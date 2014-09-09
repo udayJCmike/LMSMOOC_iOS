@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface lmsmoocViewController : UIViewController
+@interface lmsmoocViewController : UIViewController<UIPageViewControllerDataSource,UIPageViewControllerDelegate>
+@property (strong, nonatomic) UIPageViewController *pageViewController;
+@property (strong, nonatomic) NSArray *pageTitles;
+@property (strong, nonatomic) NSArray *pageImages;
+
 
 @end

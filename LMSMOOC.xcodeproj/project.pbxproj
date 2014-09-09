@@ -22,6 +22,18 @@
 		0DAFD02419BEC75500A1E509 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DAFD00319BEC75500A1E509 /* UIKit.framework */; };
 		0DAFD02C19BEC75500A1E509 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0DAFD02A19BEC75500A1E509 /* InfoPlist.strings */; };
 		0DAFD02E19BEC75500A1E509 /* LMSMOOCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DAFD02D19BEC75500A1E509 /* LMSMOOCTests.m */; };
+		840B832319BEE58F0065B678 /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840B832219BEE58F0065B678 /* PageContentViewController.m */; };
+		840B832F19BF074F0065B678 /* LoginPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840B832E19BF074F0065B678 /* LoginPageViewController.m */; };
+		840B833419BF0BC80065B678 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840B833319BF0BC80065B678 /* SignupViewController.m */; };
+		840B833919BF23340065B678 /* navlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 840B833819BF23340065B678 /* navlogo.png */; };
+		8433FF3519BF2BA20029C24F /* page1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8433FF3119BF2BA20029C24F /* page1.jpg */; };
+		8433FF3619BF2BA20029C24F /* page2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8433FF3219BF2BA20029C24F /* page2.jpg */; };
+		8433FF3719BF2BA20029C24F /* page3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8433FF3319BF2BA20029C24F /* page3.png */; };
+		8433FF3819BF2BA20029C24F /* page4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8433FF3419BF2BA20029C24F /* page4.jpg */; };
+		845B10A119BF2D5B00AAE3E4 /* checkBox.png in Resources */ = {isa = PBXBuildFile; fileRef = 845B109D19BF2D5B00AAE3E4 /* checkBox.png */; };
+		845B10A219BF2D5B00AAE3E4 /* checkBox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 845B109E19BF2D5B00AAE3E4 /* checkBox@2x.png */; };
+		845B10A319BF2D5B00AAE3E4 /* checkBoxMarked.png in Resources */ = {isa = PBXBuildFile; fileRef = 845B109F19BF2D5B00AAE3E4 /* checkBoxMarked.png */; };
+		845B10A419BF2D5B00AAE3E4 /* checkBoxMarked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 845B10A019BF2D5B00AAE3E4 /* checkBoxMarked@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +67,21 @@
 		0DAFD02919BEC75500A1E509 /* LMSMOOCTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LMSMOOCTests-Info.plist"; sourceTree = "<group>"; };
 		0DAFD02B19BEC75500A1E509 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0DAFD02D19BEC75500A1E509 /* LMSMOOCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMSMOOCTests.m; sourceTree = "<group>"; };
+		840B832119BEE58F0065B678 /* PageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
+		840B832219BEE58F0065B678 /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
+		840B832D19BF074F0065B678 /* LoginPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginPageViewController.h; sourceTree = "<group>"; };
+		840B832E19BF074F0065B678 /* LoginPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginPageViewController.m; sourceTree = "<group>"; };
+		840B833219BF0BC80065B678 /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
+		840B833319BF0BC80065B678 /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
+		840B833819BF23340065B678 /* navlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = navlogo.png; path = LMSMOOC/navlogo.png; sourceTree = "<group>"; };
+		8433FF3119BF2BA20029C24F /* page1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = page1.jpg; sourceTree = "<group>"; };
+		8433FF3219BF2BA20029C24F /* page2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = page2.jpg; sourceTree = "<group>"; };
+		8433FF3319BF2BA20029C24F /* page3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = page3.png; sourceTree = "<group>"; };
+		8433FF3419BF2BA20029C24F /* page4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = page4.jpg; sourceTree = "<group>"; };
+		845B109D19BF2D5B00AAE3E4 /* checkBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = checkBox.png; path = LMSMOOC/checkBox.png; sourceTree = "<group>"; };
+		845B109E19BF2D5B00AAE3E4 /* checkBox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "checkBox@2x.png"; path = "LMSMOOC/checkBox@2x.png"; sourceTree = "<group>"; };
+		845B109F19BF2D5B00AAE3E4 /* checkBoxMarked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = checkBoxMarked.png; path = LMSMOOC/checkBoxMarked.png; sourceTree = "<group>"; };
+		845B10A019BF2D5B00AAE3E4 /* checkBoxMarked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "checkBoxMarked@2x.png"; path = "LMSMOOC/checkBoxMarked@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +111,10 @@
 		0DAFCFF319BEC75500A1E509 = {
 			isa = PBXGroup;
 			children = (
+				845B10A519BF2D5E00AAE3E4 /* Images */,
+				840B833119BF0BB60065B678 /* Signup */,
+				840B833019BF07C80065B678 /* Login */,
+				840B832419BEE5950065B678 /* PageContent */,
 				0DAFD00519BEC75500A1E509 /* LMSMOOC */,
 				0DAFD02719BEC75500A1E509 /* LMSMOOCTests */,
 				0DAFCFFE19BEC75500A1E509 /* Frameworks */,
@@ -153,6 +184,49 @@
 				0DAFD02A19BEC75500A1E509 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		840B832419BEE5950065B678 /* PageContent */ = {
+			isa = PBXGroup;
+			children = (
+				8433FF3119BF2BA20029C24F /* page1.jpg */,
+				8433FF3219BF2BA20029C24F /* page2.jpg */,
+				8433FF3319BF2BA20029C24F /* page3.png */,
+				8433FF3419BF2BA20029C24F /* page4.jpg */,
+				840B832119BEE58F0065B678 /* PageContentViewController.h */,
+				840B832219BEE58F0065B678 /* PageContentViewController.m */,
+			);
+			name = PageContent;
+			sourceTree = "<group>";
+		};
+		840B833019BF07C80065B678 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				840B832D19BF074F0065B678 /* LoginPageViewController.h */,
+				840B832E19BF074F0065B678 /* LoginPageViewController.m */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		840B833119BF0BB60065B678 /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				840B833219BF0BC80065B678 /* SignupViewController.h */,
+				840B833319BF0BC80065B678 /* SignupViewController.m */,
+			);
+			name = Signup;
+			sourceTree = "<group>";
+		};
+		845B10A519BF2D5E00AAE3E4 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				845B109D19BF2D5B00AAE3E4 /* checkBox.png */,
+				845B109E19BF2D5B00AAE3E4 /* checkBox@2x.png */,
+				845B109F19BF2D5B00AAE3E4 /* checkBoxMarked.png */,
+				845B10A019BF2D5B00AAE3E4 /* checkBoxMarked@2x.png */,
+				840B833819BF23340065B678 /* navlogo.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,10 +309,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				845B10A319BF2D5B00AAE3E4 /* checkBoxMarked.png in Resources */,
+				845B10A119BF2D5B00AAE3E4 /* checkBox.png in Resources */,
 				0DAFD01619BEC75500A1E509 /* Main_iPad.storyboard in Resources */,
 				0DAFD01B19BEC75500A1E509 /* Images.xcassets in Resources */,
+				845B10A219BF2D5B00AAE3E4 /* checkBox@2x.png in Resources */,
+				8433FF3619BF2BA20029C24F /* page2.jpg in Resources */,
+				8433FF3519BF2BA20029C24F /* page1.jpg in Resources */,
+				845B10A419BF2D5B00AAE3E4 /* checkBoxMarked@2x.png in Resources */,
+				8433FF3719BF2BA20029C24F /* page3.png in Resources */,
+				8433FF3819BF2BA20029C24F /* page4.jpg in Resources */,
 				0DAFD01319BEC75500A1E509 /* Main_iPhone.storyboard in Resources */,
 				0DAFD00A19BEC75500A1E509 /* InfoPlist.strings in Resources */,
+				840B833919BF23340065B678 /* navlogo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,7 +340,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				840B833419BF0BC80065B678 /* SignupViewController.m in Sources */,
 				0DAFD00C19BEC75500A1E509 /* main.m in Sources */,
+				840B832319BEE58F0065B678 /* PageContentViewController.m in Sources */,
+				840B832F19BF074F0065B678 /* LoginPageViewController.m in Sources */,
 				0DAFD01019BEC75500A1E509 /* lmsmoocAppDelegate.m in Sources */,
 				0DAFD01919BEC75500A1E509 /* lmsmoocViewController.m in Sources */,
 			);
@@ -333,7 +419,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: JACOB BENJAMIN (EQSE4S4WK5)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -351,6 +437,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "c70b3525-c1f6-4a9d-95d0-89fed509b6f4";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -372,7 +459,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: JACOB BENJAMIN (EQSE4S4WK5)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -383,6 +470,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				PROVISIONING_PROFILE = "c70b3525-c1f6-4a9d-95d0-89fed509b6f4";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -394,11 +482,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: JACOB BENJAMIN (EQSE4S4WK5)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LMSMOOC/LMSMOOC-Prefix.pch";
 				INFOPLIST_FILE = "LMSMOOC/LMSMOOC-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "c70b3525-c1f6-4a9d-95d0-89fed509b6f4";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -408,11 +497,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: JACOB BENJAMIN (EQSE4S4WK5)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LMSMOOC/LMSMOOC-Prefix.pch";
 				INFOPLIST_FILE = "LMSMOOC/LMSMOOC-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "c70b3525-c1f6-4a9d-95d0-89fed509b6f4";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -476,6 +566,7 @@
 				0DAFD03319BEC75500A1E509 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0DAFD03419BEC75500A1E509 /* Build configuration list for PBXNativeTarget "LMSMOOCTests" */ = {
 			isa = XCConfigurationList;
@@ -484,6 +575,7 @@
 				0DAFD03619BEC75500A1E509 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
