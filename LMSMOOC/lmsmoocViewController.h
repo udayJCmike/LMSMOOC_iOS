@@ -10,7 +10,7 @@
 
 @interface lmsmoocViewController : UIViewController<UIPageViewControllerDataSource,UIPageViewControllerDelegate>
 @property (strong, nonatomic) UIPageViewController *pageViewController;
-@property (strong, nonatomic) NSArray *pageTitles;
+
 @property (strong, nonatomic) NSArray *pageImages;
 
 

@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBProgressHUD.h"
 
-@interface SignupViewController : UIViewController
+@interface SignupViewController : UIViewController<UITextFieldDelegate,MBProgressHUDDelegate>
 @property (strong, nonatomic) IBOutlet UIButton *terms;
 @property (strong, nonatomic) IBOutlet UITextField *fname;
 @property (strong, nonatomic) IBOutlet UITextField *lname;

@@ -10,7 +10,8 @@
 #import "PageContentViewController.h"
 @interface lmsmoocViewController ()
 {
-    NSArray *viewControllers;UIPageControl *pageControl;
+    NSArray *viewControllers;
+    UIPageControl *pageControl;
 }
 @end
 
@@ -19,8 +20,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _pageTitles = @[@"LMS MOOC 1", @"LMS MOOC 2", @"LMS MOOC 3", @"LMS MOOC 4"];
-    _pageImages = @[@"page1.jpg", @"page2.jpg", @"page3.png", @"page4.jpg"];
+    if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad)
+    {
+          _pageImages = @[@"ban1.png", @"ban2.png", @"ban3.png", @"ban4.png",@"ban5.png"];
+    }
+    if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPhone) {
+          _pageImages = @[@"bantab1.png", @"bantab2.png", @"bantab3.png", @"bantab4.png", @"bantab5.png"];
+    }
+  
     
     UIButton *button =  [UIButton buttonWithType:UIButtonTypeCustom];    
     [button setTitle:@"Get Started" forState:UIControlStateNormal];
@@ -58,7 +65,7 @@
 {
     NSLog(@"index value %d",index);
     
-    if(index==4)
+    if(index==5)
     {
         UIButton *button =  [UIButton buttonWithType:UIButtonTypeCustom];
         [button setTitle:@"Browse Courses" forState:UIControlStateNormal];
@@ -80,7 +87,7 @@
 
 -(void)showinfo
 {
-    PageContentViewController *startingViewController = [self viewControllerAtIndex:3];
+    PageContentViewController *startingViewController = [self viewControllerAtIndex:4];
     
     
     viewControllers = @[startingViewController];
@@ -90,7 +97,7 @@
     for (int i=0; i<[subviews count]; i++) {
         if ([[subviews objectAtIndex:i] isKindOfClass:[UIPageControl class]]) {
             thisControl = (UIPageControl *)[subviews objectAtIndex:i];
-            thisControl.currentPage=3;
+            thisControl.currentPage=4;
         }
     }
     UIButton *button =  [UIButton buttonWithType:UIButtonTypeCustom];
@@ -110,14 +117,14 @@
 
 - (PageContentViewController *)viewControllerAtIndex:(NSUInteger)index
 {
-    if (([self.pageTitles count] == 0) || (index >= [self.pageTitles count])) {
+    if (([self.pageImages count] == 0) || (index >= [self.pageImages count])) {
         return nil;
     }
     
            // Create a new view controller and pass suitable data.
     PageContentViewController *pageContentViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageContentViewController"];
     pageContentViewController.imageFile = self.pageImages[index];
-    pageContentViewController.titleText = self.pageTitles[index];
+//    pageContentViewController.titleText = self.pageTitles[index];
     pageContentViewController.pageIndex = index;
    
     return pageContentViewController;
@@ -147,7 +154,7 @@
     }
     
     index++;
-    if (index == [self.pageTitles count]) {
+    if (index == [self.pageImages count]) {
          [self barbutton:index];
         return nil;
     }
@@ -159,7 +166,7 @@
 
 - (NSInteger)presentationCountForPageViewController:(UIPageViewController *)pageViewController
 {
-    return [self.pageTitles count];
+    return [self.pageImages count];
 }
 
 - (NSInteger)presentationIndexForPageViewController:(UIPageViewController *)pageViewController

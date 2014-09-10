@@ -11,5 +11,6 @@
 @interface lmsmoocAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property(strong,nonatomic)NSString *avatharimage;
+@property(strong,nonatomic)UIImage *av_image;
 @end

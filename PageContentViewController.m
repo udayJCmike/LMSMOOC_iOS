@@ -31,7 +31,7 @@
     self.labelcontent.text = self.titleText;
     _login.hidden=YES;
     _signup.hidden=YES;
-    if (_pageIndex==3) {
+    if (_pageIndex==4) {
         _login.hidden=NO;
         _signup.hidden=NO;
     }
@@ -39,6 +39,10 @@
     
 }
 - (IBAction)login:(id)sender {
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(login_listener)
+                                                 name:@"LoginComplete"
+                                               object:nil];
     UIViewController *loginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginVC"];
     loginVC.modalPresentationStyle = UIModalPresentationFullScreen;
     loginVC.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
@@ -56,7 +60,28 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)login_listener
+{
+    if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad)
+    {
+        UIStoryboard *welcome=[UIStoryboard storyboardWithName:@"Dashboard_iPad" bundle:nil];
+        UIViewController *initialvc=[welcome instantiateInitialViewController];
+        [self.navigationController pushViewController:initialvc animated:YES];
+        //    initialvc.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
+        //    [self presentModalViewController:initialvc animated:YES];
+           [[NSNotificationCenter defaultCenter] removeObserver:self name:@"LoginComplete" object:nil];
+    }
+    if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPhone)
+    {
+        
+        UIStoryboard *welcome=[UIStoryboard storyboardWithName:@"Dashboard_iPhone" bundle:nil];
+        UIViewController *initialvc=[welcome instantiateInitialViewController];
+        [self.navigationController pushViewController:initialvc animated:NO];
+        //    initialvc.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
+        //    [self presentModalViewController:initialvc animated:YES];
+           [[NSNotificationCenter defaultCenter] removeObserver:self name:@"LoginComplete" object:nil];
+    }
+}
 /*
 #pragma mark - Navigation
 

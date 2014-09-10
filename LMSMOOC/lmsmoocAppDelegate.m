@@ -9,7 +9,8 @@
 #import "lmsmoocAppDelegate.h"
 
 @implementation lmsmoocAppDelegate
-
+@synthesize avatharimage;
+@synthesize av_image;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     UIPageControl *pageControl = [UIPageControl appearance];
