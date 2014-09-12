@@ -10,6 +10,7 @@
 #import "MBProgressHUD.h"
 #import "databaseurl.h"
 #import "JSON.h"
+#import "UIButton+Bootstrap.h"
 @interface SignupViewController ()
 {
     databaseurl *du;
@@ -37,6 +38,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.back defaultStyle];
+    [self.signup primaryStyle];
+
     du=[[databaseurl alloc]init];
     fname.delegate = self;
     lname.delegate=self;
@@ -407,4 +411,9 @@
     return YES;
 }
 
+- (void)dealloc {
+    [_signup release];
+    [_back release];
+    [super dealloc];
+}
 @end

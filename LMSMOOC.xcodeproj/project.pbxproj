@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D3C958E19C31C9C0065A4B4 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0D3C958D19C31C9C0065A4B4 /* bg.jpg */; };
+		0D3C959419C31EFB0065A4B4 /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3C959119C31EFB0065A4B4 /* NSString+FontAwesome.m */; };
+		0D3C959519C31EFB0065A4B4 /* UIButton+Bootstrap.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3C959319C31EFB0065A4B4 /* UIButton+Bootstrap.m */; };
+		0D3C959719C329C80065A4B4 /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D3C959619C329C80065A4B4 /* edit.png */; };
 		0DAFD00019BEC75500A1E509 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DAFCFFF19BEC75500A1E509 /* Foundation.framework */; };
 		0DAFD00219BEC75500A1E509 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DAFD00119BEC75500A1E509 /* CoreGraphics.framework */; };
 		0DAFD00419BEC75500A1E509 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DAFD00319BEC75500A1E509 /* UIKit.framework */; };
@@ -97,6 +101,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D3C958D19C31C9C0065A4B4 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
+		0D3C959019C31EFB0065A4B4 /* NSString+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FontAwesome.h"; sourceTree = "<group>"; };
+		0D3C959119C31EFB0065A4B4 /* NSString+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FontAwesome.m"; sourceTree = "<group>"; };
+		0D3C959219C31EFB0065A4B4 /* UIButton+Bootstrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Bootstrap.h"; sourceTree = "<group>"; };
+		0D3C959319C31EFB0065A4B4 /* UIButton+Bootstrap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Bootstrap.m"; sourceTree = "<group>"; };
+		0D3C959619C329C80065A4B4 /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit.png; sourceTree = "<group>"; };
 		0DAFCFFC19BEC75500A1E509 /* LMSMOOC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LMSMOOC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DAFCFFF19BEC75500A1E509 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0DAFD00119BEC75500A1E509 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -245,9 +255,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D3C958F19C31EED0065A4B4 /* Bootstrap */ = {
+			isa = PBXGroup;
+			children = (
+				0D3C959019C31EFB0065A4B4 /* NSString+FontAwesome.h */,
+				0D3C959119C31EFB0065A4B4 /* NSString+FontAwesome.m */,
+				0D3C959219C31EFB0065A4B4 /* UIButton+Bootstrap.h */,
+				0D3C959319C31EFB0065A4B4 /* UIButton+Bootstrap.m */,
+			);
+			name = Bootstrap;
+			sourceTree = "<group>";
+		};
 		0DAFCFF319BEC75500A1E509 = {
 			isa = PBXGroup;
 			children = (
+				0D3C958F19C31EED0065A4B4 /* Bootstrap */,
 				84F59B6019C2AD4D009EF252 /* Button Customize */,
 				84F59B5F19C2AAE9009EF252 /* Update Password */,
 				84F59B5E19C2AAD2009EF252 /* Avatar Download */,
@@ -293,6 +315,7 @@
 				847635CF19C03FCC00F45CEF /* ban1.png */,
 				847635D019C03FCC00F45CEF /* ban2.png */,
 				847635D119C03FCC00F45CEF /* ban3.png */,
+				0D3C958D19C31C9C0065A4B4 /* bg.jpg */,
 				847635D219C03FCC00F45CEF /* ban4.png */,
 				84F59B6819C2AE28009EF252 /* ban5.png */,
 				84F59B6919C2AE28009EF252 /* bantab5.png */,
@@ -372,6 +395,7 @@
 			isa = PBXGroup;
 			children = (
 				845B109D19BF2D5B00AAE3E4 /* checkBox.png */,
+				0D3C959619C329C80065A4B4 /* edit.png */,
 				845B109E19BF2D5B00AAE3E4 /* checkBox@2x.png */,
 				845B109F19BF2D5B00AAE3E4 /* checkBoxMarked.png */,
 				845B10A019BF2D5B00AAE3E4 /* checkBoxMarked@2x.png */,
@@ -631,8 +655,10 @@
 				84F59B6B19C2AE28009EF252 /* bantab5.png in Resources */,
 				845B10A419BF2D5B00AAE3E4 /* checkBoxMarked@2x.png in Resources */,
 				84FC7DB919C01C680001FD7C /* Avatar-female.png in Resources */,
+				0D3C958E19C31C9C0065A4B4 /* bg.jpg in Resources */,
 				847635DC19C03FCC00F45CEF /* bantab2.png in Resources */,
 				84F59B7519C2FED2009EF252 /* unimportant.png in Resources */,
+				0D3C959719C329C80065A4B4 /* edit.png in Resources */,
 				84F59B6A19C2AE28009EF252 /* ban5.png in Resources */,
 				844A9CB819C1A765000A5449 /* photo-frame.png in Resources */,
 				847635D819C03FCC00F45CEF /* ban2.png in Resources */,
@@ -668,6 +694,7 @@
 				847635E519C0733C00F45CEF /* Mycourses_iPadViewController.m in Sources */,
 				84FC7DDC19C02E4A0001FD7C /* DashboardcontainerViewController.m in Sources */,
 				84FC7D9619C0064E0001FD7C /* SBJsonWriter.m in Sources */,
+				0D3C959419C31EFB0065A4B4 /* NSString+FontAwesome.m in Sources */,
 				840B833419BF0BC80065B678 /* SignupViewController.m in Sources */,
 				0DAFD00C19BEC75500A1E509 /* main.m in Sources */,
 				84FC7DAB19C0191B0001FD7C /* REFrostedViewController.m in Sources */,
@@ -691,6 +718,7 @@
 				84FC7D9019C0064E0001FD7C /* NSObject+SBJSON.m in Sources */,
 				84F59B7119C2FC37009EF252 /* MAILinboxTableViewCell.m in Sources */,
 				840B832F19BF074F0065B678 /* LoginPageViewController.m in Sources */,
+				0D3C959519C31EFB0065A4B4 /* UIButton+Bootstrap.m in Sources */,
 				0DAFD01019BEC75500A1E509 /* lmsmoocAppDelegate.m in Sources */,
 				0DAFD01919BEC75500A1E509 /* lmsmoocViewController.m in Sources */,
 				84FC7DBC19C021180001FD7C /* ProfileUpdateViewController.m in Sources */,
@@ -821,12 +849,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer: JACOB BENJAMIN (EQSE4S4WK5)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LMSMOOC/LMSMOOC-Prefix.pch";
 				INFOPLIST_FILE = "LMSMOOC/LMSMOOC-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c70b3525-c1f6-4a9d-95d0-89fed509b6f4";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -837,12 +866,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer: JACOB BENJAMIN (EQSE4S4WK5)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LMSMOOC/LMSMOOC-Prefix.pch";
 				INFOPLIST_FILE = "LMSMOOC/LMSMOOC-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c70b3525-c1f6-4a9d-95d0-89fed509b6f4";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

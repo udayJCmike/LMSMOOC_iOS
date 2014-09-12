@@ -7,6 +7,7 @@
 //
 
 #import "PageContentViewController.h"
+#import "UIButton+Bootstrap.h"
 
 @interface PageContentViewController ()
 
@@ -27,6 +28,34 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //Button Styles
+    
+    [self.login primaryStyle];
+    [self.signup primaryStyle];
+    //[self.successButton successStyle];
+    //[self.infoButton infoStyle];
+    //[self.warningButton warningStyle];
+    //[self.dangerButton dangerStyle];
+    
+    //[self.bookmarkButton primaryStyle];
+    //[self.bookmarkButton addAwesomeIcon:FAIconBookmark beforeTitle:YES];
+    
+    //[self.doneButton successStyle];
+    //[self.doneButton addAwesomeIcon:FAIconCheck beforeTitle:NO];
+    
+    //[self.deleteButton dangerStyle];
+    //[self.deleteButton addAwesomeIcon:FAIconRemove beforeTitle:YES];
+    
+   //[self.downloadButton defaultStyle];
+    //[self.downloadButton addAwesomeIcon:FAIconDownloadAlt beforeTitle:NO];
+    
+    //[self.calendarButton infoStyle];
+    //[self.calendarButton addAwesomeIcon:FAIconCalendar beforeTitle:NO];
+    
+    //[self.favoriteButton warningStyle];
+    //[self.favoriteButton addAwesomeIcon:FAIconStar beforeTitle:NO];
+
     self.imageview.image = [UIImage imageNamed:self.imageFile];
     self.labelcontent.text = self.titleText;
     _login.hidden=YES;

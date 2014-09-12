@@ -8,6 +8,7 @@
 
 #import "Passwordchange.h"
 #import "APRoundedButton.h"
+#import "UIButton+Bootstrap.h"
 #define  AppDelegate (lmsmoocAppDelegate *)[[UIApplication sharedApplication] delegate]
 
 
@@ -61,28 +62,28 @@
             cfm_pwd.layer.borderColor =[[[UIColor grayColor] colorWithAlphaComponent:0.5] CGColor];
             
             
-            CGRect btnTempFrame=CGRectMake(95, 295, 176, 30);
+            CGRect btnTempFrame=CGRectMake(105, 280, 170, 30);
             getpwd=[[APRoundedButton alloc]initWithFrame:btnTempFrame];
-            getpwd.style=4;
+           // getpwd.style=4;
             [getpwd.titleLabel setFont:[UIFont boldSystemFontOfSize:20]];
             [getpwd.titleLabel setTextColor:[UIColor whiteColor]];
-            [getpwd setTitle:@"Get Passwod" forState:UIControlStateNormal];
+            [getpwd setTitle:@"Get Password" forState:UIControlStateNormal];
             [getpwd addTarget:self action:@selector(changePassword:) forControlEvents:UIControlEventTouchUpInside];
-            [getpwd setBackgroundColor:[UIColor colorWithRed:39/256.0 green:64/256.0 blue:150/256.0 alpha:1.0]];
+            [getpwd setBackgroundColor:[UIColor colorWithRed:61/256.0 green:139/256.0 blue:202/256.0 alpha:1.0]];
             [getpwd setTintColor:[UIColor whiteColor]];
-            [getpwd.layer setCornerRadius:14.0f];
+            [getpwd.layer setCornerRadius:5.0f];
             
             
-            CGRect closeButtonFrame=CGRectMake(368, 295, 67, 30);
+            CGRect closeButtonFrame=CGRectMake(305, 280, 170, 30);
             close=[[APRoundedButton alloc]initWithFrame:closeButtonFrame];
-            close.style=4;
+          //  close.style=4;
             [close.titleLabel setFont:[UIFont boldSystemFontOfSize:20]];
             [close.titleLabel setTextColor:[UIColor whiteColor]];
             [close setTitle:@"Close" forState:UIControlStateNormal];
             [close addTarget:self action:@selector(closeView:) forControlEvents:UIControlEventTouchUpInside];
-            [close setBackgroundColor:[UIColor colorWithRed:39/256.0 green:64/256.0 blue:150/256.0 alpha:1.0]];
+            [close setBackgroundColor:[UIColor colorWithRed:127/256.0 green:127/256.0 blue:127/256.0 alpha:1.0]];
             [close setTintColor:[UIColor whiteColor]];
-            [close.layer setCornerRadius:14.0f];
+            [close.layer setCornerRadius:5.0f];
             
             CGRect swipeLabelFrame=CGRectMake(95, 67, 187, 29);
             label1=[[UILabel alloc]initWithFrame:swipeLabelFrame];
@@ -147,31 +148,31 @@
             cfm_pwd.layer.borderColor =[[[UIColor grayColor] colorWithAlphaComponent:0.5] CGColor];
             
             
-            CGRect btnTempFrame=CGRectMake(14, 236, 106, 30);
+            CGRect btnTempFrame=CGRectMake(23, 236, 106, 30);
             getpwd=[[APRoundedButton alloc]initWithFrame:btnTempFrame];
-            getpwd.style=4;
+           // getpwd.style=4;
             
             //        [btnTemp setBackgroundImage:[UIImage imageNamed:@"btn_plain_iphone.png"] forState:UIControlStateNormal];
             [getpwd.titleLabel setFont:[UIFont boldSystemFontOfSize:15]];
             [getpwd.titleLabel setTextColor:[UIColor whiteColor]];
-            [getpwd setTitle:@"Get Passwod" forState:UIControlStateNormal];
+            [getpwd setTitle:@"Get Password" forState:UIControlStateNormal];
             [getpwd addTarget:self action:@selector(changePassword:) forControlEvents:UIControlEventTouchUpInside];
-            [getpwd setBackgroundColor:[UIColor colorWithRed:39/256.0 green:64/256.0 blue:150/256.0 alpha:1.0]];
+            [getpwd setBackgroundColor:[UIColor colorWithRed:66/256.0 green:139/256.0 blue:202/256.0 alpha:1.0]];
             [getpwd setTintColor:[UIColor whiteColor]];
-            [getpwd.layer setCornerRadius:14.0f];
+            [getpwd.layer setCornerRadius:5.0f];
             
             
-            CGRect closeButtonFrame=CGRectMake(161, 236, 46, 30);
+            CGRect closeButtonFrame=CGRectMake(137, 236, 103, 30);
             close=[[APRoundedButton alloc]initWithFrame:closeButtonFrame];
-            close.style=4;
+            //close.style=4;
             // [closeButton setBackgroundImage:[UIImage imageNamed:@"btn_plain_iphone.png"] forState:UIControlStateNormal];
             [close.titleLabel setFont:[UIFont boldSystemFontOfSize:15]];
             [close.titleLabel setTextColor:[UIColor whiteColor]];
             [close setTitle:@"Close" forState:UIControlStateNormal];
             [close addTarget:self action:@selector(closeView:) forControlEvents:UIControlEventTouchUpInside];
-            [close setBackgroundColor:[UIColor colorWithRed:39/256.0 green:64/256.0 blue:150/256.0 alpha:1.0]];
+            [close setBackgroundColor:[UIColor colorWithRed:127/256.0 green:127/256.0 blue:127/256.0 alpha:1.0]];
             [close setTintColor:[UIColor whiteColor]];
-            [close.layer setCornerRadius:14.0f];
+            [close.layer setCornerRadius:5.0f];
             CGRect swipeLabelFrame=CGRectMake(20, 20, 158, 21);
             label1=[[UILabel alloc]initWithFrame:swipeLabelFrame];
             

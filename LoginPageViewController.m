@@ -11,6 +11,7 @@
 #import "SBJSON.h"
 #import "MBProgressHUD.h"
 #import "lmsmoocAppDelegate.h"
+#import "UIButton+Bootstrap.h"
 #define  AppDelegate (lmsmoocAppDelegate *)[[UIApplication sharedApplication] delegate]
 @interface LoginPageViewController ()
 {
@@ -35,6 +36,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.login primaryStyle];
+    [self.back defaultStyle];
+
+    
     NSString *keepmeres=[[NSUserDefaults standardUserDefaults]objectForKey:@"keepmesign"];
     if ([keepmeres isEqualToString:@"1"]) {
         username.text=[[NSUserDefaults standardUserDefaults]objectForKey:@"username"];
@@ -253,4 +258,9 @@
 
 
 
+- (void)dealloc {
+    [_login release];
+    [_back release];
+    [super dealloc];
+}
 @end

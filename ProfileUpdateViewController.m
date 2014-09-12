@@ -12,6 +12,7 @@
 #import "SBJSON.h"
 #import "DashboardContentListTableViewController.h"
 #import "AvatarImagesViewController.h"
+#import "UIButton+Bootstrap.h"
 
 #define  AppDelegate (lmsmoocAppDelegate *)[[UIApplication sharedApplication] delegate]
 
@@ -47,6 +48,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self.saveprofile primaryStyle];
     // Do any additional setup after loading the view.
     if (self.navigationController.navigationBar.hidden == YES)
     {
@@ -465,6 +468,7 @@
 
 - (void)dealloc {
     
+    [_saveprofile release];
     [super dealloc];
 }
 @end

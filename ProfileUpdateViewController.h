@@ -22,5 +22,6 @@
 
 @property (retain, nonatomic) IBOutlet UISegmentedControl *interestedin;
 @property (retain, nonatomic) IBOutlet UISegmentedControl *gender;
+@property (retain, nonatomic) IBOutlet UIButton *saveprofile;
 
 @end

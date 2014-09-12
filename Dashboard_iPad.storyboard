@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Courselist i Pad View Controller-->
+        <!--Courselist i Pad View Controller - Courses-->
         <scene sceneID="qua-I0-cou">
             <objects>
                 <collectionViewController storyboardIdentifier="CourseList" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yHi-QU-zVq" customClass="Courselist_iPad_ViewController" sceneMemberID="viewController">
@@ -59,7 +59,7 @@
                             <outlet property="delegate" destination="yHi-QU-zVq" id="9oI-s2-7wA"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="lhB-Ml-pKt"/>
+                    <navigationItem key="navigationItem" title="Courses" id="lhB-Ml-pKt"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nn9-r8-AUA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -86,7 +86,7 @@
             </objects>
             <point key="canvasLocation" x="-3557" y="-3289"/>
         </scene>
-        <!--Profile Update View Controller-->
+        <!--Profile Update View Controller - Profile-->
         <scene sceneID="tSf-0d-nua">
             <objects>
                 <viewController storyboardIdentifier="Profile" useStoryboardIdentifierAsRestorationIdentifier="YES" id="i9n-qq-drc" customClass="ProfileUpdateViewController" sceneMemberID="viewController">
@@ -204,7 +204,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="0Qh-ZN-r7N">
-                                <rect key="frame" x="275" y="364" width="191" height="29"/>
+                                <rect key="frame" x="275" y="367" width="191" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Male"/>
@@ -214,8 +214,8 @@
                                     <action selector="genderact:" destination="i9n-qq-drc" eventType="valueChanged" id="Mah-le-HB0"/>
                                 </connections>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fs0-TQ-0Ms" customClass="APRoundedButton">
-                                <rect key="frame" x="373" y="494" width="278" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fs0-TQ-0Ms">
+                                <rect key="frame" x="373" y="465" width="278" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.1536089196" green="0.25123399340000002" blue="0.58841811129999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -224,19 +224,14 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
-                                        <integer key="value" value="4"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="signup:" destination="i9n-qq-drc" eventType="touchUpInside" id="1Cl-y1-9hF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LcE-ja-4hw">
-                                <rect key="frame" x="473" y="303" width="46" height="30"/>
+                                <rect key="frame" x="473" y="296" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="edit">
+                                <state key="normal" backgroundImage="edit.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -247,7 +242,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <navigationItem key="navigationItem" id="N4c-5Y-AdD"/>
+                    <navigationItem key="navigationItem" title="Profile" id="N4c-5Y-AdD"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="email" destination="Ijr-eL-90t" id="k4f-Wa-t72"/>
@@ -256,6 +251,7 @@
                         <outlet property="interestedin" destination="bW5-X6-veO" id="N34-vz-jw5"/>
                         <outlet property="lname" destination="xqi-sR-wx4" id="1jP-aU-fMk"/>
                         <outlet property="password" destination="6Da-mO-uhY" id="T7M-sg-7KO"/>
+                        <outlet property="saveprofile" destination="fs0-TQ-0Ms" id="4q5-0L-EU2"/>
                         <outlet property="username" destination="Lnh-5B-rAd" id="LDZ-XA-MwR"/>
                     </connections>
                 </viewController>
@@ -263,7 +259,7 @@
             </objects>
             <point key="canvasLocation" x="-790" y="-4338"/>
         </scene>
-        <!--Mailinbox Table View Controller-->
+        <!--Mailinbox Table View Controller - Inbox-->
         <scene sceneID="cAw-bX-uxs">
             <objects>
                 <tableViewController storyboardIdentifier="mailinbox" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Xi1-7U-yej" customClass="MailinboxTableViewController" sceneMemberID="viewController">
@@ -287,14 +283,14 @@
                             <outlet property="delegate" destination="Xi1-7U-yej" id="SB1-6L-W37"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="hjL-GG-6vA"/>
+                    <navigationItem key="navigationItem" title="Inbox" id="hjL-GG-6vA"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zkx-BF-QR8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="322" y="-4470"/>
         </scene>
-        <!--Mycourses i Pad View Controller-->
+        <!--Mycourses i Pad View Controller - My Courses-->
         <scene sceneID="H1c-IZ-VjV">
             <objects>
                 <collectionViewController storyboardIdentifier="mycourse" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="126-tN-qQz" customClass="Mycourses_iPadViewController" sceneMemberID="viewController">
@@ -348,14 +344,14 @@
                             <outlet property="delegate" destination="126-tN-qQz" id="RBu-Da-1gm"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="96l-X8-iqY"/>
+                    <navigationItem key="navigationItem" title="My Courses" id="96l-X8-iqY"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3h9-Pj-QHW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1450" y="-3896"/>
         </scene>
-        <!--Myfavorites i Pad View Controller-->
+        <!--Myfavorites i Pad View Controller - My favorites Courses-->
         <scene sceneID="vlU-ef-xBB">
             <objects>
                 <collectionViewController storyboardIdentifier="myfavorites" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fVj-3Q-HPw" customClass="Myfavorites_iPadViewController" sceneMemberID="viewController">
@@ -409,14 +405,14 @@
                             <outlet property="delegate" destination="fVj-3Q-HPw" id="0zW-Qs-qQQ"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="dp1-lB-n9t"/>
+                    <navigationItem key="navigationItem" title="My favorites Courses" id="dp1-lB-n9t"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pEc-aG-tDH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1722" y="-2528"/>
         </scene>
-        <!--Billing Table View Controller-->
+        <!--Billing Table View Controller - Billings-->
         <scene sceneID="2c7-Qa-IGx">
             <objects>
                 <tableViewController storyboardIdentifier="Billing" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ger-kY-RCL" customClass="BillingTableViewController" sceneMemberID="viewController">
@@ -440,14 +436,14 @@
                             <outlet property="delegate" destination="Ger-kY-RCL" id="VLS-O5-nTu"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="VZJ-Ux-iHv"/>
+                    <navigationItem key="navigationItem" title="Billings" id="VZJ-Ux-iHv"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ryN-cC-u2Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1094" y="-1184"/>
         </scene>
-        <!--Myauthors Table View Controller-->
+        <!--Myauthors Table View Controller - My Authors-->
         <scene sceneID="TYl-OH-JJU">
             <objects>
                 <tableViewController storyboardIdentifier="myauthors" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VpM-Ls-ugp" customClass="MyauthorsTableViewController" sceneMemberID="viewController">
@@ -471,14 +467,14 @@
                             <outlet property="delegate" destination="VpM-Ls-ugp" id="7p4-ME-UtM"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="TzO-bP-Gjc"/>
+                    <navigationItem key="navigationItem" title="My Authors" id="TzO-bP-Gjc"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wYS-Pd-CXW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="586" y="-584"/>
         </scene>
-        <!--Mycategories Table View Controller-->
+        <!--Mycategories Table View Controller - My Categories-->
         <scene sceneID="smI-Ut-bZs">
             <objects>
                 <tableViewController storyboardIdentifier="mycategories" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bdO-ZU-3il" customClass="MycategoriesTableViewController" sceneMemberID="viewController">
@@ -502,7 +498,7 @@
                             <outlet property="delegate" destination="bdO-ZU-3il" id="5Qo-LQ-hF3"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Kvm-uG-9vU"/>
+                    <navigationItem key="navigationItem" title="My Categories" id="Kvm-uG-9vU"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7vl-4k-2sk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -563,6 +559,9 @@
             <point key="canvasLocation" x="-2944" y="-1443"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="edit.png" width="512" height="512"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -116,7 +116,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Las-00-oSV">
-                                        <rect key="frame" x="148" y="236" width="73" height="30"/>
+                                        <rect key="frame" x="137" y="236" width="103" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.1536089196" green="0.25123399340000002" blue="0.58841811129999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Close">
@@ -180,7 +180,7 @@
             </objects>
             <point key="canvasLocation" x="-274" y="-2717"/>
         </scene>
-        <!--Mycourses Table View Controller-->
+        <!--Mycourses Table View Controller - My Courses-->
         <scene sceneID="gy1-hn-yUM">
             <objects>
                 <tableViewController storyboardIdentifier="mycourse" id="ekd-5s-5Ad" customClass="MycoursesTableViewController" sceneMemberID="viewController">
@@ -203,13 +203,13 @@
                             <outlet property="delegate" destination="ekd-5s-5Ad" id="1hn-wN-1lH"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="cDz-2s-Zgi"/>
+                    <navigationItem key="navigationItem" title="My Courses" id="cDz-2s-Zgi"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4vv-di-BXZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1824" y="-2387"/>
         </scene>
-        <!--Courselist i Phone Table View Controller-->
+        <!--Courselist i Phone Table View Controller - Courses-->
         <scene sceneID="uL8-OM-Ko3">
             <objects>
                 <tableViewController storyboardIdentifier="CourseList" id="Ghu-G5-s7H" customClass="courselist_iPhoneTableViewController" sceneMemberID="viewController">
@@ -232,7 +232,7 @@
                             <outlet property="delegate" destination="Ghu-G5-s7H" id="2kM-Df-YYD"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="6VG-HY-Wrd"/>
+                    <navigationItem key="navigationItem" title="Courses" id="6VG-HY-Wrd"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P8T-Jr-Zcd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -262,7 +262,7 @@
             </objects>
             <point key="canvasLocation" x="-378" y="-550"/>
         </scene>
-        <!--Profile Update View Controller-->
+        <!--Profile Update View Controller - Profile-->
         <scene sceneID="lmI-Gu-0dh">
             <objects>
                 <viewController storyboardIdentifier="Profile" id="29E-oz-Do0" customClass="ProfileUpdateViewController" sceneMemberID="viewController">
@@ -275,7 +275,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Firstname" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="z37-Ky-urj">
-                                <rect key="frame" x="24" y="76" width="258" height="30"/>
+                                <rect key="frame" x="30" y="75" width="258" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -284,7 +284,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Lastname" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lpa-Wo-aO2">
-                                <rect key="frame" x="24" y="123" width="258" height="30"/>
+                                <rect key="frame" x="30" y="120" width="258" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -293,7 +293,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="tJA-VN-hBT">
-                                <rect key="frame" x="24" y="161" width="258" height="30"/>
+                                <rect key="frame" x="30" y="165" width="258" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -302,7 +302,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email ID" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Bck-vG-QBt">
-                                <rect key="frame" x="24" y="208" width="258" height="30"/>
+                                <rect key="frame" x="30" y="210" width="258" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -311,7 +311,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="X8g-VK-nhw">
-                                <rect key="frame" x="24" y="252" width="258" height="30"/>
+                                <rect key="frame" x="30" y="255" width="258" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -320,41 +320,43 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Interested In" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S2k-NJ-Hci">
-                                <rect key="frame" x="24" y="290" width="107" height="21"/>
+                                <rect key="frame" x="30" y="290" width="107" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="M7d-ds-brQ">
-                                <rect key="frame" x="24" y="314" width="223" height="29"/>
+                                <rect key="frame" x="30" y="320" width="223" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Subject"/>
                                     <segment title="Courses"/>
                                 </segments>
+                                <color key="tintColor" red="0.25882352941176467" green="0.54509803921568623" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="interested:" destination="29E-oz-Do0" eventType="valueChanged" id="Eao-gY-RUv"/>
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gender" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b18-JV-NlR">
-                                <rect key="frame" x="24" y="350" width="107" height="21"/>
+                                <rect key="frame" x="30" y="355" width="107" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="7cS-ux-Koh">
-                                <rect key="frame" x="24" y="375" width="223" height="29"/>
+                                <rect key="frame" x="30" y="380" width="223" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Male"/>
                                     <segment title="Female"/>
                                 </segments>
+                                <color key="tintColor" red="0.25882352941176467" green="0.54509803921568623" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="genderact:" destination="29E-oz-Do0" eventType="valueChanged" id="WSr-jO-bah"/>
                                 </connections>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nW2-22-339" customClass="APRoundedButton">
-                                <rect key="frame" x="51" y="457" width="194" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nW2-22-339">
+                                <rect key="frame" x="62" y="440" width="194" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.1536089196" green="0.25123399340000002" blue="0.58841811129999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -362,19 +364,14 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
-                                        <integer key="value" value="4"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="signup:" destination="29E-oz-Do0" eventType="touchUpInside" id="I89-ZU-f4g"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WYZ-mf-JGV">
-                                <rect key="frame" x="285" y="256" width="35" height="21"/>
+                                <rect key="frame" x="286" y="255" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Edit">
+                                <state key="normal" backgroundImage="edit.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -384,7 +381,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Yoo-Af-YGF"/>
+                    <navigationItem key="navigationItem" title="Profile" id="Yoo-Af-YGF"/>
                     <connections>
                         <outlet property="email" destination="Bck-vG-QBt" id="xhE-fc-KY6"/>
                         <outlet property="fname" destination="z37-Ky-urj" id="SaL-Kp-ImG"/>
@@ -392,6 +389,7 @@
                         <outlet property="interestedin" destination="M7d-ds-brQ" id="eFk-DX-dNY"/>
                         <outlet property="lname" destination="lpa-Wo-aO2" id="mdK-Ab-ypK"/>
                         <outlet property="password" destination="X8g-VK-nhw" id="Nsf-W2-FKf"/>
+                        <outlet property="saveprofile" destination="nW2-22-339" id="2cY-6W-bJC"/>
                         <outlet property="username" destination="tJA-VN-hBT" id="PGa-gu-U5o"/>
                     </connections>
                 </viewController>
@@ -399,7 +397,7 @@
             </objects>
             <point key="canvasLocation" x="229" y="-2439"/>
         </scene>
-        <!--Myfavorites Table View Controller-->
+        <!--Myfavorites Table View Controller - My favorite Courses-->
         <scene sceneID="tur-9m-L0u">
             <objects>
                 <tableViewController storyboardIdentifier="myfavorites" useStoryboardIdentifierAsRestorationIdentifier="YES" id="iLx-RB-L79" customClass="MyfavoritesTableViewController" sceneMemberID="viewController">
@@ -422,13 +420,13 @@
                             <outlet property="delegate" destination="iLx-RB-L79" id="cXb-Oe-Nja"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="dxJ-f5-5jp"/>
+                    <navigationItem key="navigationItem" title="My favorite Courses" id="dxJ-f5-5jp"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zUG-bq-QOC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1420" y="-1533"/>
         </scene>
-        <!--Mycategories Table View Controller-->
+        <!--Mycategories Table View Controller - My Categories-->
         <scene sceneID="fUF-kF-EyF">
             <objects>
                 <tableViewController storyboardIdentifier="mycategories" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Rx0-Ke-2LF" customClass="MycategoriesTableViewController" sceneMemberID="viewController">
@@ -451,13 +449,13 @@
                             <outlet property="delegate" destination="Rx0-Ke-2LF" id="MDR-DK-UVr"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="0eh-41-sTd"/>
+                    <navigationItem key="navigationItem" title="My Categories" id="0eh-41-sTd"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4wb-5I-Ags" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1884" y="-1307"/>
         </scene>
-        <!--Mailinbox Table View Controller-->
+        <!--Mailinbox Table View Controller - Inbox-->
         <scene sceneID="dnp-3V-eAW">
             <objects>
                 <tableViewController storyboardIdentifier="mailinbox" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dGE-ak-b0W" customClass="MailinboxTableViewController" sceneMemberID="viewController">
@@ -505,7 +503,7 @@
                             <outlet property="delegate" destination="dGE-ak-b0W" id="kzo-b7-Cj5"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="rwn-xM-Lqc"/>
+                    <navigationItem key="navigationItem" title="Inbox" id="rwn-xM-Lqc"/>
                     <connections>
                         <segue destination="Y6D-Xs-aK5" kind="push" identifier="DetailView" id="531-sI-VDL"/>
                     </connections>
@@ -514,7 +512,7 @@
             </objects>
             <point key="canvasLocation" x="867" y="-2585"/>
         </scene>
-        <!--Mail Details View Controller-->
+        <!--Mail Details View Controller - Message-->
         <scene sceneID="T9H-jq-hZ4">
             <objects>
                 <viewController id="Y6D-Xs-aK5" customClass="MailDetailsViewController" sceneMemberID="viewController">
@@ -585,7 +583,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="WaI-Qg-1t0"/>
+                    <navigationItem key="navigationItem" title="Message" id="WaI-Qg-1t0"/>
                     <connections>
                         <outlet property="body" destination="KpZ-7u-cbY" id="A7m-bi-5Nq"/>
                         <outlet property="date" destination="pRw-6E-lcv" id="bFk-Wp-Zft"/>
@@ -598,7 +596,7 @@
             </objects>
             <point key="canvasLocation" x="1332" y="-2619"/>
         </scene>
-        <!--Billing Table View Controller-->
+        <!--Billing Table View Controller - Billings-->
         <scene sceneID="GuO-Se-VLi">
             <objects>
                 <tableViewController storyboardIdentifier="Billing" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nYE-1G-VxJ" customClass="BillingTableViewController" sceneMemberID="viewController">
@@ -621,13 +619,13 @@
                             <outlet property="delegate" destination="nYE-1G-VxJ" id="ipi-Ua-IlU"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="AeV-pY-mea"/>
+                    <navigationItem key="navigationItem" title="Billings" id="AeV-pY-mea"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1dg-8A-4eC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1096" y="146"/>
         </scene>
-        <!--Myauthors Table View Controller-->
+        <!--Myauthors Table View Controller - My Authors-->
         <scene sceneID="ta9-dX-aVI">
             <objects>
                 <tableViewController storyboardIdentifier="myauthors" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7PH-hA-qZK" customClass="MyauthorsTableViewController" sceneMemberID="viewController">
@@ -650,7 +648,7 @@
                             <outlet property="delegate" destination="7PH-hA-qZK" id="5an-GA-hec"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Isn-cH-Bou"/>
+                    <navigationItem key="navigationItem" title="My Authors" id="Isn-cH-Bou"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="62v-z4-0pT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -658,6 +656,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="edit.png" width="512" height="512"/>
         <image name="placeholder.png" width="420" height="420"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
