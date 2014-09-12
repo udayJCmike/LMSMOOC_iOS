@@ -39,20 +39,44 @@
     
 }
 - (IBAction)login:(id)sender {
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(login_listener)
                                                  name:@"LoginComplete"
                                                object:nil];
     UIViewController *loginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginVC"];
     loginVC.modalPresentationStyle = UIModalPresentationFullScreen;
-    loginVC.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
+    
+    if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad)
+    {
+        loginVC.modalTransitionStyle=UIModalTransitionStyleCoverVertical;
+
+    }
+    if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPhone)
+    {
+        loginVC.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
+
+    }
     [self presentViewController:loginVC animated:YES completion:nil];
+   
 }
 
 - (IBAction)signup:(id)sender {
+    
     UIViewController *loginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SignupVC"];
     loginVC.modalPresentationStyle = UIModalPresentationFullScreen;
-    loginVC.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
+    if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad)
+    {
+        loginVC.modalTransitionStyle=UIModalTransitionStyleCoverVertical;
+
+    }
+    if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPhone)
+    {
+        loginVC.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
+
+    }
+  
+    
     [self presentViewController:loginVC animated:YES completion:nil];
 }
 - (void)didReceiveMemoryWarning
