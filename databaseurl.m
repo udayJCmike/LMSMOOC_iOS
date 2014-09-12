@@ -75,7 +75,7 @@ static databaseurl * appInstance;
 -(BOOL)validatePasswordForSignupPage:(NSString *)password
 
 {
-    NSString *userFormat1 =@"[A-Za-z0-9]{4,32}";
+    NSString *userFormat1 =@"[A-Za-z0-9@]{4,32}";
     //[(UITextField*)[self.view viewWithTag:101] resignFirstResponder];
     NSPredicate *test = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", userFormat1];
     return [test evaluateWithObject:password];

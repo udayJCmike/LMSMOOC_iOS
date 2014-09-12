@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface Passwordchange : UIView
+#import "databaseurl.h"
+#import "lmsmoocAppDelegate.h"
+#import "APRoundedButton.h"
+@interface Passwordchange : UIView<UITextFieldDelegate>
 {
     UIView *popUpView;
     UILabel *label1;
@@ -17,9 +19,10 @@
     UITextField *cur_pwd;
     UITextField *cfm_pwd;
     UITextField *new_pwd;
-    UIButton *close;
-    UIButton *getpwd;
-    
+    APRoundedButton *close;
+    APRoundedButton *getpwd;
+    databaseurl *du;
+     lmsmoocAppDelegate *delegate;
     
 }
 @end

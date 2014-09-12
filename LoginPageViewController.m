@@ -38,7 +38,7 @@
     NSString *keepmeres=[[NSUserDefaults standardUserDefaults]objectForKey:@"keepmesign"];
     if ([keepmeres isEqualToString:@"1"]) {
         username.text=[[NSUserDefaults standardUserDefaults]objectForKey:@"username"];
-        password.text=@"arul@123";
+        password.text=@"akash@123";
         reminder.selected=YES;
         [reminder setImage:[UIImage imageNamed:@"checkBoxMarked.png"] forState:UIControlStateNormal];
        
@@ -172,23 +172,31 @@
             if ([[menu objectForKey:@"success"] isEqualToString:@"Yes"])
             {
                 [HUD hide:YES];
+                lmsmoocAppDelegate *delegate=AppDelegate;
+                delegate.Profiledetails=[[NSMutableDictionary alloc]init];
                 
                 [[NSUserDefaults standardUserDefaults]setValue:username.text forKey:@"username"];
                 [[NSUserDefaults standardUserDefaults]setValue:[menu objectForKey:@"userid"] forKey:@"userid"];
-                NSString *firstname=[menu objectForKey:@"firstname"];
-                NSString *lastname=[menu objectForKey:@"lastname"];
-                NSString *email=[menu objectForKey:@"email"];
-                NSString *interested_in=[menu objectForKey:@"interested_in"];
-                NSString *gender=[menu objectForKey:@"gender"];
+                [delegate.Profiledetails setValue:[menu objectForKey:@"firstname"] forKey:@"firstname"];
+                [delegate.Profiledetails setValue:[menu objectForKey:@"lastname"] forKey:@"lastname"];
+                [delegate.Profiledetails setValue:[menu objectForKey:@"email"] forKey:@"email"];
+                [delegate.Profiledetails setValue:[menu objectForKey:@"interested_in"] forKey:@"interested_in"];
+                [delegate.Profiledetails setValue:[menu objectForKey:@"gender"] forKey:@"gender"];
+                [delegate.Profiledetails setValue:[menu objectForKey:@"avatarURL"] forKey:@"avatarURL"];
+                [delegate.Profiledetails setValue:[menu objectForKey:@"avatarImage"] forKey:@"avatarImage"];
+                [delegate.Profiledetails setValue:[menu objectForKey:@"logins"] forKey:@"logins"];
+                [delegate.Profiledetails setValue:[menu objectForKey:@"username"] forKey:@"username"];
+                [delegate.Profiledetails setValue:[menu objectForKey:@"password"] forKey:@"password"];
+                
+                
                 NSString *avatarURL=[menu objectForKey:@"avatarURL"];
                 NSString *avatarImage=[menu objectForKey:@"avatarImage"];
-                NSString *logins=[menu objectForKey:@"logins"];
-                NSString *username1=[menu objectForKey:@"username"];
-                NSString *password1=[menu objectForKey:@"password"];
+                
 
-                lmsmoocAppDelegate *delegate=AppDelegate;
-                delegate.avatharimage=[NSString stringWithFormat:@"%@%@",avatarURL,avatarImage];
-                delegate.av_image=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:delegate.avatharimage]]];
+                
+              
+                delegate.avatharURL=avatarURL;
+                delegate.av_image=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",avatarURL,avatarImage]]]];
                 
 
               
@@ -205,7 +213,8 @@
                   [[NSUserDefaults standardUserDefaults]synchronize];
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"LoginComplete"
                                                                     object:self
-                                                                  userInfo:nil];
+                                                                userInfo:nil];
+               
                 
             [self dismiss:self];
                 

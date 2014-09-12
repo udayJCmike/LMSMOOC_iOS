@@ -13,8 +13,6 @@
 		0DAFD00A19BEC75500A1E509 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0DAFD00819BEC75500A1E509 /* InfoPlist.strings */; };
 		0DAFD00C19BEC75500A1E509 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DAFD00B19BEC75500A1E509 /* main.m */; };
 		0DAFD01019BEC75500A1E509 /* lmsmoocAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DAFD00F19BEC75500A1E509 /* lmsmoocAppDelegate.m */; };
-		0DAFD01319BEC75500A1E509 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DAFD01119BEC75500A1E509 /* Main_iPhone.storyboard */; };
-		0DAFD01619BEC75500A1E509 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DAFD01419BEC75500A1E509 /* Main_iPad.storyboard */; };
 		0DAFD01919BEC75500A1E509 /* lmsmoocViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DAFD01819BEC75500A1E509 /* lmsmoocViewController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		0DAFD01B19BEC75500A1E509 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DAFD01A19BEC75500A1E509 /* Images.xcassets */; };
 		0DAFD02219BEC75500A1E509 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DAFD02119BEC75500A1E509 /* XCTest.framework */; };
@@ -26,6 +24,9 @@
 		840B832F19BF074F0065B678 /* LoginPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840B832E19BF074F0065B678 /* LoginPageViewController.m */; };
 		840B833419BF0BC80065B678 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840B833319BF0BC80065B678 /* SignupViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		840B833919BF23340065B678 /* navlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 840B833819BF23340065B678 /* navlogo.png */; };
+		844A9CB419C19A4D000A5449 /* Avatarimagecell.m in Sources */ = {isa = PBXBuildFile; fileRef = 844A9CB319C19A4D000A5449 /* Avatarimagecell.m */; };
+		844A9CB619C1A2BB000A5449 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 844A9CB519C1A2BB000A5449 /* placeholder.png */; };
+		844A9CB819C1A765000A5449 /* photo-frame.png in Resources */ = {isa = PBXBuildFile; fileRef = 844A9CB719C1A765000A5449 /* photo-frame.png */; };
 		845B10A119BF2D5B00AAE3E4 /* checkBox.png in Resources */ = {isa = PBXBuildFile; fileRef = 845B109D19BF2D5B00AAE3E4 /* checkBox.png */; };
 		845B10A219BF2D5B00AAE3E4 /* checkBox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 845B109E19BF2D5B00AAE3E4 /* checkBox@2x.png */; };
 		845B10A319BF2D5B00AAE3E4 /* checkBoxMarked.png in Resources */ = {isa = PBXBuildFile; fileRef = 845B109F19BF2D5B00AAE3E4 /* checkBoxMarked.png */; };
@@ -38,13 +39,17 @@
 		847635DC19C03FCC00F45CEF /* bantab2.png in Resources */ = {isa = PBXBuildFile; fileRef = 847635D419C03FCC00F45CEF /* bantab2.png */; };
 		847635DD19C03FCC00F45CEF /* bantab3.png in Resources */ = {isa = PBXBuildFile; fileRef = 847635D519C03FCC00F45CEF /* bantab3.png */; };
 		847635DE19C03FCC00F45CEF /* bantab4.png in Resources */ = {isa = PBXBuildFile; fileRef = 847635D619C03FCC00F45CEF /* bantab4.png */; };
-		847635E119C0435500F45CEF /* ban5.png in Resources */ = {isa = PBXBuildFile; fileRef = 847635DF19C0435500F45CEF /* ban5.png */; };
-		847635E219C0435500F45CEF /* bantab5.png in Resources */ = {isa = PBXBuildFile; fileRef = 847635E019C0435500F45CEF /* bantab5.png */; };
 		847635E519C0733C00F45CEF /* Mycourses_iPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847635E419C0733C00F45CEF /* Mycourses_iPadViewController.m */; };
 		847635E819C0735900F45CEF /* Myfavorites_iPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847635E719C0735900F45CEF /* Myfavorites_iPadViewController.m */; };
 		847635EB19C077BF00F45CEF /* CollectionCellContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 847635EA19C077BF00F45CEF /* CollectionCellContent.m */; };
 		847635ED19C07CFC00F45CEF /* menu_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 847635EC19C07CFC00F45CEF /* menu_icon.png */; };
 		847635F019C095A700F45CEF /* Passwordchange.m in Sources */ = {isa = PBXBuildFile; fileRef = 847635EF19C095A700F45CEF /* Passwordchange.m */; };
+		8476E7F419C17EE8002DB513 /* AvatarImagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476E7F319C17EE8002DB513 /* AvatarImagesViewController.m */; };
+		84F59B6319C2AD5A009EF252 /* APRoundedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F59B6219C2AD5A009EF252 /* APRoundedButton.m */; };
+		84F59B6619C2AD89009EF252 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F59B6419C2AD89009EF252 /* Main_iPad.storyboard */; };
+		84F59B6719C2AD89009EF252 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F59B6519C2AD89009EF252 /* Main_iPhone.storyboard */; };
+		84F59B6A19C2AE28009EF252 /* ban5.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F59B6819C2AE28009EF252 /* ban5.png */; };
+		84F59B6B19C2AE28009EF252 /* bantab5.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F59B6919C2AE28009EF252 /* bantab5.png */; };
 		84FC7D8E19C0064E0001FD7C /* databaseurl.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FC7D7C19C0064E0001FD7C /* databaseurl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		84FC7D8F19C0064E0001FD7C /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FC7D7F19C0064E0001FD7C /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		84FC7D9019C0064E0001FD7C /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FC7D8119C0064E0001FD7C /* NSObject+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -98,8 +103,6 @@
 		0DAFD00D19BEC75500A1E509 /* LMSMOOC-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LMSMOOC-Prefix.pch"; sourceTree = "<group>"; };
 		0DAFD00E19BEC75500A1E509 /* lmsmoocAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = lmsmoocAppDelegate.h; sourceTree = "<group>"; };
 		0DAFD00F19BEC75500A1E509 /* lmsmoocAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = lmsmoocAppDelegate.m; sourceTree = "<group>"; };
-		0DAFD01219BEC75500A1E509 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		0DAFD01519BEC75500A1E509 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		0DAFD01719BEC75500A1E509 /* lmsmoocViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = lmsmoocViewController.h; sourceTree = "<group>"; };
 		0DAFD01819BEC75500A1E509 /* lmsmoocViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = lmsmoocViewController.m; sourceTree = "<group>"; };
 		0DAFD01A19BEC75500A1E509 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -115,6 +118,10 @@
 		840B833219BF0BC80065B678 /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
 		840B833319BF0BC80065B678 /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
 		840B833819BF23340065B678 /* navlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = navlogo.png; path = LMSMOOC/navlogo.png; sourceTree = "<group>"; };
+		844A9CB219C19A4D000A5449 /* Avatarimagecell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Avatarimagecell.h; sourceTree = "<group>"; };
+		844A9CB319C19A4D000A5449 /* Avatarimagecell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Avatarimagecell.m; sourceTree = "<group>"; };
+		844A9CB519C1A2BB000A5449 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
+		844A9CB719C1A765000A5449 /* photo-frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo-frame.png"; sourceTree = "<group>"; };
 		845B109D19BF2D5B00AAE3E4 /* checkBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = checkBox.png; path = LMSMOOC/checkBox.png; sourceTree = "<group>"; };
 		845B109E19BF2D5B00AAE3E4 /* checkBox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "checkBox@2x.png"; path = "LMSMOOC/checkBox@2x.png"; sourceTree = "<group>"; };
 		845B109F19BF2D5B00AAE3E4 /* checkBoxMarked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = checkBoxMarked.png; path = LMSMOOC/checkBoxMarked.png; sourceTree = "<group>"; };
@@ -127,8 +134,6 @@
 		847635D419C03FCC00F45CEF /* bantab2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bantab2.png; sourceTree = "<group>"; };
 		847635D519C03FCC00F45CEF /* bantab3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bantab3.png; sourceTree = "<group>"; };
 		847635D619C03FCC00F45CEF /* bantab4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bantab4.png; sourceTree = "<group>"; };
-		847635DF19C0435500F45CEF /* ban5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ban5.png; sourceTree = "<group>"; };
-		847635E019C0435500F45CEF /* bantab5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bantab5.png; sourceTree = "<group>"; };
 		847635E319C0733C00F45CEF /* Mycourses_iPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mycourses_iPadViewController.h; sourceTree = "<group>"; };
 		847635E419C0733C00F45CEF /* Mycourses_iPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mycourses_iPadViewController.m; sourceTree = "<group>"; };
 		847635E619C0735900F45CEF /* Myfavorites_iPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Myfavorites_iPadViewController.h; sourceTree = "<group>"; };
@@ -138,6 +143,14 @@
 		847635EC19C07CFC00F45CEF /* menu_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_icon.png; sourceTree = "<group>"; };
 		847635EE19C095A700F45CEF /* Passwordchange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Passwordchange.h; sourceTree = "<group>"; };
 		847635EF19C095A700F45CEF /* Passwordchange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Passwordchange.m; sourceTree = "<group>"; };
+		8476E7F219C17EE8002DB513 /* AvatarImagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvatarImagesViewController.h; sourceTree = "<group>"; };
+		8476E7F319C17EE8002DB513 /* AvatarImagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvatarImagesViewController.m; sourceTree = "<group>"; };
+		84F59B6119C2AD5A009EF252 /* APRoundedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APRoundedButton.h; sourceTree = "<group>"; };
+		84F59B6219C2AD5A009EF252 /* APRoundedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APRoundedButton.m; sourceTree = "<group>"; };
+		84F59B6419C2AD89009EF252 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
+		84F59B6519C2AD89009EF252 /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
+		84F59B6819C2AE28009EF252 /* ban5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ban5.png; sourceTree = "<group>"; };
+		84F59B6919C2AE28009EF252 /* bantab5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bantab5.png; sourceTree = "<group>"; };
 		84FC7D7B19C0064E0001FD7C /* databaseurl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = databaseurl.h; sourceTree = "<group>"; };
 		84FC7D7C19C0064E0001FD7C /* databaseurl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = databaseurl.m; sourceTree = "<group>"; };
 		84FC7D7D19C0064E0001FD7C /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
@@ -225,8 +238,9 @@
 		0DAFCFF319BEC75500A1E509 = {
 			isa = PBXGroup;
 			children = (
-				847635EE19C095A700F45CEF /* Passwordchange.h */,
-				847635EF19C095A700F45CEF /* Passwordchange.m */,
+				84F59B6019C2AD4D009EF252 /* Button Customize */,
+				84F59B5F19C2AAE9009EF252 /* Update Password */,
+				84F59B5E19C2AAD2009EF252 /* Avatar Download */,
 				84FC7DD619C0244A0001FD7C /* iPad_menulist */,
 				84FC7DD519C024330001FD7C /* iPhone_menulist */,
 				84FC7D9C19C018FD0001FD7C /* Dashboard */,
@@ -270,16 +284,16 @@
 				847635D019C03FCC00F45CEF /* ban2.png */,
 				847635D119C03FCC00F45CEF /* ban3.png */,
 				847635D219C03FCC00F45CEF /* ban4.png */,
-				847635DF19C0435500F45CEF /* ban5.png */,
+				84F59B6819C2AE28009EF252 /* ban5.png */,
+				84F59B6919C2AE28009EF252 /* bantab5.png */,
 				847635D319C03FCC00F45CEF /* bantab1.png */,
 				847635D419C03FCC00F45CEF /* bantab2.png */,
 				847635D519C03FCC00F45CEF /* bantab3.png */,
 				847635D619C03FCC00F45CEF /* bantab4.png */,
-				847635E019C0435500F45CEF /* bantab5.png */,
 				0DAFD00E19BEC75500A1E509 /* lmsmoocAppDelegate.h */,
 				0DAFD00F19BEC75500A1E509 /* lmsmoocAppDelegate.m */,
-				0DAFD01119BEC75500A1E509 /* Main_iPhone.storyboard */,
-				0DAFD01419BEC75500A1E509 /* Main_iPad.storyboard */,
+				84F59B6419C2AD89009EF252 /* Main_iPad.storyboard */,
+				84F59B6519C2AD89009EF252 /* Main_iPhone.storyboard */,
 				0DAFD01719BEC75500A1E509 /* lmsmoocViewController.h */,
 				0DAFD01819BEC75500A1E509 /* lmsmoocViewController.m */,
 				0DAFD01A19BEC75500A1E509 /* Images.xcassets */,
@@ -354,6 +368,37 @@
 				840B833819BF23340065B678 /* navlogo.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		84F59B5E19C2AAD2009EF252 /* Avatar Download */ = {
+			isa = PBXGroup;
+			children = (
+				844A9CB519C1A2BB000A5449 /* placeholder.png */,
+				844A9CB719C1A765000A5449 /* photo-frame.png */,
+				844A9CB219C19A4D000A5449 /* Avatarimagecell.h */,
+				844A9CB319C19A4D000A5449 /* Avatarimagecell.m */,
+				8476E7F219C17EE8002DB513 /* AvatarImagesViewController.h */,
+				8476E7F319C17EE8002DB513 /* AvatarImagesViewController.m */,
+			);
+			name = "Avatar Download";
+			sourceTree = "<group>";
+		};
+		84F59B5F19C2AAE9009EF252 /* Update Password */ = {
+			isa = PBXGroup;
+			children = (
+				847635EE19C095A700F45CEF /* Passwordchange.h */,
+				847635EF19C095A700F45CEF /* Passwordchange.m */,
+			);
+			name = "Update Password";
+			sourceTree = "<group>";
+		};
+		84F59B6019C2AD4D009EF252 /* Button Customize */ = {
+			isa = PBXGroup;
+			children = (
+				84F59B6119C2AD5A009EF252 /* APRoundedButton.h */,
+				84F59B6219C2AD5A009EF252 /* APRoundedButton.m */,
+			);
+			name = "Button Customize";
 			sourceTree = "<group>";
 		};
 		84FC7D7A19C0063D0001FD7C /* NetworkChecking */ = {
@@ -541,22 +586,24 @@
 				845B10A119BF2D5B00AAE3E4 /* checkBox.png in Resources */,
 				847635DB19C03FCC00F45CEF /* bantab1.png in Resources */,
 				84FC7D9819C017750001FD7C /* Dashboard_iPhone.storyboard in Resources */,
-				0DAFD01619BEC75500A1E509 /* Main_iPad.storyboard in Resources */,
 				0DAFD01B19BEC75500A1E509 /* Images.xcassets in Resources */,
-				847635E219C0435500F45CEF /* bantab5.png in Resources */,
+				84F59B6719C2AD89009EF252 /* Main_iPhone.storyboard in Resources */,
 				845B10A219BF2D5B00AAE3E4 /* checkBox@2x.png in Resources */,
-				847635E119C0435500F45CEF /* ban5.png in Resources */,
 				847635DD19C03FCC00F45CEF /* bantab3.png in Resources */,
 				847635ED19C07CFC00F45CEF /* menu_icon.png in Resources */,
 				847635D719C03FCC00F45CEF /* ban1.png in Resources */,
+				844A9CB619C1A2BB000A5449 /* placeholder.png in Resources */,
 				847635DE19C03FCC00F45CEF /* bantab4.png in Resources */,
 				84FC7D9A19C017880001FD7C /* Dashboard_iPad.storyboard in Resources */,
+				84F59B6B19C2AE28009EF252 /* bantab5.png in Resources */,
 				845B10A419BF2D5B00AAE3E4 /* checkBoxMarked@2x.png in Resources */,
 				84FC7DB919C01C680001FD7C /* Avatar-female.png in Resources */,
 				847635DC19C03FCC00F45CEF /* bantab2.png in Resources */,
+				84F59B6A19C2AE28009EF252 /* ban5.png in Resources */,
+				844A9CB819C1A765000A5449 /* photo-frame.png in Resources */,
 				847635D819C03FCC00F45CEF /* ban2.png in Resources */,
 				847635D919C03FCC00F45CEF /* ban3.png in Resources */,
-				0DAFD01319BEC75500A1E509 /* Main_iPhone.storyboard in Resources */,
+				84F59B6619C2AD89009EF252 /* Main_iPad.storyboard in Resources */,
 				0DAFD00A19BEC75500A1E509 /* InfoPlist.strings in Resources */,
 				840B833919BF23340065B678 /* navlogo.png in Resources */,
 			);
@@ -599,7 +646,9 @@
 				84FC7D8E19C0064E0001FD7C /* databaseurl.m in Sources */,
 				84FC7DAE19C0191B0001FD7C /* UIViewController+REFrostedViewController.m in Sources */,
 				84FC7DAD19C0191B0001FD7C /* UIView+REFrostedViewController.m in Sources */,
+				844A9CB419C19A4D000A5449 /* Avatarimagecell.m in Sources */,
 				847635E819C0735900F45CEF /* Myfavorites_iPadViewController.m in Sources */,
+				8476E7F419C17EE8002DB513 /* AvatarImagesViewController.m in Sources */,
 				84FC7D9519C0064E0001FD7C /* SBJsonParser.m in Sources */,
 				84FC7D9319C0064E0001FD7C /* SBJSON.m in Sources */,
 				847635EB19C077BF00F45CEF /* CollectionCellContent.m in Sources */,
@@ -609,6 +658,7 @@
 				0DAFD01019BEC75500A1E509 /* lmsmoocAppDelegate.m in Sources */,
 				0DAFD01919BEC75500A1E509 /* lmsmoocViewController.m in Sources */,
 				84FC7DBC19C021180001FD7C /* ProfileUpdateViewController.m in Sources */,
+				84F59B6319C2AD5A009EF252 /* APRoundedButton.m in Sources */,
 				84FC7DC519C023B80001FD7C /* MycoursesTableViewController.m in Sources */,
 				84FC7D8F19C0064E0001FD7C /* MBProgressHUD.m in Sources */,
 				84FC7DC819C023C70001FD7C /* MyfavoritesTableViewController.m in Sources */,
@@ -642,22 +692,6 @@
 				0DAFD00919BEC75500A1E509 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		0DAFD01119BEC75500A1E509 /* Main_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0DAFD01219BEC75500A1E509 /* Base */,
-			);
-			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		0DAFD01419BEC75500A1E509 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0DAFD01519BEC75500A1E509 /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		0DAFD02A19BEC75500A1E509 /* InfoPlist.strings */ = {

@@ -19,7 +19,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *username;
 @property (strong, nonatomic) IBOutlet UITextField *email;
 @property (strong, nonatomic) IBOutlet UITextField *password;
-@property (strong, nonatomic) IBOutlet UITextField *cpassword;
+
 @property (retain, nonatomic) IBOutlet UISegmentedControl *interestedin;
 @property (retain, nonatomic) IBOutlet UISegmentedControl *gender;
 

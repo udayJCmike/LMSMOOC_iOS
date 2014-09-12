@@ -29,8 +29,9 @@
     }
   
     
-    UIButton *button =  [UIButton buttonWithType:UIButtonTypeCustom];    
-    [button setTitle:@"Get Started" forState:UIControlStateNormal];
+    UIButton *button =  [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setTitle:@"Ready to go!!" forState:UIControlStateNormal];
+    button.titleLabel.font = [UIFont systemFontOfSize:15.0];
     [button addTarget:self action:@selector(showinfo) forControlEvents:UIControlEventTouchUpInside];
     [button setFrame:CGRectMake(0, 0, 100, 32)];
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -68,7 +69,9 @@
     if(index==5)
     {
         UIButton *button =  [UIButton buttonWithType:UIButtonTypeCustom];
-        [button setTitle:@"Browse Courses" forState:UIControlStateNormal];
+        [button setTitle:@"Explore Courses!!" forState:UIControlStateNormal];
+        button.titleLabel.font = [UIFont systemFontOfSize:15.0];
+        button.titleLabel.font = [UIFont systemFontOfSize:15.0];
         [button addTarget:self action:@selector(showcourse) forControlEvents:UIControlEventTouchUpInside];
         [button setFrame:CGRectMake(0, 0, 150, 32)];
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -76,13 +79,16 @@
     }
     else  {
         UIButton *button =  [UIButton buttonWithType:UIButtonTypeCustom];
-        [button setTitle:@"Get Started" forState:UIControlStateNormal];
+        [button setTitle:@"Ready to go!!" forState:UIControlStateNormal];
+        button.titleLabel.font = [UIFont systemFontOfSize:15.0];
+        button.titleLabel.font = [UIFont systemFontOfSize:15.0];
         [button addTarget:self action:@selector(showinfo) forControlEvents:UIControlEventTouchUpInside];
         [button setFrame:CGRectMake(0, 0, 100, 32)];
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
         
     }
+
 }
 
 -(void)showinfo
@@ -101,7 +107,9 @@
         }
     }
     UIButton *button =  [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setTitle:@"Browse Courses" forState:UIControlStateNormal];
+    [button setTitle:@"Explore Courses!!" forState:UIControlStateNormal];
+    button.titleLabel.font = [UIFont systemFontOfSize:15.0];
+    button.titleLabel.font = [UIFont systemFontOfSize:15.0];
     [button addTarget:self action:@selector(showcourse) forControlEvents:UIControlEventTouchUpInside];
     [button setFrame:CGRectMake(0, 0, 150, 32)];
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];

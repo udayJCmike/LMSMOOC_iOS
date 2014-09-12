@@ -44,12 +44,6 @@
     [button setFrame:CGRectMake(0, 0, 32, 32)];
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
-//    dispatch_group_t imageQueue = dispatch_group_create();
-//    
-//    dispatch_group_async(imageQueue, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
-//                         ^{
-//                             
-//                         });
    
 }
 - (void)menu:(id)sender {

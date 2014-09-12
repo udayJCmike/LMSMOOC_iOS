@@ -11,6 +11,8 @@
 #import "databaseurl.h"
 #import "SBJSON.h"
 #import "DashboardContentListTableViewController.h"
+#import "AvatarImagesViewController.h"
+
 #define  AppDelegate (lmsmoocAppDelegate *)[[UIApplication sharedApplication] delegate]
 
 @interface ProfileUpdateViewController ()
@@ -27,7 +29,7 @@
 @synthesize username;
 @synthesize email;
 @synthesize password;
-@synthesize cpassword;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -36,7 +38,12 @@
     }
     return self;
 }
-
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    password.text=[delegate.Profiledetails objectForKey:@"password"];
+     
+    NSLog(@"value image %@",[delegate.Profiledetails valueForKey:@"avatarImage"]);
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -57,23 +64,55 @@
                                              selector:@selector(menulistener:)
                                                  name:@"Showmenu"
                                                object:nil];
+   
     
      du=[[databaseurl alloc]init];
     fname.delegate = self;
     lname.delegate=self;
     username.delegate=self;
     password.delegate = self;
-    cpassword.delegate=self;
+   
     email.delegate=self;
-    interestedval=@"courses";
-    genderval=@"male";
+    interestedval=@"null";
+    genderval=@"null";
     UITapGestureRecognizer *get=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:get];
     
    delegate=AppDelegate;
-    delegate.avatharimage= @"http://208.109.248.89:8085/OnlineCourse/resources/images/users/g6.png";
-    delegate.av_image=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:delegate.avatharimage]]];
-    [list reloadTableContent];
+    if(delegate.Profiledetails)
+    {
+        [self setvalues];
+    }
+//    delegate.avatharimage= @"http://208.109.248.89:8085/OnlineCourse/resources/images/users/g6.png";
+//    delegate.av_image=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:delegate.avatharimage]]];
+//    [list reloadTableContent];
+    
+}
+
+-(void)setvalues
+{
+  delegate=AppDelegate;
+    fname.text=[delegate.Profiledetails objectForKey:@"firstname"];
+   lname.text=[delegate.Profiledetails objectForKey:@"lastname"];
+    username.text=[delegate.Profiledetails objectForKey:@"username"];
+    email.text=[delegate.Profiledetails objectForKey:@"email"];
+    password.text=[delegate.Profiledetails objectForKey:@"password"];
+    interestedval=[delegate.Profiledetails objectForKey:@"interested_in"];
+    genderval=[delegate.Profiledetails objectForKey:@"gender"];
+    
+    if ([genderval isEqualToString:@"female"]) {
+        [_gender setSelectedSegmentIndex:1];
+    }
+    else if ([genderval isEqualToString:@"male"]){
+        [_gender setSelectedSegmentIndex:0];
+    }
+    if ([interestedval isEqualToString:@"courses"]) {
+        [_interestedin setSelectedSegmentIndex:1];
+    }
+    else if([interestedval isEqualToString:@"subject"]) {
+        [_interestedin setSelectedSegmentIndex:0];
+    }
+
     
 }
 -(void)dismissKeyboard
@@ -82,7 +121,7 @@
     [lname resignFirstResponder];
     [username resignFirstResponder];
     [email resignFirstResponder];
-    [cpassword resignFirstResponder];
+
     [password resignFirstResponder];
     
 }
@@ -122,7 +161,18 @@
                     {
                         if ([du validatePasswordForSignupPage:password.text])
                         {
-                            
+                          
+                            [delegate.Profiledetails setValue:fname.text forKey:@"firstname"];
+                            [delegate.Profiledetails setValue:lname.text forKey:@"lastname"];
+                            [delegate.Profiledetails setValue:email.text forKey:@"email"];
+                            [delegate.Profiledetails setValue:interestedval forKey:@"interested_in"];
+                            [delegate.Profiledetails setValue:genderval forKey:@"gender"];
+//                            [delegate.Profiledetails setValue:[menu objectForKey:@"avatarURL"] forKey:@"avatarURL"];
+//                            [delegate.Profiledetails setValue:[menu objectForKey:@"avatarImage"] forKey:@"avatarImage"];
+//                            [delegate.Profiledetails setValue:[menu objectForKey:@"logins"] forKey:@"logins"];
+                            password.text=[delegate.Profiledetails objectForKey:@"password"];
+                    
+                            NSLog(@"dictionary values %@",delegate.Profiledetails);
                         }
                         else
                         {
@@ -202,9 +252,7 @@
     fname.text=@"";
     lname.text=@"";
     email.text=@"";
-    password.text=@"";
-    cpassword.text=@"";
-    username.text=@"";
+   
     
     
 }
@@ -229,15 +277,15 @@
     {
         
         NSDictionary* menu = [parsedvalue objectForKey:@"serviceresponse"];
-        if ([[menu objectForKey:@"servicename"] isEqualToString:@"Signup"])
+        if ([[menu objectForKey:@"servicename"] isEqualToString:@"Signupupdate"])
         {
             if ([[menu objectForKey:@"success"] isEqualToString:@"Yes"])
             {
                 
-                NSLog(@"Inserting  Succecssful");
+                NSLog(@"Updation  Succecssful");
                 
                 [HUD hide:YES];
-                [self reset];
+          
                 
                 
                 //                if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad)
@@ -257,19 +305,9 @@
                 
             {
                 [HUD hide:YES];
-                NSString *response=[menu objectForKey:@"emaill"];
-                if ([response isEqualToString:@"emailexist"]) {
-                    
-                    NSLog(@"email exist");
-                }
-                else if ([response isEqualToString:@"usernameexist"]) {
-                    
-                    NSLog(@"username exist");
-                }
-                else
-                {
-                    NSLog(@"signup failed");
-                }
+                
+                    NSLog(@"Updation failed");
+                
                 
             }
             
@@ -282,7 +320,7 @@
     NSString *urltemp=[[databaseurl sharedInstance]DBurl];
     NSString *url1=@"Signup.php?service=signupupdate";
     NSString *url2=[NSString stringWithFormat:@"%@%@",urltemp,url1];
-    NSString *post =[[NSString alloc] initWithFormat:@"%@=%@&lastname=%@&username=%@&emailid=%@&password=%@&interested=%@&gender=%@&id=%@&avatar=%@&%@=%@",firstEntity,value1,lname.text,username.text,email.text,password.text,interestedval,genderval,[[NSUserDefaults standardUserDefaults]objectForKey:@"userid"],delegate.avatharimage,secondEntity,value2];
+    NSString *post =[[NSString alloc] initWithFormat:@"%@=%@&lastname=%@&username=%@&emailid=%@&password=%@&interested=%@&gender=%@&id=%@&%@=%@",firstEntity,value1,lname.text,username.text,email.text,password.text,interestedval,genderval,[[NSUserDefaults standardUserDefaults]objectForKey:@"userid"],secondEntity,value2];
     //  NSLog(@"POST %@",post);
     NSURL *url = [NSURL URLWithString:url2];
     return [du returndbresult:post URL:url];
@@ -316,19 +354,7 @@
             }
         }
     }
-    else if(textField == cpassword)
-    {
-        NSString *rangeOfString = @" ";
-        NSCharacterSet *rangeOfCharacters = [NSCharacterSet characterSetWithCharactersInString:rangeOfString];
-        if(![string isEqualToString:@""])
-        {
-            if (range.location == 0 && [rangeOfCharacters characterIsMember:[string characterAtIndex:0]] )
-            {
-                
-                return NO;
-            }
-        }
-    }
+   
     else if (textField == fname)
     {
         NSString *rangeOfString = @" ";
@@ -403,20 +429,38 @@
     else if ([sender selectedSegmentIndex]==1) {
         genderval=@"female";
     }
+     [delegate.Profiledetails setValue:genderval forKey:@"gender"];
+ 
 }
 - (IBAction)interested:(id)sender {
     if ([sender selectedSegmentIndex]==0) {
-        interestedval=@"courses";
+        interestedval=@"subject";
     }
     else if ([sender selectedSegmentIndex]==1) {
-        interestedval=@"subject";
+        interestedval=@"courses";
     }
 }
 - (IBAction)changepwd:(id)sender {
-    Passwordchange *mpvc=[Passwordchange alloc];
-    
-    
+    if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad)
+    {
+//        Password_ipadViewController *loginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"PasswordChange"];
+//        loginVC.modalPresentationStyle = UIModalPresentationFullScreen;
+//        loginVC.modalTransitionStyle=UIModalTransitionStyleCoverVertical;
+//        [self presentViewController:loginVC animated:YES completion:nil];
+        Passwordchange *mpvc=[Passwordchange alloc];
+        
+        mpvc=[mpvc initWithFrame:CGRectMake(0,0,1024,1024)];
+          mpvc.transform = CGAffineTransformMakeRotation(4.71);
+     
+    }
+    if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPhone) {
+        Passwordchange *mpvc=[Passwordchange alloc];
+        
+        
         mpvc=[mpvc initWithFrame:CGRectMake(0,0,320,568)];
+    }
+   
+   
 }
 
 - (void)dealloc {
