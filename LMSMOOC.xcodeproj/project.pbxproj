@@ -50,6 +50,10 @@
 		84F59B6719C2AD89009EF252 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F59B6519C2AD89009EF252 /* Main_iPhone.storyboard */; };
 		84F59B6A19C2AE28009EF252 /* ban5.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F59B6819C2AE28009EF252 /* ban5.png */; };
 		84F59B6B19C2AE28009EF252 /* bantab5.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F59B6919C2AE28009EF252 /* bantab5.png */; };
+		84F59B7119C2FC37009EF252 /* MAILinboxTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F59B7019C2FC37009EF252 /* MAILinboxTableViewCell.m */; };
+		84F59B7319C2FECE009EF252 /* important.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F59B7219C2FECE009EF252 /* important.png */; };
+		84F59B7519C2FED2009EF252 /* unimportant.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F59B7419C2FED2009EF252 /* unimportant.png */; };
+		84F59B7A19C2FFA9009EF252 /* MailDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F59B7919C2FFA9009EF252 /* MailDetailsViewController.m */; };
 		84FC7D8E19C0064E0001FD7C /* databaseurl.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FC7D7C19C0064E0001FD7C /* databaseurl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		84FC7D8F19C0064E0001FD7C /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FC7D7F19C0064E0001FD7C /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		84FC7D9019C0064E0001FD7C /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FC7D8119C0064E0001FD7C /* NSObject+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -151,6 +155,12 @@
 		84F59B6519C2AD89009EF252 /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
 		84F59B6819C2AE28009EF252 /* ban5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ban5.png; sourceTree = "<group>"; };
 		84F59B6919C2AE28009EF252 /* bantab5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bantab5.png; sourceTree = "<group>"; };
+		84F59B6F19C2FC37009EF252 /* MAILinboxTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAILinboxTableViewCell.h; sourceTree = "<group>"; };
+		84F59B7019C2FC37009EF252 /* MAILinboxTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAILinboxTableViewCell.m; sourceTree = "<group>"; };
+		84F59B7219C2FECE009EF252 /* important.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = important.png; sourceTree = "<group>"; };
+		84F59B7419C2FED2009EF252 /* unimportant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unimportant.png; sourceTree = "<group>"; };
+		84F59B7819C2FFA9009EF252 /* MailDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailDetailsViewController.h; sourceTree = "<group>"; };
+		84F59B7919C2FFA9009EF252 /* MailDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailDetailsViewController.m; sourceTree = "<group>"; };
 		84FC7D7B19C0064E0001FD7C /* databaseurl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = databaseurl.h; sourceTree = "<group>"; };
 		84FC7D7C19C0064E0001FD7C /* databaseurl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = databaseurl.m; sourceTree = "<group>"; };
 		84FC7D7D19C0064E0001FD7C /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
@@ -401,6 +411,30 @@
 			name = "Button Customize";
 			sourceTree = "<group>";
 		};
+		84F59B7619C2FF3F009EF252 /* MailList */ = {
+			isa = PBXGroup;
+			children = (
+				84FC7DC019C023A80001FD7C /* MailinboxTableViewController.h */,
+				84FC7DC119C023A80001FD7C /* MailinboxTableViewController.m */,
+				84F59B7419C2FED2009EF252 /* unimportant.png */,
+				84F59B6F19C2FC37009EF252 /* MAILinboxTableViewCell.h */,
+				84F59B7219C2FECE009EF252 /* important.png */,
+				84F59B7019C2FC37009EF252 /* MAILinboxTableViewCell.m */,
+				84F59B7819C2FFA9009EF252 /* MailDetailsViewController.h */,
+				84F59B7919C2FFA9009EF252 /* MailDetailsViewController.m */,
+			);
+			name = MailList;
+			sourceTree = "<group>";
+		};
+		84F59B7719C2FF56009EF252 /* ProfileUpdate */ = {
+			isa = PBXGroup;
+			children = (
+				84FC7DBA19C021180001FD7C /* ProfileUpdateViewController.h */,
+				84FC7DBB19C021180001FD7C /* ProfileUpdateViewController.m */,
+			);
+			name = ProfileUpdate;
+			sourceTree = "<group>";
+		};
 		84FC7D7A19C0063D0001FD7C /* NetworkChecking */ = {
 			isa = PBXGroup;
 			children = (
@@ -466,6 +500,8 @@
 		84FC7DD519C024330001FD7C /* iPhone_menulist */ = {
 			isa = PBXGroup;
 			children = (
+				84F59B7719C2FF56009EF252 /* ProfileUpdate */,
+				84F59B7619C2FF3F009EF252 /* MailList */,
 				84FC7DD719C02B360001FD7C /* BillingTableViewController.h */,
 				84FC7DD819C02B360001FD7C /* BillingTableViewController.m */,
 				84FC7DCC19C023F30001FD7C /* MyauthorsTableViewController.h */,
@@ -476,12 +512,8 @@
 				84FC7DC719C023C70001FD7C /* MyfavoritesTableViewController.m */,
 				84FC7DC319C023B80001FD7C /* MycoursesTableViewController.h */,
 				84FC7DC419C023B80001FD7C /* MycoursesTableViewController.m */,
-				84FC7DC019C023A80001FD7C /* MailinboxTableViewController.h */,
-				84FC7DC119C023A80001FD7C /* MailinboxTableViewController.m */,
 				84FC7DBD19C022FB0001FD7C /* courselist_iPhoneTableViewController.h */,
 				84FC7DBE19C022FB0001FD7C /* courselist_iPhoneTableViewController.m */,
-				84FC7DBA19C021180001FD7C /* ProfileUpdateViewController.h */,
-				84FC7DBB19C021180001FD7C /* ProfileUpdateViewController.m */,
 			);
 			name = iPhone_menulist;
 			sourceTree = "<group>";
@@ -589,6 +621,7 @@
 				0DAFD01B19BEC75500A1E509 /* Images.xcassets in Resources */,
 				84F59B6719C2AD89009EF252 /* Main_iPhone.storyboard in Resources */,
 				845B10A219BF2D5B00AAE3E4 /* checkBox@2x.png in Resources */,
+				84F59B7319C2FECE009EF252 /* important.png in Resources */,
 				847635DD19C03FCC00F45CEF /* bantab3.png in Resources */,
 				847635ED19C07CFC00F45CEF /* menu_icon.png in Resources */,
 				847635D719C03FCC00F45CEF /* ban1.png in Resources */,
@@ -599,6 +632,7 @@
 				845B10A419BF2D5B00AAE3E4 /* checkBoxMarked@2x.png in Resources */,
 				84FC7DB919C01C680001FD7C /* Avatar-female.png in Resources */,
 				847635DC19C03FCC00F45CEF /* bantab2.png in Resources */,
+				84F59B7519C2FED2009EF252 /* unimportant.png in Resources */,
 				84F59B6A19C2AE28009EF252 /* ban5.png in Resources */,
 				844A9CB819C1A765000A5449 /* photo-frame.png in Resources */,
 				847635D819C03FCC00F45CEF /* ban2.png in Resources */,
@@ -640,6 +674,7 @@
 				84FC7D9219C0064E0001FD7C /* Reachability.m in Sources */,
 				84FC7DBF19C022FB0001FD7C /* courselist_iPhoneTableViewController.m in Sources */,
 				84FC7D9419C0064E0001FD7C /* SBJsonBase.m in Sources */,
+				84F59B7A19C2FFA9009EF252 /* MailDetailsViewController.m in Sources */,
 				84FC7DCB19C023E30001FD7C /* MycategoriesTableViewController.m in Sources */,
 				840B832319BEE58F0065B678 /* PageContentViewController.m in Sources */,
 				84FC7DA919C0191B0001FD7C /* RECommonFunctions.m in Sources */,
@@ -654,6 +689,7 @@
 				847635EB19C077BF00F45CEF /* CollectionCellContent.m in Sources */,
 				84FC7DC219C023A80001FD7C /* MailinboxTableViewController.m in Sources */,
 				84FC7D9019C0064E0001FD7C /* NSObject+SBJSON.m in Sources */,
+				84F59B7119C2FC37009EF252 /* MAILinboxTableViewCell.m in Sources */,
 				840B832F19BF074F0065B678 /* LoginPageViewController.m in Sources */,
 				0DAFD01019BEC75500A1E509 /* lmsmoocAppDelegate.m in Sources */,
 				0DAFD01919BEC75500A1E509 /* lmsmoocViewController.m in Sources */,

@@ -8,8 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "REFrostedViewController.h"
-@interface MailinboxTableViewController : UITableViewController
+#import "MBProgressHUD.h"
+#import "databaseurl.h"
+#import "SBJSON.h"
+#import "MAILinboxTableViewCell.h"
+#import "MailDetailsViewController.h"
+@interface MailinboxTableViewController : UITableViewController<MBProgressHUDDelegate>
 {
-     NSArray *inbox;
+     NSMutableArray *inbox;
+    MBProgressHUD *HUD;
+    
+    
 }
 @end
