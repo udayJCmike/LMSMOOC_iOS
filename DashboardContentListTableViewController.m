@@ -36,12 +36,12 @@
     if (!delegate.av_image)
     {
          NSLog(@"avatar URL not found");
-        profileimage=[UIImage imageNamed:@"Avatar-female.png"];
+        delegate.profileimage=[UIImage imageNamed:@"Avatar-female.png"];
         delegate.av_image=[NSString stringWithFormat:@"Avatar-female.png"];
     }
     else
     {
-        profileimage=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:delegate.av_image]]];
+//        profileimage=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:delegate.av_image]]];
 
     }
     self.tableView.separatorColor = [UIColor colorWithRed:150/255.0f green:161/255.0f blue:177/255.0f alpha:1.0f];
@@ -49,12 +49,12 @@
     self.tableView.dataSource = self;
     self.tableView.opaque = NO;
     self.tableView.backgroundColor = [UIColor clearColor];
-    
+    self.tableView.allowsSelection=YES;
     self.tableView.tableHeaderView = ({
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 184.0f)];
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 40, 100, 100)];
         imageView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
-        imageView.image = profileimage;
+        imageView.image = delegate.profileimage;
         imageView.layer.masksToBounds = YES;
         imageView.layer.cornerRadius = 50.0;
         imageView.layer.borderColor = [UIColor whiteColor].CGColor;
@@ -93,10 +93,18 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
+  //  colorWithRed:66 green:139 blue:202 alpha:0.0
     cell.backgroundColor = [UIColor clearColor];
     cell.textLabel.textColor = [UIColor colorWithRed:62/255.0f green:68/255.0f blue:75/255.0f alpha:1.0f];
     cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:17];
 }
+//- (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//   
+////   UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+////    cell.backgroundColor= [UIColor colorWithRed:66/255.0f green:139/255.0f blue:202/255.0f alpha:1.0f];
+//
+//}
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)sectionIndex
 {
@@ -124,10 +132,24 @@
     
     
 }
-
+//- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+//    return YES;
+//}
+-(void)clearrows
+{
+    for (int i=0;i<[titles count];i++) {
+        NSIndexPath *indexPath=[NSIndexPath indexPathForRow:i inSection:0 ];
+        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+        cell.backgroundColor= [UIColor clearColor];
+       [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    }
+    [self.tableView reloadData];
+}
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [self clearrows];
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    cell.backgroundColor= [UIColor colorWithRed:66/255.0f green:139/255.0f blue:202/255.0f alpha:1.0f];
     DashboardMainViewController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"contentController"];
     
     if (indexPath.section == 0 && indexPath.row == 0) {
@@ -209,7 +231,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     
-    
+  
  cell.textLabel.text = titles[indexPath.row];
     
     

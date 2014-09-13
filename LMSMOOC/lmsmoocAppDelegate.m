@@ -12,7 +12,7 @@
 @synthesize avatharURL;
 @synthesize av_image;
 @synthesize Profiledetails;
-
+@synthesize profileimage;
 
 
 

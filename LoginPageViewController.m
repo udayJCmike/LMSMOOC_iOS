@@ -203,7 +203,7 @@
               
                 delegate.avatharURL=avatarURL;
                 delegate.av_image=[NSString stringWithFormat:@"%@%@",avatarURL,avatarImage];
-                
+                delegate.profileimage=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:delegate.av_image]]];
 
               
                 if (reminder.selected) {

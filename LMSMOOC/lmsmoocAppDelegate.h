@@ -15,7 +15,7 @@
 @property (strong, nonatomic) UIWindow *window;
 @property(strong,nonatomic)NSString *avatharURL;
 @property(strong,nonatomic)NSString *av_image;
-
+@property(strong,nonatomic)UIImage *profileimage;
 @property(strong,nonatomic)NSMutableDictionary *Profiledetails;
 -(void)downloadDataFromURL:(NSURL *)url withCompletionHandler:(void(^)(NSData *data))completionHandler;
 @end
