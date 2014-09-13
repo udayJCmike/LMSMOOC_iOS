@@ -102,8 +102,8 @@
             NSDictionary *temp=[arrayList1 objectForKey:@"serviceresponse"];
             NSLog(@"%@",[temp objectForKey:@"inbox_id"]);
             mess=[temp objectForKey:@"inboxmessage"];
-            mess = [mess stringByReplacingOccurrencesOfString: @"<br>" withString: @"\n"];
-            mess = [mess stringByReplacingOccurrencesOfString: @"<hr>" withString: @"\n"];
+            mess = [mess stringByReplacingOccurrencesOfString: @"<br>" withString: @"\n\n"];
+            mess = [mess stringByReplacingOccurrencesOfString: @"<br>" withString: @"\n\n"];
             [temp setValue:mess forKey:@"inboxmessage"];
             [inbox addObject:temp];
             

@@ -7,6 +7,7 @@
 //
 
 #import "MailDetailsViewController.h"
+#import "UIButton+Bootstrap.h"
 
 @interface MailDetailsViewController ()
 
@@ -31,6 +32,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+   
     du=[[databaseurl alloc]init];
     if ([selectedrow count]>0) {
         from.text=[selectedrow objectForKey:@"sender_name"];
@@ -40,12 +42,16 @@
        imp=[selectedrow objectForKey:@"important_status"];
         if ([imp isEqualToString:@"1"])
         {
+            [self.important warningStyle];
+           // [self.important addAwesomeIcon:FAIconRemove beforeTitle:YES];
             
-            [important setTitle:@"Unimportant" forState:UIControlStateNormal];
+            [important setTitle:@"Remove important" forState:UIControlStateNormal];
             important.tag=11;
         }
         else
         {
+            [self.important successStyle];
+           // [self.important addAwesomeIcon:FAIconCheck beforeTitle:YES];
              [important setTitle:@"Mark as important" forState:UIControlStateNormal];
             important.tag=10;
             
@@ -62,13 +68,16 @@
     HUD.delegate = self;
     HUD.labelText = @"Please wait...";
     [HUD show:YES];
-    if ([sender.titleLabel.text isEqualToString:@"Unimportant"])
+    if ([sender.titleLabel.text isEqualToString:@"Remove important"])
     {
         if ([[du submitvalues]isEqualToString:@"Success"])
         {
             imp=@"0";
             [self updatereadstate:@"0"];
+            [self.important successStyle];
+            //[self.important addAwesomeIcon:FAIconCheck beforeTitle:YES];
       [important setTitle:@"Mark as important" forState:UIControlStateNormal];
+            
         }
         else
         {
@@ -85,7 +94,10 @@
         {
             imp=@"1";
             [self updatereadstate:@"1"];
-            [important setTitle:@"Unimportant" forState:UIControlStateNormal];
+            [self.important warningStyle];
+           // [self.important addAwesomeIcon:FAIconRemove beforeTitle:YES];
+            [important setTitle:@"Remove important" forState:UIControlStateNormal];
+            
         }
         else
         {
