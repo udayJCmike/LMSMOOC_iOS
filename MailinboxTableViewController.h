@@ -15,7 +15,7 @@
 #import "MailDetailsViewController.h"
 @interface MailinboxTableViewController : UITableViewController<MBProgressHUDDelegate>
 {
-     NSMutableArray *inbox;
+   __block  NSMutableArray *inbox;
     MBProgressHUD *HUD;
     
     

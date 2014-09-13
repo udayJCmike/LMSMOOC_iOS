@@ -198,11 +198,11 @@
                 NSString *avatarURL=[menu objectForKey:@"avatarURL"];
                 NSString *avatarImage=[menu objectForKey:@"avatarImage"];
                 
-
+                NSLog(@"values %@",avatarImage);
                 
               
                 delegate.avatharURL=avatarURL;
-                delegate.av_image=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",avatarURL,avatarImage]]]];
+                delegate.av_image=[NSString stringWithFormat:@"%@%@",avatarURL,avatarImage];
                 
 
               

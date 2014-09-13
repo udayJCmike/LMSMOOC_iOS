@@ -7,7 +7,8 @@
 //
 
 #import "MailinboxTableViewController.h"
-
+#import "lmsmoocAppDelegate.h"
+#define  AppDelegate (lmsmoocAppDelegate *)[[UIApplication sharedApplication] delegate]
 @interface MailinboxTableViewController ()
 {
     databaseurl *du;
@@ -62,7 +63,7 @@
 {
     if ([[du submitvalues]isEqualToString:@"Success"])
     {
-        [self checkdata];
+        [self getMailList];
     }
     else
     {
@@ -74,6 +75,51 @@
     }
 
 }
+-(void)getMailList
+{
+   
+    NSString *userid=[[NSUserDefaults standardUserDefaults]objectForKey:@"userid"];
+    NSString *urltemp=[[databaseurl sharedInstance]DBurl];
+    NSString *url1=@"Inboxlist.php?";
+    __block NSString *mess;
+    
+    NSString *URLString=[NSString stringWithFormat:@"%@%@studentid=%@",urltemp,url1,userid];
+    
+    NSMutableArray *search = [du MultipleCharacters:URLString];
+    
+    NSDictionary* menu = [search valueForKey:@"serviceresponse"];
+    
+    NSArray *Listofdatas=[menu objectForKey:@"Inbox List"];
+    
+    
+    if ([Listofdatas count]>0)
+    {
+        inbox=[[NSMutableArray alloc]init];
+        
+        for (int i=0;i<[Listofdatas count];i++)
+        {
+            NSDictionary *arrayList1= [Listofdatas objectAtIndex:i];
+            NSDictionary *temp=[arrayList1 objectForKey:@"serviceresponse"];
+            NSLog(@"%@",[temp objectForKey:@"inbox_id"]);
+            mess=[temp objectForKey:@"inboxmessage"];
+            mess = [mess stringByReplacingOccurrencesOfString: @"<br>" withString: @"\n"];
+            mess = [mess stringByReplacingOccurrencesOfString: @"<hr>" withString: @"\n"];
+            [temp setValue:mess forKey:@"inboxmessage"];
+            [inbox addObject:temp];
+            
+            
+        }
+        [self.tableView reloadData];
+        [HUD hide:YES];
+    }
+    
+    
+    
+    
+
+    
+}
+
 -(void)checkdata
 {
     NSString *userid=[[NSUserDefaults standardUserDefaults]objectForKey:@"userid"];
@@ -125,7 +171,7 @@
     
     
     NSString *urltemp=[[databaseurl sharedInstance]DBurl];
-    NSString *url1=@"Inbox.php?service=inboxlist";
+    NSString *url1=@"Inboxlist.php?";
     NSString *url2=[NSString stringWithFormat:@"%@%@",urltemp,url1];
     NSString *post =[[NSString alloc] initWithFormat:@"%@=%@&%@=%@",firstEntity,value1,secondEntity,value2];
     NSURL *url = [NSURL URLWithString:url2];
@@ -172,6 +218,9 @@
     MAILinboxTableViewCell *cell =(MAILinboxTableViewCell*) [tableView dequeueReusableCellWithIdentifier:@"mailinbox" forIndexPath:indexPath];
     
     NSDictionary *temp=[inbox objectAtIndex:indexPath.row];
+   
+    
+
     cell.Subject.text=[temp objectForKey:@"subject"];
      cell.date.text=[temp objectForKey:@"sent_date"];
    
@@ -268,7 +317,7 @@
 }
 -(void)importantStatus:(id)sender
 {
-       NSLog(@"Important status %@ updated",sender);
+     //  NSLog(@"Important status %@ updated",sender);
     NSIndexPath *indexpath=[self.tableView indexPathForSelectedRow];
     [[inbox objectAtIndex:indexpath.row] setObject:[sender valueForKey:@"object"] forKey:@"important_status"];
 }

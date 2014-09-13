@@ -320,10 +320,18 @@
 }
 -(NSString *)HttpPostEntityFirst1:(NSString*)firstEntity ForValue1:(NSString*)value1 EntitySecond:(NSString*)secondEntity ForValue2:(NSString*)value2
 {
+    NSString *avatar;
+    if ([genderval isEqualToString:@"male"]) {
+        avatar=@"/resources/images/users/1.png";
+    }
+    else if ([genderval isEqualToString:@"female"]) {
+        avatar=@"/resources/images/users/g1.png";
+    }
+    
     NSString *urltemp=[[databaseurl sharedInstance]DBurl];
     NSString *url1=@"Signup.php?service=signupupdate";
     NSString *url2=[NSString stringWithFormat:@"%@%@",urltemp,url1];
-    NSString *post =[[NSString alloc] initWithFormat:@"%@=%@&lastname=%@&username=%@&emailid=%@&password=%@&interested=%@&gender=%@&id=%@&%@=%@",firstEntity,value1,lname.text,username.text,email.text,password.text,interestedval,genderval,[[NSUserDefaults standardUserDefaults]objectForKey:@"userid"],secondEntity,value2];
+    NSString *post =[[NSString alloc] initWithFormat:@"%@=%@&lastname=%@&username=%@&emailid=%@&password=%@&interested=%@&gender=%@&id=%@&avatar=%@&%@=%@",firstEntity,value1,lname.text,username.text,email.text,password.text,interestedval,genderval,[[NSUserDefaults standardUserDefaults]objectForKey:@"userid"],avatar,secondEntity,value2];
     //  NSLog(@"POST %@",post);
     NSURL *url = [NSURL URLWithString:url2];
     return [du returndbresult:post URL:url];

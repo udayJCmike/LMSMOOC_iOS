@@ -79,6 +79,7 @@
     _containerViewController = [[REFrostedContainerViewController alloc] init];
     _containerViewController.frostedViewController = self;
     _menuViewSize = CGSizeZero;
+    _limitMenuViewSize=YES;
     _liveBlur = REUIKitIsFlatMode();
     _panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:_containerViewController action:@selector(panGestureRecognized:)];
     _automaticSize = YES;
@@ -158,6 +159,7 @@
 
 - (void)setMenuViewSize:(CGSize)menuViewSize
 {
+  
     _menuViewSize = menuViewSize;
     self.automaticSize = NO;
 }
@@ -171,31 +173,64 @@
 
 - (void)presentMenuViewControllerWithAnimatedApperance:(BOOL)animateApperance
 {
-    if ([self.delegate conformsToProtocol:@protocol(REFrostedViewControllerDelegate)] && [self.delegate respondsToSelector:@selector(frostedViewController:willShowMenuViewController:)]) {
-        [self.delegate frostedViewController:self willShowMenuViewController:self.menuViewController];
-    }
     
-    self.containerViewController.animateApperance = animateApperance;
-    if (self.automaticSize) {
-        if (self.direction == REFrostedViewControllerDirectionLeft || self.direction == REFrostedViewControllerDirectionRight)
-            self.calculatedMenuViewSize = CGSizeMake(self.contentViewController.view.frame.size.width - 50.0f, self.contentViewController.view.frame.size.height);
-        
-        if (self.direction == REFrostedViewControllerDirectionTop || self.direction == REFrostedViewControllerDirectionBottom)
-            self.calculatedMenuViewSize = CGSizeMake(self.contentViewController.view.frame.size.width, self.contentViewController.view.frame.size.height - 50.0f);
-    } else {
-        self.calculatedMenuViewSize = CGSizeMake(_menuViewSize.width > 0 ? _menuViewSize.width : self.contentViewController.view.frame.size.width,
-                                                 _menuViewSize.height > 0 ? _menuViewSize.height : self.contentViewController.view.frame.size.height);
-    }
-    
-    if (!self.liveBlur) {
-        if (REUIKitIsFlatMode() && !self.blurTintColor) {
-            self.blurTintColor = [UIColor colorWithWhite:1 alpha:0.75f];
+    if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad) {
+        if ([self.delegate conformsToProtocol:@protocol(REFrostedViewControllerDelegate)] && [self.delegate respondsToSelector:@selector(frostedViewController:willShowMenuViewController:)]) {
+            [self.delegate frostedViewController:self willShowMenuViewController:self.menuViewController];
         }
-        self.containerViewController.screenshotImage = [[self.contentViewController.view re_screenshot] re_applyBlurWithRadius:self.blurRadius tintColor:self.blurTintColor saturationDeltaFactor:self.blurSaturationDeltaFactor maskImage:nil];
-    }
         
-    [self re_displayController:self.containerViewController frame:self.contentViewController.view.frame];
-    self.visible = YES;
+        self.containerViewController.animateApperance = animateApperance;
+        if (self.automaticSize) {
+            if (self.direction == REFrostedViewControllerDirectionLeft || self.direction == REFrostedViewControllerDirectionRight)
+                self.calculatedMenuViewSize = CGSizeMake(self.contentViewController.view.frame.size.width - 750.0f, self.contentViewController.view.frame.size.height);
+            
+            if (self.direction == REFrostedViewControllerDirectionTop || self.direction == REFrostedViewControllerDirectionBottom)
+                self.calculatedMenuViewSize = CGSizeMake(self.contentViewController.view.frame.size.width, self.contentViewController.view.frame.size.height - 50.0f);
+        } else {
+            self.calculatedMenuViewSize = CGSizeMake(_menuViewSize.width > 0 ? _menuViewSize.width : self.contentViewController.view.frame.size.width,
+                                                     _menuViewSize.height > 0 ? _menuViewSize.height : self.contentViewController.view.frame.size.height);
+        }
+        
+        if (!self.liveBlur) {
+            if (REUIKitIsFlatMode() && !self.blurTintColor) {
+                self.blurTintColor = [UIColor colorWithWhite:1 alpha:0.75f];
+            }
+            self.containerViewController.screenshotImage = [[self.contentViewController.view re_screenshot] re_applyBlurWithRadius:self.blurRadius tintColor:self.blurTintColor saturationDeltaFactor:self.blurSaturationDeltaFactor maskImage:nil];
+        }
+        
+        [self re_displayController:self.containerViewController frame:self.contentViewController.view.frame];
+        self.visible = YES;
+    }
+    else if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPhone)
+    {
+        if ([self.delegate conformsToProtocol:@protocol(REFrostedViewControllerDelegate)] && [self.delegate respondsToSelector:@selector(frostedViewController:willShowMenuViewController:)]) {
+            [self.delegate frostedViewController:self willShowMenuViewController:self.menuViewController];
+        }
+        
+        self.containerViewController.animateApperance = animateApperance;
+        if (self.automaticSize) {
+            if (self.direction == REFrostedViewControllerDirectionLeft || self.direction == REFrostedViewControllerDirectionRight)
+                self.calculatedMenuViewSize = CGSizeMake(self.contentViewController.view.frame.size.width-100 , self.contentViewController.view.frame.size.height);
+            
+            if (self.direction == REFrostedViewControllerDirectionTop || self.direction == REFrostedViewControllerDirectionBottom)
+                self.calculatedMenuViewSize = CGSizeMake(self.contentViewController.view.frame.size.width-100, self.contentViewController.view.frame.size.height - 50.0f);
+        } else {
+            self.calculatedMenuViewSize = CGSizeMake(_menuViewSize.width > 0 ? _menuViewSize.width-100 : self.contentViewController.view.frame.size.width,
+                                                     _menuViewSize.height > 0 ? _menuViewSize.height : self.contentViewController.view.frame.size.height);
+        }
+        
+        if (!self.liveBlur) {
+            if (REUIKitIsFlatMode() && !self.blurTintColor) {
+                self.blurTintColor = [UIColor colorWithWhite:1 alpha:0.75f];
+            }
+            self.containerViewController.screenshotImage = [[self.contentViewController.view re_screenshot] re_applyBlurWithRadius:self.blurRadius tintColor:self.blurTintColor saturationDeltaFactor:self.blurSaturationDeltaFactor maskImage:nil];
+        }
+        
+        [self re_displayController:self.containerViewController frame:self.contentViewController.view.frame];
+        self.visible = YES;
+        
+    }
+    
 }
 
 - (void)hideMenuViewControllerWithCompletionHandler:(void(^)(void))completionHandler

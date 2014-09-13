@@ -8,12 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@interface databaseurl : NSObject
+@interface databaseurl : NSObject <UIApplicationDelegate>
 {
     BOOL isConnect;
     NSString *Headername;
 }
 +(databaseurl*)sharedInstance;
+
 -(NSString*)submitvalues;
 - (NSString*) DBurl;
 -(NSString *)returndbresult:(NSString *)post URL:(NSURL *)url;
@@ -24,4 +25,5 @@
 -(BOOL)validateOtherNameForSignupPage:(NSString *)firstname;
 -(BOOL)validatePasswordForSignupPage:(NSString *)password;
 -(BOOL)validateUserNameForSignupPage:(NSString *)firstname;
+-(NSMutableArray *)MultipleCharacters:(NSString *)url;
 @end

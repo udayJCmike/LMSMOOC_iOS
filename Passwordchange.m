@@ -32,7 +32,7 @@
             
             cur_pwd  = [[UITextField alloc] initWithFrame:CGRectMake(303, 67, 187, 30)];
             cur_pwd.textColor = [UIColor blackColor];
-            cur_pwd.font = [UIFont fontWithName:@"Helvetica-Bold" size:14];
+            cur_pwd.font = [UIFont fontWithName:@"Helvetica Neue" size:14];
             [cur_pwd.layer setCornerRadius:10.0f];
             cur_pwd.delegate=self;
             cur_pwd.text=[delegate.Profiledetails objectForKey:@"password"];
@@ -44,7 +44,7 @@
             new_pwd = [[UITextField alloc] initWithFrame:CGRectMake(303, 127, 187, 30)];
             [new_pwd.layer setCornerRadius:10.0f];
             new_pwd.textColor = [UIColor blackColor];
-            new_pwd.font = [UIFont fontWithName:@"Helvetica-Bold" size:14];
+            new_pwd.font = [UIFont fontWithName:@"Helvetica Neue" size:14];
             new_pwd.delegate=self;
             new_pwd.secureTextEntry=YES;
             new_pwd.clearButtonMode = UITextFieldViewModeWhileEditing;
@@ -53,7 +53,7 @@
             
             cfm_pwd = [[UITextField alloc] initWithFrame:CGRectMake(303, 194, 187, 30)];
             cfm_pwd.textColor = [UIColor blackColor];
-            cfm_pwd.font = [UIFont fontWithName:@"Helvetica-Bold" size:14];
+            cfm_pwd.font = [UIFont fontWithName:@"Helvetica Neue" size:14];
             [cfm_pwd.layer setCornerRadius:10.0f];
             cfm_pwd.delegate=self;
             cfm_pwd.secureTextEntry=YES;
@@ -65,7 +65,7 @@
             CGRect btnTempFrame=CGRectMake(105, 280, 170, 30);
             getpwd=[[APRoundedButton alloc]initWithFrame:btnTempFrame];
            // getpwd.style=4;
-            [getpwd.titleLabel setFont:[UIFont boldSystemFontOfSize:20]];
+            [getpwd.titleLabel setFont:[UIFont fontWithName:@"Helvetica Neue" size:20]];
             [getpwd.titleLabel setTextColor:[UIColor whiteColor]];
             [getpwd setTitle:@"Get Password" forState:UIControlStateNormal];
             [getpwd addTarget:self action:@selector(changePassword:) forControlEvents:UIControlEventTouchUpInside];
@@ -77,7 +77,7 @@
             CGRect closeButtonFrame=CGRectMake(305, 280, 170, 30);
             close=[[APRoundedButton alloc]initWithFrame:closeButtonFrame];
           //  close.style=4;
-            [close.titleLabel setFont:[UIFont boldSystemFontOfSize:20]];
+            [close.titleLabel setFont:[UIFont fontWithName:@"Helvetica Neue" size:20]];
             [close.titleLabel setTextColor:[UIColor whiteColor]];
             [close setTitle:@"Close" forState:UIControlStateNormal];
             [close addTarget:self action:@selector(closeView:) forControlEvents:UIControlEventTouchUpInside];
@@ -90,21 +90,21 @@
             [label1 setBackgroundColor:[UIColor clearColor]];
             [label1 setText:@"Current Password"];
             [label1 setTextColor:[UIColor blackColor]];
-            [label1 setFont:[UIFont systemFontOfSize:17]];
+            [label1 setFont:[UIFont fontWithName:@"Helvetica Neue" size:17]];
             
             CGRect dateLabelFrame=CGRectMake(95, 127, 187, 29);
             label2=[[UILabel alloc]initWithFrame:dateLabelFrame];
             [label2 setBackgroundColor:[UIColor clearColor]];
             [label2 setText:@"New Password"];
             [label2 setTextColor:[UIColor blackColor]];
-            [label2 setFont:[UIFont systemFontOfSize:17]];
+            [label2 setFont:[UIFont fontWithName:@"Helvetica Neue" size:17]];
             
             CGRect priceLabelFrame=CGRectMake(95, 194, 187, 29);
             label3=[[UILabel alloc]initWithFrame:priceLabelFrame];
             [label3 setBackgroundColor:[UIColor clearColor]];
             [label3 setText:@"Confirm New Password"];
             [label3 setTextColor:[UIColor blackColor]];
-            [label3 setFont:[UIFont systemFontOfSize:17]];
+            [label3 setFont:[UIFont fontWithName:@"Helvetica Neue" size:17]];
             
         }
         else if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPhone)
@@ -118,7 +118,7 @@
             
             cur_pwd  = [[UITextField alloc] initWithFrame:CGRectMake(20, 49, 220, 30)];
             cur_pwd.textColor = [UIColor blackColor];
-            cur_pwd.font = [UIFont fontWithName:@"Helvetica-Bold" size:14];
+            cur_pwd.font =[UIFont fontWithName:@"Helvetica Neue" size:14];
             [cur_pwd.layer setCornerRadius:10.0f];
             cur_pwd.delegate=self;
             cur_pwd.text=[delegate.Profiledetails objectForKey:@"password"];
@@ -130,7 +130,7 @@
             new_pwd = [[UITextField alloc] initWithFrame:CGRectMake(20, 116, 220, 30)];
             [new_pwd.layer setCornerRadius:10.0f];
             new_pwd.textColor = [UIColor blackColor];
-            new_pwd.font = [UIFont fontWithName:@"Helvetica-Bold" size:14];
+            new_pwd.font = [UIFont fontWithName:@"Helvetica Neue" size:14];
             new_pwd.delegate=self;
             new_pwd.secureTextEntry=YES;
             new_pwd.clearsOnBeginEditing=YES;
@@ -139,7 +139,7 @@
             
             cfm_pwd = [[UITextField alloc] initWithFrame:CGRectMake(20, 178, 220, 30)];
             cfm_pwd.textColor = [UIColor blackColor];
-            cfm_pwd.font = [UIFont fontWithName:@"Helvetica-Bold" size:14];
+            cfm_pwd.font = [UIFont fontWithName:@"Helvetica Neue" size:14];
             [cfm_pwd.layer setCornerRadius:10.0f];
             cfm_pwd.delegate=self;
             cfm_pwd.secureTextEntry=YES;
@@ -153,7 +153,7 @@
            // getpwd.style=4;
             
             //        [btnTemp setBackgroundImage:[UIImage imageNamed:@"btn_plain_iphone.png"] forState:UIControlStateNormal];
-            [getpwd.titleLabel setFont:[UIFont boldSystemFontOfSize:15]];
+            [getpwd.titleLabel  setFont:[UIFont fontWithName:@"Helvetica Neue" size:15]];
             [getpwd.titleLabel setTextColor:[UIColor whiteColor]];
             [getpwd setTitle:@"Get Password" forState:UIControlStateNormal];
             [getpwd addTarget:self action:@selector(changePassword:) forControlEvents:UIControlEventTouchUpInside];
@@ -166,7 +166,7 @@
             close=[[APRoundedButton alloc]initWithFrame:closeButtonFrame];
             //close.style=4;
             // [closeButton setBackgroundImage:[UIImage imageNamed:@"btn_plain_iphone.png"] forState:UIControlStateNormal];
-            [close.titleLabel setFont:[UIFont boldSystemFontOfSize:15]];
+            [close.titleLabel  setFont:[UIFont fontWithName:@"Helvetica Neue" size:15]];
             [close.titleLabel setTextColor:[UIColor whiteColor]];
             [close setTitle:@"Close" forState:UIControlStateNormal];
             [close addTarget:self action:@selector(closeView:) forControlEvents:UIControlEventTouchUpInside];
@@ -179,7 +179,7 @@
             [label1 setBackgroundColor:[UIColor clearColor]];
             [label1 setText:@"Current Password"];
             [label1 setTextColor:[UIColor blackColor]];
-            [label1 setFont:[UIFont systemFontOfSize:16]];
+            [label1  setFont:[UIFont fontWithName:@"Helvetica Neue" size:15]];
             
             CGRect dateLabelFrame=CGRectMake(20, 87, 129, 21);
             label2=[[UILabel alloc]initWithFrame:dateLabelFrame];
@@ -187,14 +187,14 @@
             [label2 setBackgroundColor:[UIColor clearColor]];
             [label2 setText:@"New Password"];
             [label2 setTextColor:[UIColor blackColor]];
-            [label2 setFont:[UIFont systemFontOfSize:16]];
+            [label2  setFont:[UIFont fontWithName:@"Helvetica Neue" size:15]];
             
             CGRect priceLabelFrame=CGRectMake(20, 154, 194, 21);
             label3=[[UILabel alloc]initWithFrame:priceLabelFrame];
             [label3 setBackgroundColor:[UIColor clearColor]];
             [label3 setText:@"Confirm New Password"];
             [label3 setTextColor:[UIColor blackColor]];
-            [label3 setFont:[UIFont systemFontOfSize:16]];
+            [label3  setFont:[UIFont fontWithName:@"Helvetica Neue" size:15]];
         }
        
        

@@ -17,6 +17,7 @@ static databaseurl * appInstance;
 	}
 	return appInstance;
 }
+#pragma mark - Class method implementation
 
 -(NSString*)DBurl
 {
@@ -181,5 +182,13 @@ static databaseurl * appInstance;
     }
     return filename;
 }
-
+-(NSMutableArray *)MultipleCharacters:(NSString *)url
+{
+    NSMutableURLRequest *request =[[NSMutableURLRequest alloc]initWithURL:[NSURL URLWithString:url]];
+    NSData *returnData = [ NSURLConnection sendSynchronousRequest:request returningResponse: nil error: nil ];
+    NSString *returnString = [[NSString alloc]initWithData:returnData encoding:NSUTF8StringEncoding];
+    NSError *err = nil;
+    NSMutableArray *search = [NSJSONSerialization JSONObjectWithData:[returnString dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:&err];
+    return search;
+}
 @end

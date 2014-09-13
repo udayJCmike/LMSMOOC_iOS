@@ -14,6 +14,8 @@
 @synthesize Profiledetails;
 
 
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     UIPageControl *pageControl = [UIPageControl appearance];
@@ -23,6 +25,12 @@
     return YES;
 }
 							
+
+
+
+
+
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -31,7 +39,7 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
+    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
@@ -49,5 +57,44 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+
+#pragma mark - Class method implementation
+
+-(void)downloadDataFromURL:(NSURL *)url withCompletionHandler:(void (^)(NSData *))completionHandler{
+    // Instantiate a session configuration object.
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    
+    // Instantiate a session object.
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
+    
+    // Create a data task object to perform the data downloading.
+    NSURLSessionDataTask *task = [session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        if (error != nil) {
+            // If any error occurs then just display its description on the console.
+            NSLog(@"%@", [error localizedDescription]);
+        }
+        else{
+            // If no error occurs, check the HTTP status code.
+            NSInteger HTTPStatusCode = [(NSHTTPURLResponse *)response statusCode];
+            
+            // If it's other than 200, then show it on the console.
+            if (HTTPStatusCode != 200) {
+                NSLog(@"HTTP status code = %d", HTTPStatusCode);
+            }
+            
+            // Call the completion handler with the returned data on the main thread.
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                completionHandler(data);
+            }];
+        }
+    }];
+    
+    // Resume the task.
+    [task resume];
+}
+
+
 
 @end

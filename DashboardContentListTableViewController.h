@@ -18,5 +18,8 @@
 #import "DashboardcontainerViewController.h"
 #import "ProfileUpdateViewController.h"
 @interface DashboardContentListTableViewController : UITableViewController
+{
+    UIImage *profileimage;
+}
 -(void)reloadTableContent;
 @end

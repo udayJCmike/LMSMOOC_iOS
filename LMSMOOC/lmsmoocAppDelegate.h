@@ -10,10 +10,12 @@
 
 @interface lmsmoocAppDelegate : UIResponder <UIApplicationDelegate>
 
+
+
 @property (strong, nonatomic) UIWindow *window;
 @property(strong,nonatomic)NSString *avatharURL;
-@property(strong,nonatomic)UIImage *av_image;
+@property(strong,nonatomic)NSString *av_image;
 
 @property(strong,nonatomic)NSMutableDictionary *Profiledetails;
-
+-(void)downloadDataFromURL:(NSURL *)url withCompletionHandler:(void(^)(NSData *data))completionHandler;
 @end

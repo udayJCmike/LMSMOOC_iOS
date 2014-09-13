@@ -32,12 +32,17 @@
 {
     [super viewDidLoad];
     delegate=AppDelegate;
-//    NSLog(@"avatar URL %@",delegate.avatharimage);
-  // delegate.avatharimage= @"http://208.109.248.89:8085/OnlineCourse/resources/images/users/g6.png";
+
     if (!delegate.av_image)
     {
          NSLog(@"avatar URL not found");
-        delegate.av_image=[UIImage imageNamed:@"Avatar-female.png"];
+        profileimage=[UIImage imageNamed:@"Avatar-female.png"];
+        delegate.av_image=[NSString stringWithFormat:@"Avatar-female.png"];
+    }
+    else
+    {
+        profileimage=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:delegate.av_image]]];
+
     }
     self.tableView.separatorColor = [UIColor colorWithRed:150/255.0f green:161/255.0f blue:177/255.0f alpha:1.0f];
     self.tableView.delegate = self;
@@ -49,7 +54,7 @@
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 184.0f)];
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 40, 100, 100)];
         imageView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
-        imageView.image = delegate.av_image;
+        imageView.image = profileimage;
         imageView.layer.masksToBounds = YES;
         imageView.layer.cornerRadius = 50.0;
         imageView.layer.borderColor = [UIColor whiteColor].CGColor;
