@@ -13,7 +13,7 @@
 @synthesize av_image;
 @synthesize Profiledetails;
 @synthesize profileimage;
-
+@synthesize course_image_url;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions

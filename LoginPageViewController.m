@@ -194,7 +194,7 @@
                 [delegate.Profiledetails setValue:[menu objectForKey:@"username"] forKey:@"username"];
                 [delegate.Profiledetails setValue:[menu objectForKey:@"password"] forKey:@"password"];
                 
-                
+                 delegate.course_image_url= [menu objectForKey:@"courseimageURL"];
                 NSString *avatarURL=[menu objectForKey:@"avatarURL"];
                 NSString *avatarImage=[menu objectForKey:@"avatarImage"];
                 

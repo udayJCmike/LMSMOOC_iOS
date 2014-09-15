@@ -7,33 +7,69 @@
 //
 
 #import "courselist_iPhoneTableViewController.h"
-
+#define  AppDelegate (lmsmoocAppDelegate *)[[UIApplication sharedApplication] delegate]
 @interface courselist_iPhoneTableViewController ()
 
 @end
 
 @implementation courselist_iPhoneTableViewController
+@synthesize tableView;
+@synthesize course_type;
+//- (id)initWithStyle:(UITableViewStyle)style
+//{
+//    self = [super initWithStyle:style];
+//    if (self) {
+//        // Custom initialization
+//    }
+//    return self;
+//}
 
-- (id)initWithStyle:(UITableViewStyle)style
+-(UIView*)initFooterView
 {
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+    footerView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 40.0)];
+    
+    UIActivityIndicatorView * actInd = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    
+    actInd.tag = 10;
+    
+    actInd.frame = CGRectMake(150.0, 5.0, 20.0, 20.0);
+    
+    actInd.hidesWhenStopped = YES;
+    
+    [footerView addSubview:actInd];
+    
+   [actInd startAnimating];
+    return footerView;
 }
-
+//- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+//    
+//    return 50;
+//}
+//- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+//    
+//   
+//    
+//    return  [self initFooterView];
+//    
+//    
+//}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    offset=0;
+    offset_free=0;
+    offset_paid=0;
     // if Navigation Bar is already hidden
      if (self.navigationController.navigationBar.hidden == YES)
     {
         // Show the Navigation Bar
         [self.navigationController setNavigationBarHidden:NO animated:NO];
     }
+  
 
-   courselist=[[NSArray alloc]initWithObjects:@"course 1",@"course 2", nil];
+  courselist=[[NSMutableArray alloc]init];
+      freecourselist=[[NSMutableArray alloc]init];
+      paidlist=[[NSMutableArray alloc]init];
     UIButton *button =  [UIButton buttonWithType:UIButtonTypeCustom];
     [button setImage:[UIImage imageNamed:@"menu_icon.png"] forState:UIControlStateNormal];
     [button addTarget:self action:@selector(menulistener:) forControlEvents:UIControlEventTouchUpInside];
@@ -44,8 +80,175 @@
                                              selector:@selector(menulistener:)
                                                  name:@"Showmenu"
                                                object:nil];
+    du=[[databaseurl alloc]init];
+    delegate=AppDelegate;
+    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+    [self.navigationController.view addSubview:HUD];
+    HUD.delegate = self;
+    HUD.labelText = @"Please wait...";
+    [HUD show:YES];
+    _imageOperationQueue = [[NSOperationQueue alloc]init];
+    _imageOperationQueue.maxConcurrentOperationCount = 4;
+    self.imageCache = [[NSCache alloc] init];
+    [self loadDatas];
+
+}
+-(void)loadDatas
+{
+    if ([[du submitvalues]isEqualToString:@"Success"])
+    {
+        if (course_type.selectedSegmentIndex==0) {
+             [self getCourseList];
+        }
+        else  if (course_type.selectedSegmentIndex==1) {
+             [self getFreeCourseList];
+        }
+        else  {
+             [self getPaidCourseList];
+        }
+
+    }
+    else
+    {
+        //[HUD hide:YES];
+        HUD.labelText = @"Check network connection";
+        HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@""]];
+        HUD.mode = MBProgressHUDModeCustomView;
+        [HUD hide:YES afterDelay:1];
+    }
+    
 }
 
+-(void)getCourseList
+{
+    
+    
+ 
+    NSString *urltemp=[[databaseurl sharedInstance]DBurl];
+    NSString *url1=@"AllCourse.php";
+    
+    NSString *URLString=[NSString stringWithFormat:@"%@%@?offset=%d",urltemp,url1,offset];
+    
+    NSMutableArray *search = [du MultipleCharacters:URLString];
+    
+    NSDictionary* menu = [search valueForKey:@"serviceresponse"];
+    
+    NSArray *Listofdatas=[menu objectForKey:@"Course List"];
+    
+    
+    if ([Listofdatas count]>0)
+    {
+        
+        
+        for (int i=0;i<[Listofdatas count];i++)
+        {
+            NSDictionary *arrayList1= [Listofdatas objectAtIndex:i];
+            NSDictionary *temp=[arrayList1 objectForKey:@"serviceresponse"];
+//            NSLog(@"Received Values %@",temp);
+            [courselist addObject:temp];
+            
+            
+        }
+        [self.tableView reloadData];
+        if (![HUD isHidden]) {
+             [HUD hide:YES];
+        }
+       
+    }
+    offset+=10;
+
+    
+    
+    
+    
+}
+-(void)getFreeCourseList
+{
+    
+  
+   // [courselist removeAllObjects];
+    NSString *urltemp=[[databaseurl sharedInstance]DBurl];
+    NSString *url1=@"AllCourse_Free.php";
+    
+    NSString *URLString=[NSString stringWithFormat:@"%@%@?offset=%d",urltemp,url1,offset_free];
+    
+    NSMutableArray *search = [du MultipleCharacters:URLString];
+    
+    NSDictionary* menu = [search valueForKey:@"serviceresponse"];
+    
+    NSArray *Listofdatas=[menu objectForKey:@"Course List"];
+    
+    
+    if ([Listofdatas count]>0)
+    {
+        
+        
+        for (int i=0;i<[Listofdatas count];i++)
+        {
+            NSDictionary *arrayList1= [Listofdatas objectAtIndex:i];
+            NSDictionary *temp=[arrayList1 objectForKey:@"serviceresponse"];
+//            NSLog(@"Received Values %@",temp);
+            [courselist addObject:temp];
+            
+            
+        }
+        [self.tableView reloadData];
+        if (![HUD isHidden]) {
+            [HUD hide:YES];
+        }
+        
+    }
+    offset_free+=10;
+  
+    
+    
+    
+    
+}
+-(void)getPaidCourseList
+{
+    
+  
+   // [courselist removeAllObjects];
+
+    NSString *urltemp=[[databaseurl sharedInstance]DBurl];
+    NSString *url1=@"AllCourse_paid.php";
+    
+    NSString *URLString=[NSString stringWithFormat:@"%@%@?offset=%d",urltemp,url1,offset_paid];
+    
+    NSMutableArray *search = [du MultipleCharacters:URLString];
+    
+    NSDictionary* menu = [search valueForKey:@"serviceresponse"];
+    
+    NSArray *Listofdatas=[menu objectForKey:@"Course List"];
+    
+    
+    if ([Listofdatas count]>0)
+    {
+        
+        
+        for (int i=0;i<[Listofdatas count];i++)
+        {
+            NSDictionary *arrayList1= [Listofdatas objectAtIndex:i];
+            NSDictionary *temp=[arrayList1 objectForKey:@"serviceresponse"];
+//            NSLog(@"Received Values %@",temp);
+            [courselist addObject:temp];
+            
+            
+        }
+        [self.tableView reloadData];
+        if (![HUD isHidden]) {
+            [HUD hide:YES];
+        }
+        
+    }
+    offset_paid+=10;
+
+    
+    
+    
+    
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -56,25 +259,76 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
+
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
+
     return [courselist count];
+
+    // Return the number of rows in the section.
+    
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CourseList" forIndexPath:indexPath];
+    CourseDesignTableViewCell *cell = (CourseDesignTableViewCell*)[self.tableView dequeueReusableCellWithIdentifier:@"CourseList" forIndexPath:indexPath];
+    NSDictionary *course;
+
+
+    course=[courselist objectAtIndex:indexPath.row];
+    cell.coursename.text=[course objectForKey:@"course_name"];
+    cell.authorname.text=[course objectForKey:@"course_author"];
+    cell.price.text=[course objectForKey:@"course_price"];
+    cell.cover.image=[UIImage imageNamed:[course objectForKey:@"course_cover_image"]];
+    cell.review.image=[UIImage imageNamed:[course objectForKey:@"ratings"]];
+ NSString *imageUrlString = [[NSString alloc]initWithFormat:@"%@/%@/%@",delegate.course_image_url,[course objectForKey:@"course_id"],[course objectForKey:@"course_cover_image"]];
     
-    cell.textLabel.text=[courselist objectAtIndex:indexPath.row];
+    UIImage *imageFromCache = [self.imageCache objectForKey:imageUrlString];
     
+    if (imageFromCache) {
+        cell.cover.image= imageFromCache;
+        // set your frame accordingly
+    }
+    else
+    {
+        cell.cover.image = [UIImage imageNamed:@"placeholder"];
+        
+        
+        [self.imageOperationQueue addOperationWithBlock:^{
+            NSURL *imageurl = [NSURL URLWithString:imageUrlString];
+            UIImage *img = [UIImage imageWithData:[NSData dataWithContentsOfURL:imageurl]];
+            
+            if (img != nil) {
+                
+                // update cache
+                [self.imageCache setObject:img forKey:imageUrlString];
+                
+                // now update UI in main queue
+                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                    // see if the cell is still visible ... it's possible the user has scrolled the cell so it's no longer visible, but the cell has been reused for another indexPath
+                    CourseDesignTableViewCell *updateCell = (CourseDesignTableViewCell*)[self.tableView cellForRowAtIndexPath:indexPath];
+                    
+                    // if so, update the image
+                    if (updateCell) {
+                        // I don't know what you want to set this to, but make sure to set it appropriately for your cell; usually I don't mess with the frame.
+                        [updateCell.cover setImage:img];
+                    }
+                }];
+            }
+        }];
+    }
+
+    
+        if (indexPath.row == [courselist count] - 1)
+            [self loadDatas];
+
+   
+         
     return cell;
 }
 
@@ -87,58 +341,50 @@
     [self.frostedViewController presentMenuViewController];
       [[NSNotificationCenter defaultCenter] removeObserver:self name:@"Showmenu" object:nil];
 }
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSDictionary *temp=[courselist objectAtIndex:indexPath.row];
+    NSString *url=[NSString stringWithFormat:@"http://208.109.248.89:8085/OnlineCourse/student_view_Course?course_id=%@&authorid=%@&pur=%@&catcourse=&coursetype=",[temp objectForKey:@"course_id"], [temp objectForKey:@"instructor_id"],[temp objectForKey:@"numofpurchased"]];
+   // NSLog(@"URL %@",url);
+    [[UIApplication sharedApplication]openURL:[NSURL URLWithString:url]];
+    
 }
-*/
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
+- (IBAction)course_type:(UISegmentedControl*)sender {
+    
+    if (sender.selectedSegmentIndex==0) {
+        course_type_val=@"All";
+        offset=0;   [courselist removeAllObjects];
+         [_imageOperationQueue cancelAllOperations];
+         [self loadDatas];
+        [self.tableView reloadData];
+    }
+    else  if (sender.selectedSegmentIndex==1) {
+       course_type_val=@"Free";
+        offset_free=0;   [courselist removeAllObjects];
+         [_imageOperationQueue cancelAllOperations];
+         [self loadDatas];
+          [self.tableView reloadData];
+    }
+    else  if (sender.selectedSegmentIndex==2) {
+        course_type_val=@"Paid";
+        offset_paid=0;   [courselist removeAllObjects];
+         [_imageOperationQueue cancelAllOperations];
+         [self loadDatas];
+         [self.tableView reloadData];
+    }
+    
 }
-*/
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (void)dealloc {
      [[NSNotificationCenter defaultCenter] removeObserver:self name:@"Showmenu" object:nil];
    
+  
+    
     [super dealloc];
 }
 @end

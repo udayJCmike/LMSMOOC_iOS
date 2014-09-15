@@ -8,9 +8,29 @@
 
 #import <UIKit/UIKit.h>
 #import "REFrostedViewController.h"
-@interface courselist_iPhoneTableViewController : UITableViewController
+#import "MBProgressHUD.h"
+#import "lmsmoocAppDelegate.h"
+#import "databaseurl.h"
+#import "SBJSON.h"
+#import "CourseDesignTableViewCell.h"
+#import "UIButton+Bootstrap.h"
+@interface courselist_iPhoneTableViewController : UIViewController<MBProgressHUDDelegate,UITableViewDataSource,UITableViewDelegate>
 {
-    NSArray *courselist;
+    UIView* footerView;
+    NSMutableArray*courselist;
+     NSMutableArray*freecourselist;
+     NSMutableArray*paidlist;
+     MBProgressHUD *HUD;
+    databaseurl *du;
+    lmsmoocAppDelegate *delegate;
+    int offset,offset_free,offset_paid;
+    NSString *course_type_val;
+    
 }
+@property (retain, nonatomic) IBOutlet UISegmentedControl *course_type;
+@property (retain, nonatomic) IBOutlet UITableView *tableView;
+@property (retain, nonatomic)  NSOperationQueue *imageOperationQueue;
+@property (retain, nonatomic)    NSCache *imageCache;
+
 
 @end

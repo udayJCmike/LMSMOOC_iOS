@@ -10,7 +10,7 @@
 
 @interface lmsmoocAppDelegate : UIResponder <UIApplicationDelegate>
 
-
+@property(strong,nonatomic)NSString *course_image_url;
 
 @property (strong, nonatomic) UIWindow *window;
 @property(strong,nonatomic)NSString *avatharURL;

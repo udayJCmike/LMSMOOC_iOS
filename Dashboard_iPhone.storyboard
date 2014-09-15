@@ -209,35 +209,6 @@
             </objects>
             <point key="canvasLocation" x="1824" y="-2387"/>
         </scene>
-        <!--Courselist i Phone Table View Controller - Courses-->
-        <scene sceneID="uL8-OM-Ko3">
-            <objects>
-                <tableViewController storyboardIdentifier="CourseList" id="Ghu-G5-s7H" customClass="courselist_iPhoneTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="XhC-bm-dBF">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CourseList" id="wPL-FF-1ue">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wPL-FF-1ue" id="5XO-F8-tzL">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Ghu-G5-s7H" id="HFs-uI-ys8"/>
-                            <outlet property="delegate" destination="Ghu-G5-s7H" id="2kM-Df-YYD"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Courses" id="6VG-HY-Wrd"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="P8T-Jr-Zcd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-94" y="-1389"/>
-        </scene>
         <!--Dashboard Main View Controller-->
         <scene sceneID="in1-vA-vXA">
             <objects>
@@ -248,7 +219,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Ghu-G5-s7H" kind="relationship" relationship="rootViewController" id="l0p-rG-YHZ"/>
                         <segue destination="29E-oz-Do0" kind="push" id="ECJ-Fv-GTN"/>
                         <segue destination="iLx-RB-L79" kind="push" id="Ovh-nX-WHS"/>
                         <segue destination="7PH-hA-qZK" kind="push" id="vi4-mU-8e5"/>
@@ -256,6 +226,7 @@
                         <segue destination="dGE-ak-b0W" kind="push" id="qjl-2M-qWV"/>
                         <segue destination="ekd-5s-5Ad" kind="push" id="Cdc-ql-eiK"/>
                         <segue destination="Rx0-Ke-2LF" kind="push" id="RhC-st-506"/>
+                        <segue destination="04v-Vj-C5F" kind="relationship" relationship="rootViewController" id="W97-2L-tyH"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ddr-1k-EAs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -653,6 +624,100 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="62v-z4-0pT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1124" y="-581"/>
+        </scene>
+        <!--Courselist i Phone Table View Controller-->
+        <scene sceneID="gLk-iO-jaQ">
+            <objects>
+                <viewController storyboardIdentifier="CourseList" useStoryboardIdentifierAsRestorationIdentifier="YES" id="04v-Vj-C5F" customClass="courselist_iPhoneTableViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ded-4h-MKI"/>
+                        <viewControllerLayoutGuide type="bottom" id="zWf-AU-za2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fms-a7-HCk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="QHw-Rg-c2U">
+                                <rect key="frame" x="0.0" y="64" width="320" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="All"/>
+                                    <segment title="Free"/>
+                                    <segment title="Paid"/>
+                                </segments>
+                                <connections>
+                                    <action selector="course_type:" destination="04v-Vj-C5F" eventType="valueChanged" id="5Yh-t8-eBN"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="139" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qrp-nm-sah">
+                                <rect key="frame" x="0.0" y="93" width="320" height="475"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CourseList" rowHeight="139" id="TTW-zo-OKU" customClass="CourseDesignTableViewCell">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="139"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TTW-zo-OKU" id="N7H-Qz-3fe">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="138"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="201" translatesAutoresizingMaskIntoConstraints="NO" id="Vyp-mR-qRS">
+                                                    <rect key="frame" x="9" y="7" width="201" height="59"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcK-hN-xRF">
+                                                    <rect key="frame" x="9" y="63" width="201" height="26"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f78-a0-SSf">
+                                                    <rect key="frame" x="9" y="102" width="130" height="26"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8LS-rH-4Ra">
+                                                    <rect key="frame" x="218" y="7" width="94" height="94"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kvE-m6-GSd">
+                                                    <rect key="frame" x="180" y="109" width="132" height="23"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="authorname" destination="hcK-hN-xRF" id="kmH-BN-MBw"/>
+                                            <outlet property="coursename" destination="Vyp-mR-qRS" id="PfJ-sw-Hdb"/>
+                                            <outlet property="cover" destination="8LS-rH-4Ra" id="pUL-ck-Xy7"/>
+                                            <outlet property="price" destination="f78-a0-SSf" id="nGZ-bJ-QjX"/>
+                                            <outlet property="review" destination="kvE-m6-GSd" id="w7V-Nf-soo"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="04v-Vj-C5F" id="nrB-bV-CMb"/>
+                                    <outlet property="delegate" destination="04v-Vj-C5F" id="P3u-k4-yeJ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Hbb-gi-Co1"/>
+                    <connections>
+                        <outlet property="course_type" destination="QHw-Rg-c2U" id="vLf-Jr-PUI"/>
+                        <outlet property="tableView" destination="qrp-nm-sah" id="oPO-6l-kO0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pUV-jc-b6e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-825" y="-2135"/>
         </scene>
     </scenes>
     <resources>
