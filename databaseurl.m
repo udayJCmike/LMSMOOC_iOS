@@ -76,15 +76,71 @@ static databaseurl * appInstance;
 -(BOOL)validatePasswordForSignupPage:(NSString *)password
 
 {
-    NSString *userFormat1 =@"[A-Za-z0-9@]{4,32}";
-    //[(UITextField*)[self.view viewWithTag:101] resignFirstResponder];
-    NSPredicate *test = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", userFormat1];
-    return [test evaluateWithObject:password];
+    BOOL lowerCaseLetter=FALSE,upperCaseLetter=FALSE,digit=FALSE,specialCharacter=FALSE;
+    int asciiValue;
+    if(([password length] >= 8) && ([password length] <=25 ))
+    {
+        for (int i = 0; i < [password length]; i++)
+        {
+            unichar c = [password characterAtIndex:i];
+            if(!lowerCaseLetter)
+            {
+                lowerCaseLetter = [[NSCharacterSet lowercaseLetterCharacterSet] characterIsMember:c];
+            }
+            if(!upperCaseLetter)
+            {
+                upperCaseLetter = [[NSCharacterSet uppercaseLetterCharacterSet] characterIsMember:c];
+            }
+            if(!digit)
+            {
+                digit = [[NSCharacterSet decimalDigitCharacterSet] characterIsMember:c];
+            }
+            
+            asciiValue = [password characterAtIndex:i];
+            if(!specialCharacter)
+            {
+                if(asciiValue >=33 && asciiValue <= 47)
+                {
+                    specialCharacter=1;
+                }
+                else if (asciiValue>=58 && asciiValue<=64)
+                    specialCharacter=1;
+                else if (asciiValue>=91 && asciiValue<=96)
+                    specialCharacter=1;
+                else
+                {
+                    //NSLog(@"else block");
+                    specialCharacter=0;
+                }
+
+            }
+          //  NSLog(@"ascii value---%d",asciiValue);
+            
+        }
+        
+        if(specialCharacter && digit && (lowerCaseLetter || upperCaseLetter))
+        {
+            //do what u want
+          //  NSLog(@"Valid Password %d %d %d %d",specialCharacter,digit,lowerCaseLetter,upperCaseLetter);
+             return YES;
+        }
+        else
+        {
+            // NSLog(@"inValid Password %d %d %d %d",specialCharacter,digit,lowerCaseLetter,upperCaseLetter);
+             return NO;
+            
+        }
+    }
+    else return NO;
+//    NSString *userFormat1 =@"[A-Za-z0-9@]{4,24}";
+//    //[(UITextField*)[self.view viewWithTag:101] resignFirstResponder];
+//    NSPredicate *test = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", userFormat1];
+//    return [test evaluateWithObject:password];
 }
 -(BOOL)validateNameForSignupPage:(NSString *)firstname
 
 {
-    NSString *userFormat1 =@"[A-Za-z ]{4,32}";
+    NSString *userFormat1 =@"[A-Za-z ]{3,15}";
     //[(UITextField*)[self.view viewWithTag:101] resignFirstResponder];
     NSPredicate *test = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", userFormat1];
     return [test evaluateWithObject:firstname];
@@ -92,7 +148,7 @@ static databaseurl * appInstance;
 
 -(BOOL)validateUserNameForSignupPage:(NSString *)firstname
 {
-    NSString *userFormat1 =@"[A-Za-z 0-9]{6,32}";
+    NSString *userFormat1 =@"[A-Za-z0-9@_-]{6,25}";
     //[(UITextField*)[self.view viewWithTag:101] resignFirstResponder];
     NSPredicate *test = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", userFormat1];
     return [test evaluateWithObject:firstname];
@@ -188,7 +244,9 @@ static databaseurl * appInstance;
     NSData *returnData = [ NSURLConnection sendSynchronousRequest:request returningResponse: nil error: nil ];
     NSString *returnString = [[NSString alloc]initWithData:returnData encoding:NSUTF8StringEncoding];
     NSError *err = nil;
+     // NSLog(@"return string res %@",returnString);
     NSMutableArray *search = [NSJSONSerialization JSONObjectWithData:[returnString dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:&err];
+   // NSLog(@"search res %@",search);
     return search;
 }
 @end

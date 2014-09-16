@@ -14,6 +14,7 @@
 #import "SBJSON.h"
 #import "CourseDesignTableViewCell.h"
 #import "UIButton+Bootstrap.h"
+#import "CategorywiseDatasViewController.h"
 @interface courselist_iPhoneTableViewController : UIViewController<MBProgressHUDDelegate,UITableViewDataSource,UITableViewDelegate>
 {
     UIView* footerView;
@@ -31,6 +32,7 @@
 @property (retain, nonatomic) IBOutlet UITableView *tableView;
 @property (retain, nonatomic)  NSOperationQueue *imageOperationQueue;
 @property (retain, nonatomic)    NSCache *imageCache;
-
+@property (retain, nonatomic) IBOutlet UITableView *category_tableView;
+@property(retain,nonatomic)NSMutableArray *categorylist;
 
 @end

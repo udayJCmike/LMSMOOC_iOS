@@ -26,6 +26,14 @@
 		0DAFD02419BEC75500A1E509 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DAFD00319BEC75500A1E509 /* UIKit.framework */; };
 		0DAFD02C19BEC75500A1E509 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0DAFD02A19BEC75500A1E509 /* InfoPlist.strings */; };
 		0DAFD02E19BEC75500A1E509 /* LMSMOOCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DAFD02D19BEC75500A1E509 /* LMSMOOCTests.m */; };
+		84082A5519C802960039F4E8 /* CategorywiseDatasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84082A5419C802960039F4E8 /* CategorywiseDatasViewController.m */; };
+		84082A5819C80F1E0039F4E8 /* CourseSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84082A5719C80F1E0039F4E8 /* CourseSearchViewController.m */; };
+		84082A5A19C80FF30039F4E8 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 84082A5919C80FF30039F4E8 /* search.png */; };
+		84082A6219C834490039F4E8 /* btn_close_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 84082A5C19C834490039F4E8 /* btn_close_normal.png */; };
+		84082A6319C834490039F4E8 /* btn_close_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84082A5D19C834490039F4E8 /* btn_close_normal@2x.png */; };
+		84082A6419C834490039F4E8 /* btn_close_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 84082A5E19C834490039F4E8 /* btn_close_selected.png */; };
+		84082A6519C834490039F4E8 /* btn_close_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84082A5F19C834490039F4E8 /* btn_close_selected@2x.png */; };
+		84082A6619C834490039F4E8 /* DXAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84082A6119C834490039F4E8 /* DXAlertView.m */; };
 		840B832319BEE58F0065B678 /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840B832219BEE58F0065B678 /* PageContentViewController.m */; };
 		840B832F19BF074F0065B678 /* LoginPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840B832E19BF074F0065B678 /* LoginPageViewController.m */; };
 		840B833419BF0BC80065B678 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840B833319BF0BC80065B678 /* SignupViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -129,6 +137,17 @@
 		0DAFD02B19BEC75500A1E509 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0DAFD02D19BEC75500A1E509 /* LMSMOOCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMSMOOCTests.m; sourceTree = "<group>"; };
 		0DE658D719C4515C00E8604D /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
+		84082A5319C802960039F4E8 /* CategorywiseDatasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategorywiseDatasViewController.h; sourceTree = "<group>"; };
+		84082A5419C802960039F4E8 /* CategorywiseDatasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategorywiseDatasViewController.m; sourceTree = "<group>"; };
+		84082A5619C80F1E0039F4E8 /* CourseSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseSearchViewController.h; sourceTree = "<group>"; };
+		84082A5719C80F1E0039F4E8 /* CourseSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseSearchViewController.m; sourceTree = "<group>"; };
+		84082A5919C80FF30039F4E8 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
+		84082A5C19C834490039F4E8 /* btn_close_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_close_normal.png; sourceTree = "<group>"; };
+		84082A5D19C834490039F4E8 /* btn_close_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_close_normal@2x.png"; sourceTree = "<group>"; };
+		84082A5E19C834490039F4E8 /* btn_close_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_close_selected.png; sourceTree = "<group>"; };
+		84082A5F19C834490039F4E8 /* btn_close_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_close_selected@2x.png"; sourceTree = "<group>"; };
+		84082A6019C834490039F4E8 /* DXAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXAlertView.h; sourceTree = "<group>"; };
+		84082A6119C834490039F4E8 /* DXAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXAlertView.m; sourceTree = "<group>"; };
 		840B832119BEE58F0065B678 /* PageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
 		840B832219BEE58F0065B678 /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
 		840B832D19BF074F0065B678 /* LoginPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginPageViewController.h; sourceTree = "<group>"; };
@@ -274,7 +293,11 @@
 		0DAFCFF319BEC75500A1E509 = {
 			isa = PBXGroup;
 			children = (
-				84CBD4FA19C730A100CB50D1 /* CourseList */,
+				84F59B7619C2FF3F009EF252 /* MailList */,
+				84F59B7719C2FF56009EF252 /* ProfileUpdate */,
+				84082A6719C840900039F4E8 /* CourseList_iPad */,
+				84082A5B19C8342F0039F4E8 /* ALERTVIEW */,
+				84CBD4FA19C730A100CB50D1 /* CourseList_iPhone */,
 				0D3C958F19C31EED0065A4B4 /* Bootstrap */,
 				84F59B6019C2AD4D009EF252 /* Button Customize */,
 				84F59B5F19C2AAE9009EF252 /* Update Password */,
@@ -372,6 +395,30 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		84082A5B19C8342F0039F4E8 /* ALERTVIEW */ = {
+			isa = PBXGroup;
+			children = (
+				84082A5C19C834490039F4E8 /* btn_close_normal.png */,
+				84082A5D19C834490039F4E8 /* btn_close_normal@2x.png */,
+				84082A5E19C834490039F4E8 /* btn_close_selected.png */,
+				84082A5F19C834490039F4E8 /* btn_close_selected@2x.png */,
+				84082A6019C834490039F4E8 /* DXAlertView.h */,
+				84082A6119C834490039F4E8 /* DXAlertView.m */,
+			);
+			name = ALERTVIEW;
+			sourceTree = "<group>";
+		};
+		84082A6719C840900039F4E8 /* CourseList_iPad */ = {
+			isa = PBXGroup;
+			children = (
+				847635E919C077BF00F45CEF /* CollectionCellContent.h */,
+				847635EA19C077BF00F45CEF /* CollectionCellContent.m */,
+				84FC7DD219C0242B0001FD7C /* Courselist_iPad_ViewController.h */,
+				84FC7DD319C0242B0001FD7C /* Courselist_iPad_ViewController.m */,
+			);
+			name = CourseList_iPad;
+			sourceTree = "<group>";
+		};
 		840B832419BEE5950065B678 /* PageContent */ = {
 			isa = PBXGroup;
 			children = (
@@ -412,15 +459,20 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
-		84CBD4FA19C730A100CB50D1 /* CourseList */ = {
+		84CBD4FA19C730A100CB50D1 /* CourseList_iPhone */ = {
 			isa = PBXGroup;
 			children = (
+				84082A5919C80FF30039F4E8 /* search.png */,
+				84082A5619C80F1E0039F4E8 /* CourseSearchViewController.h */,
+				84082A5719C80F1E0039F4E8 /* CourseSearchViewController.m */,
+				84082A5319C802960039F4E8 /* CategorywiseDatasViewController.h */,
+				84082A5419C802960039F4E8 /* CategorywiseDatasViewController.m */,
 				84CBD4FB19C730C500CB50D1 /* CourseDesignTableViewCell.h */,
 				84CBD4FC19C730C500CB50D1 /* CourseDesignTableViewCell.m */,
 				84CBD4FD19C730C500CB50D1 /* courselist_iPhoneTableViewController.h */,
 				84CBD4FE19C730C500CB50D1 /* courselist_iPhoneTableViewController.m */,
 			);
-			name = CourseList;
+			name = CourseList_iPhone;
 			sourceTree = "<group>";
 		};
 		84F59B5E19C2AAD2009EF252 /* Avatar Download */ = {
@@ -541,8 +593,6 @@
 		84FC7DD519C024330001FD7C /* iPhone_menulist */ = {
 			isa = PBXGroup;
 			children = (
-				84F59B7719C2FF56009EF252 /* ProfileUpdate */,
-				84F59B7619C2FF3F009EF252 /* MailList */,
 				84FC7DD719C02B360001FD7C /* BillingTableViewController.h */,
 				84FC7DD819C02B360001FD7C /* BillingTableViewController.m */,
 				84FC7DCC19C023F30001FD7C /* MyauthorsTableViewController.h */,
@@ -560,10 +610,6 @@
 		84FC7DD619C0244A0001FD7C /* iPad_menulist */ = {
 			isa = PBXGroup;
 			children = (
-				847635E919C077BF00F45CEF /* CollectionCellContent.h */,
-				847635EA19C077BF00F45CEF /* CollectionCellContent.m */,
-				84FC7DD219C0242B0001FD7C /* Courselist_iPad_ViewController.h */,
-				84FC7DD319C0242B0001FD7C /* Courselist_iPad_ViewController.m */,
 				847635E619C0735900F45CEF /* Myfavorites_iPadViewController.h */,
 				847635E719C0735900F45CEF /* Myfavorites_iPadViewController.m */,
 				847635E319C0733C00F45CEF /* Mycourses_iPadViewController.h */,
@@ -663,20 +709,25 @@
 				845B10A219BF2D5B00AAE3E4 /* checkBox@2x.png in Resources */,
 				847635DD19C03FCC00F45CEF /* bantab3.png in Resources */,
 				847635ED19C07CFC00F45CEF /* menu_icon.png in Resources */,
+				84082A6519C834490039F4E8 /* btn_close_selected@2x.png in Resources */,
+				84082A6219C834490039F4E8 /* btn_close_normal.png in Resources */,
 				847635D719C03FCC00F45CEF /* ban1.png in Resources */,
 				844A9CB619C1A2BB000A5449 /* placeholder.png in Resources */,
 				847635DE19C03FCC00F45CEF /* bantab4.png in Resources */,
 				84FC7D9A19C017880001FD7C /* Dashboard_iPad.storyboard in Resources */,
 				84F59B6B19C2AE28009EF252 /* bantab5.png in Resources */,
+				84082A6419C834490039F4E8 /* btn_close_selected.png in Resources */,
 				845B10A419BF2D5B00AAE3E4 /* checkBoxMarked@2x.png in Resources */,
 				84FC7DB919C01C680001FD7C /* Avatar-female.png in Resources */,
 				0D3C958E19C31C9C0065A4B4 /* bg.jpg in Resources */,
 				0D2E930B19C42C00005C4E67 /* unimportant.png in Resources */,
+				84082A6319C834490039F4E8 /* btn_close_normal@2x.png in Resources */,
 				847635DC19C03FCC00F45CEF /* bantab2.png in Resources */,
 				0D3C959719C329C80065A4B4 /* edit.png in Resources */,
 				84F59B6A19C2AE28009EF252 /* ban5.png in Resources */,
 				844A9CB819C1A765000A5449 /* photo-frame.png in Resources */,
 				847635D819C03FCC00F45CEF /* ban2.png in Resources */,
+				84082A5A19C80FF30039F4E8 /* search.png in Resources */,
 				847635D919C03FCC00F45CEF /* ban3.png in Resources */,
 				84F59B6619C2AD89009EF252 /* Main_iPad.storyboard in Resources */,
 				0DAFD00A19BEC75500A1E509 /* InfoPlist.strings in Resources */,
@@ -709,6 +760,7 @@
 				847635E519C0733C00F45CEF /* Mycourses_iPadViewController.m in Sources */,
 				84FC7DDC19C02E4A0001FD7C /* DashboardcontainerViewController.m in Sources */,
 				84FC7D9619C0064E0001FD7C /* SBJsonWriter.m in Sources */,
+				84082A5519C802960039F4E8 /* CategorywiseDatasViewController.m in Sources */,
 				0D3C959419C31EFB0065A4B4 /* NSString+FontAwesome.m in Sources */,
 				840B833419BF0BC80065B678 /* SignupViewController.m in Sources */,
 				0DAFD00C19BEC75500A1E509 /* main.m in Sources */,
@@ -737,8 +789,10 @@
 				0D3C959519C31EFB0065A4B4 /* UIButton+Bootstrap.m in Sources */,
 				0DAFD01019BEC75500A1E509 /* lmsmoocAppDelegate.m in Sources */,
 				0DAFD01919BEC75500A1E509 /* lmsmoocViewController.m in Sources */,
+				84082A6619C834490039F4E8 /* DXAlertView.m in Sources */,
 				84FC7DBC19C021180001FD7C /* ProfileUpdateViewController.m in Sources */,
 				84F59B6319C2AD5A009EF252 /* APRoundedButton.m in Sources */,
+				84082A5819C80F1E0039F4E8 /* CourseSearchViewController.m in Sources */,
 				84FC7DC519C023B80001FD7C /* MycoursesTableViewController.m in Sources */,
 				84FC7D8F19C0064E0001FD7C /* MBProgressHUD.m in Sources */,
 				84FC7DC819C023C70001FD7C /* MyfavoritesTableViewController.m in Sources */,

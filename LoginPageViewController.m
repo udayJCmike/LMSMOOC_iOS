@@ -12,6 +12,7 @@
 #import "MBProgressHUD.h"
 #import "lmsmoocAppDelegate.h"
 #import "UIButton+Bootstrap.h"
+#import "DXAlertView.h"
 #define  AppDelegate (lmsmoocAppDelegate *)[[UIApplication sharedApplication] delegate]
 @interface LoginPageViewController ()
 {
@@ -80,6 +81,14 @@
         ([password.text length]==0))
     {
         c=0;
+        DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"Info" contentText:@"Enter username and password." leftButtonTitle:nil rightButtonTitle:@"Close"];
+        [alert show];
+        alert.rightBlock = ^() {
+            
+        };
+        alert.dismissBlock = ^() {
+            
+        };
        
     }
     else if (([username.text length]>0) &&
@@ -87,7 +96,15 @@
         
     {
         c=0;
-        NSLog(@"Enter password");
+        DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"Info" contentText:@"Enter the password." leftButtonTitle:nil rightButtonTitle:@"Close"];
+        [alert show];
+        alert.rightBlock = ^() {
+          
+        };
+        alert.dismissBlock = ^() {
+           
+        };
+
         
         
     }
@@ -97,7 +114,14 @@
              ([password.text length]>0))
     {
         c=0;
-        NSLog(@"Enter usrname");
+        DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"Info" contentText:@"Enter the username." leftButtonTitle:nil rightButtonTitle:@"Close"];
+        [alert show];
+        alert.rightBlock = ^() {
+            
+        };
+        alert.dismissBlock = ^() {
+            
+        };
         
     }
     else
@@ -232,8 +256,15 @@
                 
                 
                 [HUD hide:YES];
-                NSLog(@"invalid username or password");
-                
+               // NSLog(@"invalid username or password");
+                DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"Sorry User!" contentText:@"Invalid username or password." leftButtonTitle:nil rightButtonTitle:@"Close"];
+                [alert show];
+                alert.rightBlock = ^() {
+                    
+                };
+                alert.dismissBlock = ^() {
+                    
+                };
                 username.text=@"";
                 password.text=@"";
                 
