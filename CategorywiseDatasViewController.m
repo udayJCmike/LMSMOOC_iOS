@@ -14,6 +14,7 @@
 
 @implementation CategorywiseDatasViewController
 @synthesize categoryname;
+int loadcompleted;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -29,6 +30,7 @@
     NSLog(@"catergory name received %@",categoryname);
     self.navigationItem.title=categoryname;
     offset=0;
+    loadcompleted=0;
     courselist=[[NSMutableArray alloc]init];
     du=[[databaseurl alloc]init];
     delegate=AppDelegate;
@@ -69,6 +71,7 @@
 {
     [super viewDidDisappear:animated];
     offset=0;
+    loadcompleted=0;
     [courselist removeAllObjects];
     [_imageOperationQueue cancelAllOperations];
     
@@ -111,6 +114,7 @@
     }
     else
     {
+        loadcompleted=1;
         NSLog(@"No Datas found");
     }
     offset+=10;
@@ -189,8 +193,12 @@
         }
         
         
-        if (indexPath.row == [courselist count] - 1)
+    if (indexPath.row == [courselist count] - 1)
+    {
+        if (loadcompleted!=1) {
             [self loadDatas];
+        }
+    }
         return cell;
    
     

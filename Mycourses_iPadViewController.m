@@ -78,9 +78,9 @@
     
     CollectionCellContent *cell = (CollectionCellContent*)[collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     
-    cell.Bgimage.image = [UIImage imageNamed:[courseImages objectAtIndex:indexPath.row]];
+    cell.cover.image = [UIImage imageNamed:[courseImages objectAtIndex:indexPath.row]];
     //  cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"photo-frame.png"]];
-    cell.ftext.text=[NSString stringWithFormat:@"%@",[courselist objectAtIndex:indexPath.row]];
+    cell.coursename.text=[NSString stringWithFormat:@"%@",[courselist objectAtIndex:indexPath.row]];
     if(indexPath.row==courselist.count-1)
     {
         //do code for loading additional datas...

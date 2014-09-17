@@ -9,8 +9,11 @@
 #import "CollectionCellContent.h"
 
 @implementation CollectionCellContent
-@synthesize Bgimage;
-@synthesize ftext;
+@synthesize coursename;
+@synthesize cover;
+@synthesize authorname;
+@synthesize price;
+@synthesize review;
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];

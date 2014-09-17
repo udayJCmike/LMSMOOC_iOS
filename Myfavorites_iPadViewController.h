@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "CollectionCellContent.h"
 #import "REFrostedViewController.h"
-@interface Myfavorites_iPadViewController : UICollectionViewController
+#import "MBProgressHUD.h"
+@interface Myfavorites_iPadViewController : UIViewController<MBProgressHUDDelegate,UICollectionViewDataSource,UICollectionViewDelegate>
 {
     NSArray *courselist;
     NSArray *courseImages;

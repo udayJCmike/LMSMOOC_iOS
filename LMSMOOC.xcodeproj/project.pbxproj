@@ -61,6 +61,9 @@
 		8476E7F419C17EE8002DB513 /* AvatarImagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476E7F319C17EE8002DB513 /* AvatarImagesViewController.m */; };
 		84CBD4FF19C730C500CB50D1 /* CourseDesignTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CBD4FC19C730C500CB50D1 /* CourseDesignTableViewCell.m */; };
 		84CBD50019C730C500CB50D1 /* courselist_iPhoneTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CBD4FE19C730C500CB50D1 /* courselist_iPhoneTableViewController.m */; };
+		84E52CBD19C9B2440042D07A /* CategorywiseDatasiPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E52CBC19C9B2440042D07A /* CategorywiseDatasiPadViewController.m */; };
+		84E52CC019C9B7050042D07A /* CourseSearchiPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E52CBF19C9B7050042D07A /* CourseSearchiPadViewController.m */; };
+		84E52CC319C9D0A90042D07A /* categorypopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E52CC219C9D0A90042D07A /* categorypopoverViewController.m */; };
 		84F59B6319C2AD5A009EF252 /* APRoundedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F59B6219C2AD5A009EF252 /* APRoundedButton.m */; };
 		84F59B6619C2AD89009EF252 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F59B6419C2AD89009EF252 /* Main_iPad.storyboard */; };
 		84F59B6719C2AD89009EF252 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F59B6519C2AD89009EF252 /* Main_iPhone.storyboard */; };
@@ -186,6 +189,12 @@
 		84CBD4FC19C730C500CB50D1 /* CourseDesignTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseDesignTableViewCell.m; sourceTree = "<group>"; };
 		84CBD4FD19C730C500CB50D1 /* courselist_iPhoneTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = courselist_iPhoneTableViewController.h; sourceTree = "<group>"; };
 		84CBD4FE19C730C500CB50D1 /* courselist_iPhoneTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = courselist_iPhoneTableViewController.m; sourceTree = "<group>"; };
+		84E52CBB19C9B2440042D07A /* CategorywiseDatasiPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategorywiseDatasiPadViewController.h; sourceTree = "<group>"; };
+		84E52CBC19C9B2440042D07A /* CategorywiseDatasiPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategorywiseDatasiPadViewController.m; sourceTree = "<group>"; };
+		84E52CBE19C9B7050042D07A /* CourseSearchiPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseSearchiPadViewController.h; sourceTree = "<group>"; };
+		84E52CBF19C9B7050042D07A /* CourseSearchiPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseSearchiPadViewController.m; sourceTree = "<group>"; };
+		84E52CC119C9D0A80042D07A /* categorypopoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = categorypopoverViewController.h; sourceTree = "<group>"; };
+		84E52CC219C9D0A90042D07A /* categorypopoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = categorypopoverViewController.m; sourceTree = "<group>"; };
 		84F59B6119C2AD5A009EF252 /* APRoundedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APRoundedButton.h; sourceTree = "<group>"; };
 		84F59B6219C2AD5A009EF252 /* APRoundedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APRoundedButton.m; sourceTree = "<group>"; };
 		84F59B6419C2AD89009EF252 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
@@ -411,10 +420,16 @@
 		84082A6719C840900039F4E8 /* CourseList_iPad */ = {
 			isa = PBXGroup;
 			children = (
+				84E52CC119C9D0A80042D07A /* categorypopoverViewController.h */,
+				84E52CC219C9D0A90042D07A /* categorypopoverViewController.m */,
 				847635E919C077BF00F45CEF /* CollectionCellContent.h */,
 				847635EA19C077BF00F45CEF /* CollectionCellContent.m */,
 				84FC7DD219C0242B0001FD7C /* Courselist_iPad_ViewController.h */,
 				84FC7DD319C0242B0001FD7C /* Courselist_iPad_ViewController.m */,
+				84E52CBB19C9B2440042D07A /* CategorywiseDatasiPadViewController.h */,
+				84E52CBC19C9B2440042D07A /* CategorywiseDatasiPadViewController.m */,
+				84E52CBE19C9B7050042D07A /* CourseSearchiPadViewController.h */,
+				84E52CBF19C9B7050042D07A /* CourseSearchiPadViewController.m */,
 			);
 			name = CourseList_iPad;
 			sourceTree = "<group>";
@@ -760,6 +775,7 @@
 				847635E519C0733C00F45CEF /* Mycourses_iPadViewController.m in Sources */,
 				84FC7DDC19C02E4A0001FD7C /* DashboardcontainerViewController.m in Sources */,
 				84FC7D9619C0064E0001FD7C /* SBJsonWriter.m in Sources */,
+				84E52CC019C9B7050042D07A /* CourseSearchiPadViewController.m in Sources */,
 				84082A5519C802960039F4E8 /* CategorywiseDatasViewController.m in Sources */,
 				0D3C959419C31EFB0065A4B4 /* NSString+FontAwesome.m in Sources */,
 				840B833419BF0BC80065B678 /* SignupViewController.m in Sources */,
@@ -783,7 +799,9 @@
 				847635EB19C077BF00F45CEF /* CollectionCellContent.m in Sources */,
 				84FC7DC219C023A80001FD7C /* MailinboxTableViewController.m in Sources */,
 				84FC7D9019C0064E0001FD7C /* NSObject+SBJSON.m in Sources */,
+				84E52CBD19C9B2440042D07A /* CategorywiseDatasiPadViewController.m in Sources */,
 				84F59B7119C2FC37009EF252 /* MAILinboxTableViewCell.m in Sources */,
+				84E52CC319C9D0A90042D07A /* categorypopoverViewController.m in Sources */,
 				84CBD4FF19C730C500CB50D1 /* CourseDesignTableViewCell.m in Sources */,
 				840B832F19BF074F0065B678 /* LoginPageViewController.m in Sources */,
 				0D3C959519C31EFB0065A4B4 /* UIButton+Bootstrap.m in Sources */,

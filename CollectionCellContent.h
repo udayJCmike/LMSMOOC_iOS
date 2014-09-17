@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface CollectionCellContent : UICollectionViewCell
-@property (retain, nonatomic) IBOutlet UIImageView *Bgimage;
-@property (retain, nonatomic) IBOutlet UILabel *ftext;
+@property (retain, nonatomic) IBOutlet UILabel *coursename;
+@property (retain, nonatomic) IBOutlet UILabel *authorname;
+@property (retain, nonatomic) IBOutlet UILabel *price;
+@property (retain, nonatomic) IBOutlet UIImageView *cover;
+@property (retain, nonatomic) IBOutlet UIImageView *review;
 
 @end

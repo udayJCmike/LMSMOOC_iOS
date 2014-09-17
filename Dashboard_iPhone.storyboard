@@ -739,6 +739,7 @@
                                     <segment title="Paid"/>
                                     <segment title="Category"/>
                                 </segments>
+                                <color key="tintColor" red="0.25882352939999997" green="0.5450980392" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="course_type:" destination="04v-Vj-C5F" eventType="valueChanged" id="5Yh-t8-eBN"/>
                                 </connections>

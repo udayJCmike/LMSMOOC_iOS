@@ -1,20 +1,19 @@
 //
-//  CourseSearchViewController.m
+//  CategorywiseDatasiPadViewController.m
 //  LMSMOOC
 //
-//  Created by DeemsysInc on 16/09/14.
+//  Created by DeemsysInc on 17/09/14.
 //  Copyright (c) 2014 deemsys. All rights reserved.
 //
 
-#import "CourseSearchViewController.h"
+#import "CategorywiseDatasiPadViewController.h"
 #define  AppDelegate (lmsmoocAppDelegate *)[[UIApplication sharedApplication] delegate]
-
-@interface CourseSearchViewController ()
+@interface CategorywiseDatasiPadViewController ()
 
 @end
 
-@implementation CourseSearchViewController
-@synthesize coursename;
+@implementation CategorywiseDatasiPadViewController
+@synthesize categoryname;
 int loadcompleted;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,35 +27,23 @@ int loadcompleted;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog(@"catergory name received %@",categoryname);
+    self.navigationItem.title=categoryname;
     offset=0;
     loadcompleted=0;
     courselist=[[NSMutableArray alloc]init];
     du=[[databaseurl alloc]init];
     delegate=AppDelegate;
-        _imageOperationQueue = [[NSOperationQueue alloc]init];
-    _imageOperationQueue.maxConcurrentOperationCount = 4;
-    self.imageCache = [[NSCache alloc] init];
-   
-
-}
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    [textField resignFirstResponder];
     HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
     [self.navigationController.view addSubview:HUD];
     HUD.delegate = self;
     HUD.labelText = @"Please wait...";
     [HUD show:YES];
-    if ([textField.text length]>0) {
-        offset=0;
-        loadcompleted=0;
-        [courselist removeAllObjects];
-        [_imageOperationQueue cancelAllOperations];
-        [self loadDatas];
-    }
-    return YES;
+    _imageOperationQueue = [[NSOperationQueue alloc]init];
+    _imageOperationQueue.maxConcurrentOperationCount = 4;
+    self.imageCache = [[NSCache alloc] init];
+    [self loadDatas];
 }
-
 -(void)loadDatas
 {
     if ([[du submitvalues]isEqualToString:@"Success"])
@@ -78,17 +65,24 @@ int loadcompleted;
     }
     
 }
-
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    offset=0;
+    loadcompleted=0;
+    [courselist removeAllObjects];
+    [_imageOperationQueue cancelAllOperations];
+    
+}
 -(void)getCourseList
 {
     
-    du=[[databaseurl alloc]init];
-   
-    NSString *urltemp=[[databaseurl sharedInstance]DBurl];
-    NSString *url1=@"CourseSearch.php";
-  NSString *course= [coursename.text stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
     
-    NSString *URLString=[NSString stringWithFormat:@"%@%@?offset=%d&course=%@",urltemp,url1,offset,course];
+    
+    NSString *urltemp=[[databaseurl sharedInstance]DBurl];
+    NSString *url1=@"CategorywiseDatas.php";
+    
+    NSString *URLString=[NSString stringWithFormat:@"%@%@?offset=%d&category=%@",urltemp,url1,offset,categoryname];
     
     NSMutableArray *search = [du MultipleCharacters:URLString];
     
@@ -110,51 +104,52 @@ int loadcompleted;
             
             
         }
-        [self.tableView reloadData];
-        if (![HUD isHidden]) {
-            [HUD hide:YES];
-        }
-       // NSLog(@"arrat Datas found---- %@",courselist);
+   
+      
+        
     }
     else
     {
         loadcompleted=1;
         NSLog(@"No Datas found");
     }
-    offset+=10;
-    
     if (![HUD isHidden]) {
         [HUD hide:YES];
     }
+    offset+=10;
     
+    
+    [self performSelector:@selector(reloaddatas) withObject:nil afterDelay:1.0f];
     
     
 }
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    
-    // Return the number of sections.
-    return 1;
-}
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+-(void)reloaddatas
 {
-    
-    return [courselist count];
-    
-    // Return the number of rows in the section.
-    
+    [self.ipadcollection reloadData];
+}
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    return courselist.count;
 }
 
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    //     NSMutableArray *indexPaths = [NSMutableArray arrayWithObject:indexPath];
+    NSLog(@"clicked at index %d",indexPath.row);
+    NSDictionary *temp=[courselist objectAtIndex:indexPath.row];
+    NSString *url=[NSString stringWithFormat:@"http://208.109.248.89:8085/OnlineCourse/student_view_Course?course_id=%@&authorid=%@&pur=%@&catcourse=&coursetype=",[temp objectForKey:@"course_id"], [temp objectForKey:@"instructor_id"],[temp objectForKey:@"numofpurchased"]];
+    // NSLog(@"URL %@",url);
+    [[UIApplication sharedApplication]openURL:[NSURL URLWithString:url]];
+}
+
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *identifier = @"CourseList";
     
     
-    CourseDesignTableViewCell *cell = (CourseDesignTableViewCell*)[self.tableView dequeueReusableCellWithIdentifier:@"CourseList" forIndexPath:indexPath];
+    CollectionCellContent *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     NSDictionary *course;
-    
-    
     course=[courselist objectAtIndex:indexPath.row];
     cell.coursename.text=[course objectForKey:@"course_name"];
     cell.authorname.text=[course objectForKey:@"course_author"];
@@ -180,17 +175,15 @@ int loadcompleted;
             
             if (img != nil) {
                 
-                // update cache
+                
                 [self.imageCache setObject:img forKey:imageUrlString];
                 
-                // now update UI in main queue
+                
                 [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                    // see if the cell is still visible ... it's possible the user has scrolled the cell so it's no longer visible, but the cell has been reused for another indexPath
-                    CourseDesignTableViewCell *updateCell = (CourseDesignTableViewCell*)[self.tableView cellForRowAtIndexPath:indexPath];
                     
-                    // if so, update the image
+                    CollectionCellContent *updateCell = (CollectionCellContent*)[self.ipadcollection cellForItemAtIndexPath:indexPath];
                     if (updateCell) {
-                        // I don't know what you want to set this to, but make sure to set it appropriately for your cell; usually I don't mess with the frame.
+                        
                         [updateCell.cover setImage:img];
                     }
                 }];
@@ -202,26 +195,19 @@ int loadcompleted;
     if (indexPath.row == [courselist count] - 1)
     {
         if (loadcompleted!=1) {
-            [self loadDatas];
+            [self performSelector:@selector(loadDatas) withObject:nil afterDelay:1.0f];
         }
     }
+    
+    
+    
     return cell;
+    
     
     
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-    
-    
-    NSDictionary *temp=[courselist objectAtIndex:indexPath.row];
-    NSString *url=[NSString stringWithFormat:@"http://208.109.248.89:8085/OnlineCourse/student_view_Course?course_id=%@&authorid=%@&pur=%@&catcourse=&coursetype=",[temp objectForKey:@"course_id"], [temp objectForKey:@"instructor_id"],[temp objectForKey:@"numofpurchased"]];
-    // NSLog(@"URL %@",url);
-    [[UIApplication sharedApplication]openURL:[NSURL URLWithString:url]];
-    
-    
-}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -229,18 +215,14 @@ int loadcompleted;
 }
 
 /*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
- {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+#pragma mark - Navigation
 
-- (void)dealloc {
- 
-    [super dealloc];
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
 }
+*/
+
 @end

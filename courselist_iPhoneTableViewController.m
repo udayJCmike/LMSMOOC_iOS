@@ -13,6 +13,7 @@
 @end
 
 @implementation courselist_iPhoneTableViewController
+int loadcompleted;
 @synthesize tableView;
 @synthesize course_type;
 @synthesize category_tableView;
@@ -68,7 +69,7 @@
         [self.navigationController setNavigationBarHidden:NO animated:NO];
     }
   
-
+    loadcompleted=0;
   courselist=[[NSMutableArray alloc]init];
       freecourselist=[[NSMutableArray alloc]init];
       paidlist=[[NSMutableArray alloc]init];
@@ -177,10 +178,15 @@
             
         }
         [self.tableView reloadData];
-        if (![HUD isHidden]) {
-             [HUD hide:YES];
-        }
        
+       
+    }
+    else
+    {
+        loadcompleted=1;
+    }
+    if (![HUD isHidden]) {
+        [HUD hide:YES];
     }
     offset+=10;
 
@@ -225,6 +231,13 @@
         }
         
     }
+    else
+    {
+        loadcompleted=1;
+    }
+    if (![HUD isHidden]) {
+        [HUD hide:YES];
+    }
     offset_free+=10;
   
     
@@ -268,6 +281,13 @@
             [HUD hide:YES];
         }
         
+    }
+    else
+    {
+        loadcompleted=1;
+    }
+    if (![HUD isHidden]) {
+        [HUD hide:YES];
     }
     offset_paid+=10;
 
@@ -413,7 +433,11 @@
 
     
         if (indexPath.row == [courselist count] - 1)
-            [self loadDatas];
+        {
+            if (loadcompleted!=1) {
+                  [self loadDatas]; 
+            }
+        }
          return cell;
     }
     else
@@ -469,6 +493,7 @@
     if (sender.selectedSegmentIndex==0) {
         course_type_val=@"All";
         offset=0;
+        loadcompleted=0;
         [courselist removeAllObjects];
         [_imageOperationQueue cancelAllOperations];
         self.tableView.hidden=NO;
@@ -478,7 +503,9 @@
     }
     else  if (sender.selectedSegmentIndex==1) {
         course_type_val=@"Free";
-        offset_free=0;   [courselist removeAllObjects];
+        offset_free=0;
+        loadcompleted=0;
+        [courselist removeAllObjects];
         [_imageOperationQueue cancelAllOperations];
         self.tableView.hidden=NO;
         self.category_tableView.hidden=YES;
@@ -487,7 +514,9 @@
     }
     else  if (sender.selectedSegmentIndex==2) {
         course_type_val=@"Paid";
-        offset_paid=0;   [courselist removeAllObjects];
+        offset_paid=0;
+        loadcompleted=0;
+        [courselist removeAllObjects];
         self.tableView.hidden=NO;
         [_imageOperationQueue cancelAllOperations];
         self.category_tableView.hidden=YES;
@@ -498,7 +527,9 @@
         course_type_val=@"Category";
         self.tableView.hidden=YES;
         self.category_tableView.hidden=NO;
-        offset_paid=0;   [courselist removeAllObjects];
+        offset_paid=0;
+        loadcompleted=0;
+        [courselist removeAllObjects];
         [_imageOperationQueue cancelAllOperations];
         [self loadDatas];
         [self.category_tableView reloadData];
