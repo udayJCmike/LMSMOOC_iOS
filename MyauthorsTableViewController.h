@@ -1,3 +1,4 @@
+
 //
 //  MyauthorsTableViewController.h
 //  LMSMOOC
@@ -8,8 +9,20 @@
 
 #import <UIKit/UIKit.h>
 #import "REFrostedViewController.h"
-@interface MyauthorsTableViewController : UITableViewController
+#import "MBProgressHUD.h"
+#import "lmsmoocAppDelegate.h"
+#import "databaseurl.h"
+#import "SBJSON.h"
+#import "AuthorTableViewCell.h"
+#import "MyauthorcoursesViewController.h"
+#define  AppDelegate (lmsmoocAppDelegate *)[[UIApplication sharedApplication] delegate]
+@interface MyauthorsTableViewController : UITableViewController<MBProgressHUDDelegate>
 {
-    NSArray *myauthors;
+    NSMutableArray *myauthors;
+    MBProgressHUD *HUD;
+    databaseurl *du;
+    lmsmoocAppDelegate *delegate;
+ 
+
 }
 @end

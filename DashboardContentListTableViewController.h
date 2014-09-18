@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "BillingTableViewController.h"
 #import "MyauthorsTableViewController.h"
-#import "MycategoriesTableViewController.h"
-#import "MyfavoritesTableViewController.h"
-#import "MycoursesTableViewController.h"
+#import "MycategoriesViewController.h"
+#import "MycoursesViewController.h"
+#import "MyfavoritesViewController.h"
 #import "MailinboxTableViewController.h"
 #import "courselist_iPhoneTableViewController.h"
 #import "DashboardMainViewController.h"

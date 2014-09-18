@@ -1,0 +1,67 @@
+//
+//  BillingDetailViewController.m
+//  LMSMOOC
+//
+//  Created by DeemsysInc on 18/09/14.
+//  Copyright (c) 2014 deemsys. All rights reserved.
+//
+
+#import "BillingDetailViewController.h"
+
+@interface BillingDetailViewController ()
+
+@end
+
+@implementation BillingDetailViewController
+@synthesize authorname;
+@synthesize coursename;
+@synthesize dateofpurchase;
+@synthesize price;
+@synthesize promo;
+@synthesize reduction;
+@synthesize amountpaid;
+@synthesize transactiondate;
+@synthesize transactionid;
+@synthesize billdatas;
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    coursename.text=[billdatas valueForKey:@"course_name"];
+       authorname.text=[billdatas valueForKey:@"course_author"];
+       dateofpurchase.text=[billdatas valueForKey:@"purchased_date"];
+       price.text=[billdatas valueForKey:@"amount_paid"];
+       promo.text=[billdatas valueForKey:@"promocode"];
+       reduction.text=[billdatas valueForKey:@"reduction"];
+       amountpaid.text=[billdatas valueForKey:@"amount_paid"];
+       transactiondate.text=[billdatas valueForKey:@"transaction_date"];
+       transactionid.text=[billdatas valueForKey:@"transaction_id"];
+    
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+@end

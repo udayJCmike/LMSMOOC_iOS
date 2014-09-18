@@ -8,9 +8,19 @@
 
 #import <UIKit/UIKit.h>
 #import "REFrostedViewController.h"
-@interface BillingTableViewController : UITableViewController
+#import "MBProgressHUD.h"
+#import "lmsmoocAppDelegate.h"
+#import "databaseurl.h"
+#import "SBJSON.h"
+#import "BillingTableViewCell.h"
+#import "BillingDetailViewController.h"
+#define  AppDelegate (lmsmoocAppDelegate *)[[UIApplication sharedApplication] delegate]
+@interface BillingTableViewController : UITableViewController<MBProgressHUDDelegate>
 {
-    NSArray *billing;
+    NSMutableArray *billing;
+    MBProgressHUD *HUD;
+    databaseurl *du;
+    lmsmoocAppDelegate *delegate;
 }
-@property (retain, nonatomic) IBOutlet UIBarButtonItem *menuact;
+
 @end

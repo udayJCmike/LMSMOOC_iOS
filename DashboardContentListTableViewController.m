@@ -168,17 +168,17 @@
     }
     else if(indexPath.section == 0 && indexPath.row == 3) {
         
-        MycoursesTableViewController *secondViewController2 = [self.storyboard instantiateViewControllerWithIdentifier:@"mycourse"];
+        MycoursesViewController *secondViewController2 = [self.storyboard instantiateViewControllerWithIdentifier:@"mycourse"];
         navigationController.viewControllers = @[secondViewController2];
     }
     else if(indexPath.section == 0 && indexPath.row == 4) {
         
-        MyfavoritesTableViewController *secondViewController2 = [self.storyboard instantiateViewControllerWithIdentifier:@"myfavorites"];
+        MyfavoritesViewController *secondViewController2 = [self.storyboard instantiateViewControllerWithIdentifier:@"myfavorites"];
         navigationController.viewControllers = @[secondViewController2];
     }
     else if(indexPath.section == 0 && indexPath.row == 5) {
         
-        MycategoriesTableViewController *secondViewController2 = [self.storyboard instantiateViewControllerWithIdentifier:@"mycategories"];
+        MycategoriesViewController *secondViewController2 = [self.storyboard instantiateViewControllerWithIdentifier:@"mycategories"];
         navigationController.viewControllers = @[secondViewController2];
     }
     else if(indexPath.section == 0 && indexPath.row == 6) {

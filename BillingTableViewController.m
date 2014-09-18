@@ -27,7 +27,7 @@
 {
     [super viewDidLoad];
     
-    billing=[[NSArray alloc]initWithObjects:@"bill1",@"bill 2", nil];
+    billing=[[NSMutableArray alloc]init];
     if (self.navigationController.navigationBar.hidden == YES)
     {
         // Show the Navigation Bar
@@ -43,6 +43,15 @@
                                              selector:@selector(menulistener:)
                                                  name:@"Showmenu"
                                             object:nil];
+    du=[[databaseurl alloc]init];
+    delegate=AppDelegate;
+    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+    [self.navigationController.view addSubview:HUD];
+    HUD.delegate = self;
+    HUD.labelText = @"Please wait...";
+    [HUD show:YES];
+    [self loadDatas];
+
 }
 
     - (void)menulistener:(id)sender {
@@ -60,87 +69,125 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)loadDatas
+{
+    if ([[du submitvalues]isEqualToString:@"Success"])
+    {
+        [self getList];
+        
+        
+    }
+    else
+    {
+        //[HUD hide:YES];
+        HUD.labelText = @"Check network connection";
+        HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@""]];
+        HUD.mode = MBProgressHUDModeCustomView;
+        [HUD hide:YES afterDelay:1];
+    }
+    
+}
+-(void)getList
+{
+    NSString *  studentid=[[NSUserDefaults standardUserDefaults]objectForKey:@"userid"];
+    NSString *response=[self HttpPostEntityFirst1:@"studentid" ForValue1:studentid  EntitySecond:@"authkey" ForValue2:@"rzTFevN099Km39PV"];
+    NSError *error;
+    // NSLog(@"response %@",response);
+    SBJSON *json = [[SBJSON new] autorelease];
+    NSDictionary *parsedvalue = [json objectWithString:response error:&error];
+    
+    // NSLog(@"%@ parsedvalue",parsedvalue);
+    if (parsedvalue == nil)
+    {
+        
+        //NSLog(@"parsedvalue == nil");
+        
+    }
+    else
+    {
+        NSDictionary* menu = [parsedvalue objectForKey:@"serviceresponse"];
+        NSArray *Listofdatas=[menu objectForKey:@"Bill List"];
+        
+        //   NSLog(@"listof datas values %@",Listofdatas);
+        
+        if ([Listofdatas count]>0)
+        {
+            
+            
+            for (id list in Listofdatas)
+            {
+                NSDictionary *arrayList1=[(NSDictionary*)list objectForKey:@"serviceresponse"];
+                
+                [billing addObject:arrayList1];
+                
+            }
+            // NSLog(@"category values %@",categorylist);
+        }
+        
+        [HUD hide:YES];
+        [self.tableView reloadData];
+        
+    }
+    
+}
+-(NSString *)HttpPostEntityFirst1:(NSString*)firstEntity ForValue1:(NSString*)value1 EntitySecond:(NSString*)secondEntity ForValue2:(NSString*)value2
+{
+    
+    
+    NSString *urltemp=[[databaseurl sharedInstance]DBurl];
+    NSString *url1=@"Billing.php?service=Billinglist";
+    NSString *url2=[NSString stringWithFormat:@"%@%@",urltemp,url1];
+    NSString *post =[[NSString alloc] initWithFormat:@"%@=%@&%@=%@",firstEntity,value1,secondEntity,value2];
+    NSURL *url = [NSURL URLWithString:url2];
+    NSLog(@"%@ url %@ post",url2 ,post    );
+    return [du returndbresult:post URL:url];
+}
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
+
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return [billing count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Billing" forIndexPath:indexPath];
+    BillingTableViewCell *cell =(BillingTableViewCell*) [tableView dequeueReusableCellWithIdentifier:@"Billing" forIndexPath:indexPath];
     
-    
-    cell.textLabel.text=[billing objectAtIndex:indexPath.row];
+    NSDictionary *temp=[billing objectAtIndex:indexPath.row];
+    cell.coursename.text=[temp valueForKey:@"course_name"];
+    cell.purchaseddate.text=[temp valueForKey:@"purchased_date"];
+    cell.promocode.text=[temp valueForKey:@"promocode"];
+    cell.reduction.text=[temp valueForKey:@"reduction"];
+     cell.amount.text=[temp valueForKey:@"amount_paid"];
     return cell;
 }
-- (IBAction)menuact:(id)sender {
-    [self.view endEditing:YES];
-    [self.frostedViewController.view endEditing:YES];
-    [self.frostedViewController presentMenuViewController];
-}
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+   
+    [self performSegueWithIdentifier:@"BillingDetails" sender:self];
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    if ([[segue identifier]isEqualToString:@"BillingDetails"]) {
+        NSIndexPath *index=[self.tableView indexPathForSelectedRow];
+        BillingDetailViewController *vc=[segue destinationViewController];
+        vc.billdatas=[billing objectAtIndex:index.row];
+    }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
 
 - (void)dealloc {
-    [_menuact release];
+   
     [super dealloc];
 }
 @end

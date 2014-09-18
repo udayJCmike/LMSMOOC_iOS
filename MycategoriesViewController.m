@@ -1,22 +1,25 @@
 //
-//  MyauthorsTableViewController.m
+//  MycategoriesViewController.m
 //  LMSMOOC
 //
-//  Created by DeemsysInc on 10/09/14.
+//  Created by DeemsysInc on 18/09/14.
 //  Copyright (c) 2014 deemsys. All rights reserved.
 //
 
-#import "MyauthorsTableViewController.h"
-
-@interface MyauthorsTableViewController ()
-
+#import "MycategoriesViewController.h"
+#import "databaseurl.h"
+@interface MycategoriesViewController ()
+{
+    databaseurl *du;
+}
 @end
 
-@implementation MyauthorsTableViewController
-
-- (id)initWithStyle:(UITableViewStyle)style
+@implementation MycategoriesViewController
+@synthesize category_tableView;
+@synthesize categorylist;
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithStyle:style];
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
     }
@@ -26,8 +29,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    myauthors=[[NSMutableArray alloc]init];
+    loadcompleted=0;
+    category_tableView.dataSource=self;
+    category_tableView.delegate=self;
+     categorylist=[[NSMutableArray alloc]init];
+  
     if (self.navigationController.navigationBar.hidden == YES)
     {
         // Show the Navigation Bar
@@ -44,39 +50,25 @@
                                                  name:@"Showmenu"
                                                object:nil];
     du=[[databaseurl alloc]init];
-    delegate=AppDelegate;
-    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
-    [self.navigationController.view addSubview:HUD];
-    HUD.delegate = self;
-    HUD.labelText = @"Please wait...";
-    [HUD show:YES];
-    [self loadDatas];
-
+    [self getList];
+    [category_tableView reloadData];
 }
--(void)loadDatas
-{
-    if ([[du submitvalues]isEqualToString:@"Success"])
-    {
-        [self getList];
-        
-       
-    }
-    else
-    {
-        //[HUD hide:YES];
-        HUD.labelText = @"Check network connection";
-        HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@""]];
-        HUD.mode = MBProgressHUDModeCustomView;
-        [HUD hide:YES afterDelay:1];
-    }
+
+- (void)menulistener:(id)sender {
     
+    
+    
+    [self.view endEditing:YES];
+    [self.frostedViewController.view endEditing:YES];
+    [self.frostedViewController presentMenuViewController];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"Showmenu" object:nil];
 }
 -(void)getList
 {
-  NSString *  studentid=[[NSUserDefaults standardUserDefaults]objectForKey:@"userid"];
+    studentid=[[NSUserDefaults standardUserDefaults]objectForKey:@"userid"];
     NSString *response=[self HttpPostEntityFirst1:@"studentid" ForValue1:studentid  EntitySecond:@"authkey" ForValue2:@"rzTFevN099Km39PV"];
     NSError *error;
-   // NSLog(@"response %@",response);
+  //  NSLog(@"response %@",response);
     SBJSON *json = [[SBJSON new] autorelease];
     NSDictionary *parsedvalue = [json objectWithString:response error:&error];
     
@@ -90,10 +82,10 @@
     else
     {
         NSDictionary* menu = [parsedvalue objectForKey:@"serviceresponse"];
-        NSArray *Listofdatas=[menu objectForKey:@"Author List"];
+        NSArray *Listofdatas=[menu objectForKey:@"Category List"];
         
-        //   NSLog(@"listof datas values %@",Listofdatas);
-        
+     //   NSLog(@"listof datas values %@",Listofdatas);
+      
         if ([Listofdatas count]>0)
         {
             
@@ -101,14 +93,18 @@
             for (id list in Listofdatas)
             {
                 NSDictionary *arrayList1=[(NSDictionary*)list objectForKey:@"serviceresponse"];
-                
-                [myauthors addObject:arrayList1];
+                [categorylist addObject:[arrayList1 objectForKey:@"category_name"]];
                 
             }
-            // NSLog(@"category values %@",categorylist);
+           // NSLog(@"category values %@",categorylist);
         }
-       
-        [HUD hide:YES];
+        else
+        {
+            loadcompleted=1;
+        }
+        
+        
+        
         [self performSelector:@selector(relodtable) withObject:self afterDelay:0.5f];
         
     }
@@ -116,32 +112,20 @@
 }
 -(void)relodtable
 {
-    [self.tableView reloadData];
+    [category_tableView reloadData];
 }
 -(NSString *)HttpPostEntityFirst1:(NSString*)firstEntity ForValue1:(NSString*)value1 EntitySecond:(NSString*)secondEntity ForValue2:(NSString*)value2
 {
     
     
     NSString *urltemp=[[databaseurl sharedInstance]DBurl];
-    NSString *url1=@"Myauthor.php?service=Myauthorlist";
+    NSString *url1=@"Categories.php?service=MyCategorylist";
     NSString *url2=[NSString stringWithFormat:@"%@%@",urltemp,url1];
     NSString *post =[[NSString alloc] initWithFormat:@"%@=%@&%@=%@",firstEntity,value1,secondEntity,value2];
     NSURL *url = [NSURL URLWithString:url2];
     NSLog(@"%@ url %@ post",url2 ,post    );
     return [du returndbresult:post URL:url];
 }
-
-
-- (void)menulistener:(id)sender {
-    
-    
-    
-    [self.view endEditing:YES];
-    [self.frostedViewController.view endEditing:YES];
-    [self.frostedViewController presentMenuViewController];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"Showmenu" object:nil];
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -152,62 +136,40 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-
-    // Return the number of sections.
     return 1;
 }
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-
-    // Return the number of rows in the section.
-    return [myauthors count];
+    return [categorylist count];
 }
-
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    AuthorTableViewCell *cell = (AuthorTableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"myauthors" forIndexPath:indexPath];
+    UITableViewCell *cell;
+    static NSString *simpleTableIdentifier = @"mycourses";
     
-    NSDictionary *temp=[myauthors objectAtIndex:indexPath.row];
-    cell.authorname.text=[temp valueForKey:@"course_author"];
-      cell.noofpurchased.text=[temp valueForKey:@"no_course"];
+    cell = [self.category_tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+    }
+    
+    cell.textLabel.text = [categorylist objectAtIndex:indexPath.row];
+  //  NSLog(@"category data %@", cell.textLabel.text);
     return cell;
 }
 
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
 
 
 
-
+// Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(RemoveStatus:)
                                                  name:@"RemoveStatus"
                                                object:nil];
-    [self performSegueWithIdentifier:@"MyAuthorDatas" sender:self];
+    [self performSegueWithIdentifier:@"Mycategory" sender:self];
 }
 
 -(void)RemoveStatus:(id)sender
@@ -215,22 +177,28 @@
     NSString *status=  [sender valueForKey:@"object"];
     if ([status isEqualToString:@"success"])
     {
-        NSIndexPath *index=[self.tableView indexPathForSelectedRow];
-        [myauthors removeObjectAtIndex:index.row];
-        [self.tableView reloadData];
+        NSIndexPath *index=[self.category_tableView indexPathForSelectedRow];
+        [categorylist removeObjectAtIndex:index.row];
+        [self.category_tableView reloadData];
     }
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"RemoveStatus" object:nil];
     
 }
-
+/*
+ // Override to support conditional rearranging of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ // Return NO if you do not want the item to be re-orderable.
+ return YES;
+ }
+ */
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier]isEqualToString:@"MyAuthorDatas"]) {
-        NSIndexPath *index=[self.tableView indexPathForSelectedRow];
-        MyauthorcoursesViewController *vc=[segue destinationViewController];
-        vc.authorid=[[myauthors objectAtIndex:index.row]objectForKey:@"instructor_id"];
-        vc.authorname=[[myauthors objectAtIndex:index.row]objectForKey:@"course_author"];
+    if ([[segue identifier]isEqualToString:@"Mycategory"]) {
+        NSIndexPath *index=[self.category_tableView indexPathForSelectedRow];
+        MycategoriesDetailViewController *vc=[segue destinationViewController];
+        vc.categoryname=[categorylist objectAtIndex:index.row];
     }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.

@@ -70,6 +70,14 @@
 		84E52CBD19C9B2440042D07A /* CategorywiseDatasiPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E52CBC19C9B2440042D07A /* CategorywiseDatasiPadViewController.m */; };
 		84E52CC019C9B7050042D07A /* CourseSearchiPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E52CBF19C9B7050042D07A /* CourseSearchiPadViewController.m */; };
 		84E52CC319C9D0A90042D07A /* categorypopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E52CC219C9D0A90042D07A /* categorypopoverViewController.m */; };
+		84EC715819CAD77000529168 /* MycategoriesDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EC715319CAD77000529168 /* MycategoriesDetailViewController.m */; };
+		84EC715919CAD77000529168 /* MycoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EC715519CAD77000529168 /* MycoursesViewController.m */; };
+		84EC715A19CAD77000529168 /* MyfavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EC715719CAD77000529168 /* MyfavoritesViewController.m */; };
+		84EC715D19CAF66500529168 /* MycategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EC715C19CAF66500529168 /* MycategoriesViewController.m */; };
+		84EC716119CAFE5F00529168 /* AuthorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EC716019CAFE5F00529168 /* AuthorTableViewCell.m */; };
+		84EC716419CB087E00529168 /* MyauthorcoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EC716319CB087E00529168 /* MyauthorcoursesViewController.m */; };
+		84EC716719CB16A200529168 /* BillingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EC716619CB16A200529168 /* BillingTableViewCell.m */; };
+		84EC716A19CB1ACB00529168 /* BillingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EC716919CB1ACB00529168 /* BillingDetailViewController.m */; };
 		84F59B6319C2AD5A009EF252 /* APRoundedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F59B6219C2AD5A009EF252 /* APRoundedButton.m */; };
 		84F59B6619C2AD89009EF252 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F59B6419C2AD89009EF252 /* Main_iPad.storyboard */; };
 		84F59B6719C2AD89009EF252 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F59B6519C2AD89009EF252 /* Main_iPhone.storyboard */; };
@@ -99,9 +107,6 @@
 		84FC7DB919C01C680001FD7C /* Avatar-female.png in Resources */ = {isa = PBXBuildFile; fileRef = 84FC7DB819C01C680001FD7C /* Avatar-female.png */; };
 		84FC7DBC19C021180001FD7C /* ProfileUpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FC7DBB19C021180001FD7C /* ProfileUpdateViewController.m */; };
 		84FC7DC219C023A80001FD7C /* MailinboxTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FC7DC119C023A80001FD7C /* MailinboxTableViewController.m */; };
-		84FC7DC519C023B80001FD7C /* MycoursesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FC7DC419C023B80001FD7C /* MycoursesTableViewController.m */; };
-		84FC7DC819C023C70001FD7C /* MyfavoritesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FC7DC719C023C70001FD7C /* MyfavoritesTableViewController.m */; };
-		84FC7DCB19C023E30001FD7C /* MycategoriesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FC7DCA19C023E30001FD7C /* MycategoriesTableViewController.m */; };
 		84FC7DCE19C023F30001FD7C /* MyauthorsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FC7DCD19C023F30001FD7C /* MyauthorsTableViewController.m */; };
 		84FC7DD419C0242B0001FD7C /* Courselist_iPad_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FC7DD319C0242B0001FD7C /* Courselist_iPad_ViewController.m */; };
 		84FC7DD919C02B360001FD7C /* BillingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FC7DD819C02B360001FD7C /* BillingTableViewController.m */; };
@@ -207,6 +212,22 @@
 		84E52CBF19C9B7050042D07A /* CourseSearchiPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseSearchiPadViewController.m; sourceTree = "<group>"; };
 		84E52CC119C9D0A80042D07A /* categorypopoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = categorypopoverViewController.h; sourceTree = "<group>"; };
 		84E52CC219C9D0A90042D07A /* categorypopoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = categorypopoverViewController.m; sourceTree = "<group>"; };
+		84EC715219CAD77000529168 /* MycategoriesDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MycategoriesDetailViewController.h; sourceTree = "<group>"; };
+		84EC715319CAD77000529168 /* MycategoriesDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MycategoriesDetailViewController.m; sourceTree = "<group>"; };
+		84EC715419CAD77000529168 /* MycoursesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MycoursesViewController.h; sourceTree = "<group>"; };
+		84EC715519CAD77000529168 /* MycoursesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MycoursesViewController.m; sourceTree = "<group>"; };
+		84EC715619CAD77000529168 /* MyfavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyfavoritesViewController.h; sourceTree = "<group>"; };
+		84EC715719CAD77000529168 /* MyfavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyfavoritesViewController.m; sourceTree = "<group>"; };
+		84EC715B19CAF66500529168 /* MycategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MycategoriesViewController.h; sourceTree = "<group>"; };
+		84EC715C19CAF66500529168 /* MycategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MycategoriesViewController.m; sourceTree = "<group>"; };
+		84EC715F19CAFE5F00529168 /* AuthorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthorTableViewCell.h; sourceTree = "<group>"; };
+		84EC716019CAFE5F00529168 /* AuthorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthorTableViewCell.m; sourceTree = "<group>"; };
+		84EC716219CB087E00529168 /* MyauthorcoursesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyauthorcoursesViewController.h; sourceTree = "<group>"; };
+		84EC716319CB087E00529168 /* MyauthorcoursesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyauthorcoursesViewController.m; sourceTree = "<group>"; };
+		84EC716519CB16A200529168 /* BillingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BillingTableViewCell.h; sourceTree = "<group>"; };
+		84EC716619CB16A200529168 /* BillingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BillingTableViewCell.m; sourceTree = "<group>"; };
+		84EC716819CB1ACB00529168 /* BillingDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BillingDetailViewController.h; sourceTree = "<group>"; };
+		84EC716919CB1ACB00529168 /* BillingDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BillingDetailViewController.m; sourceTree = "<group>"; };
 		84F59B6119C2AD5A009EF252 /* APRoundedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APRoundedButton.h; sourceTree = "<group>"; };
 		84F59B6219C2AD5A009EF252 /* APRoundedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APRoundedButton.m; sourceTree = "<group>"; };
 		84F59B6419C2AD89009EF252 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
@@ -259,12 +280,6 @@
 		84FC7DBB19C021180001FD7C /* ProfileUpdateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileUpdateViewController.m; sourceTree = "<group>"; };
 		84FC7DC019C023A80001FD7C /* MailinboxTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailinboxTableViewController.h; sourceTree = "<group>"; };
 		84FC7DC119C023A80001FD7C /* MailinboxTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailinboxTableViewController.m; sourceTree = "<group>"; };
-		84FC7DC319C023B80001FD7C /* MycoursesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MycoursesTableViewController.h; sourceTree = "<group>"; };
-		84FC7DC419C023B80001FD7C /* MycoursesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MycoursesTableViewController.m; sourceTree = "<group>"; };
-		84FC7DC619C023C70001FD7C /* MyfavoritesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyfavoritesTableViewController.h; sourceTree = "<group>"; };
-		84FC7DC719C023C70001FD7C /* MyfavoritesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyfavoritesTableViewController.m; sourceTree = "<group>"; };
-		84FC7DC919C023E30001FD7C /* MycategoriesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MycategoriesTableViewController.h; sourceTree = "<group>"; };
-		84FC7DCA19C023E30001FD7C /* MycategoriesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MycategoriesTableViewController.m; sourceTree = "<group>"; };
 		84FC7DCC19C023F30001FD7C /* MyauthorsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyauthorsTableViewController.h; sourceTree = "<group>"; };
 		84FC7DCD19C023F30001FD7C /* MyauthorsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyauthorsTableViewController.m; sourceTree = "<group>"; };
 		84FC7DD219C0242B0001FD7C /* Courselist_iPad_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Courselist_iPad_ViewController.h; sourceTree = "<group>"; };
@@ -314,6 +329,10 @@
 		0DAFCFF319BEC75500A1E509 = {
 			isa = PBXGroup;
 			children = (
+				84EC715E19CAFDB900529168 /* MyAuthors */,
+				84EC715119CAD75500529168 /* MyCourses */,
+				84EC715019CAD74C00529168 /* MyFavorites */,
+				84EC714F19CAD74300529168 /* MyCategory */,
 				84F59B7619C2FF3F009EF252 /* MailList */,
 				84F59B7719C2FF56009EF252 /* ProfileUpdate */,
 				84082A6719C840900039F4E8 /* CourseList_iPad */,
@@ -324,7 +343,7 @@
 				84F59B5F19C2AAE9009EF252 /* Update Password */,
 				84F59B5E19C2AAD2009EF252 /* Avatar Download */,
 				84FC7DD619C0244A0001FD7C /* iPad_menulist */,
-				84FC7DD519C024330001FD7C /* iPhone_menulist */,
+				84FC7DD519C024330001FD7C /* Billing */,
 				84FC7D9C19C018FD0001FD7C /* Dashboard */,
 				84FC7D9B19C018EB0001FD7C /* SidebarPackages */,
 				84FC7D7A19C0063D0001FD7C /* NetworkChecking */,
@@ -508,6 +527,48 @@
 			name = CourseList_iPhone;
 			sourceTree = "<group>";
 		};
+		84EC714F19CAD74300529168 /* MyCategory */ = {
+			isa = PBXGroup;
+			children = (
+				84EC715B19CAF66500529168 /* MycategoriesViewController.h */,
+				84EC715C19CAF66500529168 /* MycategoriesViewController.m */,
+				84EC715219CAD77000529168 /* MycategoriesDetailViewController.h */,
+				84EC715319CAD77000529168 /* MycategoriesDetailViewController.m */,
+			);
+			name = MyCategory;
+			sourceTree = "<group>";
+		};
+		84EC715019CAD74C00529168 /* MyFavorites */ = {
+			isa = PBXGroup;
+			children = (
+				84EC715619CAD77000529168 /* MyfavoritesViewController.h */,
+				84EC715719CAD77000529168 /* MyfavoritesViewController.m */,
+			);
+			name = MyFavorites;
+			sourceTree = "<group>";
+		};
+		84EC715119CAD75500529168 /* MyCourses */ = {
+			isa = PBXGroup;
+			children = (
+				84EC715419CAD77000529168 /* MycoursesViewController.h */,
+				84EC715519CAD77000529168 /* MycoursesViewController.m */,
+			);
+			name = MyCourses;
+			sourceTree = "<group>";
+		};
+		84EC715E19CAFDB900529168 /* MyAuthors */ = {
+			isa = PBXGroup;
+			children = (
+				84EC715F19CAFE5F00529168 /* AuthorTableViewCell.h */,
+				84EC716019CAFE5F00529168 /* AuthorTableViewCell.m */,
+				84FC7DCC19C023F30001FD7C /* MyauthorsTableViewController.h */,
+				84FC7DCD19C023F30001FD7C /* MyauthorsTableViewController.m */,
+				84EC716219CB087E00529168 /* MyauthorcoursesViewController.h */,
+				84EC716319CB087E00529168 /* MyauthorcoursesViewController.m */,
+			);
+			name = MyAuthors;
+			sourceTree = "<group>";
+		};
 		84F59B5E19C2AAD2009EF252 /* Avatar Download */ = {
 			isa = PBXGroup;
 			children = (
@@ -623,21 +684,17 @@
 			name = Dashboard;
 			sourceTree = "<group>";
 		};
-		84FC7DD519C024330001FD7C /* iPhone_menulist */ = {
+		84FC7DD519C024330001FD7C /* Billing */ = {
 			isa = PBXGroup;
 			children = (
+				84EC716519CB16A200529168 /* BillingTableViewCell.h */,
+				84EC716619CB16A200529168 /* BillingTableViewCell.m */,
 				84FC7DD719C02B360001FD7C /* BillingTableViewController.h */,
 				84FC7DD819C02B360001FD7C /* BillingTableViewController.m */,
-				84FC7DCC19C023F30001FD7C /* MyauthorsTableViewController.h */,
-				84FC7DCD19C023F30001FD7C /* MyauthorsTableViewController.m */,
-				84FC7DC919C023E30001FD7C /* MycategoriesTableViewController.h */,
-				84FC7DCA19C023E30001FD7C /* MycategoriesTableViewController.m */,
-				84FC7DC619C023C70001FD7C /* MyfavoritesTableViewController.h */,
-				84FC7DC719C023C70001FD7C /* MyfavoritesTableViewController.m */,
-				84FC7DC319C023B80001FD7C /* MycoursesTableViewController.h */,
-				84FC7DC419C023B80001FD7C /* MycoursesTableViewController.m */,
+				84EC716819CB1ACB00529168 /* BillingDetailViewController.h */,
+				84EC716919CB1ACB00529168 /* BillingDetailViewController.m */,
 			);
-			name = iPhone_menulist;
+			name = Billing;
 			sourceTree = "<group>";
 		};
 		84FC7DD619C0244A0001FD7C /* iPad_menulist */ = {
@@ -789,8 +846,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84EC715919CAD77000529168 /* MycoursesViewController.m in Sources */,
 				84FC7DB119C01A210001FD7C /* DashboardMainViewController.m in Sources */,
 				84FC7DAA19C0191B0001FD7C /* REFrostedContainerViewController.m in Sources */,
+				84EC716A19CB1ACB00529168 /* BillingDetailViewController.m in Sources */,
 				84FC7D9119C0064E0001FD7C /* NSString+SBJSON.m in Sources */,
 				84FC7DB419C01A550001FD7C /* DashboardContentListTableViewController.m in Sources */,
 				84FC7DCE19C023F30001FD7C /* MyauthorsTableViewController.m in Sources */,
@@ -806,10 +865,11 @@
 				0DAFD00C19BEC75500A1E509 /* main.m in Sources */,
 				84FC7DAB19C0191B0001FD7C /* REFrostedViewController.m in Sources */,
 				84FC7D9219C0064E0001FD7C /* Reachability.m in Sources */,
+				84EC716719CB16A200529168 /* BillingTableViewCell.m in Sources */,
 				84FC7D9419C0064E0001FD7C /* SBJsonBase.m in Sources */,
 				84F59B7A19C2FFA9009EF252 /* MailDetailsViewController.m in Sources */,
-				84FC7DCB19C023E30001FD7C /* MycategoriesTableViewController.m in Sources */,
 				84CBD50019C730C500CB50D1 /* courselist_iPhoneTableViewController.m in Sources */,
+				84EC715A19CAD77000529168 /* MyfavoritesViewController.m in Sources */,
 				840B832319BEE58F0065B678 /* PageContentViewController.m in Sources */,
 				84FC7DA919C0191B0001FD7C /* RECommonFunctions.m in Sources */,
 				84FC7D8E19C0064E0001FD7C /* databaseurl.m in Sources */,
@@ -820,10 +880,14 @@
 				8476E7F419C17EE8002DB513 /* AvatarImagesViewController.m in Sources */,
 				84FC7D9519C0064E0001FD7C /* SBJsonParser.m in Sources */,
 				84FC7D9319C0064E0001FD7C /* SBJSON.m in Sources */,
+				84EC716119CAFE5F00529168 /* AuthorTableViewCell.m in Sources */,
 				847635EB19C077BF00F45CEF /* CollectionCellContent.m in Sources */,
 				84FC7DC219C023A80001FD7C /* MailinboxTableViewController.m in Sources */,
+				84EC715D19CAF66500529168 /* MycategoriesViewController.m in Sources */,
+				84EC716419CB087E00529168 /* MyauthorcoursesViewController.m in Sources */,
 				84FC7D9019C0064E0001FD7C /* NSObject+SBJSON.m in Sources */,
 				84E52CBD19C9B2440042D07A /* CategorywiseDatasiPadViewController.m in Sources */,
+				84EC715819CAD77000529168 /* MycategoriesDetailViewController.m in Sources */,
 				84F59B7119C2FC37009EF252 /* MAILinboxTableViewCell.m in Sources */,
 				84E52CC319C9D0A90042D07A /* categorypopoverViewController.m in Sources */,
 				84CBD4FF19C730C500CB50D1 /* CourseDesignTableViewCell.m in Sources */,
@@ -835,9 +899,7 @@
 				84FC7DBC19C021180001FD7C /* ProfileUpdateViewController.m in Sources */,
 				84F59B6319C2AD5A009EF252 /* APRoundedButton.m in Sources */,
 				84082A5819C80F1E0039F4E8 /* CourseSearchViewController.m in Sources */,
-				84FC7DC519C023B80001FD7C /* MycoursesTableViewController.m in Sources */,
 				84FC7D8F19C0064E0001FD7C /* MBProgressHUD.m in Sources */,
-				84FC7DC819C023C70001FD7C /* MyfavoritesTableViewController.m in Sources */,
 				847635F019C095A700F45CEF /* Passwordchange.m in Sources */,
 				84FC7DD919C02B360001FD7C /* BillingTableViewController.m in Sources */,
 			);
