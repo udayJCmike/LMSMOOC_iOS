@@ -18,7 +18,7 @@
 #import "SBJSON.h"
 #import "UIButton+Bootstrap.h"
 #import "categorypopoverViewController.h"
-@interface Courselist_iPad_ViewController : UIViewController<MBProgressHUDDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UIPopoverControllerDelegate>
+@interface Courselist_iPad_ViewController : UIViewController<MBProgressHUDDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UIPopoverControllerDelegate>
 {
     UIPopoverController*userDataPopover;
     NSString *categoryname;

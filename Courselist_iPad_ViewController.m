@@ -31,7 +31,7 @@ int loadcompleted;
 
     - (void)viewDidLoad
     {
-        
+         [course_type setSegmentedControlStyle:UISegmentedControlStylePlain];
         loadcompleted=0;
         offset=0;
         offset_free=0;
@@ -377,8 +377,9 @@ int loadcompleted;
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"Showmenu" object:nil];
 }
 - (IBAction)course_type:(UISegmentedControl*)sender {
-    
+    [course_type setSegmentedControlStyle:UISegmentedControlStylePlain];
     if (sender.selectedSegmentIndex==0) {
+        
         course_type_val=@"All";
         offset=0;
         loadcompleted=0;
