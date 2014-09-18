@@ -17,6 +17,7 @@
 {
    __block  NSMutableArray *inbox;
     MBProgressHUD *HUD;
+    int unread,count;
     
     
 }

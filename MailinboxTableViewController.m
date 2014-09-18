@@ -30,7 +30,8 @@
 {
     [super viewDidLoad];
     du=[[databaseurl alloc]init];
-
+    unread=0;
+    count=0;
     if (self.navigationController.navigationBar.hidden == YES)
     {
         // Show the Navigation Bar
@@ -53,11 +54,15 @@
     [HUD show:YES];
     [self loadDatas];
     
+    self.navigationItem.title=[NSString stringWithFormat:@"Inbox (%d/%d)",unread,count];
+    
 }
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     [self.tableView reloadData];
+    
+    self.navigationItem.title=[NSString stringWithFormat:@"Inbox (%d/%d)",unread,count];
 }
 -(void)loadDatas
 {
@@ -95,12 +100,17 @@
     if ([Listofdatas count]>0)
     {
         inbox=[[NSMutableArray alloc]init];
+        count=(int)[Listofdatas count];
         
         for (int i=0;i<[Listofdatas count];i++)
         {
             NSDictionary *arrayList1= [Listofdatas objectAtIndex:i];
             NSDictionary *temp=[arrayList1 objectForKey:@"serviceresponse"];
             NSLog(@"%@",[temp objectForKey:@"inbox_id"]);
+            if([[temp objectForKey:@"read_status"]isEqualToString:@"0"])
+            {
+                unread++;
+            }
             mess=[temp objectForKey:@"inboxmessage"];
             mess = [mess stringByReplacingOccurrencesOfString: @"<br>" withString: @"\n\n"];
             mess = [mess stringByReplacingOccurrencesOfString: @"<br>" withString: @"\n\n"];
@@ -231,6 +241,14 @@
     {
      cell.importantstatus.image=[UIImage imageNamed:@"unimportant.png"];   
     }
+    NSString *read=  [[inbox objectAtIndex:indexPath.row] objectForKey:@"read_status"];
+    if ([read isEqualToString:@"0"]) {
+        cell.backgroundColor= [UIColor colorWithRed:224/255.0f green:224/255.0f blue:224/255.0f alpha:1.0f];
+    }
+    else
+    {
+        cell.backgroundColor=[UIColor clearColor];
+    }
     return cell;
 }
 
@@ -261,6 +279,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self updatereadStatus:[inbox objectAtIndex:indexPath.row]];
+    if ([[[inbox objectAtIndex:indexPath.row] objectForKey:@"read_status"]isEqualToString:@"0"]) {
+        unread--;
+    }
+
     NSLog(@"read %@",[[inbox objectAtIndex:indexPath.row] objectForKey:@"read_status"]);
   NSMutableDictionary *dict=[inbox objectAtIndex:indexPath.row];
     [dict setValue:@"1" forKey:@"read_status"];

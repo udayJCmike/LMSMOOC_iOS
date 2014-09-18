@@ -155,7 +155,37 @@ int loadcompleted;
     cell.authorname.text=[course objectForKey:@"course_author"];
     cell.price.text=[course objectForKey:@"course_price"];
     cell.cover.image=[UIImage imageNamed:[course objectForKey:@"course_cover_image"]];
-    cell.review.image=[UIImage imageNamed:[course objectForKey:@"ratings"]];
+    //cell.review.image=[UIImage imageNamed:[course objectForKey:@"ratings"]];
+    NSString * rating =[course objectForKey:@"ratings"];
+    
+    NSLog(@"rating %@",rating);
+    if([rating isEqualToString:@"1"])
+    {
+        cell.review.image=[UIImage imageNamed:@"1star"];
+    }
+    else if([rating isEqualToString:@"2"])
+    {
+        cell.review.image=[UIImage imageNamed:@"2star"];
+    }
+    else if([rating isEqualToString:@"3"])
+    {
+        cell.review.image=[UIImage imageNamed:@"3star"];
+    }
+    else if([rating isEqualToString:@"4"])
+    {
+        cell.review.image=[UIImage imageNamed:@"4star"];
+    }
+    else if([rating isEqualToString:@"5"])
+    {
+        cell.review.image=[UIImage imageNamed:@"5star"];
+    }
+    else
+    {
+        cell.review.image=[UIImage imageNamed:@"0star"];
+    }
+
+    
+    
     NSString *imageUrlString = [[NSString alloc]initWithFormat:@"%@/%@/%@",delegate.course_image_url,[course objectForKey:@"course_id"],[course objectForKey:@"course_cover_image"]];
     
     UIImage *imageFromCache = [self.imageCache objectForKey:imageUrlString];
