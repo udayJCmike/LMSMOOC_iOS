@@ -457,8 +457,8 @@ int loadcompleted;
         userDataPopover.popoverContentSize = CGSizeMake(320.0, 400.0);
         CGRect newFrame=[(UIButton*)sender frame];
        NSLog(@"%@", NSStringFromCGRect(newFrame));
-        newFrame.origin.x=400;
-        newFrame.origin.y=15;
+        newFrame.origin.x=475;
+        newFrame.origin.y=30;
         [userDataPopover presentPopoverFromRect:newFrame
                                               inView:self.view
                             permittedArrowDirections:UIPopoverArrowDirectionUp
