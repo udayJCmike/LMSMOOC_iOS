@@ -334,15 +334,15 @@
                 NSString *response=[menu objectForKey:@"emaill"];
                 if ([response isEqualToString:@"emailexist"]) {
                 
-                    NSLog(@"email exist");
+                     [self ShowAlert:@"Email id exist."];
                 }
                 else if ([response isEqualToString:@"usernameexist"]) {
                     
-                    NSLog(@"username exist");
+                     [self ShowAlert:@"Username exist."];
                 }
                 else
                 {
-                    NSLog(@"signup failed");
+                      [self ShowAlert:@"Signup failed."];
                 }
                
             }
@@ -359,6 +359,29 @@
     NSString *url1=@"Signup.php?service=signup";
     NSString *url2=[NSString stringWithFormat:@"%@%@",urltemp,url1];
     NSString *post =[[NSString alloc] initWithFormat:@"%@=%@&lastname=%@&username=%@&emailid=%@&password=%@&cpassword=%@&%@=%@",firstEntity,value1,second,username.text,email.text,password.text,cpassword.text,secondEntity,value2];
+    //  NSLog(@"POST %@",post);
+    NSURL *url = [NSURL URLWithString:url2];
+    return [du returndbresult:post URL:url];
+}
+-(NSString *)HttpPostEntityUsername:(NSString*)firstEntity ForValue1:(NSString*)value1 EntitySecond:(NSString*)secondEntity ForValue2:(NSString*)value2
+{
+    
+    NSString *urltemp=[[databaseurl sharedInstance]DBurl];
+    NSString *url1=@"Signup.php?service=usernameExist";
+    NSString *url2=[NSString stringWithFormat:@"%@%@",urltemp,url1];
+    NSString *post =[[NSString alloc] initWithFormat:@"%@=%@&%@=%@",firstEntity,value1,secondEntity,value2];
+    //  NSLog(@"POST %@",post);
+    NSURL *url = [NSURL URLWithString:url2];
+    return [du returndbresult:post URL:url];
+}
+-(NSString *)HttpPostEntityEmail:(NSString*)firstEntity ForValue1:(NSString*)value1 EntitySecond:(NSString*)secondEntity ForValue2:(NSString*)value2
+{
+    NSString *second= [lname.text stringByReplacingOccurrencesOfString:@" " withString:@""];
+    second= [second uppercaseString];
+    NSString *urltemp=[[databaseurl sharedInstance]DBurl];
+    NSString *url1=@"Signup.php?service=emailExist";
+    NSString *url2=[NSString stringWithFormat:@"%@%@",urltemp,url1];
+    NSString *post =[[NSString alloc] initWithFormat:@"%@=%@&%@=%@",firstEntity,value1,secondEntity,value2];
     //  NSLog(@"POST %@",post);
     NSURL *url = [NSURL URLWithString:url2];
     return [du returndbresult:post URL:url];
@@ -580,6 +603,39 @@
         case 3:
             if ([du validateUserNameForSignupPage:username.text])
             {
+                HUD = [MBProgressHUD showHUDAddedTo:self.view  animated:YES];
+                HUD.mode=MBProgressHUDModeIndeterminate;
+                HUD.delegate = self;
+                HUD.labelText = @"Please wait";
+                [HUD show:YES];
+                NSString *response=[self HttpPostEntityUsername:@"username" ForValue1:textField.text  EntitySecond:@"authkey" ForValue2:@"rzTFevN099Km39PV"];
+                
+                NSError *error;
+                SBJSON *json = [[SBJSON new] autorelease];
+                NSDictionary *parsedvalue = [json objectWithString:response error:&error];
+                
+                //  NSLog(@"%@ parsed valued",parsedvalue);
+                if (parsedvalue == nil)
+                {
+                    //NSLog(@"parsedvalue == nil");
+                    [HUD hide:YES];
+                }
+                else
+                {
+                    
+                    NSDictionary* menu = [parsedvalue objectForKey:@"serviceresponse"];
+                    [HUD hide:YES];
+                        if ([[menu objectForKey:@"success"] isEqualToString:@"Yes"])
+                        {
+                            [HUD hide:YES];
+                        }
+                    else  if ([[menu objectForKey:@"emaill"] isEqualToString:@"usernameexist"])
+                    {
+                        [self ShowAlert:@"Username exist."];
+                    }
+                }
+
+                
             }
             else
             {
@@ -600,6 +656,37 @@
         case 4:
             if ([du validateEmailForSignupPage:email.text])
             {
+                HUD = [MBProgressHUD showHUDAddedTo:self.view  animated:YES];
+                HUD.mode=MBProgressHUDModeIndeterminate;
+                HUD.delegate = self;
+                HUD.labelText = @"Please wait";
+                [HUD show:YES];
+                NSString *response=[self HttpPostEntityEmail:@"email" ForValue1:textField.text  EntitySecond:@"authkey" ForValue2:@"rzTFevN099Km39PV"];
+                
+                NSError *error;
+                SBJSON *json = [[SBJSON new] autorelease];
+                NSDictionary *parsedvalue = [json objectWithString:response error:&error];
+                
+                //  NSLog(@"%@ parsed valued",parsedvalue);
+                if (parsedvalue == nil)
+                {
+                    //NSLog(@"parsedvalue == nil");
+                    [HUD hide:YES];
+                }
+                else
+                {
+                    
+                    NSDictionary* menu = [parsedvalue objectForKey:@"serviceresponse"];
+                    [HUD hide:YES];
+                    if ([[menu objectForKey:@"success"] isEqualToString:@"Yes"])
+                    {
+                        [HUD hide:YES];
+                    }
+                    else  if ([[menu objectForKey:@"emaill"] isEqualToString:@"emailexist"])
+                    {
+                        [self ShowAlert:@"Email id exist."];
+                    }
+                }
             }
             else
             {

@@ -33,7 +33,7 @@
     [super viewDidLoad];
     delegate=AppDelegate;
 
-    if (!delegate.av_image)
+    if (!delegate.profileimage)
     {
          NSLog(@"avatar URL not found");
         delegate.profileimage=[UIImage imageNamed:@"Avatar-female.png"];

@@ -353,14 +353,14 @@
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="yui-YP-4Em">
                                                 <rect key="frame" x="114" y="179" width="188" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="tintColor" patternImage="90FCD5BF-F480-4125-A36F-6A50BA988B0F" colorSpace="pattern"/>
+                                                <color key="tintColor" patternImage="A558BA24-183E-4933-9240-86392998698F" colorSpace="pattern"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="0Cx-TW-OFk">
                                                 <rect key="frame" x="114" y="227" width="188" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="tintColor" patternImage="90FCD5BF-F480-4125-A36F-6A50BA988B0F" colorSpace="pattern"/>
+                                                <color key="tintColor" patternImage="A558BA24-183E-4933-9240-86392998698F" colorSpace="pattern"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
@@ -494,7 +494,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="90FCD5BF-F480-4125-A36F-6A50BA988B0F" width="320" height="460">
+        <image name="A558BA24-183E-4933-9240-86392998698F" width="320" height="460">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

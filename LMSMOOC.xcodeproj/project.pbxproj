@@ -67,6 +67,10 @@
 		8476E7F419C17EE8002DB513 /* AvatarImagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476E7F319C17EE8002DB513 /* AvatarImagesViewController.m */; };
 		8491BA0419CBF3F900B649ED /* MyCategoriesDetailiPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8491BA0319CBF3F900B649ED /* MyCategoriesDetailiPadViewController.m */; };
 		8491BA0719CBF94B00B649ED /* MyauthorcoursesiPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8491BA0619CBF94B00B649ED /* MyauthorcoursesiPadViewController.m */; };
+		8491BA0919CC5B9200B649ED /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8491BA0819CC5B9100B649ED /* MessageUI.framework */; };
+		8491BA0B19CC5B9900B649ED /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8491BA0A19CC5B9900B649ED /* MobileCoreServices.framework */; };
+		8491BA0D19CC5BB000B649ED /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8491BA0C19CC5BB000B649ED /* CoreData.framework */; };
+		8491BA0F19CC5BBC00B649ED /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8491BA0E19CC5BBC00B649ED /* AssetsLibrary.framework */; };
 		84CBD4FF19C730C500CB50D1 /* CourseDesignTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CBD4FC19C730C500CB50D1 /* CourseDesignTableViewCell.m */; };
 		84CBD50019C730C500CB50D1 /* courselist_iPhoneTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CBD4FE19C730C500CB50D1 /* courselist_iPhoneTableViewController.m */; };
 		84E52CBD19C9B2440042D07A /* CategorywiseDatasiPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E52CBC19C9B2440042D07A /* CategorywiseDatasiPadViewController.m */; };
@@ -208,6 +212,10 @@
 		8491BA0319CBF3F900B649ED /* MyCategoriesDetailiPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCategoriesDetailiPadViewController.m; sourceTree = "<group>"; };
 		8491BA0519CBF94B00B649ED /* MyauthorcoursesiPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyauthorcoursesiPadViewController.h; sourceTree = "<group>"; };
 		8491BA0619CBF94B00B649ED /* MyauthorcoursesiPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyauthorcoursesiPadViewController.m; sourceTree = "<group>"; };
+		8491BA0819CC5B9100B649ED /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		8491BA0A19CC5B9900B649ED /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		8491BA0C19CC5BB000B649ED /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		8491BA0E19CC5BBC00B649ED /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		84CBD4FB19C730C500CB50D1 /* CourseDesignTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseDesignTableViewCell.h; sourceTree = "<group>"; };
 		84CBD4FC19C730C500CB50D1 /* CourseDesignTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseDesignTableViewCell.m; sourceTree = "<group>"; };
 		84CBD4FD19C730C500CB50D1 /* courselist_iPhoneTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = courselist_iPhoneTableViewController.h; sourceTree = "<group>"; };
@@ -301,6 +309,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8491BA0F19CC5BBC00B649ED /* AssetsLibrary.framework in Frameworks */,
+				8491BA0D19CC5BB000B649ED /* CoreData.framework in Frameworks */,
+				8491BA0B19CC5B9900B649ED /* MobileCoreServices.framework in Frameworks */,
+				8491BA0919CC5B9200B649ED /* MessageUI.framework in Frameworks */,
 				0DAFD00219BEC75500A1E509 /* CoreGraphics.framework in Frameworks */,
 				0DAFD00419BEC75500A1E509 /* UIKit.framework in Frameworks */,
 				0DAFD00019BEC75500A1E509 /* Foundation.framework in Frameworks */,
@@ -375,6 +387,10 @@
 		0DAFCFFE19BEC75500A1E509 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8491BA0E19CC5BBC00B649ED /* AssetsLibrary.framework */,
+				8491BA0C19CC5BB000B649ED /* CoreData.framework */,
+				8491BA0A19CC5B9900B649ED /* MobileCoreServices.framework */,
+				8491BA0819CC5B9100B649ED /* MessageUI.framework */,
 				0DAFCFFF19BEC75500A1E509 /* Foundation.framework */,
 				0DAFD00119BEC75500A1E509 /* CoreGraphics.framework */,
 				0DAFD00319BEC75500A1E509 /* UIKit.framework */,

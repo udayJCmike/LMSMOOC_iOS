@@ -9,6 +9,7 @@
 #import "Passwordchange.h"
 #import "APRoundedButton.h"
 #import "UIButton+Bootstrap.h"
+#import "DXAlertView.h"
 #define  AppDelegate (lmsmoocAppDelegate *)[[UIApplication sharedApplication] delegate]
 
 
@@ -40,7 +41,9 @@
             cur_pwd.clearButtonMode = UITextFieldViewModeWhileEditing;
             cur_pwd.layer.borderWidth = 1;
             cur_pwd.layer.borderColor =[[[UIColor grayColor] colorWithAlphaComponent:0.5] CGColor];
-            
+            cur_pwd.tag=1;
+            new_pwd.tag=2;
+            cfm_pwd.tag=3;
             new_pwd = [[UITextField alloc] initWithFrame:CGRectMake(303, 127, 187, 30)];
             [new_pwd.layer setCornerRadius:10.0f];
             new_pwd.textColor = [UIColor blackColor];
@@ -109,6 +112,9 @@
         }
         else if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPhone)
         {
+            cur_pwd.tag=1;
+            new_pwd.tag=2;
+            cfm_pwd.tag=3;
             delegate=AppDelegate;
             [delegate.Profiledetails objectForKey:@"password"];
             // Initialization code
@@ -281,6 +287,147 @@
     [textField resignFirstResponder];
     return YES;
 }
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+     if(textField == cur_pwd)
+    {
+        NSString *rangeOfString = @" ";
+        NSCharacterSet *rangeOfCharacters = [NSCharacterSet characterSetWithCharactersInString:rangeOfString];
+        if(![string isEqualToString:@""])
+        {
+            if (range.location == 0 && [rangeOfCharacters characterIsMember:[string characterAtIndex:0]] )
+            {
+                
+                return NO;
+            }
+            for (int i = 0; i<[string length]; i++)
+            {
+                UniChar c1 = [string characterAtIndex:i];
+                if ([rangeOfCharacters characterIsMember:c1])
+                {
+                    return NO;
+                }
+            }
+        }
+    }
+    else if(textField == new_pwd)
+    {
+        NSString *rangeOfString = @" ";
+        NSCharacterSet *rangeOfCharacters = [NSCharacterSet characterSetWithCharactersInString:rangeOfString];
+        if(![string isEqualToString:@""])
+        {
+            if (range.location == 0 && [rangeOfCharacters characterIsMember:[string characterAtIndex:0]] )
+            {
+                
+                return NO;
+            }
+            for (int i = 0; i<[string length]; i++)
+            {
+                UniChar c1 = [string characterAtIndex:i];
+                if ([rangeOfCharacters characterIsMember:c1])
+                {
+                    return NO;
+                }
+            }
+        }
+    }
+   
+        else if(textField == cfm_pwd)
+        {
+            NSString *rangeOfString = @" ";
+            NSCharacterSet *rangeOfCharacters = [NSCharacterSet characterSetWithCharactersInString:rangeOfString];
+            if(![string isEqualToString:@""])
+            {
+                if (range.location == 0 && [rangeOfCharacters characterIsMember:[string characterAtIndex:0]] )
+                {
+                    
+                    return NO;
+                }
+                for (int i = 0; i<[string length]; i++)
+                {
+                    UniChar c1 = [string characterAtIndex:i];
+                    if ([rangeOfCharacters characterIsMember:c1])
+                    {
+                        return NO;
+                    }
+                }
+            }
+        }
+    return YES;
+    
+}
+-(void)ShowAlert:(NSString*)message
+{
+    DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"Info" contentText:[NSString stringWithFormat:@"%@",message] leftButtonTitle:nil rightButtonTitle:@"Close"];
+    [alert show];
+    alert.rightBlock = ^() {
+        
+    };
+    alert.dismissBlock = ^() {
+        
+    };
+    
+}
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    switch (textField.tag) {
+        case 1:
+            if ([du validatePasswordForSignupPage:cur_pwd.text])
+            {
+            }
+            else
+            {
+                if ([cur_pwd.text length]==0) {
+                    [self ShowAlert:@"Enter the password."];
+                }
+                else
+                {
+                    [self ShowAlert:@"Should contain 1 alphabet.\nShould contain 1 number.\nShould contain 1 special character.\nShould be 8 to 25 characters."];
+                    
+                }
+                //  NSLog(@"ENTER VALID password");
+                
+            }
+            break;
+        case 2:
+            if ([du validatePasswordForSignupPage:new_pwd.text])
+            {
+            }
+            else
+            {
+                if ([new_pwd.text length]==0) {
+                    [self ShowAlert:@"Enter the password."];
+                }
+                else
+                {
+                    [self ShowAlert:@"Should contain 1 alphabet.\nShould contain 1 number.\nShould contain 1 special character.\nShould be 8 to 25 characters."];
+                    
+                }
+                //  NSLog(@"ENTER VALID password");
+                
+            }
+            break;
+        case 3:
+            if ([new_pwd.text isEqualToString:cfm_pwd.text])
+            {
+            }
+            else
+            {
+                
+                
+                [self ShowAlert:@"Password and Confirm Password should be same."];
+                
+                
+                //  NSLog(@"Password mismatch");
+                
+            }
+            break;
+            
+        default:
+            break;
+    }
+}
+
 - (void)willRemoveSubview:(UIView *)subview {
     NSLog(@"called... removed");
 }
