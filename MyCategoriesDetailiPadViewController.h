@@ -1,22 +1,22 @@
 //
-//  Mycourses_iPadViewController.h
+//  MyCategoriesDetailiPadViewController.h
 //  LMSMOOC
 //
-//  Created by DeemsysInc on 10/09/14.
+//  Created by DeemsysInc on 19/09/14.
 //  Copyright (c) 2014 deemsys. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "CollectionCellContent.h"
-#import "REFrostedViewController.h"
 #import "MBProgressHUD.h"
 #import "lmsmoocAppDelegate.h"
 #import "databaseurl.h"
 #import "SBJSON.h"
 #import "UIButton+Bootstrap.h"
-@interface Mycourses_iPadViewController : UIViewController<MBProgressHUDDelegate,UICollectionViewDataSource,UICollectionViewDelegate>
+@interface MyCategoriesDetailiPadViewController : UIViewController<MBProgressHUDDelegate,UICollectionViewDataSource,UICollectionViewDelegate>
 
 {
+    int loadcompleted;
     NSMutableArray*courselist;
     MBProgressHUD *HUD;
     databaseurl *du;
@@ -28,4 +28,5 @@
 @property (retain, nonatomic)  NSOperationQueue *imageOperationQueue;
 @property (retain, nonatomic)    NSCache *imageCache;
 
+@property(nonatomic,retain)NSString *categoryname;
 @end

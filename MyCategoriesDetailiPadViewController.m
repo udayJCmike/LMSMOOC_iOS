@@ -1,20 +1,19 @@
 //
-//  CategorywiseDatasiPadViewController.m
+//  MyCategoriesDetailiPadViewController.m
 //  LMSMOOC
 //
-//  Created by DeemsysInc on 17/09/14.
+//  Created by DeemsysInc on 19/09/14.
 //  Copyright (c) 2014 deemsys. All rights reserved.
 //
 
-#import "CategorywiseDatasiPadViewController.h"
+#import "MyCategoriesDetailiPadViewController.h"
 #define  AppDelegate (lmsmoocAppDelegate *)[[UIApplication sharedApplication] delegate]
-@interface CategorywiseDatasiPadViewController ()
+@interface MyCategoriesDetailiPadViewController ()
 
 @end
 
-@implementation CategorywiseDatasiPadViewController
+@implementation MyCategoriesDetailiPadViewController
 @synthesize categoryname;
-int loadcompleted;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -34,16 +33,94 @@ int loadcompleted;
     courselist=[[NSMutableArray alloc]init];
     du=[[databaseurl alloc]init];
     delegate=AppDelegate;
+    
+    _imageOperationQueue = [[NSOperationQueue alloc]init];
+    _imageOperationQueue.maxConcurrentOperationCount = 4;
+    self.imageCache = [[NSCache alloc] init];
     HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
     [self.navigationController.view addSubview:HUD];
     HUD.delegate = self;
     HUD.labelText = @"Please wait...";
     [HUD show:YES];
-    _imageOperationQueue = [[NSOperationQueue alloc]init];
-    _imageOperationQueue.maxConcurrentOperationCount = 4;
-    self.imageCache = [[NSCache alloc] init];
+ 
+    UIButton *button2 =  [UIButton buttonWithType:UIButtonTypeCustom];
+    [button2 setTitle:@"Remove From favorites" forState:UIControlStateNormal];
+    // [button2 setTitle:@"Add to favorites" forState:UIControlStateSelected];
+    [button2 addTarget:self action:@selector(removecategory) forControlEvents:UIControlEventTouchUpInside];
+    [button2 setFrame:CGRectMake(0, 0, 180, 32)];
+    [button2 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button2];
+    self.navigationItem.title=categoryname;
     [self loadDatas];
+
 }
+-(void)removecategory
+{
+    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+    [self.navigationController.view addSubview:HUD];
+    HUD.delegate = self;
+    HUD.labelText = @"Please wait...";
+    [HUD show:YES];
+    
+    
+    NSString* studentid=[[NSUserDefaults standardUserDefaults]objectForKey:@"userid"];
+    NSString *response=[self HttpPostEntityFirst1:@"studentid" ForValue1:studentid  EntitySecond:@"authkey" ForValue2:@"rzTFevN099Km39PV"];
+    NSError *error;
+    //  NSLog(@"response %@",response);
+    SBJSON *json = [[SBJSON new] autorelease];
+    NSDictionary *parsedvalue = [json objectWithString:response error:&error];
+    
+    // NSLog(@"%@ parsedvalue",parsedvalue);
+    if (parsedvalue == nil)
+    {
+        
+        //NSLog(@"parsedvalue == nil");
+        
+    }
+    else
+    {
+        NSDictionary* menu = [parsedvalue objectForKey:@"serviceresponse"];
+        if ([[menu objectForKey:@"success"]isEqualToString:@"Yes"]) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"RemoveStatus"
+                                                                object:@"success"
+                                                              userInfo:nil];
+            
+        }
+        else
+        {
+            NSLog(@"failure");
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"RemoveStatus"
+                                                                object:@"failure"
+                                                              userInfo:nil];
+        }
+        
+    }
+    
+    [HUD hide:YES];
+    [self.navigationController popViewControllerAnimated:YES];
+    
+}
+
+
+-(NSString *)HttpPostEntityFirst1:(NSString*)firstEntity ForValue1:(NSString*)value1 EntitySecond:(NSString*)secondEntity ForValue2:(NSString*)value2
+{
+    
+    
+    NSString *urltemp=[[databaseurl sharedInstance]DBurl];
+    NSString *url1=@"Categories.php?service=RemoveCategory";
+    NSString *url2=[NSString stringWithFormat:@"%@%@",urltemp,url1];
+    NSString *post =[[NSString alloc] initWithFormat:@"%@=%@&categoryname=%@&%@=%@",firstEntity,value1,categoryname,secondEntity,value2];
+    NSURL *url = [NSURL URLWithString:url2];
+    
+    return [du returndbresult:post URL:url];
+}
+
+
+
+
+
+// Do any additional setup after loading the view.
+
 -(void)loadDatas
 {
     if ([[du submitvalues]isEqualToString:@"Success"])
@@ -80,9 +157,9 @@ int loadcompleted;
     
     
     NSString *urltemp=[[databaseurl sharedInstance]DBurl];
-    NSString *url1=@"CategorywiseDatas.php";
+    NSString *url1=@"Mycategories.php";
     
-    NSString *URLString=[NSString stringWithFormat:@"%@%@?offset=%d&category=%@",urltemp,url1,offset,categoryname];
+    NSString *URLString=[NSString stringWithFormat:@"%@%@?offset=%d&categoryname=%@",urltemp,url1,offset,categoryname];
     
     NSMutableArray *search = [du MultipleCharacters:URLString];
     
@@ -104,8 +181,7 @@ int loadcompleted;
             
             
         }
-   
-      
+        
         
     }
     else
@@ -113,6 +189,8 @@ int loadcompleted;
         loadcompleted=1;
         NSLog(@"No Datas found");
     }
+   
+  
     if (![HUD isHidden]) {
         [HUD hide:YES];
     }
@@ -183,7 +261,6 @@ int loadcompleted;
     {
         cell.review.image=[UIImage imageNamed:@"0star"];
     }
-
     
     
     NSString *imageUrlString = [[NSString alloc]initWithFormat:@"%@/%@/%@",delegate.course_image_url,[course objectForKey:@"course_id"],[course objectForKey:@"course_cover_image"]];
@@ -238,21 +315,5 @@ int loadcompleted;
 }
 
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

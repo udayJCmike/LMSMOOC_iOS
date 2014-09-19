@@ -395,7 +395,7 @@ int loadcompleted;
     cell.cover.image=[UIImage imageNamed:[course objectForKey:@"course_cover_image"]];
         NSString * rating =[course objectForKey:@"ratings"];
         
-        NSLog(@"rating %@",rating);
+      //  NSLog(@"rating %@",rating);
         if([rating isEqualToString:@"1"])
         {
             cell.review.image=[UIImage imageNamed:@"1star"];

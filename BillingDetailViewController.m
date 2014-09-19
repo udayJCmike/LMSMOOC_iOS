@@ -38,10 +38,18 @@
     coursename.text=[billdatas valueForKey:@"course_name"];
        authorname.text=[billdatas valueForKey:@"course_author"];
        dateofpurchase.text=[billdatas valueForKey:@"purchased_date"];
-       price.text=[billdatas valueForKey:@"amount_paid"];
-       promo.text=[billdatas valueForKey:@"promocode"];
-       reduction.text=[billdatas valueForKey:@"reduction"];
-       amountpaid.text=[billdatas valueForKey:@"amount_paid"];
+       price.text=[NSString stringWithFormat:@"$%@",[billdatas valueForKey:@"amount_paid"]];
+    if ([[billdatas valueForKey:@"promocode"]isEqualToString:@"1"]) {
+        promo.text=@"Yes";
+    }
+    else if([[billdatas valueForKey:@"promocode"]isEqualToString:@"0"])
+    {
+        promo.text=@"No";
+    }
+    
+      // promo.text=[billdatas valueForKey:@"promocode"];
+       reduction.text=[NSString stringWithFormat:@"$%@",[billdatas valueForKey:@"reduction"]];
+       amountpaid.text=[NSString stringWithFormat:@"$%@",[billdatas valueForKey:@"amount_paid"]];
        transactiondate.text=[billdatas valueForKey:@"transaction_date"];
        transactionid.text=[billdatas valueForKey:@"transaction_id"];
     

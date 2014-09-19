@@ -10,9 +10,22 @@
 #import "CollectionCellContent.h"
 #import "REFrostedViewController.h"
 #import "MBProgressHUD.h"
+#import "lmsmoocAppDelegate.h"
+#import "databaseurl.h"
+#import "SBJSON.h"
+#import "UIButton+Bootstrap.h"
+#define  AppDelegate (lmsmoocAppDelegate *)[[UIApplication sharedApplication] delegate]
 @interface Myfavorites_iPadViewController : UIViewController<MBProgressHUDDelegate,UICollectionViewDataSource,UICollectionViewDelegate>
 {
-    NSArray *courselist;
-    NSArray *courseImages;
+    NSMutableArray*courselist;
+    MBProgressHUD *HUD;
+    databaseurl *du;
+    lmsmoocAppDelegate *delegate;
+    int offset;
+    int loadcompleted;
 }
+
+@property (retain, nonatomic) IBOutlet UICollectionView *ipadcollection;
+@property (retain, nonatomic)  NSOperationQueue *imageOperationQueue;
+@property (retain, nonatomic)    NSCache *imageCache;
 @end

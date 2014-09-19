@@ -164,9 +164,16 @@
     NSDictionary *temp=[billing objectAtIndex:indexPath.row];
     cell.coursename.text=[temp valueForKey:@"course_name"];
     cell.purchaseddate.text=[temp valueForKey:@"purchased_date"];
-    cell.promocode.text=[temp valueForKey:@"promocode"];
-    cell.reduction.text=[temp valueForKey:@"reduction"];
-     cell.amount.text=[temp valueForKey:@"amount_paid"];
+    if ([[temp valueForKey:@"promocode"]isEqualToString:@"1"]) {
+         cell.promocode.text=@"Yes";
+    }
+    else if([[temp valueForKey:@"promocode"]isEqualToString:@"0"])
+    {
+         cell.promocode.text=@"No";
+    }
+   
+    cell.reduction.text=[NSString stringWithFormat:@"$%@",[temp valueForKey:@"reduction"]];
+     cell.amount.text=[NSString stringWithFormat:@"$%@",[temp valueForKey:@"amount_paid"]];
     return cell;
 }
 

@@ -164,7 +164,7 @@ int loadcompleted;
     
     NSString * rating =[course objectForKey:@"ratings"];
     
-    NSLog(@"rating %@",rating);
+  //  NSLog(@"rating %@",rating);
     if([rating isEqualToString:@"1"])
     {
         cell.review.image=[UIImage imageNamed:@"1star"];
