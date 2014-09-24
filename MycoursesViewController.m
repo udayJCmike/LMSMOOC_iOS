@@ -105,7 +105,7 @@ int loadcompleted;
     [super viewDidDisappear:animated];
     offset=0;
     loadcompleted=0;
-    [courselist removeAllObjects];
+   // [courselist removeAllObjects];
     [_imageOperationQueue cancelAllOperations];
     
 }
@@ -118,13 +118,13 @@ int loadcompleted;
     NSString *url1=@"Mycourses.php";
     
     NSString *URLString=[NSString stringWithFormat:@"%@%@?offset=%d&studentid=%@",urltemp,url1,offset,studentid];
-    
+    //NSLog(@"url  %@",URLString);
     NSMutableArray *search = [du MultipleCharacters:URLString];
-    
+    // NSLog(@"search  %@",search);
     NSDictionary* menu = [search valueForKey:@"serviceresponse"];
     
     NSArray *Listofdatas=[menu objectForKey:@"Course List"];
-    
+   // NSLog(@"list  %@",Listofdatas);
     
     if ([Listofdatas count]>0)
     {
@@ -134,7 +134,10 @@ int loadcompleted;
         {
             NSDictionary *arrayList1= [Listofdatas objectAtIndex:i];
             NSDictionary *temp=[arrayList1 objectForKey:@"serviceresponse"];
-            //            NSLog(@"Received Values %@",temp);
+           NSString* mess=[temp objectForKey:@"course_description"];
+            mess = [mess stringByReplacingOccurrencesOfString: @"<br>" withString: @"\n"];
+            mess = [mess stringByReplacingOccurrencesOfString: @"<br>" withString: @"\n"];
+            [temp setValue:mess forKey:@"course_description"];
             [courselist addObject:temp];
             
             
@@ -152,7 +155,7 @@ int loadcompleted;
         [HUD hide:YES];
     }
     offset+=10;
-    
+   //  NSLog(@"Received Values %@",courselist);
     
     
     
@@ -263,16 +266,43 @@ int loadcompleted;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    delegate.CourseDetail=[courselist objectAtIndex:indexPath.row];
+
+  
+    if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad)
+    {
+       
+        UIStoryboard *welcome=[UIStoryboard storyboardWithName:@"CourseDetailiPad" bundle:nil];
+        UIViewController *initialvc=[welcome instantiateInitialViewController];
+        [self.navigationController pushViewController:initialvc animated:YES];
+       
+    }
+    else if(UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPhone)
+    {
+        UIStoryboard *welcome=[UIStoryboard storyboardWithName:@"CourseDetailiPhone" bundle:nil];
+        UIViewController *initialvc=[welcome instantiateInitialViewController];
+        [self.navigationController pushViewController:initialvc animated:YES];
+    }
     
-    
-    
-    NSDictionary *temp=[courselist objectAtIndex:indexPath.row];
-    NSString *url=[NSString stringWithFormat:@"http://208.109.248.89:8085/OnlineCourse/student_view_Course?course_id=%@&authorid=%@&pur=%@&catcourse=&coursetype=",[temp objectForKey:@"course_id"], [temp objectForKey:@"instructor_id"],[temp objectForKey:@"numofpurchased"]];
-    // NSLog(@"URL %@",url);
-    [[UIApplication sharedApplication]openURL:[NSURL URLWithString:url]];
+
+   // [self performSegueWithIdentifier:@"CourseDetails" sender:self];
+//    NSDictionary *temp=[courselist objectAtIndex:indexPath.row];
+  /*  if([[temp objectForKey:@"studentenrolled"]isEqualToString:@"0"])
+    {
+        NSString *url=[NSString stringWithFormat:@"http://208.109.248.89:8085/OnlineCourse/student_view_Course?course_id=%@&authorid=%@&pur=%@&catcourse=&coursetype=",[temp objectForKey:@"course_id"], [temp objectForKey:@"instructor_id"],[temp objectForKey:@"numofpurchased"]];
+        // NSLog(@"URL %@",url);
+        [[UIApplication sharedApplication]openURL:[NSURL URLWithString:url]];
+    }
+    else
+    {
+        NSLog(@"Student enrolled");
+    }
+    */
     
     
 }
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

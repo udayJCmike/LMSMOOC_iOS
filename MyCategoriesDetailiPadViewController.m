@@ -147,7 +147,7 @@
     [super viewDidDisappear:animated];
     offset=0;
     loadcompleted=0;
-    [courselist removeAllObjects];
+   // [courselist removeAllObjects];
     [_imageOperationQueue cancelAllOperations];
     
 }
@@ -158,8 +158,8 @@
     
     NSString *urltemp=[[databaseurl sharedInstance]DBurl];
     NSString *url1=@"Mycategories.php";
-    
-    NSString *URLString=[NSString stringWithFormat:@"%@%@?offset=%d&categoryname=%@",urltemp,url1,offset,categoryname];
+     NSString * studentid= [[NSUserDefaults standardUserDefaults]objectForKey:@"userid"];
+    NSString *URLString=[NSString stringWithFormat:@"%@%@?offset=%d&categoryname=%@&studentid=%@",urltemp,url1,offset,categoryname,studentid];
     
     NSMutableArray *search = [du MultipleCharacters:URLString];
     
@@ -176,6 +176,10 @@
         {
             NSDictionary *arrayList1= [Listofdatas objectAtIndex:i];
             NSDictionary *temp=[arrayList1 objectForKey:@"serviceresponse"];
+            NSString* mess=[temp objectForKey:@"course_description"];
+            mess = [mess stringByReplacingOccurrencesOfString: @"<br>" withString: @"\n"];
+            mess = [mess stringByReplacingOccurrencesOfString: @"<br>" withString: @"\n"];
+            [temp setValue:mess forKey:@"course_description"];
             //            NSLog(@"Received Values %@",temp);
             [courselist addObject:temp];
             
@@ -216,9 +220,34 @@
     //     NSMutableArray *indexPaths = [NSMutableArray arrayWithObject:indexPath];
     NSLog(@"clicked at index %d",indexPath.row);
     NSDictionary *temp=[courselist objectAtIndex:indexPath.row];
-    NSString *url=[NSString stringWithFormat:@"http://208.109.248.89:8085/OnlineCourse/student_view_Course?course_id=%@&authorid=%@&pur=%@&catcourse=&coursetype=",[temp objectForKey:@"course_id"], [temp objectForKey:@"instructor_id"],[temp objectForKey:@"numofpurchased"]];
-    // NSLog(@"URL %@",url);
-    [[UIApplication sharedApplication]openURL:[NSURL URLWithString:url]];
+    if([[temp objectForKey:@"studentenrolled"]isEqualToString:@"0"])
+    {
+        NSString *url=[NSString stringWithFormat:@"http://208.109.248.89:8085/OnlineCourse/student_view_Course?course_id=%@&authorid=%@&pur=%@&catcourse=&coursetype=",[temp objectForKey:@"course_id"], [temp objectForKey:@"instructor_id"],[temp objectForKey:@"numofpurchased"]];
+        // NSLog(@"URL %@",url);
+        [[UIApplication sharedApplication]openURL:[NSURL URLWithString:url]];
+    }
+    else
+    {
+        NSLog(@"Student enrolled");
+        delegate.CourseDetail=[courselist objectAtIndex:indexPath.row];
+        
+        
+        if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad)
+        {
+            
+            UIStoryboard *welcome=[UIStoryboard storyboardWithName:@"CourseDetailiPad" bundle:nil];
+            UIViewController *initialvc=[welcome instantiateInitialViewController];
+            [self.navigationController pushViewController:initialvc animated:YES];
+            
+        }
+        else if(UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPhone)
+        {
+            UIStoryboard *welcome=[UIStoryboard storyboardWithName:@"CourseDetailiPhone" bundle:nil];
+            UIViewController *initialvc=[welcome instantiateInitialViewController];
+            [self.navigationController pushViewController:initialvc animated:YES];
+        }
+
+    }
 }
 
 

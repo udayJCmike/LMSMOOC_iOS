@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface lmsmoocAppDelegate : UIResponder <UIApplicationDelegate>
-
+@property(strong,nonatomic)NSMutableDictionary *lectureDetail;
 @property(strong,nonatomic)NSString *course_image_url;
-
+@property(strong,nonatomic)NSMutableDictionary *CourseDetail;
 @property (strong, nonatomic) UIWindow *window;
 @property(strong,nonatomic)NSString *avatharURL;
 @property(strong,nonatomic)NSString *av_image;

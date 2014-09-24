@@ -75,7 +75,7 @@
         [view addSubview:label];
         view;
     });
-    titles = [[NSArray alloc]initWithObjects:@"Home", @"Profile", @"Inbox",@"My Courses",@"My Favorites",@"My Categories",@"My Authors",@"Billing",@"Logout",nil];
+    titles = [[NSArray alloc]initWithObjects:@"Home", @"Profile", @"Inbox",@"My Courses",@"My Favorites",@"My Categories",@"My Authors",@"Billing",@"Change Password",@"Logout",nil];
 
 }
 -(void)reloadTableContent
@@ -189,6 +189,11 @@
     else if(indexPath.section == 0 && indexPath.row == 7) {
         
         BillingTableViewController *secondViewController2 = [self.storyboard instantiateViewControllerWithIdentifier:@"Billing"];
+        navigationController.viewControllers = @[secondViewController2];
+    }
+    else if(indexPath.section == 0 && indexPath.row == 8) {
+        
+        ChangePasswordViewController *secondViewController2 = [self.storyboard instantiateViewControllerWithIdentifier:@"ChangePassword"];
         navigationController.viewControllers = @[secondViewController2];
     }
     

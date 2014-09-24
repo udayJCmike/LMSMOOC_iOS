@@ -120,7 +120,23 @@
 }
 -(void)showcourse
 {
-    NSLog(@"courses page");
+    if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad)
+    {
+        UIStoryboard *welcome=[UIStoryboard storyboardWithName:@"BrowseCourses_iPad" bundle:nil];
+        UIViewController *initialvc=[welcome instantiateInitialViewController];
+        [self.navigationController pushViewController:initialvc animated:YES];
+        //    initialvc.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
+        //    [self presentModalViewController:initialvc animated:YES];
+    }
+    if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPhone)
+    {
+        UIStoryboard *welcome=[UIStoryboard storyboardWithName:@"BrowseCourses" bundle:nil];
+        UIViewController *initialvc=[welcome instantiateInitialViewController];
+        [self.navigationController pushViewController:initialvc animated:YES];
+        //    initialvc.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
+        //    [self presentModalViewController:initialvc animated:YES];
+    }
+
 }
 
 - (PageContentViewController *)viewControllerAtIndex:(NSUInteger)index
@@ -188,7 +204,15 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if (self.navigationController.navigationBar.hidden == YES)
+    {
+        // Show the Navigation Bar
+        [self.navigationController setNavigationBarHidden:NO animated:NO];
+    }
+}
 
 @end
 @implementation UIPageViewController (Additions)

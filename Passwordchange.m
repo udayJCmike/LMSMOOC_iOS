@@ -370,6 +370,7 @@
 }
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
+    NSLog(@"tag number %d",textField.tag);
     switch (textField.tag) {
         case 1:
             if ([du validatePasswordForSignupPage:cur_pwd.text])

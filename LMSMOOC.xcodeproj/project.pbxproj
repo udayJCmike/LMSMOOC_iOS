@@ -51,6 +51,15 @@
 		845B10A219BF2D5B00AAE3E4 /* checkBox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 845B109E19BF2D5B00AAE3E4 /* checkBox@2x.png */; };
 		845B10A319BF2D5B00AAE3E4 /* checkBoxMarked.png in Resources */ = {isa = PBXBuildFile; fileRef = 845B109F19BF2D5B00AAE3E4 /* checkBoxMarked.png */; };
 		845B10A419BF2D5B00AAE3E4 /* checkBoxMarked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 845B10A019BF2D5B00AAE3E4 /* checkBoxMarked@2x.png */; };
+		8470B50A19CD40FF008A5809 /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8470B50919CD40FF008A5809 /* ChangePasswordViewController.m */; };
+		8470B50C19CD624E008A5809 /* BrowseCourses.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8470B50B19CD624E008A5809 /* BrowseCourses.storyboard */; };
+		8470B50E19CD6423008A5809 /* BrowseCourses_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8470B50D19CD6423008A5809 /* BrowseCourses_iPad.storyboard */; };
+		8470B51219CD64A2008A5809 /* BrowseCourseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8470B51119CD64A2008A5809 /* BrowseCourseListViewController.m */; };
+		8470B51719CD64CB008A5809 /* BrowseCourseiPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8470B51619CD64CB008A5809 /* BrowseCourseiPadViewController.m */; };
+		8470B51A19CD64F6008A5809 /* BrowseCategorywiseDatasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8470B51919CD64F6008A5809 /* BrowseCategorywiseDatasViewController.m */; };
+		8470B51D19CD6511008A5809 /* BrowseCourseSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8470B51C19CD6511008A5809 /* BrowseCourseSearchViewController.m */; };
+		8470B52019CD6555008A5809 /* BrowseCategorywiseDatasiPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8470B51F19CD6555008A5809 /* BrowseCategorywiseDatasiPadViewController.m */; };
+		8470B52319CD656E008A5809 /* BrowseCourseSearchiPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8470B52219CD656E008A5809 /* BrowseCourseSearchiPadViewController.m */; };
 		847635D719C03FCC00F45CEF /* ban1.png in Resources */ = {isa = PBXBuildFile; fileRef = 847635CF19C03FCC00F45CEF /* ban1.png */; };
 		847635D819C03FCC00F45CEF /* ban2.png in Resources */ = {isa = PBXBuildFile; fileRef = 847635D019C03FCC00F45CEF /* ban2.png */; };
 		847635D919C03FCC00F45CEF /* ban3.png in Resources */ = {isa = PBXBuildFile; fileRef = 847635D119C03FCC00F45CEF /* ban3.png */; };
@@ -71,6 +80,17 @@
 		8491BA0B19CC5B9900B649ED /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8491BA0A19CC5B9900B649ED /* MobileCoreServices.framework */; };
 		8491BA0D19CC5BB000B649ED /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8491BA0C19CC5BB000B649ED /* CoreData.framework */; };
 		8491BA0F19CC5BBC00B649ED /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8491BA0E19CC5BBC00B649ED /* AssetsLibrary.framework */; };
+		849CE19D19CFF0F7001F78C0 /* CourseDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849CE19C19CFF0F7001F78C0 /* CourseDetailViewController.m */; };
+		849CE19F19D00066001F78C0 /* CourseDetailiPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849CE19E19D00066001F78C0 /* CourseDetailiPhone.storyboard */; };
+		849CE1A119D00086001F78C0 /* CourseDetailiPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849CE1A019D00086001F78C0 /* CourseDetailiPad.storyboard */; };
+		849CE1A519D000EF001F78C0 /* SyllabusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849CE1A419D000EF001F78C0 /* SyllabusViewController.m */; };
+		849CE1A819D000FE001F78C0 /* AboutauthorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849CE1A719D000FE001F78C0 /* AboutauthorViewController.m */; };
+		849CE1AB19D0010D001F78C0 /* AboutcourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849CE1AA19D0010D001F78C0 /* AboutcourseViewController.m */; };
+		849CE1AF19D003BE001F78C0 /* ViewPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849CE1AE19D003BE001F78C0 /* ViewPagerController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		849CE1B119D0061E001F78C0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849CE1B019D0061E001F78C0 /* QuartzCore.framework */; };
+		849CE1B419D0303A001F78C0 /* SyllabusLectureTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 849CE1B319D0303A001F78C0 /* SyllabusLectureTableViewCell.m */; };
+		849CE1B819D04D10001F78C0 /* downArrowBlack.png in Resources */ = {isa = PBXBuildFile; fileRef = 849CE1B619D04D10001F78C0 /* downArrowBlack.png */; };
+		849CE1B919D04D10001F78C0 /* upArrowBlack.png in Resources */ = {isa = PBXBuildFile; fileRef = 849CE1B719D04D10001F78C0 /* upArrowBlack.png */; };
 		84CBD4FF19C730C500CB50D1 /* CourseDesignTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CBD4FC19C730C500CB50D1 /* CourseDesignTableViewCell.m */; };
 		84CBD50019C730C500CB50D1 /* courselist_iPhoneTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CBD4FE19C730C500CB50D1 /* courselist_iPhoneTableViewController.m */; };
 		84E52CBD19C9B2440042D07A /* CategorywiseDatasiPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E52CBC19C9B2440042D07A /* CategorywiseDatasiPadViewController.m */; };
@@ -84,6 +104,9 @@
 		84EC716419CB087E00529168 /* MyauthorcoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EC716319CB087E00529168 /* MyauthorcoursesViewController.m */; };
 		84EC716719CB16A200529168 /* BillingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EC716619CB16A200529168 /* BillingTableViewCell.m */; };
 		84EC716A19CB1ACB00529168 /* BillingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EC716919CB1ACB00529168 /* BillingDetailViewController.m */; };
+		84EDDB6B19D28C8400FEAE95 /* AudioPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EDDB6A19D28C8400FEAE95 /* AudioPlayerViewController.m */; };
+		84EDDB6E19D28C9000FEAE95 /* VideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EDDB6D19D28C9000FEAE95 /* VideoPlayerViewController.m */; };
+		84EDDB7119D28CA200FEAE95 /* TextViewerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84EDDB7019D28CA200FEAE95 /* TextViewerViewController.m */; };
 		84F59B6319C2AD5A009EF252 /* APRoundedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F59B6219C2AD5A009EF252 /* APRoundedButton.m */; };
 		84F59B6619C2AD89009EF252 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F59B6419C2AD89009EF252 /* Main_iPad.storyboard */; };
 		84F59B6719C2AD89009EF252 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F59B6519C2AD89009EF252 /* Main_iPhone.storyboard */; };
@@ -189,6 +212,22 @@
 		845B109E19BF2D5B00AAE3E4 /* checkBox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "checkBox@2x.png"; path = "LMSMOOC/checkBox@2x.png"; sourceTree = "<group>"; };
 		845B109F19BF2D5B00AAE3E4 /* checkBoxMarked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = checkBoxMarked.png; path = LMSMOOC/checkBoxMarked.png; sourceTree = "<group>"; };
 		845B10A019BF2D5B00AAE3E4 /* checkBoxMarked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "checkBoxMarked@2x.png"; path = "LMSMOOC/checkBoxMarked@2x.png"; sourceTree = "<group>"; };
+		8470B50819CD40FF008A5809 /* ChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordViewController.h; sourceTree = "<group>"; };
+		8470B50919CD40FF008A5809 /* ChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordViewController.m; sourceTree = "<group>"; };
+		8470B50B19CD624E008A5809 /* BrowseCourses.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BrowseCourses.storyboard; sourceTree = "<group>"; };
+		8470B50D19CD6423008A5809 /* BrowseCourses_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BrowseCourses_iPad.storyboard; sourceTree = "<group>"; };
+		8470B51019CD64A2008A5809 /* BrowseCourseListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowseCourseListViewController.h; sourceTree = "<group>"; };
+		8470B51119CD64A2008A5809 /* BrowseCourseListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowseCourseListViewController.m; sourceTree = "<group>"; };
+		8470B51519CD64CB008A5809 /* BrowseCourseiPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowseCourseiPadViewController.h; sourceTree = "<group>"; };
+		8470B51619CD64CB008A5809 /* BrowseCourseiPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowseCourseiPadViewController.m; sourceTree = "<group>"; };
+		8470B51819CD64F6008A5809 /* BrowseCategorywiseDatasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowseCategorywiseDatasViewController.h; sourceTree = "<group>"; };
+		8470B51919CD64F6008A5809 /* BrowseCategorywiseDatasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowseCategorywiseDatasViewController.m; sourceTree = "<group>"; };
+		8470B51B19CD6511008A5809 /* BrowseCourseSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowseCourseSearchViewController.h; sourceTree = "<group>"; };
+		8470B51C19CD6511008A5809 /* BrowseCourseSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowseCourseSearchViewController.m; sourceTree = "<group>"; };
+		8470B51E19CD6555008A5809 /* BrowseCategorywiseDatasiPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowseCategorywiseDatasiPadViewController.h; sourceTree = "<group>"; };
+		8470B51F19CD6555008A5809 /* BrowseCategorywiseDatasiPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowseCategorywiseDatasiPadViewController.m; sourceTree = "<group>"; };
+		8470B52119CD656E008A5809 /* BrowseCourseSearchiPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowseCourseSearchiPadViewController.h; sourceTree = "<group>"; };
+		8470B52219CD656E008A5809 /* BrowseCourseSearchiPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowseCourseSearchiPadViewController.m; sourceTree = "<group>"; };
 		847635CF19C03FCC00F45CEF /* ban1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ban1.png; sourceTree = "<group>"; };
 		847635D019C03FCC00F45CEF /* ban2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ban2.png; sourceTree = "<group>"; };
 		847635D119C03FCC00F45CEF /* ban3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ban3.png; sourceTree = "<group>"; };
@@ -216,6 +255,23 @@
 		8491BA0A19CC5B9900B649ED /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		8491BA0C19CC5BB000B649ED /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		8491BA0E19CC5BBC00B649ED /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		849CE19B19CFF0F7001F78C0 /* CourseDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseDetailViewController.h; sourceTree = "<group>"; };
+		849CE19C19CFF0F7001F78C0 /* CourseDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseDetailViewController.m; sourceTree = "<group>"; };
+		849CE19E19D00066001F78C0 /* CourseDetailiPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CourseDetailiPhone.storyboard; sourceTree = "<group>"; };
+		849CE1A019D00086001F78C0 /* CourseDetailiPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CourseDetailiPad.storyboard; sourceTree = "<group>"; };
+		849CE1A319D000EF001F78C0 /* SyllabusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyllabusViewController.h; sourceTree = "<group>"; };
+		849CE1A419D000EF001F78C0 /* SyllabusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyllabusViewController.m; sourceTree = "<group>"; };
+		849CE1A619D000FE001F78C0 /* AboutauthorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutauthorViewController.h; sourceTree = "<group>"; };
+		849CE1A719D000FE001F78C0 /* AboutauthorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutauthorViewController.m; sourceTree = "<group>"; };
+		849CE1A919D0010D001F78C0 /* AboutcourseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutcourseViewController.h; sourceTree = "<group>"; };
+		849CE1AA19D0010D001F78C0 /* AboutcourseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutcourseViewController.m; sourceTree = "<group>"; };
+		849CE1AD19D003BE001F78C0 /* ViewPagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewPagerController.h; sourceTree = "<group>"; };
+		849CE1AE19D003BE001F78C0 /* ViewPagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewPagerController.m; sourceTree = "<group>"; };
+		849CE1B019D0061E001F78C0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		849CE1B219D03039001F78C0 /* SyllabusLectureTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyllabusLectureTableViewCell.h; sourceTree = "<group>"; };
+		849CE1B319D0303A001F78C0 /* SyllabusLectureTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyllabusLectureTableViewCell.m; sourceTree = "<group>"; };
+		849CE1B619D04D10001F78C0 /* downArrowBlack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = downArrowBlack.png; sourceTree = "<group>"; };
+		849CE1B719D04D10001F78C0 /* upArrowBlack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upArrowBlack.png; sourceTree = "<group>"; };
 		84CBD4FB19C730C500CB50D1 /* CourseDesignTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseDesignTableViewCell.h; sourceTree = "<group>"; };
 		84CBD4FC19C730C500CB50D1 /* CourseDesignTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseDesignTableViewCell.m; sourceTree = "<group>"; };
 		84CBD4FD19C730C500CB50D1 /* courselist_iPhoneTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = courselist_iPhoneTableViewController.h; sourceTree = "<group>"; };
@@ -242,6 +298,12 @@
 		84EC716619CB16A200529168 /* BillingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BillingTableViewCell.m; sourceTree = "<group>"; };
 		84EC716819CB1ACB00529168 /* BillingDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BillingDetailViewController.h; sourceTree = "<group>"; };
 		84EC716919CB1ACB00529168 /* BillingDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BillingDetailViewController.m; sourceTree = "<group>"; };
+		84EDDB6919D28C8400FEAE95 /* AudioPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioPlayerViewController.h; sourceTree = "<group>"; };
+		84EDDB6A19D28C8400FEAE95 /* AudioPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioPlayerViewController.m; sourceTree = "<group>"; };
+		84EDDB6C19D28C9000FEAE95 /* VideoPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayerViewController.h; sourceTree = "<group>"; };
+		84EDDB6D19D28C9000FEAE95 /* VideoPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoPlayerViewController.m; sourceTree = "<group>"; };
+		84EDDB6F19D28CA200FEAE95 /* TextViewerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewerViewController.h; sourceTree = "<group>"; };
+		84EDDB7019D28CA200FEAE95 /* TextViewerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewerViewController.m; sourceTree = "<group>"; };
 		84F59B6119C2AD5A009EF252 /* APRoundedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APRoundedButton.h; sourceTree = "<group>"; };
 		84F59B6219C2AD5A009EF252 /* APRoundedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APRoundedButton.m; sourceTree = "<group>"; };
 		84F59B6419C2AD89009EF252 /* Main_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPad.storyboard; sourceTree = "<group>"; };
@@ -309,6 +371,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				849CE1B119D0061E001F78C0 /* QuartzCore.framework in Frameworks */,
 				8491BA0F19CC5BBC00B649ED /* AssetsLibrary.framework in Frameworks */,
 				8491BA0D19CC5BB000B649ED /* CoreData.framework in Frameworks */,
 				8491BA0B19CC5B9900B649ED /* MobileCoreServices.framework in Frameworks */,
@@ -347,6 +410,10 @@
 		0DAFCFF319BEC75500A1E509 = {
 			isa = PBXGroup;
 			children = (
+				84EDDB6819D28C5E00FEAE95 /* LectureDetails */,
+				849CE1AC19D00399001F78C0 /* ViewPager */,
+				849CE1A219D000CC001F78C0 /* Course Detail */,
+				8470B50F19CD6458008A5809 /* BrowseCourses */,
 				84EC715E19CAFDB900529168 /* MyAuthors */,
 				84EC715119CAD75500529168 /* MyCourses */,
 				84EC715019CAD74C00529168 /* MyFavorites */,
@@ -387,6 +454,7 @@
 		0DAFCFFE19BEC75500A1E509 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				849CE1B019D0061E001F78C0 /* QuartzCore.framework */,
 				8491BA0E19CC5BBC00B649ED /* AssetsLibrary.framework */,
 				8491BA0C19CC5BB000B649ED /* CoreData.framework */,
 				8491BA0A19CC5B9900B649ED /* MobileCoreServices.framework */,
@@ -532,6 +600,43 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		8470B50F19CD6458008A5809 /* BrowseCourses */ = {
+			isa = PBXGroup;
+			children = (
+				8470B51419CD64AD008A5809 /* iPad */,
+				8470B51319CD64A6008A5809 /* iPhone */,
+			);
+			name = BrowseCourses;
+			sourceTree = "<group>";
+		};
+		8470B51319CD64A6008A5809 /* iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				8470B51019CD64A2008A5809 /* BrowseCourseListViewController.h */,
+				8470B51119CD64A2008A5809 /* BrowseCourseListViewController.m */,
+				8470B51819CD64F6008A5809 /* BrowseCategorywiseDatasViewController.h */,
+				8470B51919CD64F6008A5809 /* BrowseCategorywiseDatasViewController.m */,
+				8470B51B19CD6511008A5809 /* BrowseCourseSearchViewController.h */,
+				8470B51C19CD6511008A5809 /* BrowseCourseSearchViewController.m */,
+				8470B50B19CD624E008A5809 /* BrowseCourses.storyboard */,
+			);
+			name = iPhone;
+			sourceTree = "<group>";
+		};
+		8470B51419CD64AD008A5809 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				8470B51519CD64CB008A5809 /* BrowseCourseiPadViewController.h */,
+				8470B51619CD64CB008A5809 /* BrowseCourseiPadViewController.m */,
+				8470B51E19CD6555008A5809 /* BrowseCategorywiseDatasiPadViewController.h */,
+				8470B51F19CD6555008A5809 /* BrowseCategorywiseDatasiPadViewController.m */,
+				8470B52119CD656E008A5809 /* BrowseCourseSearchiPadViewController.h */,
+				8470B52219CD656E008A5809 /* BrowseCourseSearchiPadViewController.m */,
+				8470B50D19CD6423008A5809 /* BrowseCourses_iPad.storyboard */,
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
 		8491B9FA19CBED2900B649ED /* iPad */ = {
 			isa = PBXGroup;
 			children = (
@@ -610,6 +715,44 @@
 			name = iPad;
 			sourceTree = "<group>";
 		};
+		849CE1A219D000CC001F78C0 /* Course Detail */ = {
+			isa = PBXGroup;
+			children = (
+				849CE1B519D030A4001F78C0 /* Syllabus */,
+				849CE1A919D0010D001F78C0 /* AboutcourseViewController.h */,
+				849CE1AA19D0010D001F78C0 /* AboutcourseViewController.m */,
+				849CE1A619D000FE001F78C0 /* AboutauthorViewController.h */,
+				849CE1A719D000FE001F78C0 /* AboutauthorViewController.m */,
+				849CE19B19CFF0F7001F78C0 /* CourseDetailViewController.h */,
+				849CE19C19CFF0F7001F78C0 /* CourseDetailViewController.m */,
+				849CE19E19D00066001F78C0 /* CourseDetailiPhone.storyboard */,
+				849CE1A019D00086001F78C0 /* CourseDetailiPad.storyboard */,
+			);
+			name = "Course Detail";
+			sourceTree = "<group>";
+		};
+		849CE1AC19D00399001F78C0 /* ViewPager */ = {
+			isa = PBXGroup;
+			children = (
+				849CE1AD19D003BE001F78C0 /* ViewPagerController.h */,
+				849CE1AE19D003BE001F78C0 /* ViewPagerController.m */,
+			);
+			name = ViewPager;
+			sourceTree = "<group>";
+		};
+		849CE1B519D030A4001F78C0 /* Syllabus */ = {
+			isa = PBXGroup;
+			children = (
+				849CE1B219D03039001F78C0 /* SyllabusLectureTableViewCell.h */,
+				849CE1B319D0303A001F78C0 /* SyllabusLectureTableViewCell.m */,
+				849CE1A319D000EF001F78C0 /* SyllabusViewController.h */,
+				849CE1A419D000EF001F78C0 /* SyllabusViewController.m */,
+				849CE1B619D04D10001F78C0 /* downArrowBlack.png */,
+				849CE1B719D04D10001F78C0 /* upArrowBlack.png */,
+			);
+			name = Syllabus;
+			sourceTree = "<group>";
+		};
 		84CBD4FA19C730A100CB50D1 /* CourseList_iPhone */ = {
 			isa = PBXGroup;
 			children = (
@@ -662,6 +805,19 @@
 			name = MyAuthors;
 			sourceTree = "<group>";
 		};
+		84EDDB6819D28C5E00FEAE95 /* LectureDetails */ = {
+			isa = PBXGroup;
+			children = (
+				84EDDB6F19D28CA200FEAE95 /* TextViewerViewController.h */,
+				84EDDB7019D28CA200FEAE95 /* TextViewerViewController.m */,
+				84EDDB6C19D28C9000FEAE95 /* VideoPlayerViewController.h */,
+				84EDDB6D19D28C9000FEAE95 /* VideoPlayerViewController.m */,
+				84EDDB6919D28C8400FEAE95 /* AudioPlayerViewController.h */,
+				84EDDB6A19D28C8400FEAE95 /* AudioPlayerViewController.m */,
+			);
+			name = LectureDetails;
+			sourceTree = "<group>";
+		};
 		84F59B5E19C2AAD2009EF252 /* Avatar Download */ = {
 			isa = PBXGroup;
 			children = (
@@ -678,6 +834,8 @@
 		84F59B5F19C2AAE9009EF252 /* Update Password */ = {
 			isa = PBXGroup;
 			children = (
+				8470B50819CD40FF008A5809 /* ChangePasswordViewController.h */,
+				8470B50919CD40FF008A5809 /* ChangePasswordViewController.m */,
 				847635EE19C095A700F45CEF /* Passwordchange.h */,
 				847635EF19C095A700F45CEF /* Passwordchange.m */,
 			);
@@ -870,6 +1028,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				849CE1A119D00086001F78C0 /* CourseDetailiPad.storyboard in Resources */,
 				0DFCDC3A19CAB990002D317D /* 4star.png in Resources */,
 				847635DA19C03FCC00F45CEF /* ban4.png in Resources */,
 				845B10A319BF2D5B00AAE3E4 /* checkBoxMarked.png in Resources */,
@@ -881,6 +1040,7 @@
 				84FC7D9819C017750001FD7C /* Dashboard_iPhone.storyboard in Resources */,
 				0DAFD01B19BEC75500A1E509 /* Images.xcassets in Resources */,
 				0DFCDC3819CAB990002D317D /* 2star.png in Resources */,
+				849CE1B919D04D10001F78C0 /* upArrowBlack.png in Resources */,
 				84F59B6719C2AD89009EF252 /* Main_iPhone.storyboard in Resources */,
 				845B10A219BF2D5B00AAE3E4 /* checkBox@2x.png in Resources */,
 				847635DD19C03FCC00F45CEF /* bantab3.png in Resources */,
@@ -893,9 +1053,11 @@
 				84FC7D9A19C017880001FD7C /* Dashboard_iPad.storyboard in Resources */,
 				84F59B6B19C2AE28009EF252 /* bantab5.png in Resources */,
 				84082A6419C834490039F4E8 /* btn_close_selected.png in Resources */,
+				8470B50E19CD6423008A5809 /* BrowseCourses_iPad.storyboard in Resources */,
 				845B10A419BF2D5B00AAE3E4 /* checkBoxMarked@2x.png in Resources */,
 				0DFCDC3719CAB990002D317D /* 1star.png in Resources */,
 				84FC7DB919C01C680001FD7C /* Avatar-female.png in Resources */,
+				8470B50C19CD624E008A5809 /* BrowseCourses.storyboard in Resources */,
 				0D3C958E19C31C9C0065A4B4 /* bg.jpg in Resources */,
 				0D2E930B19C42C00005C4E67 /* unimportant.png in Resources */,
 				84082A6319C834490039F4E8 /* btn_close_normal@2x.png in Resources */,
@@ -908,8 +1070,10 @@
 				847635D919C03FCC00F45CEF /* ban3.png in Resources */,
 				84F59B6619C2AD89009EF252 /* Main_iPad.storyboard in Resources */,
 				0DAFD00A19BEC75500A1E509 /* InfoPlist.strings in Resources */,
+				849CE1B819D04D10001F78C0 /* downArrowBlack.png in Resources */,
 				840B833919BF23340065B678 /* navlogo.png in Resources */,
 				0DFCDC3B19CAB990002D317D /* 5star.png in Resources */,
+				849CE19F19D00066001F78C0 /* CourseDetailiPhone.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -928,29 +1092,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84EDDB6E19D28C9000FEAE95 /* VideoPlayerViewController.m in Sources */,
 				84EC715919CAD77000529168 /* MycoursesViewController.m in Sources */,
 				84FC7DB119C01A210001FD7C /* DashboardMainViewController.m in Sources */,
 				84FC7DAA19C0191B0001FD7C /* REFrostedContainerViewController.m in Sources */,
 				84EC716A19CB1ACB00529168 /* BillingDetailViewController.m in Sources */,
 				84FC7D9119C0064E0001FD7C /* NSString+SBJSON.m in Sources */,
 				84FC7DB419C01A550001FD7C /* DashboardContentListTableViewController.m in Sources */,
+				8470B51A19CD64F6008A5809 /* BrowseCategorywiseDatasViewController.m in Sources */,
 				84FC7DCE19C023F30001FD7C /* MyauthorsTableViewController.m in Sources */,
 				84FC7DAC19C0191B0001FD7C /* UIImage+REFrostedViewController.m in Sources */,
 				84FC7DD419C0242B0001FD7C /* Courselist_iPad_ViewController.m in Sources */,
 				847635E519C0733C00F45CEF /* Mycourses_iPadViewController.m in Sources */,
 				84FC7DDC19C02E4A0001FD7C /* DashboardcontainerViewController.m in Sources */,
+				849CE1AB19D0010D001F78C0 /* AboutcourseViewController.m in Sources */,
 				84FC7D9619C0064E0001FD7C /* SBJsonWriter.m in Sources */,
 				84E52CC019C9B7050042D07A /* CourseSearchiPadViewController.m in Sources */,
 				84082A5519C802960039F4E8 /* CategorywiseDatasViewController.m in Sources */,
+				84EDDB7119D28CA200FEAE95 /* TextViewerViewController.m in Sources */,
 				0D3C959419C31EFB0065A4B4 /* NSString+FontAwesome.m in Sources */,
 				840B833419BF0BC80065B678 /* SignupViewController.m in Sources */,
+				849CE1B419D0303A001F78C0 /* SyllabusLectureTableViewCell.m in Sources */,
 				0DAFD00C19BEC75500A1E509 /* main.m in Sources */,
 				84FC7DAB19C0191B0001FD7C /* REFrostedViewController.m in Sources */,
+				849CE1A819D000FE001F78C0 /* AboutauthorViewController.m in Sources */,
 				84FC7D9219C0064E0001FD7C /* Reachability.m in Sources */,
+				849CE1AF19D003BE001F78C0 /* ViewPagerController.m in Sources */,
 				84EC716719CB16A200529168 /* BillingTableViewCell.m in Sources */,
 				8491BA0719CBF94B00B649ED /* MyauthorcoursesiPadViewController.m in Sources */,
 				84FC7D9419C0064E0001FD7C /* SBJsonBase.m in Sources */,
+				849CE1A519D000EF001F78C0 /* SyllabusViewController.m in Sources */,
 				84F59B7A19C2FFA9009EF252 /* MailDetailsViewController.m in Sources */,
+				8470B52019CD6555008A5809 /* BrowseCategorywiseDatasiPadViewController.m in Sources */,
+				8470B51D19CD6511008A5809 /* BrowseCourseSearchViewController.m in Sources */,
 				84CBD50019C730C500CB50D1 /* courselist_iPhoneTableViewController.m in Sources */,
 				84EC715A19CAD77000529168 /* MyfavoritesViewController.m in Sources */,
 				840B832319BEE58F0065B678 /* PageContentViewController.m in Sources */,
@@ -959,6 +1133,7 @@
 				84FC7DAE19C0191B0001FD7C /* UIViewController+REFrostedViewController.m in Sources */,
 				84FC7DAD19C0191B0001FD7C /* UIView+REFrostedViewController.m in Sources */,
 				844A9CB419C19A4D000A5449 /* Avatarimagecell.m in Sources */,
+				849CE19D19CFF0F7001F78C0 /* CourseDetailViewController.m in Sources */,
 				847635E819C0735900F45CEF /* Myfavorites_iPadViewController.m in Sources */,
 				8476E7F419C17EE8002DB513 /* AvatarImagesViewController.m in Sources */,
 				84FC7D9519C0064E0001FD7C /* SBJsonParser.m in Sources */,
@@ -968,6 +1143,8 @@
 				84FC7DC219C023A80001FD7C /* MailinboxTableViewController.m in Sources */,
 				84EC715D19CAF66500529168 /* MycategoriesViewController.m in Sources */,
 				84EC716419CB087E00529168 /* MyauthorcoursesViewController.m in Sources */,
+				8470B50A19CD40FF008A5809 /* ChangePasswordViewController.m in Sources */,
+				8470B51719CD64CB008A5809 /* BrowseCourseiPadViewController.m in Sources */,
 				84FC7D9019C0064E0001FD7C /* NSObject+SBJSON.m in Sources */,
 				84E52CBD19C9B2440042D07A /* CategorywiseDatasiPadViewController.m in Sources */,
 				84EC715819CAD77000529168 /* MycategoriesDetailViewController.m in Sources */,
@@ -975,6 +1152,7 @@
 				84E52CC319C9D0A90042D07A /* categorypopoverViewController.m in Sources */,
 				84CBD4FF19C730C500CB50D1 /* CourseDesignTableViewCell.m in Sources */,
 				840B832F19BF074F0065B678 /* LoginPageViewController.m in Sources */,
+				8470B52319CD656E008A5809 /* BrowseCourseSearchiPadViewController.m in Sources */,
 				0D3C959519C31EFB0065A4B4 /* UIButton+Bootstrap.m in Sources */,
 				0DAFD01019BEC75500A1E509 /* lmsmoocAppDelegate.m in Sources */,
 				0DAFD01919BEC75500A1E509 /* lmsmoocViewController.m in Sources */,
@@ -984,7 +1162,9 @@
 				84082A5819C80F1E0039F4E8 /* CourseSearchViewController.m in Sources */,
 				84FC7D8F19C0064E0001FD7C /* MBProgressHUD.m in Sources */,
 				847635F019C095A700F45CEF /* Passwordchange.m in Sources */,
+				84EDDB6B19D28C8400FEAE95 /* AudioPlayerViewController.m in Sources */,
 				84FC7DD919C02B360001FD7C /* BillingTableViewController.m in Sources */,
+				8470B51219CD64A2008A5809 /* BrowseCourseListViewController.m in Sources */,
 				8491BA0419CBF3F900B649ED /* MyCategoriesDetailiPadViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -51,6 +51,8 @@
     [super viewDidLoad];
     
     [self.saveprofile primaryStyle];
+    [self.browse primaryStyle];
+    [self.upload primaryStyle];
     // Do any additional setup after loading the view.
     if (self.navigationController.navigationBar.hidden == YES)
     {
@@ -188,7 +190,7 @@
 //                            [delegate.Profiledetails setValue:[menu objectForKey:@"avatarURL"] forKey:@"avatarURL"];
 //                            [delegate.Profiledetails setValue:[menu objectForKey:@"avatarImage"] forKey:@"avatarImage"];
 //                            [delegate.Profiledetails setValue:[menu objectForKey:@"logins"] forKey:@"logins"];
-                            password.text=[delegate.Profiledetails objectForKey:@"password"];
+                           
                     
                             NSLog(@"dictionary values %@",delegate.Profiledetails);
                         }
@@ -488,7 +490,7 @@
 
 -(IBAction)browseimage:(id)sender
 {
-    if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad) {
+  /*  if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad) {
         if ([self.popovercontroller isPopoverVisible]) {
             [self.popovercontroller dismissPopoverAnimated:YES];
             [popovercontroller release];
@@ -504,14 +506,32 @@
     UIActionSheet *actionSheet=nil;
      if(UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPhone) {
         
-    actionSheet = [[UIActionSheet alloc] initWithTitle:@""
-                                                             delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil
-                                                    otherButtonTitles:@"", @"Select Photo From Library", @"Cancel", nil];
+    actionSheet = [[UIActionSheet alloc] initWithTitle:@""delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil
+             otherButtonTitles:@"Select Photo From Library", @"Cancel", nil];
     actionSheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
     actionSheet.destructiveButtonIndex = 1;
     [actionSheet showInView:self.view];
     actionSheet.tag=1;
     }
+    
+    */
+    
+    
+    UIActionSheet *actionSheet=nil;
+    actionSheet = [[UIActionSheet alloc] initWithTitle:@""delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil
+                                     otherButtonTitles:@"Select Photo From Library", @"Cancel", nil];
+    actionSheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
+    actionSheet.destructiveButtonIndex = 1;
+     actionSheet.tag=1;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        // In this case the device is an iPad.
+        [actionSheet showFromRect:[(UIButton *)sender frame] inView:self.view animated:YES];
+    }
+    else{
+        // In this case the device is an iPhone/iPod Touch.
+        [actionSheet showInView:self.view];
+    }
+    
     
 }
 
@@ -521,18 +541,31 @@
     
     if (actionSheet.tag==1)
     {
-        if (buttonIndex == 0)
+
+    if (buttonIndex == 0)
         {
-            
-            
-            [self TakePhotoWithCamera];
-        }
-        else if (buttonIndex == 1)
-        {
-            [self SelectPhotoFromLibrary];
+          
+            if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad) {
+                if ([self.popovercontroller isPopoverVisible]) {
+                    [self.popovercontroller dismissPopoverAnimated:YES];
+                    [popovercontroller release];
+                }
+                else
+                {
+                    
+                    [self SelectPhotoFromLibrary];
+                }
+                
+                
+                
+            }
+            else
+            {
+                  [self SelectPhotoFromLibrary];
+            }
         }
         
-        else if (buttonIndex == 2)
+        else if (buttonIndex == 1)
         {
             NSLog(@"cancel");
         }
@@ -584,13 +617,14 @@
        
         if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad)
         {
+           
             self.popovercontroller = [[UIPopoverController alloc]initWithContentViewController:picker1];
             
             popovercontroller.delegate = self;
             
-            [self.popovercontroller presentPopoverFromRect:CGRectMake(100, 200, 200, 200) inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny             animated:NO];
+            [self.popovercontroller presentPopoverFromRect:CGRectMake(275, 270, 200, 200) inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny             animated:NO];
             
-            [picker1 release];
+           // [picker1 release];
             
         }
         
@@ -674,8 +708,10 @@
 
 -(void)signupdata
 {
-    
-    NSString *response=[self HttpPostEntityFirst1:@"firstname" ForValue1:fname.text  EntitySecond:@"authkey" ForValue2:@"rzTFevN099Km39PV"];
+    NSString *first= [fname.text stringByReplacingOccurrencesOfString:@" " withString:@""];
+    first= [first uppercaseString];
+   
+    NSString *response=[self HttpPostEntityFirst1:@"firstname" ForValue1:first  EntitySecond:@"authkey" ForValue2:@"rzTFevN099Km39PV"];
     
     NSError *error;
     SBJSON *json = [[SBJSON new] autorelease];
@@ -733,7 +769,8 @@
 {
     NSString *avatar;
     NSString *userid=[[NSUserDefaults standardUserDefaults]valueForKey:@"userid"];
-   
+    NSString *second= [lname.text stringByReplacingOccurrencesOfString:@" " withString:@""];
+    second= [second uppercaseString];
   
     if (uploaded) {
         avatar=[NSString stringWithFormat:@"S%@.jpg",userid ];
@@ -756,7 +793,7 @@
     NSString *urltemp=[[databaseurl sharedInstance]DBurl];
     NSString *url1=@"Signup.php?service=signupupdate";
     NSString *url2=[NSString stringWithFormat:@"%@%@",urltemp,url1];
-    NSString *post =[[NSString alloc] initWithFormat:@"%@=%@&lastname=%@&username=%@&emailid=%@&password=%@&interested=%@&gender=%@&id=%@&avatar=%@&%@=%@",firstEntity,value1,lname.text,username.text,email.text,password.text,interestedval,genderval,[[NSUserDefaults standardUserDefaults]objectForKey:@"userid"],avatar,secondEntity,value2];
+    NSString *post =[[NSString alloc] initWithFormat:@"%@=%@&lastname=%@&username=%@&emailid=%@&interested=%@&gender=%@&id=%@&avatar=%@&%@=%@",firstEntity,value1,second,username.text,email.text,interestedval,genderval,[[NSUserDefaults standardUserDefaults]objectForKey:@"userid"],avatar,secondEntity,value2];
     //  NSLog(@"POST %@",post);
     NSURL *url = [NSURL URLWithString:url2];
     return [du returndbresult:post URL:url];
@@ -1000,6 +1037,8 @@
         
         mpvc=[mpvc initWithFrame:CGRectMake(0,0,1024,1024)];
           mpvc.transform = CGAffineTransformMakeRotation(4.71);
+        
+        [self.view addSubview:mpvc];
      
     }
     if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPhone) {

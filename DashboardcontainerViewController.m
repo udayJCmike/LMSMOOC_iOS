@@ -44,6 +44,7 @@
     [button setFrame:CGRectMake(0, 0, 32, 32)];
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    [self menu:nil];
    
 }
 - (void)menu:(id)sender {

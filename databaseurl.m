@@ -67,8 +67,8 @@ static databaseurl * appInstance;
     
     else
     {
-        
-        return @"Success";
+       return  @"Success";
+       // return @"Failure";
     }
     
     
@@ -121,12 +121,12 @@ static databaseurl * appInstance;
         if(specialCharacter && digit && (lowerCaseLetter || upperCaseLetter))
         {
             //do what u want
-          //  NSLog(@"Valid Password %d %d %d %d",specialCharacter,digit,lowerCaseLetter,upperCaseLetter);
+          // NSLog(@"Valid Password %d %d %d %d",specialCharacter,digit,lowerCaseLetter,upperCaseLetter);
              return YES;
         }
         else
         {
-            // NSLog(@"inValid Password %d %d %d %d",specialCharacter,digit,lowerCaseLetter,upperCaseLetter);
+           // NSLog(@"inValid Password %d %d %d %d",specialCharacter,digit,lowerCaseLetter,upperCaseLetter);
              return NO;
             
         }
@@ -244,9 +244,12 @@ static databaseurl * appInstance;
     NSData *returnData = [ NSURLConnection sendSynchronousRequest:request returningResponse: nil error: nil ];
     NSString *returnString = [[NSString alloc]initWithData:returnData encoding:NSUTF8StringEncoding];
     NSError *err = nil;
-     // NSLog(@"return string res %@",returnString);
+//    returnString=[returnString stringByReplacingOccurrencesOfString:@"\n" withString:@"<br>"];
+//    returnString=[returnString stringByReplacingOccurrencesOfString:@"\r" withString:@"<br>"];
+//    returnString=[returnString stringByReplacingOccurrencesOfString:@"\t" withString:@"<br>"];
+     //NSLog(@"return string res %@",returnString);
     NSMutableArray *search = [NSJSONSerialization JSONObjectWithData:[returnString dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:&err];
-   // NSLog(@"search res %@",search);
+  // NSLog(@"search response %@",search);
     return search;
 }
 @end

@@ -62,13 +62,14 @@ int loadcompleted;
     offset=0;
     offset_free=0;
     offset_paid=0;
+    
     // if Navigation Bar is already hidden
      if (self.navigationController.navigationBar.hidden == YES)
     {
         // Show the Navigation Bar
         [self.navigationController setNavigationBarHidden:NO animated:NO];
     }
-  
+    
     loadcompleted=0;
   courselist=[[NSMutableArray alloc]init];
       freecourselist=[[NSMutableArray alloc]init];
@@ -154,8 +155,8 @@ int loadcompleted;
  
     NSString *urltemp=[[databaseurl sharedInstance]DBurl];
     NSString *url1=@"AllCourse.php";
-    
-    NSString *URLString=[NSString stringWithFormat:@"%@%@?offset=%d",urltemp,url1,offset];
+     NSString *  studentid=[[NSUserDefaults standardUserDefaults]objectForKey:@"userid"];
+    NSString *URLString=[NSString stringWithFormat:@"%@%@?offset=%d&studentid=%@",urltemp,url1,offset,studentid];
     
     NSMutableArray *search = [du MultipleCharacters:URLString];
     
@@ -172,6 +173,10 @@ int loadcompleted;
         {
             NSDictionary *arrayList1= [Listofdatas objectAtIndex:i];
             NSDictionary *temp=[arrayList1 objectForKey:@"serviceresponse"];
+            NSString* mess=[temp objectForKey:@"course_description"];
+            mess = [mess stringByReplacingOccurrencesOfString: @"<br>" withString: @"\n"];
+            mess = [mess stringByReplacingOccurrencesOfString: @"<br>" withString: @"\n"];
+            [temp setValue:mess forKey:@"course_description"];
 //            NSLog(@"Received Values %@",temp);
             [courselist addObject:temp];
             
@@ -202,9 +207,10 @@ int loadcompleted;
    // [courselist removeAllObjects];
     NSString *urltemp=[[databaseurl sharedInstance]DBurl];
     NSString *url1=@"AllCourse_Free.php";
-    
-    NSString *URLString=[NSString stringWithFormat:@"%@%@?offset=%d",urltemp,url1,offset_free];
-    
+     NSString *  studentid=[[NSUserDefaults standardUserDefaults]objectForKey:@"userid"];
+    NSString *URLString=[NSString stringWithFormat:@"%@%@?offset=%d&studentid=%@",urltemp,url1,offset_free,studentid];
+   
+   
     NSMutableArray *search = [du MultipleCharacters:URLString];
     
     NSDictionary* menu = [search valueForKey:@"serviceresponse"];
@@ -220,6 +226,10 @@ int loadcompleted;
         {
             NSDictionary *arrayList1= [Listofdatas objectAtIndex:i];
             NSDictionary *temp=[arrayList1 objectForKey:@"serviceresponse"];
+            NSString* mess=[temp objectForKey:@"course_description"];
+            mess = [mess stringByReplacingOccurrencesOfString: @"<br>" withString: @"\n"];
+            mess = [mess stringByReplacingOccurrencesOfString: @"<br>" withString: @"\n"];
+            [temp setValue:mess forKey:@"course_description"];
 //            NSLog(@"Received Values %@",temp);
             [courselist addObject:temp];
             
@@ -253,8 +263,8 @@ int loadcompleted;
 
     NSString *urltemp=[[databaseurl sharedInstance]DBurl];
     NSString *url1=@"AllCourse_paid.php";
-    
-    NSString *URLString=[NSString stringWithFormat:@"%@%@?offset=%d",urltemp,url1,offset_paid];
+     NSString *  studentid=[[NSUserDefaults standardUserDefaults]objectForKey:@"userid"];
+    NSString *URLString=[NSString stringWithFormat:@"%@%@?offset=%d&studentid=%@",urltemp,url1,offset_paid,studentid];
     
     NSMutableArray *search = [du MultipleCharacters:URLString];
     
@@ -271,6 +281,10 @@ int loadcompleted;
         {
             NSDictionary *arrayList1= [Listofdatas objectAtIndex:i];
             NSDictionary *temp=[arrayList1 objectForKey:@"serviceresponse"];
+            NSString* mess=[temp objectForKey:@"course_description"];
+            mess = [mess stringByReplacingOccurrencesOfString: @"<br>" withString: @"\n"];
+            mess = [mess stringByReplacingOccurrencesOfString: @"<br>" withString: @"\n"];
+            [temp setValue:mess forKey:@"course_description"];
 //            NSLog(@"Received Values %@",temp);
             [courselist addObject:temp];
             
@@ -298,7 +312,8 @@ int loadcompleted;
 }
 -(void)getList
 {
-    NSString *response=[self HttpPostEntityFirst1:@"studentid" ForValue1:@"32"  EntitySecond:@"authkey" ForValue2:@"rzTFevN099Km39PV"];
+    NSString *userid=[[NSUserDefaults standardUserDefaults]objectForKey:@"userid"];
+    NSString *response=[self HttpPostEntityFirst1:@"studentid" ForValue1:userid  EntitySecond:@"authkey" ForValue2:@"rzTFevN099Km39PV"];
     NSError *error;
     //  NSLog(@"response %@",response);
     SBJSON *json = [[SBJSON new] autorelease];
@@ -507,9 +522,34 @@ int loadcompleted;
         
     
     NSDictionary *temp=[courselist objectAtIndex:indexPath.row];
-    NSString *url=[NSString stringWithFormat:@"http://208.109.248.89:8085/OnlineCourse/student_view_Course?course_id=%@&authorid=%@&pur=%@&catcourse=&coursetype=",[temp objectForKey:@"course_id"], [temp objectForKey:@"instructor_id"],[temp objectForKey:@"numofpurchased"]];
-   // NSLog(@"URL %@",url);
-    [[UIApplication sharedApplication]openURL:[NSURL URLWithString:url]];
+        if([[temp objectForKey:@"studentenrolled"]isEqualToString:@"0"])
+        {
+            NSString *url=[NSString stringWithFormat:@"http://208.109.248.89:8085/OnlineCourse/student_view_Course?course_id=%@&authorid=%@&pur=%@&catcourse=&coursetype=",[temp objectForKey:@"course_id"], [temp objectForKey:@"instructor_id"],[temp objectForKey:@"numofpurchased"]];
+            // NSLog(@"URL %@",url);
+            [[UIApplication sharedApplication]openURL:[NSURL URLWithString:url]];
+        }
+        else
+        {
+            NSLog(@"Student enrolled");
+            delegate.CourseDetail=[courselist objectAtIndex:indexPath.row];
+            
+            
+            if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad)
+            {
+                
+                UIStoryboard *welcome=[UIStoryboard storyboardWithName:@"CourseDetailiPad" bundle:nil];
+                UIViewController *initialvc=[welcome instantiateInitialViewController];
+                [self.navigationController pushViewController:initialvc animated:YES];
+                
+            }
+            else if(UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPhone)
+            {
+                UIStoryboard *welcome=[UIStoryboard storyboardWithName:@"CourseDetailiPhone" bundle:nil];
+                UIViewController *initialvc=[welcome instantiateInitialViewController];
+                [self.navigationController pushViewController:initialvc animated:YES];
+            }
+
+        }
     }
     else if (tableView.tag==2)
     {

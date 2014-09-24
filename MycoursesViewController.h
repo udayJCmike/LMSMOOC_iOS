@@ -13,6 +13,7 @@
 #import "lmsmoocAppDelegate.h"
 #import "databaseurl.h"
 #import "CourseDesignTableViewCell.h"
+#import "CourseDetailViewController.h"
 @interface MycoursesViewController :UIViewController<MBProgressHUDDelegate,UITableViewDataSource,UITableViewDelegate>
 {
     NSMutableArray*courselist;

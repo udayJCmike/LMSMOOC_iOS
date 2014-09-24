@@ -77,18 +77,53 @@
 {
     int c=1;
     [self dismissKeyboard];
-    if (([username.text length]==0) &&
+    if (([username.text length]>0)&&([password.text length]>0))
+    {
+        HUD = [MBProgressHUD showHUDAddedTo:self.view  animated:YES];
+        HUD.mode=MBProgressHUDModeIndeterminate;
+        HUD.delegate = self;
+        HUD.labelText = @"Please wait";
+        [HUD show:YES];
+        c=1;
+        
+        if (c==1)
+            
+        {
+//            dispatch_group_t imageQueue = dispatch_group_create();
+//            
+//            dispatch_group_async(imageQueue, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
+//                                 ^{
+//                                     
+//                                     dispatch_async(dispatch_get_main_queue(), ^{
+//                                         
+//                                         
+//                                     });
+//                                 });
+            
+            if ([[du submitvalues]isEqualToString:@"Success"])
+            {
+                [self performSelector:@selector(checkdata:) withObject:self afterDelay:0.0f];
+            }
+            else
+            {
+                //[HUD hide:YES];
+                HUD.labelText = @"Check network connection";
+                HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@""]];
+                HUD.mode = MBProgressHUDModeCustomView;
+                [HUD hide:YES afterDelay:1];
+            }
+            
+        }
+        
+    }
+
+   else if (([username.text length]==0) &&
         ([password.text length]==0))
     {
         c=0;
         DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"Info" contentText:@"Enter username and password." leftButtonTitle:nil rightButtonTitle:@"Close"];
         [alert show];
-        alert.rightBlock = ^() {
-            
-        };
-        alert.dismissBlock = ^() {
-            
-        };
+      
        
     }
     else if (([username.text length]>0) &&
@@ -98,12 +133,8 @@
         c=0;
         DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"Info" contentText:@"Enter the password." leftButtonTitle:nil rightButtonTitle:@"Close"];
         [alert show];
-        alert.rightBlock = ^() {
-          
-        };
-        alert.dismissBlock = ^() {
-           
-        };
+       
+       
 
         
         
@@ -116,45 +147,10 @@
         c=0;
         DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"Info" contentText:@"Enter the username." leftButtonTitle:nil rightButtonTitle:@"Close"];
         [alert show];
-        alert.rightBlock = ^() {
-            
-        };
-        alert.dismissBlock = ^() {
-            
-        };
+       
         
     }
-    else
-    {
-        if (([username.text length]>0)&&([password.text length]>0))
-        {
-            c=1;
-            if (c==1)
-                
-            {
-                HUD = [MBProgressHUD showHUDAddedTo:self.view  animated:YES];
-                HUD.mode=MBProgressHUDModeIndeterminate;
-                HUD.delegate = self;
-                HUD.labelText = @"Please wait";
-                [HUD show:YES];
-                if ([[du submitvalues]isEqualToString:@"Success"])
-                {
-                    [self checkdata];
-                }
-                else
-                {
-                    //[HUD hide:YES];
-                    HUD.labelText = @"Check network connection";
-                    HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@""]];
-                    HUD.mode = MBProgressHUDModeCustomView;
-                    [HUD hide:YES afterDelay:1];
-                }
-                
-            }
-            
-        }
-    }
- 
+    
 }
 - (IBAction)checkbox:(UIButton*)sender {
     
@@ -178,7 +174,7 @@
     [textField resignFirstResponder];
     return YES;
 }
--(void)checkdata
+-(void)checkdata:(id)sender
 {
     NSString *response=[self HttpPostEntityFirst1:@"username" ForValue1:username.text  EntitySecond:@"authkey" ForValue2:@"rzTFevN099Km39PV"];
     NSError *error;
@@ -186,7 +182,7 @@
     SBJSON *json = [[SBJSON new] autorelease];
     NSDictionary *parsedvalue = [json objectWithString:response error:&error];
     
-    //NSLog(@"%@ parsedvalue",parsedvalue);
+  //  NSLog(@"%@ parsedvalue",parsedvalue);
     if (parsedvalue == nil)
     {
         
@@ -201,7 +197,7 @@
         {
             if ([[menu objectForKey:@"success"] isEqualToString:@"Yes"])
             {
-                [HUD hide:YES];
+              
                 lmsmoocAppDelegate *delegate=AppDelegate;
                 delegate.Profiledetails=[[NSMutableDictionary alloc]init];
                 
@@ -272,7 +268,7 @@
             
         }
     }
-    
+    [HUD hide:YES];
 }
 -(NSString *)HttpPostEntityFirst1:(NSString*)firstEntity ForValue1:(NSString*)value1 EntitySecond:(NSString*)secondEntity ForValue2:(NSString*)value2
 {

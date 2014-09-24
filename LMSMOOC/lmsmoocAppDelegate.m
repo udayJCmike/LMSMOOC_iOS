@@ -14,8 +14,8 @@
 @synthesize Profiledetails;
 @synthesize profileimage;
 @synthesize course_image_url;
-
-
+@synthesize CourseDetail;
+@synthesize lectureDetail;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     UIPageControl *pageControl = [UIPageControl appearance];
