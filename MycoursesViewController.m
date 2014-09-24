@@ -103,8 +103,8 @@ int loadcompleted;
 -(void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-    offset=0;
-    loadcompleted=0;
+    //offset=0;
+   // loadcompleted=0;
    // [courselist removeAllObjects];
     [_imageOperationQueue cancelAllOperations];
     

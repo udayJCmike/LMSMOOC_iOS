@@ -114,7 +114,27 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Isf-2W-Q2s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="36" y="-1406"/>
+            <point key="canvasLocation" x="-56" y="-2107"/>
+        </scene>
+        <!--Video Player View Controller-->
+        <scene sceneID="Q1B-E4-fXl">
+            <objects>
+                <viewController storyboardIdentifier="VideoPlayer" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5pY-jb-pLH" customClass="VideoPlayerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CMi-DE-Pni"/>
+                        <viewControllerLayoutGuide type="bottom" id="Oer-0h-7eo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XcL-UZ-mJj">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OzC-yK-4OZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-518" y="133"/>
         </scene>
         <!--Aboutauthor View Controller-->
         <scene sceneID="HVh-YI-lpx">
@@ -238,7 +258,98 @@
             </objects>
             <point key="canvasLocation" x="1900" y="-286"/>
         </scene>
+        <!--Text Viewer View Controller-->
+        <scene sceneID="dg5-AU-HCf">
+            <objects>
+                <viewController storyboardIdentifier="TextViewer" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Sp3-vu-Q5Q" customClass="TextViewerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kGG-oB-f4k"/>
+                        <viewControllerLayoutGuide type="bottom" id="8JX-me-nQT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WxT-BA-ra6">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Dr-J0-vLS">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="webView" destination="7Dr-J0-vLS" id="K6f-hx-k5s"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iWG-0Q-Gu5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="742" y="-23"/>
+        </scene>
+        <!--Audio Player View Controller-->
+        <scene sceneID="OJh-tl-d0y">
+            <objects>
+                <viewController storyboardIdentifier="AudioPlayer" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zLp-2v-iBt" customClass="AudioPlayerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="b0p-Y1-pRj"/>
+                        <viewControllerLayoutGuide type="bottom" id="D3T-K3-e9q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="y2k-SL-SA9">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="qHw-ZS-DUO">
+                                <rect key="frame" x="464" y="345" width="339" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="sliderDragged:" destination="zLp-2v-iBt" eventType="valueChanged" id="8P2-8c-SgX"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Asn-Ew-Ndo">
+                                <rect key="frame" x="435" y="304" width="125" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="azm-5T-1a3">
+                                <rect key="frame" x="340" y="330" width="73" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="play_button.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="play:" destination="zLp-2v-iBt" eventType="touchUpInside" id="7OA-da-IjG"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Du-rA-PIj">
+                                <rect key="frame" x="737" y="383" width="97" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="durationoutlet" destination="7Du-rA-PIj" id="gSx-E5-zqc"/>
+                        <outlet property="slider" destination="qHw-ZS-DUO" id="1Em-to-y0J"/>
+                        <outlet property="toggleplaypause" destination="azm-5T-1a3" id="eTK-fc-Vhs"/>
+                        <outlet property="totaltime" destination="Asn-Ew-Ndo" id="0Iw-Ig-n26"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ity-z0-Ajt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1854" y="-307"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="play_button.png" width="59" height="60"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

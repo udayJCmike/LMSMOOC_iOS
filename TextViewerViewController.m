@@ -13,7 +13,7 @@
 @end
 
 @implementation TextViewerViewController
-
+@synthesize webView;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -28,7 +28,7 @@
     [super viewDidLoad];
     du=[[databaseurl alloc]init];
     delegate=AppDelegate;
-   NSLog(@"value received %@",delegate.lectureDetail);
+ //  NSLog(@"value received %@",delegate.lectureDetail);
     // Do any additional setup after loading the view.
     HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
     [self.navigationController.view addSubview:HUD];
@@ -67,29 +67,14 @@
     
     NSString *URLString=[NSString stringWithFormat:@"%@%@?courseid=%@&sectionid=%@&lectureid=%@",urltemp,url1,courseid,secid,lecid];
     
-    NSMutableArray *search = [du MultipleCharacters:URLString];
+    NSString *search = [du MultipleCharactersHTML:URLString];
     
-    NSArray* menu = [search valueForKey:@"serviceresponse"];
+   
+    
+    [webView loadHTMLString:search baseURL:nil];
     
     
-    
-    
-    
-    if ([menu count]>0)
-    {
-        
-        NSLog(@"%@",[menu valueForKey:@"content"]);
-        
-        
-    }
-    else
-    {
-        
-        NSLog(@"No Datas found");
-    }
-    //        NSLog(@"section title array %@",sectionTitleArray);
-    //      NSLog(@"section content array %@",sectionContentDict);
-    //         NSLog(@"section bool array %@",arrayForBool);
+
     
         if (![HUD isHidden]) {
         [HUD hide:YES];

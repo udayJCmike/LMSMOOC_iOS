@@ -282,7 +282,7 @@
 
 -(void)sendNavigation:(NSString*)identifiername
 {
-  /*  if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad)
+   if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad)
     {
         UIViewController *initialvc=[self.storyboard instantiateViewControllerWithIdentifier:identifiername];
         [self.navigationController pushViewController:initialvc animated:YES];
@@ -294,8 +294,8 @@
         [self.navigationController pushViewController:initialvc animated:YES];
         
     }
-    */
-    [self performSegueWithIdentifier:identifiername sender:self];
+   
+   // [self performSegueWithIdentifier:identifiername sender:self];
 }
 #pragma mark - gesture tapped
 - (void)sectionHeaderTapped:(UITapGestureRecognizer *)gestureRecognizer{

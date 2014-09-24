@@ -26,4 +26,5 @@
 -(BOOL)validatePasswordForSignupPage:(NSString *)password;
 -(BOOL)validateUserNameForSignupPage:(NSString *)firstname;
 -(NSMutableArray *)MultipleCharacters:(NSString *)url;
+-(NSString *)MultipleCharactersHTML:(NSString *)url;
 @end

@@ -17,4 +17,9 @@
     databaseurl *du;
     lmsmoocAppDelegate *delegate;
 }
+@property(nonatomic,retain)NSString *audioname;
+@property (strong, nonatomic) IBOutlet UILabel *durationoutlet;
+@property (strong, nonatomic) IBOutlet UIButton *toggleplaypause;
+@property (strong, nonatomic) IBOutlet UISlider *slider;
+@property (strong, nonatomic) IBOutlet UILabel *totaltime;
 @end

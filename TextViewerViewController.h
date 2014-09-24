@@ -17,4 +17,5 @@
     databaseurl *du;
     lmsmoocAppDelegate *delegate;
 }
+@property(nonatomic,retain)IBOutlet UIWebView *webView;
 @end

@@ -10,6 +10,7 @@
 #import "lmsmoocAppDelegate.h"
 #import "MBProgressHUD.h"
 #import "databaseurl.h"
+#import<MediaPlayer/MediaPlayer.h>
 #define  AppDelegate (lmsmoocAppDelegate *)[[UIApplication sharedApplication] delegate]
 @interface VideoPlayerViewController : UIViewController<MBProgressHUDDelegate>
 {
@@ -17,4 +18,7 @@
     databaseurl *du;
     lmsmoocAppDelegate *delegate;
 }
+
+@property(nonatomic,retain)NSString *videoname;
+@property (strong, nonatomic) MPMoviePlayerController *videoPlayer;
 @end

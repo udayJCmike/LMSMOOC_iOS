@@ -56,6 +56,10 @@ int loadcompleted;
         [_imageOperationQueue cancelAllOperations];
         [self loadDatas];
     }
+    else
+    {
+        [HUD hide:YES];
+    }
     return YES;
 }
 

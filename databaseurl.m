@@ -244,12 +244,29 @@ static databaseurl * appInstance;
     NSData *returnData = [ NSURLConnection sendSynchronousRequest:request returningResponse: nil error: nil ];
     NSString *returnString = [[NSString alloc]initWithData:returnData encoding:NSUTF8StringEncoding];
     NSError *err = nil;
-//    returnString=[returnString stringByReplacingOccurrencesOfString:@"\n" withString:@"<br>"];
-//    returnString=[returnString stringByReplacingOccurrencesOfString:@"\r" withString:@"<br>"];
-//    returnString=[returnString stringByReplacingOccurrencesOfString:@"\t" withString:@"<br>"];
-     //NSLog(@"return string res %@",returnString);
+//    NSLog(@"return string %@",returnString);
+
+ 
     NSMutableArray *search = [NSJSONSerialization JSONObjectWithData:[returnString dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:&err];
-  // NSLog(@"search response %@",search);
+//  NSLog(@"search response %@",search);
     return search;
 }
+-(NSString *)MultipleCharactersHTML:(NSString *)url
+{
+    NSMutableURLRequest *request =[[NSMutableURLRequest alloc]initWithURL:[NSURL URLWithString:url]];
+    NSData *returnData = [ NSURLConnection sendSynchronousRequest:request returningResponse: nil error: nil ];
+   
+    NSString *returnString = [[NSString alloc]initWithData:returnData encoding:NSUTF8StringEncoding];
+//    NSLog(@"return string %@",returnString);
+    returnString=[returnString stringByReplacingOccurrencesOfString:@"\\" withString:@""];
+    returnString=[returnString stringByReplacingOccurrencesOfString:@"\"<" withString:@"<"];
+   returnString=[returnString stringByReplacingOccurrencesOfString:@">\"" withString:@">"];
+    NSError *err = nil;
+//    NSLog(@"return string replaced %@",returnString);
+    
+//    NSMutableArray *search = [NSJSONSerialization JSONObjectWithData:[returnString dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:&err];
+  //  NSLog(@"search response %@",search);
+    return returnString;
+}
+
 @end
