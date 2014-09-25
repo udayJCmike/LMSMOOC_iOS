@@ -71,7 +71,7 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (IBAction)forgotpassword:(id)sender {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://208.109.248.89:8085/OnlineCourse/Student/signup" ]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://208.109.248.89:8087/OnlineCourse/Student/signup" ]];
 }
 - (IBAction)login:(id)sender
 {
@@ -218,7 +218,8 @@
                 NSString *avatarURL=[menu objectForKey:@"avatarURL"];
                 NSString *avatarImage=[menu objectForKey:@"avatarImage"];
                 
-                NSLog(@"values %@",avatarImage);
+//                NSLog(@"values %@",avatarURL);
+//                    NSLog(@"values %@", delegate.course_image_url);
                 
               
                 delegate.avatharURL=avatarURL;

@@ -74,7 +74,7 @@
 
 }
 - (IBAction)termsOfservice:(id)sender {
-     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://208.109.248.89:8085/OnlineCourse/user_view_Termsofuses" ]];
+     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://208.109.248.89:8087/OnlineCourse/user_view_Termsofuses" ]];
 }
 - (IBAction)signup:(id)sender {
     int c=1;

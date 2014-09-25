@@ -59,42 +59,10 @@
 {
     
     
-    NSString*courseid= [delegate.lectureDetail objectForKey:@"id_course"];
-    NSString*secid= [delegate.lectureDetail objectForKey:@"id_section"];
-    NSString*lecid= [delegate.lectureDetail objectForKey:@"id_lecture"];
+   
     
-    NSString *urltemp=[[databaseurl sharedInstance]DBurl];
-    NSString *url1=@"LectureDetailsAudio_Video.php";
-    
-    NSString *URLString=[NSString stringWithFormat:@"%@%@?courseid=%@&sectionid=%@&lectureid=%@",urltemp,url1,courseid,secid,lecid];
-    
-    NSMutableArray *search = [du MultipleCharacters:URLString];
-    
-    NSArray* menu = [search valueForKey:@"serviceresponse"];
-    
-    
-//   NSLog(@"menu %@",menu);
-    
-    if ([menu count]>0)
-    {
+    [self performSelector:@selector(playVideo:) withObject:self afterDelay:2.0f];
         
-       // NSLog(@"%@",[menu valueForKey:@"lecture_video"]);
-        videoname=[menu valueForKey:@"lecture_video"];
-         [self performSelector:@selector(playVideo:) withObject:self afterDelay:5.0f];
-        
-    }
-    else
-    {
-        if (![HUD isHidden]) {
-            [HUD hide:YES];
-        }
-        
-        NSLog(@"No Datas found");
-    }
-    //        NSLog(@"section title array %@",sectionTitleArray);
-    //      NSLog(@"section content array %@",sectionContentDict);
-    //         NSLog(@"section bool array %@",arrayForBool);
-    
     
     
    
@@ -104,10 +72,16 @@
 }
 -(IBAction) playVideo:(id)sender
 {
+    NSString*courseid= [delegate.lectureDetail objectForKey:@"id_course"];
+    NSString*secid= [delegate.lectureDetail objectForKey:@"id_section"];
+    NSString*lecid= [delegate.lectureDetail objectForKey:@"id_lecture"];
+    videoname= [delegate.lectureDetail objectForKey:@"lecture_video"];
+    NSLog(@"video name %@",videoname);
+    NSString *imageUrlString = [[NSString alloc]initWithFormat:@"%@/%@/%@/%@/%@",delegate.course_image_url,courseid,secid,lecid,videoname];
     if (![HUD isHidden]) {
         [HUD hide:YES];
     }
-    // NSString *imageUrlString = [[NSString alloc]initWithFormat:@"%@/%@/%@",delegate.course_image_url,courseid,videoname];
+   
     NSString *path = @"http://techslides.com/demos/sample-videos/small.mp4";
     
     NSURL *url = [NSURL URLWithString:path];

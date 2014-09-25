@@ -21,7 +21,7 @@ static databaseurl * appInstance;
 
 -(NSString*)DBurl
 {
-   //NSString * link=@"http://208.109.248.89:80/gpsios/service/";
+   //NSString * link=@"http://208.109.248.89:8087/gpsios/service/";
      NSString * link=@"http://localhost:8888/LmsmoocIos/Services/";
     return link;
     
@@ -67,8 +67,8 @@ static databaseurl * appInstance;
     
     else
     {
-      // return  @"Success";
-        return @"Failure";
+      return  @"Success";
+       // return @"Failure";
     }
     
     

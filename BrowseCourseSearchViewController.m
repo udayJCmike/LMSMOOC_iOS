@@ -54,6 +54,10 @@ int loadcompleted;
         [_imageOperationQueue cancelAllOperations];
         [self loadDatas];
     }
+    else
+    {
+        [HUD hide:YES];
+    }
     return YES;
 }
 
@@ -246,7 +250,7 @@ int loadcompleted;
     
     
     NSDictionary *temp=[courselist objectAtIndex:indexPath.row];
-    NSString *url=[NSString stringWithFormat:@"http://208.109.248.89:8085/OnlineCourse/student_view_Course?course_id=%@&authorid=%@&pur=%@&catcourse=&coursetype=",[temp objectForKey:@"course_id"], [temp objectForKey:@"instructor_id"],[temp objectForKey:@"numofpurchased"]];
+    NSString *url=[NSString stringWithFormat:@"http://208.109.248.89:8087/OnlineCourse/student_view_Course?course_id=%@&authorid=%@&pur=%@&catcourse=&coursetype=",[temp objectForKey:@"course_id"], [temp objectForKey:@"instructor_id"],[temp objectForKey:@"numofpurchased"]];
     // NSLog(@"URL %@",url);
     [[UIApplication sharedApplication]openURL:[NSURL URLWithString:url]];
     

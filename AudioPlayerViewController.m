@@ -71,44 +71,9 @@
 -(void)gettextList
 {
     
-    NSString*courseid= [delegate.lectureDetail objectForKey:@"id_course"];
-    NSString*secid= [delegate.lectureDetail objectForKey:@"id_section"];
-    NSString*lecid= [delegate.lectureDetail objectForKey:@"id_lecture"];
-    
-    NSString *urltemp=[[databaseurl sharedInstance]DBurl];
-    NSString *url1=@"LectureDetailsAudio_Video.php";
-    
-    NSString *URLString=[NSString stringWithFormat:@"%@%@?courseid=%@&sectionid=%@&lectureid=%@",urltemp,url1,courseid,secid,lecid];
-    
-    NSMutableArray *search = [du MultipleCharacters:URLString];
-    
-    NSArray* menu = [search valueForKey:@"serviceresponse"];
-    
-     //  NSLog(@"menu search %@",search);
-    
-    
-    
-    if ([menu count]>0)
-    {
-        
-       // NSLog(@"%@",[menu valueForKey:@"lecture_audio"]);
-        audioname=[menu valueForKey:@"lecture_audio"];
-        
-        
-    }
-    else
-    {
-        if (![HUD isHidden]) {
-            [HUD hide:YES];
-        }
-        
-        NSLog(@"No Datas found");
-    }
-    //        NSLog(@"section title array %@",sectionTitleArray);
-    //      NSLog(@"section content array %@",sectionContentDict);
-    //         NSLog(@"section bool array %@",arrayForBool);
-    
-  
+   
+    audioname= [delegate.lectureDetail objectForKey:@"lecture_audio"];
+   
     
     if ([audioname length]>0) {
         [self performSelector:@selector(playselectedsong) withObject:self afterDelay:5.0f];
@@ -150,6 +115,13 @@
 }
 -(void)playselectedsong{
    
+    
+    NSString*courseid= [delegate.lectureDetail objectForKey:@"id_course"];
+    NSString*secid= [delegate.lectureDetail objectForKey:@"id_section"];
+    NSString*lecid= [delegate.lectureDetail objectForKey:@"id_lecture"];
+    audioname= [delegate.lectureDetail objectForKey:@"lecture_audio"];
+    NSString *imageUrlString = [[NSString alloc]initWithFormat:@"%@/%@/%@/%@/%@",delegate.course_image_url,courseid,secid,lecid,audioname];
+    
     NSURL *url = [NSURL URLWithString:@"http://tamilmp3hub.com/4256s5f46ht4he4r6/2014/Saivam/Azhagu-Song.mp3"];
     AVURLAsset *asset = [AVURLAsset assetWithURL: url];
     
