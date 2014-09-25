@@ -220,13 +220,13 @@
         cell = [[SyllabusLectureTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-   cell.lecturetype.image=[UIImage imageNamed:@""];
+   cell.lecturetype.image=[UIImage imageNamed:nil];
     
     BOOL manyCells  = [[arrayForBool objectAtIndex:indexPath.section] boolValue];
     if (!manyCells)
     {
         cell.textLabel.text=@"";
-  cell.lecturetype.image=[UIImage imageNamed:@""];
+  cell.lecturetype.image=[UIImage imageNamed:nil];
 
     }
     else

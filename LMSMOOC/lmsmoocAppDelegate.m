@@ -7,6 +7,7 @@
 //
 
 #import "lmsmoocAppDelegate.h"
+#import<MediaPlayer/MediaPlayer.h>
 
 @implementation lmsmoocAppDelegate
 @synthesize avatharURL;
@@ -23,7 +24,7 @@
     pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
     pageControl.backgroundColor=[UIColor clearColor];
 //    [[UISegmentedControl appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor redColor]} forState:UIControlStateSelected];
-    return YES;
+      return YES;
 }
 							
 
@@ -59,41 +60,50 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-
-#pragma mark - Class method implementation
-
--(void)downloadDataFromURL:(NSURL *)url withCompletionHandler:(void (^)(NSData *))completionHandler{
-    // Instantiate a session configuration object.
-    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+- (NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
+ 
     
-    // Instantiate a session object.
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
-    
-    // Create a data task object to perform the data downloading.
-    NSURLSessionDataTask *task = [session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+    if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPhone) {
         
-        if (error != nil) {
-            // If any error occurs then just display its description on the console.
-            NSLog(@"%@", [error localizedDescription]);
-        }
-        else{
-            // If no error occurs, check the HTTP status code.
-            NSInteger HTTPStatusCode = [(NSHTTPURLResponse *)response statusCode];
+    if ([[self.window.rootViewController presentedViewController] isKindOfClass:[MPMoviePlayerViewController class]]) {
+        
+        return UIInterfaceOrientationMaskAllButUpsideDown;
+    }
+    else {
+       
+        if ([[self.window.rootViewController presentedViewController]
+             isKindOfClass:[UINavigationController class]])
+        {
             
-            // If it's other than 200, then show it on the console.
-            if (HTTPStatusCode != 200) {
-                NSLog(@"HTTP status code = %d", HTTPStatusCode);
+            // look for it inside UINavigationController
+            UINavigationController *nc = (UINavigationController *)[self.window.rootViewController presentedViewController];
+            
+            // is at the top?
+            if ([nc.topViewController isKindOfClass:[MPMoviePlayerViewController class]])
+            {
+                
+                return UIInterfaceOrientationMaskAllButUpsideDown;
+                
+                // or it's presented from the top?
+            }
+            else if ([[nc.topViewController presentedViewController]isKindOfClass:[MPMoviePlayerViewController class]])
+            {
+                
+                return UIInterfaceOrientationMaskAllButUpsideDown;
             }
             
-            // Call the completion handler with the returned data on the main thread.
-            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                completionHandler(data);
-            }];
+            
+            
+            
         }
-    }];
+       
+    }
+        return UIInterfaceOrientationMaskPortrait;
+    }
+   return UIInterfaceOrientationMaskLandscape;
+        
     
-    // Resume the task.
-    [task resume];
+    
 }
 
 

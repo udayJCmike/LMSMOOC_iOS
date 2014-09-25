@@ -112,50 +112,55 @@
     
     NSURL *url = [NSURL URLWithString:path];
     //   NSString *filepath   =   [[NSBundle mainBundle] pathForResource:@"brock entrance" ofType:@"mp4"];
-    //     NSLog(@"path %@",filepath);
     //    NSURL    *fileURL    =   [NSURL fileURLWithPath:filepath];
     
-    //  	NSLog(@"path %@",fileURL);
-    // Initialize the MPMoviePlayerController object using url
-    _videoPlayer =  [[MPMoviePlayerController alloc]
-                     initWithContentURL:url];
+  
+    MPMoviePlayerViewController *playerVC = [[MPMoviePlayerViewController alloc] initWithContentURL:url] ;
     
-    // Add a notification. (It will call a "moviePlayBackDidFinish" method when _videoPlayer finish or stops the plying video)
+    // Remove the movie player view controller from the "playback did finish" notification observers
+    [[NSNotificationCenter defaultCenter] removeObserver:playerVC
+                                                    name:MPMoviePlayerPlaybackDidFinishNotification
+                                                  object:playerVC.moviePlayer];
+    
+    // Register this class as an observer instead
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(moviePlayBackDidFinish:)
+                                             selector:@selector(movieFinishedCallback:)
                                                  name:MPMoviePlayerPlaybackDidFinishNotification
-                                               object:_videoPlayer];
-    // Set control style tp default
-    _videoPlayer.controlStyle = MPMovieControlStyleDefault;
+                                               object:playerVC.moviePlayer];
     
-    // Set shouldAutoplay to YES
-    _videoPlayer.shouldAutoplay = YES;
+    // Set the modal transition style of your choice
+  //  playerVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     
-    // Add _videoPlayer's view as subview to current view.
-    [self.view addSubview:_videoPlayer.view];
+    // Present the movie player view controller
+    [self presentViewController:playerVC animated:YES completion:nil];
     
-    // Set the screen to full.
-    [_videoPlayer setFullscreen:YES animated:YES];
+    // Start playback
+    // [playerVC.moviePlayer prepareToPlay];
+    // [playerVC.moviePlayer play];
+    
+    
     
 }
-
-- (void) moviePlayBackDidFinish:(NSNotification*)notification
+- (void)movieFinishedCallback:(NSNotification*)aNotification
 {
-    MPMoviePlayerController *videoplayer = [notification object];
-    [[NSNotificationCenter defaultCenter]
-     removeObserver:self
-     name:MPMoviePlayerPlaybackDidFinishNotification
-     object:videoplayer];
+    // Obtain the reason why the movie playback finished
+    NSNumber *finishReason = [[aNotification userInfo] objectForKey:MPMoviePlayerPlaybackDidFinishReasonUserInfoKey];
     
-    if ([videoplayer
-         respondsToSelector:@selector(setFullscreen:animated:)])
+    // Dismiss the view controller ONLY when the reason is not "playback ended"
+    if ([finishReason intValue] != MPMovieFinishReasonPlaybackEnded)
     {
-        [videoplayer.view removeFromSuperview];
-        // remove the video player from superview.
+        MPMoviePlayerController *moviePlayer = [aNotification object];
+        
+        // Remove this class from the observers
+        [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                        name:MPMoviePlayerPlaybackDidFinishNotification
+                                                      object:moviePlayer];
+        
+        // Dismiss the view controller
+        [self dismissMoviePlayerViewControllerAnimated];
+        [self.navigationController popViewControllerAnimated:YES];
     }
 }
-
-
 
 - (void)didReceiveMemoryWarning
 {
