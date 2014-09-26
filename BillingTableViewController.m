@@ -124,10 +124,14 @@
             // NSLog(@"category values %@",categorylist);
         }
         
-        [HUD hide:YES];
+       
         [self.tableView reloadData];
         
     }
+    if (![HUD isHidden]) {
+        [HUD hide:YES];
+    }
+
     
 }
 -(NSString *)HttpPostEntityFirst1:(NSString*)firstEntity ForValue1:(NSString*)value1 EntitySecond:(NSString*)secondEntity ForValue2:(NSString*)value2

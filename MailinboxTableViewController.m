@@ -120,10 +120,10 @@
             
         }
         [self.tableView reloadData];
-        [HUD hide:YES];
+       
     }
     
-    
+     [HUD hide:YES];
     
     
 
@@ -174,6 +174,10 @@
        // NSLog(@"list values %@",inbox);
     
     }
+    if (![HUD isHidden]) {
+        [HUD hide:YES];
+    }
+    
     
 }
 -(NSString *)HttpPostEntityFirst1:(NSString*)firstEntity ForValue1:(NSString*)value1 EntitySecond:(NSString*)secondEntity ForValue2:(NSString*)value2

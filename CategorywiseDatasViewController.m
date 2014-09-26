@@ -111,9 +111,7 @@ int loadcompleted;
             
         }
         [self.tableView reloadData];
-        if (![HUD isHidden]) {
-            [HUD hide:YES];
-        }
+        
         
     }
     else
@@ -122,7 +120,9 @@ int loadcompleted;
         NSLog(@"No Datas found");
     }
     offset+=10;
-    
+    if (![HUD isHidden]) {
+        [HUD hide:YES];
+    }
     
     
     

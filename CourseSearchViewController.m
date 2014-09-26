@@ -119,9 +119,7 @@ int loadcompleted;
             
         }
         [self.tableView reloadData];
-        if (![HUD isHidden]) {
-            [HUD hide:YES];
-        }
+        
        // NSLog(@"arrat Datas found---- %@",courselist);
     }
     else

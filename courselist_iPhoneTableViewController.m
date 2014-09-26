@@ -236,9 +236,7 @@ int loadcompleted;
             
         }
         [self.tableView reloadData];
-        if (![HUD isHidden]) {
-            [HUD hide:YES];
-        }
+      
         
     }
     else
@@ -291,9 +289,7 @@ int loadcompleted;
             
         }
         [self.tableView reloadData];
-        if (![HUD isHidden]) {
-            [HUD hide:YES];
-        }
+      
         
     }
     else
@@ -350,6 +346,10 @@ int loadcompleted;
         // NSLog(@"list values %@",inbox);
         
     }
+    if (![HUD isHidden]) {
+        [HUD hide:YES];
+    }
+    
     
 }
 -(NSString *)HttpPostEntityFirst1:(NSString*)firstEntity ForValue1:(NSString*)value1 EntitySecond:(NSString*)secondEntity ForValue2:(NSString*)value2

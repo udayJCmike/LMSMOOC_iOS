@@ -82,9 +82,9 @@
         [HUD hide:YES];
     }
    
-    NSString *path = @"http://techslides.com/demos/sample-videos/small.mp4";
+//    NSString *path = @"http://techslides.com/demos/sample-videos/small.mp4";
     
-    NSURL *url = [NSURL URLWithString:path];
+    NSURL *url = [NSURL URLWithString:imageUrlString];
     //   NSString *filepath   =   [[NSBundle mainBundle] pathForResource:@"brock entrance" ofType:@"mp4"];
     //    NSURL    *fileURL    =   [NSURL fileURLWithPath:filepath];
     

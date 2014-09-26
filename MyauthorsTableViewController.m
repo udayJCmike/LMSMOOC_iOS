@@ -112,6 +112,10 @@
         [self performSelector:@selector(relodtable) withObject:self afterDelay:0.5f];
         
     }
+    if (![HUD isHidden]) {
+        [HUD hide:YES];
+    }
+    
     
 }
 -(void)relodtable

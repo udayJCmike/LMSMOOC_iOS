@@ -44,7 +44,7 @@
     NSString *keepmeres=[[NSUserDefaults standardUserDefaults]objectForKey:@"keepmesign"];
     if ([keepmeres isEqualToString:@"1"]) {
         username.text=[[NSUserDefaults standardUserDefaults]objectForKey:@"username"];
-        password.text=@"akash@123";
+//        password.text=@"akash@123";
         reminder.selected=YES;
         [reminder setImage:[UIImage imageNamed:@"checkBoxMarked.png"] forState:UIControlStateNormal];
        
@@ -102,7 +102,7 @@
             
             if ([[du submitvalues]isEqualToString:@"Success"])
             {
-                [self performSelector:@selector(checkdata:) withObject:self afterDelay:0.0f];
+                [self performSelector:@selector(checkdata:) withObject:self afterDelay:0.2f];
             }
             else
             {

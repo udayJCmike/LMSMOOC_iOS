@@ -122,8 +122,8 @@
     audioname= [delegate.lectureDetail objectForKey:@"lecture_audio"];
     NSString *imageUrlString = [[NSString alloc]initWithFormat:@"%@/%@/%@/%@/%@",delegate.course_image_url,courseid,secid,lecid,audioname];
     
-    NSURL *url = [NSURL URLWithString:@"http://tamilmp3hub.com/4256s5f46ht4he4r6/2014/Saivam/Azhagu-Song.mp3"];
-    AVURLAsset *asset = [AVURLAsset assetWithURL: url];
+//    NSURL *url = [NSURL URLWithString:@"http://tamilmp3hub.com/4256s5f46ht4he4r6/2014/Saivam/Azhagu-Song.mp3"];
+    AVURLAsset *asset = [AVURLAsset assetWithURL:[NSURL URLWithString:imageUrlString]];
     
     if (![HUD isHidden]) {
         [HUD hide:YES];
