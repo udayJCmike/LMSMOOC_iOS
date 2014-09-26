@@ -233,10 +233,11 @@
     {
        
        cell.textLabel.text=@"";
-        
+        NSDictionary *selectedrow=[[syllabus_details valueForKey:[sectionTitleArray objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row];
+        NSString *typename=[selectedrow valueForKey:@"type_lecture"];
         NSArray *content = [sectionContentDict valueForKey:[sectionTitleArray objectAtIndex:indexPath.section]];
         cell.textLabel.text = [content objectAtIndex:indexPath.row];
-        cell.lecturetype.image=[UIImage imageNamed:@"1star.png"];
+        cell.lecturetype.image=[UIImage imageNamed:[self setimage:typename]];
     }
    
     

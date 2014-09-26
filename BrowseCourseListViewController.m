@@ -168,6 +168,10 @@ int loadcompleted;
         {
             NSDictionary *arrayList1= [Listofdatas objectAtIndex:i];
             NSDictionary *temp=[arrayList1 objectForKey:@"serviceresponse"];
+            NSString* mess=[temp objectForKey:@"course_description"];
+            mess = [mess stringByReplacingOccurrencesOfString: @"<br>" withString: @"\n"];
+            mess = [mess stringByReplacingOccurrencesOfString: @"<br>" withString: @"\n"];
+            [temp setValue:mess forKey:@"course_description"];
             //            NSLog(@"Received Values %@",temp);
             [courselist addObject:temp];
             
@@ -217,6 +221,10 @@ int loadcompleted;
         {
             NSDictionary *arrayList1= [Listofdatas objectAtIndex:i];
             NSDictionary *temp=[arrayList1 objectForKey:@"serviceresponse"];
+            NSString* mess=[temp objectForKey:@"course_description"];
+            mess = [mess stringByReplacingOccurrencesOfString: @"<br>" withString: @"\n"];
+            mess = [mess stringByReplacingOccurrencesOfString: @"<br>" withString: @"\n"];
+            [temp setValue:mess forKey:@"course_description"];
             //            NSLog(@"Received Values %@",temp);
             [courselist addObject:temp];
             
