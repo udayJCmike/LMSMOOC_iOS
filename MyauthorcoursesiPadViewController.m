@@ -334,7 +334,7 @@
     if (indexPath.row == [courselist count] - 1)
     {
         if (loadcompleted!=1) {
-            [self performSelector:@selector(loadDatas) withObject:nil afterDelay:1.0f];
+             [self loadDatas];
         }
     }
     
