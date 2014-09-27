@@ -5,7 +5,7 @@
 //  Created by DeemsysInc on 18/09/14.
 //  Copyright (c) 2014 deemsys. All rights reserved.
 //
-
+#import "MBProgressHUD.h"
 #import "MycategoriesViewController.h"
 #import "databaseurl.h"
 @interface MycategoriesViewController ()
@@ -45,13 +45,58 @@
     [button setFrame:CGRectMake(0, 0, 32, 32)];
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(menulistener:)
-                                                 name:@"Showmenu"
-                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(menulistener:) name:@"Showmenu" object:nil];
+    
+    
+    
+    UIButton *button1 =  [UIButton buttonWithType:UIButtonTypeCustom];
+    [button1 setImage:[UIImage imageNamed:@"menu_icon.png"] forState:UIControlStateNormal];
+    //[button setTitle:@"Add Categories" forState:UIControlStateNormal];
+    [button1 addTarget:self action:@selector(addCategories) forControlEvents:UIControlEventTouchUpInside];
+    [button1 setFrame:CGRectMake(0, 0, 100, 32)];
+    [button1 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button1];
     du=[[databaseurl alloc]init];
-    [self getList];
+   [self loadDatas];
     [category_tableView reloadData];
+}
+
+-(void)loadDatas
+{
+    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+    [self.navigationController.view addSubview:HUD];
+    HUD.delegate = self;
+    HUD.labelText = @"Please wait...";
+    [HUD show:YES];
+    if ([[du submitvalues]isEqualToString:@"Success"])
+    {
+        
+        [self performSelector:@selector(getList) withObject:self afterDelay:0.2f];
+        
+        
+    }
+    else
+    {
+        //[HUD hide:YES];
+        HUD.labelText = @"Check network connection";
+        HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@""]];
+        HUD.mode = MBProgressHUDModeCustomView;
+        [HUD hide:YES afterDelay:1];
+    }
+    
+}
+-(void)addCategories
+{
+     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(additemslistener:) name:@"Addcategories" object:nil];
+    [self performSegueWithIdentifier:@"addcategories" sender:self];
+}
+
+- (void)additemslistener:(id)sender {
+   // NSLog(@"selected list in receiver sdie %@",[sender valueForKey:@"object"]);
+    NSArray *list=[sender valueForKey:@"object"];
+    [categorylist addObjectsFromArray:list];
+       [[NSNotificationCenter defaultCenter] removeObserver:self name:@"Addcategories" object:nil];
+    [self.category_tableView reloadData];
 }
 
 - (void)menulistener:(id)sender {
@@ -103,7 +148,9 @@
             loadcompleted=1;
         }
         
-        
+        if (![HUD isHidden]) {
+            [HUD hide:YES];
+        }
         
         [self performSelector:@selector(relodtable) withObject:self afterDelay:0.5f];
         

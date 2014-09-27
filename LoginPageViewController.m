@@ -202,6 +202,7 @@
                 delegate.Profiledetails=[[NSMutableDictionary alloc]init];
                 
                 [[NSUserDefaults standardUserDefaults]setValue:username.text forKey:@"username"];
+                [[NSUserDefaults standardUserDefaults]setValue:[menu objectForKey:@"firstname"] forKey:@"firstname"];
                 [[NSUserDefaults standardUserDefaults]setValue:[menu objectForKey:@"userid"] forKey:@"userid"];
                 [delegate.Profiledetails setValue:[menu objectForKey:@"firstname"] forKey:@"firstname"];
                 [delegate.Profiledetails setValue:[menu objectForKey:@"lastname"] forKey:@"lastname"];

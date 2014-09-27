@@ -42,18 +42,20 @@
     delegate=AppDelegate;
   //  NSLog(@"value received %@",delegate.lectureDetail);
     // Do any additional setup after loading the view.
-    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
-    [self.navigationController.view addSubview:HUD];
-    HUD.delegate = self;
-    HUD.labelText = @"Please wait...";
-    [HUD show:YES];
+    
     durationoutlet.text=@"00:00";
     [self loadDatas];
 }
 -(void)loadDatas
 {
+    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+    [self.navigationController.view addSubview:HUD];
+    HUD.delegate = self;
+    HUD.labelText = @"Please wait...";
+    [HUD show:YES];
     if ([[du submitvalues]isEqualToString:@"Success"])
     {
+       
         [self gettextList];
         
         
@@ -76,8 +78,8 @@
    
     
     if ([audioname length]>0) {
-        [self performSelector:@selector(playselectedsong) withObject:self afterDelay:5.0f];
-        [self performSelector:@selector(configurePlayer) withObject:self afterDelay:5.0f];
+        [self performSelector:@selector(playselectedsong) withObject:self afterDelay:0.2f];
+        [self performSelector:@selector(configurePlayer) withObject:self afterDelay:0.2f];
         
     }
     

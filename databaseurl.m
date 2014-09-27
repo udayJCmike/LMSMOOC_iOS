@@ -21,8 +21,8 @@ static databaseurl * appInstance;
 
 -(NSString*)DBurl
 {
-   //NSString * link=@"http://208.109.248.89:8087/gpsios/service/";
-     NSString * link=@"http://192.168.1.106:8888/LmsmoocIos/Services/";
+   NSString * link=@"http://208.109.248.89/mobile/ios/Services/";
+//  NSString * link=@"http://localhost:8888/LmsmoocIos/Services/";
     return link;
     
 }
@@ -244,7 +244,7 @@ static databaseurl * appInstance;
     NSData *returnData = [ NSURLConnection sendSynchronousRequest:request returningResponse: nil error: nil ];
     NSString *returnString = [[NSString alloc]initWithData:returnData encoding:NSUTF8StringEncoding];
     NSError *err = nil;
-   // NSLog(@"return string %@",returnString);
+ //  NSLog(@"return string %@",returnString);
 
  
     NSMutableArray *search = [NSJSONSerialization JSONObjectWithData:[returnString dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:&err];

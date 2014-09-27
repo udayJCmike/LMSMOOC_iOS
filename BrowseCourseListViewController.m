@@ -7,9 +7,12 @@
 //
 
 #import "BrowseCourseListViewController.h"
+
 #define  AppDelegate (lmsmoocAppDelegate *)[[UIApplication sharedApplication] delegate]
 @interface BrowseCourseListViewController ()
-
+{
+   
+}
 @end
 
 @implementation BrowseCourseListViewController
@@ -91,11 +94,7 @@ int loadcompleted;
     
     du=[[databaseurl alloc]init];
     delegate=AppDelegate;
-    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
-    [self.navigationController.view addSubview:HUD];
-    HUD.delegate = self;
-    HUD.labelText = @"Please wait...";
-    [HUD show:YES];
+   
     _imageOperationQueue = [[NSOperationQueue alloc]init];
     _imageOperationQueue.maxConcurrentOperationCount = 4;
     self.imageCache = [[NSCache alloc] init];
@@ -108,27 +107,30 @@ int loadcompleted;
 }
 -(void)loadDatas
 {
+    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+    [self.navigationController.view addSubview:HUD];
+    HUD.delegate = self;
+    HUD.labelText = @"Please wait...";
+    [HUD show:YES];
+ 
     if ([[du submitvalues]isEqualToString:@"Success"])
     {
+        
         if (course_type.selectedSegmentIndex==0) {
-            [self getCourseList];
+            [self performSelector:@selector(getCourseList) withObject:self afterDelay:0.2f];
         }
         else  if (course_type.selectedSegmentIndex==1) {
-            [self getFreeCourseList];
+            [self performSelector:@selector(getFreeCourseList) withObject:self afterDelay:0.2f];
         }
         else  if (course_type.selectedSegmentIndex==2)
         {
-            [self getPaidCourseList];
+            [self performSelector:@selector(getPaidCourseList) withObject:self afterDelay:0.2f];
         }
         else
         {
-            HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
-            [self.navigationController.view addSubview:HUD];
-            HUD.delegate = self;
-            HUD.labelText = @"Please wait...";
-            [HUD show:YES];
+           
             
-            [self getList];
+             [self performSelector:@selector(getList) withObject:self afterDelay:0.2f];
         }
         
     }
@@ -149,7 +151,7 @@ int loadcompleted;
     
     
     NSString *urltemp=[[databaseurl sharedInstance]DBurl];
-    NSString *url1=@"AllCourse.php";
+    NSString *url1=@"BrowseAllCourse.php";
   
     NSString *URLString=[NSString stringWithFormat:@"%@%@?offset=%d",urltemp,url1,offset];
     
@@ -188,6 +190,7 @@ int loadcompleted;
     if (![HUD isHidden]) {
         [HUD hide:YES];
     }
+   
     offset+=10;
     
     
@@ -201,7 +204,7 @@ int loadcompleted;
     
     // [courselist removeAllObjects];
     NSString *urltemp=[[databaseurl sharedInstance]DBurl];
-    NSString *url1=@"AllCourse_Free.php";
+    NSString *url1=@"BrowseAllCourse_Free.php";
    
     NSString *URLString=[NSString stringWithFormat:@"%@%@?offset=%d",urltemp,url1,offset_free];
     
@@ -255,7 +258,7 @@ int loadcompleted;
     // [courselist removeAllObjects];
     
     NSString *urltemp=[[databaseurl sharedInstance]DBurl];
-    NSString *url1=@"AllCourse_paid.php";
+    NSString *url1=@"BrowseAllCourse_paid.php";
     
     NSString *URLString=[NSString stringWithFormat:@"%@%@?offset=%d",urltemp,url1,offset_paid];
     

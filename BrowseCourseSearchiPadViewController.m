@@ -43,11 +43,7 @@ int loadcompleted;
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
-    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
-    [self.navigationController.view addSubview:HUD];
-    HUD.delegate = self;
-    HUD.labelText = @"Please wait...";
-    [HUD show:YES];
+    
     if ([textField.text length]>0) {
         offset=0;
         loadcompleted=0;
@@ -64,11 +60,15 @@ int loadcompleted;
 
 -(void)loadDatas
 {
+    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+    [self.navigationController.view addSubview:HUD];
+    HUD.delegate = self;
+    HUD.labelText = @"Please wait...";
+    [HUD show:YES];
     if ([[du submitvalues]isEqualToString:@"Success"])
     {
-        [self getCourseList];
         
-        
+        [self performSelector:@selector(getCourseList) withObject:self afterDelay:0.2f];
         
         
         
@@ -98,7 +98,7 @@ int loadcompleted;
     du=[[databaseurl alloc]init];
     
     NSString *urltemp=[[databaseurl sharedInstance]DBurl];
-    NSString *url1=@"CourseSearch.php";
+    NSString *url1=@"BrowseCourseSearch.php";
     NSString *course= [coursename.text stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
    
     NSString *URLString=[NSString stringWithFormat:@"%@%@?offset=%d&course=%@",urltemp,url1,offset,course];

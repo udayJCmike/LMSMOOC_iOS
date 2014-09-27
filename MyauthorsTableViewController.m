@@ -45,19 +45,22 @@
                                                object:nil];
     du=[[databaseurl alloc]init];
     delegate=AppDelegate;
-    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
-    [self.navigationController.view addSubview:HUD];
-    HUD.delegate = self;
-    HUD.labelText = @"Please wait...";
-    [HUD show:YES];
+    
     [self loadDatas];
 
 }
 -(void)loadDatas
 {
+    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+    [self.navigationController.view addSubview:HUD];
+    HUD.delegate = self;
+    HUD.labelText = @"Please wait...";
+    [HUD show:YES];
     if ([[du submitvalues]isEqualToString:@"Success"])
     {
-        [self getList];
+        
+        [self performSelector:@selector(getList) withObject:self afterDelay:0.2f];
+        
         
        
     }
@@ -76,7 +79,7 @@
   NSString *  studentid=[[NSUserDefaults standardUserDefaults]objectForKey:@"userid"];
     NSString *response=[self HttpPostEntityFirst1:@"studentid" ForValue1:studentid  EntitySecond:@"authkey" ForValue2:@"rzTFevN099Km39PV"];
     NSError *error;
-   // NSLog(@"response %@",response);
+   NSLog(@"response %@",response);
     SBJSON *json = [[SBJSON new] autorelease];
     NSDictionary *parsedvalue = [json objectWithString:response error:&error];
     

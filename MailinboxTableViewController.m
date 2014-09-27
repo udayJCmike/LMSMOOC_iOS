@@ -47,11 +47,7 @@
                                              selector:@selector(menulistener:)
                                                  name:@"Showmenu"
                                                object:nil];
-    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
-    [self.navigationController.view addSubview:HUD];
-    HUD.delegate = self;
-    HUD.labelText = @"Please wait...";
-    [HUD show:YES];
+    
     [self loadDatas];
     
     self.navigationItem.title=[NSString stringWithFormat:@"Inbox (%d/%d)",unread,count];
@@ -66,9 +62,16 @@
 }
 -(void)loadDatas
 {
-    if ([[du submitvalues]isEqualToString:@"Success"])
-    {
-        [self getMailList];
+         HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+        [self.navigationController.view addSubview:HUD];
+        HUD.delegate = self;
+        HUD.labelText = @"Please wait...";
+        [HUD show:YES];
+        if ([[du submitvalues]isEqualToString:@"Success"])
+        {
+            
+            [self performSelector:@selector(getMailList) withObject:self afterDelay:0.2f];
+        
     }
     else
     {

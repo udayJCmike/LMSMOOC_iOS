@@ -30,17 +30,21 @@
     delegate=AppDelegate;
    // NSLog(@"value received %@",delegate.lectureDetail);
     // Do any additional setup after loading the view.
+  
+       [self loadDatas];
+}
+-(void)loadDatas
+{
     HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
     [self.navigationController.view addSubview:HUD];
     HUD.delegate = self;
     HUD.labelText = @"Please wait...";
     [HUD show:YES];
-    [self loadDatas];
-}
--(void)loadDatas
-{
     if ([[du submitvalues]isEqualToString:@"Success"])
     {
+             
+        
+       
         [self gettextList];
         
         
@@ -61,7 +65,7 @@
     
    
     
-    [self performSelector:@selector(playVideo:) withObject:self afterDelay:2.0f];
+    [self performSelector:@selector(playVideo:) withObject:self afterDelay:0.2f];
         
     
     

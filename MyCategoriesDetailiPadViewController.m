@@ -37,11 +37,7 @@
     _imageOperationQueue = [[NSOperationQueue alloc]init];
     _imageOperationQueue.maxConcurrentOperationCount = 4;
     self.imageCache = [[NSCache alloc] init];
-    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
-    [self.navigationController.view addSubview:HUD];
-    HUD.delegate = self;
-    HUD.labelText = @"Please wait...";
-    [HUD show:YES];
+   
  
     UIButton *button2 =  [UIButton buttonWithType:UIButtonTypeCustom];
     [button2 setTitle:@"Remove From favorites" forState:UIControlStateNormal];
@@ -123,13 +119,15 @@
 
 -(void)loadDatas
 {
+    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+    [self.navigationController.view addSubview:HUD];
+    HUD.delegate = self;
+    HUD.labelText = @"Please wait...";
+    [HUD show:YES];
     if ([[du submitvalues]isEqualToString:@"Success"])
     {
-        [self getCourseList];
         
-        
-        
-        
+        [self performSelector:@selector(getCourseList) withObject:self afterDelay:0.2f];
         
     }
     else

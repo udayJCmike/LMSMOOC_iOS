@@ -33,6 +33,8 @@
 		0DFCDC3A19CAB990002D317D /* 4star.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DFCDC3519CAB990002D317D /* 4star.png */; };
 		0DFCDC3B19CAB990002D317D /* 5star.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DFCDC3619CAB990002D317D /* 5star.png */; };
 		0DFCDC3D19CABE0F002D317D /* 0star.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DFCDC3C19CABE0F002D317D /* 0star.png */; };
+		8402E0DB19D682B7001B9638 /* AddCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8402E0DA19D682B7001B9638 /* AddCategoryViewController.m */; };
+		8402E0DE19D693E9001B9638 /* AddCategoriesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8402E0DD19D693E9001B9638 /* AddCategoriesTableViewCell.m */; };
 		84082A5519C802960039F4E8 /* CategorywiseDatasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84082A5419C802960039F4E8 /* CategorywiseDatasViewController.m */; };
 		84082A5819C80F1E0039F4E8 /* CourseSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84082A5719C80F1E0039F4E8 /* CourseSearchViewController.m */; };
 		84082A6219C834490039F4E8 /* btn_close_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 84082A5C19C834490039F4E8 /* btn_close_normal.png */; };
@@ -196,6 +198,10 @@
 		0DFCDC3519CAB990002D317D /* 4star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4star.png; sourceTree = "<group>"; };
 		0DFCDC3619CAB990002D317D /* 5star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5star.png; sourceTree = "<group>"; };
 		0DFCDC3C19CABE0F002D317D /* 0star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0star.png; sourceTree = "<group>"; };
+		8402E0D919D682B7001B9638 /* AddCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCategoryViewController.h; sourceTree = "<group>"; };
+		8402E0DA19D682B7001B9638 /* AddCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCategoryViewController.m; sourceTree = "<group>"; };
+		8402E0DC19D693E9001B9638 /* AddCategoriesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCategoriesTableViewCell.h; sourceTree = "<group>"; };
+		8402E0DD19D693E9001B9638 /* AddCategoriesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCategoriesTableViewCell.m; sourceTree = "<group>"; };
 		84082A5319C802960039F4E8 /* CategorywiseDatasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategorywiseDatasViewController.h; sourceTree = "<group>"; };
 		84082A5419C802960039F4E8 /* CategorywiseDatasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategorywiseDatasViewController.m; sourceTree = "<group>"; };
 		84082A5619C80F1E0039F4E8 /* CourseSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseSearchViewController.h; sourceTree = "<group>"; };
@@ -722,6 +728,10 @@
 			children = (
 				84EC715B19CAF66500529168 /* MycategoriesViewController.h */,
 				84EC715C19CAF66500529168 /* MycategoriesViewController.m */,
+				8402E0DC19D693E9001B9638 /* AddCategoriesTableViewCell.h */,
+				8402E0DD19D693E9001B9638 /* AddCategoriesTableViewCell.m */,
+				8402E0D919D682B7001B9638 /* AddCategoryViewController.h */,
+				8402E0DA19D682B7001B9638 /* AddCategoryViewController.m */,
 				84EC715219CAD77000529168 /* MycategoriesDetailViewController.h */,
 				84EC715319CAD77000529168 /* MycategoriesDetailViewController.m */,
 			);
@@ -1196,10 +1206,12 @@
 				84FC7DBC19C021180001FD7C /* ProfileUpdateViewController.m in Sources */,
 				84F59B6319C2AD5A009EF252 /* APRoundedButton.m in Sources */,
 				84082A5819C80F1E0039F4E8 /* CourseSearchViewController.m in Sources */,
+				8402E0DB19D682B7001B9638 /* AddCategoryViewController.m in Sources */,
 				84FC7D8F19C0064E0001FD7C /* MBProgressHUD.m in Sources */,
 				847635F019C095A700F45CEF /* Passwordchange.m in Sources */,
 				84EDDB6B19D28C8400FEAE95 /* AudioPlayerViewController.m in Sources */,
 				84FC7DD919C02B360001FD7C /* BillingTableViewController.m in Sources */,
+				8402E0DE19D693E9001B9638 /* AddCategoriesTableViewCell.m in Sources */,
 				8470B51219CD64A2008A5809 /* BrowseCourseListViewController.m in Sources */,
 				8491BA0419CBF3F900B649ED /* MyCategoriesDetailiPadViewController.m in Sources */,
 			);

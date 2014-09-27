@@ -526,7 +526,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HAV-fl-Zmy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="867" y="-2585"/>
+            <point key="canvasLocation" x="1175" y="-3481"/>
         </scene>
         <!--Mail Details View Controller - Message-->
         <scene sceneID="T9H-jq-hZ4">
@@ -610,7 +610,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xBg-gQ-y5p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1332" y="-2619"/>
+            <point key="canvasLocation" x="1640" y="-3515"/>
         </scene>
         <!--Billing Table View Controller - Billings-->
         <scene sceneID="GuO-Se-VLi">
@@ -946,6 +946,7 @@
                     <connections>
                         <outlet property="category_tableView" destination="3HC-2J-kOc" id="dl7-k9-mvo"/>
                         <segue destination="3Nh-Dm-Aet" kind="push" identifier="Mycategory" id="MNd-hD-QW1"/>
+                        <segue destination="SSh-b6-tRU" kind="push" identifier="addcategories" id="FqI-uX-sJv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yqi-b2-x4f" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1506,6 +1507,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BV0-AI-gIF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1770" y="-127"/>
+        </scene>
+        <!--Add Category View Controller - Add Categories-->
+        <scene sceneID="ljx-fJ-dqz">
+            <objects>
+                <viewController id="SSh-b6-tRU" customClass="AddCategoryViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tlu-p1-fvf"/>
+                        <viewControllerLayoutGuide type="bottom" id="EiR-tB-uRh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YHo-RJ-V4h">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="U2k-KX-GkR">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="mycourses" id="niR-NH-wBK" customClass="AddCategoriesTableViewCell">
+                                        <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="niR-NH-wBK" id="Rkt-uT-k0f">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LgV-Uj-itx">
+                                                    <rect key="frame" x="274" y="9" width="25" height="25"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="marked" destination="LgV-Uj-itx" id="wFP-Lv-QsT"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="SSh-b6-tRU" id="Ssg-0V-B3l"/>
+                                    <outlet property="delegate" destination="SSh-b6-tRU" id="uAw-h6-E6e"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Categories" id="E5B-Xr-9TC"/>
+                    <connections>
+                        <outlet property="category_tableView" destination="U2k-KX-GkR" id="vzw-PY-Qhp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gKQ-Tu-vdY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2245" y="-550"/>
         </scene>
     </scenes>
     <resources>

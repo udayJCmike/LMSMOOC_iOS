@@ -15,8 +15,9 @@
 #import "MycategoriesDetailViewController.h"
 
 
-@interface MycategoriesViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface MycategoriesViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,MBProgressHUDDelegate>
 {
+    MBProgressHUD *HUD;
     int loadcompleted;
     NSString *studentid;
     NSMutableArray *mycategories;

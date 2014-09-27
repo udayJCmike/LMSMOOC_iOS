@@ -34,21 +34,21 @@ int loadcompleted;
     courselist=[[NSMutableArray alloc]init];
     du=[[databaseurl alloc]init];
     delegate=AppDelegate;
-    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
-    [self.navigationController.view addSubview:HUD];
-    HUD.delegate = self;
-    HUD.labelText = @"Please wait...";
-    [HUD show:YES];
-    _imageOperationQueue = [[NSOperationQueue alloc]init];
+     _imageOperationQueue = [[NSOperationQueue alloc]init];
     _imageOperationQueue.maxConcurrentOperationCount = 4;
     self.imageCache = [[NSCache alloc] init];
     [self loadDatas];
 }
 -(void)loadDatas
 {
+    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+    [self.navigationController.view addSubview:HUD];
+    HUD.delegate = self;
+    HUD.labelText = @"Please wait...";
+    [HUD show:YES];
     if ([[du submitvalues]isEqualToString:@"Success"])
     {
-        [self getCourseList];
+        [self performSelector:@selector(getCourseList) withObject:self afterDelay:0.2f];
         
         
         

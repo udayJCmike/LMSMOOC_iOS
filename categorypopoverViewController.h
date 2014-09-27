@@ -18,7 +18,10 @@
 #import "SBJSON.h"
 #import "UIButton+Bootstrap.h"
 #import "CategorywiseDatasiPadViewController.h"
-@interface categorypopoverViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface categorypopoverViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,MBProgressHUDDelegate>
+{
+    MBProgressHUD *HUD;
+}
 @property (retain, nonatomic) IBOutlet UITableView *category_tableView;
 @property(retain,nonatomic)NSMutableArray *categorylist;
 @end

@@ -31,7 +31,15 @@ int loadcompleted;
 {
     [super viewDidLoad];
     du=[[databaseurl alloc]init];
-    [self getList];
+   
+    if ([[du submitvalues]isEqualToString:@"Success"])
+    {
+        
+        [self performSelector:@selector(getList) withObject:self afterDelay:0.2f];
+        
+    }
+
+   
     // Do any additional setup after loading the view.
 }
 -(void)getList
@@ -72,7 +80,9 @@ int loadcompleted;
             loadcompleted=1;
         }
         
-    
+        if (![HUD isHidden]) {
+            [HUD hide:YES];
+        }
         [category_tableView reloadData];
         // NSLog(@"list values %@",inbox);
         

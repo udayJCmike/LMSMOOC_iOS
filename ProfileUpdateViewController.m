@@ -794,7 +794,7 @@
     NSString *url1=@"Signup.php?service=signupupdate";
     NSString *url2=[NSString stringWithFormat:@"%@%@",urltemp,url1];
     NSString *post =[[NSString alloc] initWithFormat:@"%@=%@&lastname=%@&username=%@&emailid=%@&interested=%@&gender=%@&id=%@&avatar=%@&%@=%@",firstEntity,value1,second,username.text,email.text,interestedval,genderval,[[NSUserDefaults standardUserDefaults]objectForKey:@"userid"],avatar,secondEntity,value2];
-    //  NSLog(@"POST %@",post);
+      NSLog(@"POST %@",post);
     NSURL *url = [NSURL URLWithString:url2];
     return [du returndbresult:post URL:url];
 }

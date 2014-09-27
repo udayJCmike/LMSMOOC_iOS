@@ -96,11 +96,7 @@ int loadcompleted;
     
     du=[[databaseurl alloc]init];
     delegate=AppDelegate;
-    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
-    [self.navigationController.view addSubview:HUD];
-    HUD.delegate = self;
-    HUD.labelText = @"Please wait...";
-    [HUD show:YES];
+    
     _imageOperationQueue = [[NSOperationQueue alloc]init];
     _imageOperationQueue.maxConcurrentOperationCount = 4;
     self.imageCache = [[NSCache alloc] init];
@@ -113,27 +109,30 @@ int loadcompleted;
 }
 -(void)loadDatas
 {
+    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+    [self.navigationController.view addSubview:HUD];
+    HUD.delegate = self;
+    HUD.labelText = @"Please wait...";
+    [HUD show:YES];
     if ([[du submitvalues]isEqualToString:@"Success"])
     {
+        
         if (course_type.selectedSegmentIndex==0) {
-             [self getCourseList];
+            [self performSelector:@selector(getCourseList) withObject:self afterDelay:0.2f];
+            
         }
         else  if (course_type.selectedSegmentIndex==1) {
-             [self getFreeCourseList];
+            [self performSelector:@selector(getFreeCourseList) withObject:self afterDelay:0.2f];
         }
-         else  if (course_type.selectedSegmentIndex==2)
-         {
-              [self getPaidCourseList];
-         }
+        else  if (course_type.selectedSegmentIndex==2)
+        {
+            [self performSelector:@selector(getPaidCourseList) withObject:self afterDelay:0.2f];
+        }
         else
         {
-            HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
-            [self.navigationController.view addSubview:HUD];
-            HUD.delegate = self;
-            HUD.labelText = @"Please wait...";
-            [HUD show:YES];
+           
 
-             [self getList];
+           [self performSelector:@selector(getList) withObject:self afterDelay:0.2f];
         }
 
     }
@@ -177,7 +176,7 @@ int loadcompleted;
             mess = [mess stringByReplacingOccurrencesOfString: @"<br>" withString: @"\n"];
             mess = [mess stringByReplacingOccurrencesOfString: @"<br>" withString: @"\n"];
             [temp setValue:mess forKey:@"course_description"];
-//            NSLog(@"Received Values %@",temp);
+           // NSLog(@"Received Values %@",temp);
             [courselist addObject:temp];
             
             

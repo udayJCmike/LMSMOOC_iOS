@@ -36,18 +36,19 @@
 
     
     du=[[databaseurl alloc]init];
+       [self loadDatas];
+}
+-(void)loadDatas
+{
     HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
     [self.navigationController.view addSubview:HUD];
     HUD.delegate = self;
     HUD.labelText = @"Please wait...";
     [HUD show:YES];
-    [self loadDatas];
-}
--(void)loadDatas
-{
     if ([[du submitvalues]isEqualToString:@"Success"])
     {
-        [self getAuthorDatas];
+        [self performSelector:@selector(getAuthorDatas) withObject:self afterDelay:0.2f];
+        
         
         
     }
