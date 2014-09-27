@@ -44,10 +44,17 @@ int loadcompleted;
 }
 -(void)loadDatas
 {
+    
+    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+    [self.navigationController.view addSubview:HUD];
+    HUD.delegate = self;
+    HUD.labelText = @"Please wait...";
+    [HUD show:YES];
+    
     if ([[du submitvalues]isEqualToString:@"Success"])
     {
-        [self getCourseList];
         
+        [self performSelector:@selector(getCourseList) withObject:self afterDelay:0.2f];
         
         
     }
@@ -245,15 +252,10 @@ int loadcompleted;
     // Dispose of any resources that can be recreated.
 }
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
- {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+-(void)dealloc
+{
+    [super dealloc];
+    HUD.delegate = nil;
+}
 
 @end

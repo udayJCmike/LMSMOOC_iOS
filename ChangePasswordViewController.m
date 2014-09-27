@@ -366,5 +366,9 @@
     return [du returndbresult:post URL:url];
 }
 
-
+-(void)dealloc
+{
+    [super dealloc];
+    HUD.delegate = nil;
+}
 @end

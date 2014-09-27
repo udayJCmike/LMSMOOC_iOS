@@ -598,6 +598,9 @@ int loadcompleted;
     
     
     
+        HUD.delegate = nil;
+    
+    
     [super dealloc];
 }
 @end

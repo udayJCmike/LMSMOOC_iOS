@@ -367,6 +367,10 @@ int loadcompleted;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)dealloc
+{
+    [super dealloc];
+    HUD.delegate = nil;
+}
 
 @end

@@ -281,7 +281,11 @@ int loadcompleted;
     
 }
 
-
+-(void)dealloc
+{
+    [super dealloc];
+    HUD.delegate = nil;
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

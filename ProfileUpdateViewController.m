@@ -44,7 +44,7 @@
     [super viewWillAppear:animated];
     password.text=[delegate.Profiledetails objectForKey:@"password"];
      
-    NSLog(@"value image %@",[delegate.Profiledetails valueForKey:@"avatarImage"]);
+//    NSLog(@"value image %@",[delegate.Profiledetails valueForKey:@"avatarImage"]);
 }
 - (void)viewDidLoad
 {
@@ -1088,18 +1088,32 @@
 
 
 
-
-
-
-
-
-
-- (void)dealloc {
-    
-    [_saveprofile release];
-    [super dealloc];
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    if ( HUD!=nil) {
+        
+        HUD . Delegate = nil ;
+        
+        HUD = nil ;
+        
+    }
 }
 
+
+
+
+-(void)dealloc
+{
+    [super dealloc];
+    if ( HUD!=nil) {
+        
+        HUD . Delegate = nil ;
+        
+        HUD = nil ;
+        
+    }
+}
 
 
 @end

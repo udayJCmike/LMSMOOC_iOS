@@ -96,7 +96,8 @@ int loadcompleted;
     {
         
         if (course_type.selectedSegmentIndex==0) {
-             [self performSelector:@selector(getCourseList) withObject:self afterDelay:0.2f];
+            //[self performSelector:@selector(getCourseList) withObject:self afterDelay:0.2f];
+            [self getCourseList];
             
         }
         else  if (course_type.selectedSegmentIndex==1) {
@@ -302,7 +303,7 @@ int loadcompleted;
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     //     NSMutableArray *indexPaths = [NSMutableArray arrayWithObject:indexPath];
-    NSLog(@"clicked at index %d",indexPath.row);
+    NSLog(@"clicked at index %ld",(long)indexPath.row);
     NSDictionary *temp=[courselist objectAtIndex:indexPath.row];
     if([[temp objectForKey:@"studentenrolled"]isEqualToString:@"0"])
     {
@@ -534,6 +535,10 @@ int loadcompleted;
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-
+-(void)dealloc
+{
+    [super dealloc];
+    HUD.delegate = nil;
+}
 
 @end

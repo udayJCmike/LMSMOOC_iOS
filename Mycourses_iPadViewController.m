@@ -283,5 +283,9 @@ int loadcompleted;
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"Showmenu" object:nil];
 }
 
-
+-(void)dealloc
+{
+    [super dealloc];
+    HUD.delegate = nil;
+}
 @end

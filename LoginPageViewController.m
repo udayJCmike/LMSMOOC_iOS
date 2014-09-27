@@ -44,7 +44,7 @@
     NSString *keepmeres=[[NSUserDefaults standardUserDefaults]objectForKey:@"keepmesign"];
     if ([keepmeres isEqualToString:@"1"]) {
         username.text=[[NSUserDefaults standardUserDefaults]objectForKey:@"username"];
-        password.text=@"allen@123";
+//        password.text=@"allen@123";
         reminder.selected=YES;
         [reminder setImage:[UIImage imageNamed:@"checkBoxMarked.png"] forState:UIControlStateNormal];
        
@@ -287,9 +287,9 @@
 
 
 
-- (void)dealloc {
-    [_login release];
-    [_back release];
+-(void)dealloc
+{
     [super dealloc];
+    HUD.delegate = nil;
 }
 @end

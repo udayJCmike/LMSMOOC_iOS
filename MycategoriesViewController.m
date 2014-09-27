@@ -250,5 +250,9 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-
+-(void)dealloc
+{
+    [super dealloc];
+    HUD.delegate = nil;
+}
 @end

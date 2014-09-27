@@ -414,6 +414,10 @@
 
 -(void)dealloc{
     [super dealloc];
+    
+      
+        HUD.delegate = nil;
+    
       [[NSNotificationCenter defaultCenter] removeObserver:self name:@"ReadStatus" object:nil];
      [[NSNotificationCenter defaultCenter] removeObserver:self name:@"importantStatus" object:nil];
 }

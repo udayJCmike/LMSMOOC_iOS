@@ -261,7 +261,11 @@
 
 
 
-
+-(void)dealloc
+{
+    [super dealloc];
+    HUD.delegate = nil;
+}
 
 
 

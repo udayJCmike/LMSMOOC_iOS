@@ -198,8 +198,9 @@
     // Pass the selected object to the new view controller.
 }
 
-- (void)dealloc {
-   
+-(void)dealloc
+{
     [super dealloc];
+    HUD.delegate = nil;
 }
 @end
