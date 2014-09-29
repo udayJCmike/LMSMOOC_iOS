@@ -83,7 +83,7 @@
   
     email.delegate=self;
     interestedval=@"null";
-    genderval=@"male";
+    genderval=@"null";
     UITapGestureRecognizer *get=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:get];
     
@@ -127,6 +127,11 @@
     else if([interestedval isEqualToString:@"subject"]) {
         [_interestedin setSelectedSegmentIndex:0];
     }
+    else
+    {
+        interestedval=@"";
+        [_interestedin setSelectedSegmentIndex:UISegmentedControlNoSegment];
+    }
 
     
 }
@@ -163,8 +168,8 @@
         lname.text.length>0 &&
         username.text.length>0 &&
         password.text.length>0 &&
-        
-        email.text.length>0 )
+        email.text.length>0
+         )
     {
         if ([du validateNameForSignupPage:fname.text])
         {
@@ -177,9 +182,20 @@
                     {
                         if ([du validatePasswordForSignupPage:password.text])
                         {
-                            if ([genderval length]==0) {
+                            if (![interestedval isEqualToString:@"null"] && [interestedval length]!=0) {
+                                if (![genderval isEqualToString:@"null"]&& [genderval length]!=0) {
+                                    c=1;
+                                }
+                                else
+                                {
+                                    c=0;
+                                    [self ShowAlert:@"Enter gender"];
+                                }
+                            }
+                            else
+                            {
                                 c=0;
-                                [self ShowAlert:@"Enter gender"];
+                                [self ShowAlert:@"Enter interested in"];
                             }
                             
                             [delegate.Profiledetails setValue:fname.text forKey:@"firstname"];
@@ -686,15 +702,16 @@
 }
 - (IBAction)upload:(id)sender {
     
+   
+    NSString *userid=[[NSUserDefaults standardUserDefaults]valueForKey:@"userid"];
+    NSString* name=[NSString stringWithFormat:@"S%@.jpg",userid ];
+    
+    NSString *res=[self uploadClicked:name data: [[NSUserDefaults standardUserDefaults]valueForKey:@"myimage"]];
     HUD = [MBProgressHUD showHUDAddedTo:self.view  animated:YES];
     HUD.mode=MBProgressHUDModeIndeterminate;
     HUD.delegate = self;
     HUD.labelText = @"Please wait";
     [HUD show:YES];
-    NSString *userid=[[NSUserDefaults standardUserDefaults]valueForKey:@"userid"];
-    NSString* name=[NSString stringWithFormat:@"S%@.jpg",userid ];
-    
-    NSString *res=[self uploadClicked:name data: [[NSUserDefaults standardUserDefaults]valueForKey:@"myimage"]];
     if (res) {
        
         uploaded=true;
@@ -854,7 +871,7 @@
 	
 	
 
-    NSLog(@"returndat %@",returnString);
+  //  NSLog(@"returndat %@",returnString);
     return returnString;
     
 }

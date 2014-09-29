@@ -47,7 +47,7 @@
     [HUD show:YES];
     if ([[du submitvalues]isEqualToString:@"Success"])
     {
-        [self performSelector:@selector(getAuthorDatas) withObject:self afterDelay:0.2f];
+        [self performSelector:@selector(getAuthorDatas) withObject:self afterDelay:0.1f];
         
         
         

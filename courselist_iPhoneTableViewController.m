@@ -118,7 +118,7 @@ int loadcompleted;
     {
         
         if (course_type.selectedSegmentIndex==0) {
-            //[self performSelector:@selector(getCourseList) withObject:self afterDelay:0.2f];
+         //  [self performSelector:@selector(getCourseList) withObject:self afterDelay:0.0f];
             [self getCourseList];
             
         }

@@ -44,7 +44,7 @@
     NSString *keepmeres=[[NSUserDefaults standardUserDefaults]objectForKey:@"keepmesign"];
     if ([keepmeres isEqualToString:@"1"]) {
         username.text=[[NSUserDefaults standardUserDefaults]objectForKey:@"username"];
-//        password.text=@"allen@123";
+        password.text=[[NSUserDefaults standardUserDefaults]objectForKey:@"password"];
         reminder.selected=YES;
         [reminder setImage:[UIImage imageNamed:@"checkBoxMarked.png"] forState:UIControlStateNormal];
        
@@ -202,6 +202,7 @@
                 delegate.Profiledetails=[[NSMutableDictionary alloc]init];
                 
                 [[NSUserDefaults standardUserDefaults]setValue:username.text forKey:@"username"];
+                  [[NSUserDefaults standardUserDefaults]setValue:password.text forKey:@"password"];
                 [[NSUserDefaults standardUserDefaults]setValue:[menu objectForKey:@"firstname"] forKey:@"firstname"];
                 [[NSUserDefaults standardUserDefaults]setValue:[menu objectForKey:@"userid"] forKey:@"userid"];
                 [delegate.Profiledetails setValue:[menu objectForKey:@"firstname"] forKey:@"firstname"];

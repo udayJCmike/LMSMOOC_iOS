@@ -86,6 +86,8 @@
             if ([new_pwd.text isEqualToString:cfm_pwd.text])
             {
                 [delegate.Profiledetails setValue:new_pwd.text forKey:@"password"];
+                [[NSUserDefaults standardUserDefaults]setValue:new_pwd.text forKey:@"password"];
+                [[NSUserDefaults standardUserDefaults]synchronize];
                 HUD = [MBProgressHUD showHUDAddedTo:self.view  animated:YES];
                 HUD.mode=MBProgressHUDModeIndeterminate;
                 HUD.delegate = self;
