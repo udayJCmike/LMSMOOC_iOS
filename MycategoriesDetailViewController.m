@@ -38,36 +38,42 @@ int loadcompleted;
         [self.navigationController setNavigationBarHidden:NO animated:NO];
     }
     
-    UIButton *button2 =  [UIButton buttonWithType:UIButtonTypeCustom];
-    [button2 setTitle:@"Remove From favorites" forState:UIControlStateNormal];
+   // UIButton *button2 =  [UIButton buttonWithType:UIButtonTypeCustom];
+   // [button2 setTitle:@"Remove From favorites" forState:UIControlStateNormal];
    // [button2 setTitle:@"Add to favorites" forState:UIControlStateSelected];
-    [button2 addTarget:self action:@selector(removeCategoryname:) forControlEvents:UIControlEventTouchUpInside];
-    [button2 setFrame:CGRectMake(0, 0, 180, 32)];
-    [button2 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button2];
+   // [button2 addTarget:self action:@selector(removeCategoryname:) forControlEvents:UIControlEventTouchUpInside];
+   // [button2 setFrame:CGRectMake(0, 0, 180, 32)];
+   // [button2 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+   // self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button2];
     self.navigationItem.title=categoryname;
     [self loadDatas];
 }
 
--(void)removeCategoryname:(UIButton*)sender
-{
-    
-//    dispatch_group_t imageQueue = dispatch_group_create();
-//    
-//    dispatch_group_async(imageQueue, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
-//                         ^{
-//                             NSLog(@"remove category %@",categoryname);
-    
-                             [self removecategory];
-                             
-                             
-                            
-//                             
-//                         });
-  
-    
+
+- (IBAction)trashcategoryfromfav:(id)sender {
+      [self removecategory];
     
 }
+// Method removed by Uday
+//-(void)removeCategoryname:(UIButton*)sender
+//{
+//    
+////    dispatch_group_t imageQueue = dispatch_group_create();
+////    
+////    dispatch_group_async(imageQueue, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
+////                         ^{
+////                             NSLog(@"remove category %@",categoryname);
+//    
+//                             [self removecategory];
+//                             
+//                             
+//                            
+////                             
+////                         });
+//  
+//    
+//    
+//}
 
 -(void)removecategory
 {

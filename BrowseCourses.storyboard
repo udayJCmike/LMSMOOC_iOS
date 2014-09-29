@@ -105,7 +105,7 @@
             </objects>
             <point key="canvasLocation" x="-793" y="-791"/>
         </scene>
-        <!--Browse Course List View Controller - Course-->
+        <!--Browse Course List View Controller - Courses-->
         <scene sceneID="Kng-3V-5Ph">
             <objects>
                 <viewController storyboardIdentifier="CourseList" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nls-Ea-Yd1" customClass="BrowseCourseListViewController" sceneMemberID="viewController">
@@ -207,7 +207,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Course" id="JWl-bd-Jtd"/>
+                    <navigationItem key="navigationItem" title="Courses" id="JWl-bd-Jtd"/>
                     <connections>
                         <outlet property="category_tableView" destination="5mV-Y8-zQb" id="hUq-5R-zXP"/>
                         <outlet property="course_type" destination="a91-EE-FuQ" id="h39-si-vRo"/>

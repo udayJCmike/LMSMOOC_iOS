@@ -43,16 +43,21 @@
         [self.navigationController setNavigationBarHidden:NO animated:NO];
     }
     
-    UIButton *button2 =  [UIButton buttonWithType:UIButtonTypeCustom];
-    [button2 setTitle:@"Remove From favorites" forState:UIControlStateNormal];
+   // UIButton *button2 =  [UIButton buttonWithType:UIButtonTypeCustom];
+    //[button2 setTitle:@"Remove From favorites" forState:UIControlStateNormal];
     // [button2 setTitle:@"Add to favorites" forState:UIControlStateSelected];
-    [button2 addTarget:self action:@selector(removeAuthorname) forControlEvents:UIControlEventTouchUpInside];
-    [button2 setFrame:CGRectMake(0, 0, 180, 32)];
-    [button2 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button2];
+    //[button2 addTarget:self action:@selector(removeAuthorname) forControlEvents:UIControlEventTouchUpInside];
+    //[button2 setFrame:CGRectMake(0, 0, 180, 32)];
+    //[button2 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    //self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button2];
     self.navigationItem.title=_authorname;
     [self loadDatas];
-}
+    
+    
+    
+    
+    }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -60,8 +65,8 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)removeAuthorname
-{
+- (IBAction)trashauthorfromfav:(id)sender {
+    
     HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
     [self.navigationController.view addSubview:HUD];
     HUD.delegate = self;
@@ -104,7 +109,56 @@
     [HUD hide:YES];
     [self.navigationController popViewControllerAnimated:YES];
     
+
 }
+
+
+// Method removed by Uday
+//-(void)removeAuthorname
+//{
+//    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+//    [self.navigationController.view addSubview:HUD];
+//    HUD.delegate = self;
+//    HUD.labelText = @"Please wait...";
+//    [HUD show:YES];
+//    
+//    
+//    NSString* studentid=[[NSUserDefaults standardUserDefaults]objectForKey:@"userid"];
+//    NSString *response=[self HttpPostEntityFirst1:@"studentid" ForValue1:studentid  EntitySecond:@"authkey" ForValue2:@"rzTFevN099Km39PV"];
+//    NSError *error;
+//    //  NSLog(@"response %@",response);
+//    SBJSON *json = [[SBJSON new] autorelease];
+//    NSDictionary *parsedvalue = [json objectWithString:response error:&error];
+//    
+//    // NSLog(@"%@ parsedvalue",parsedvalue);
+//    if (parsedvalue == nil)
+//    {
+//        
+//        //NSLog(@"parsedvalue == nil");
+//        
+//    }
+//    else
+//    {
+//        NSDictionary* menu = [parsedvalue objectForKey:@"serviceresponse"];
+//        if ([[menu objectForKey:@"success"]isEqualToString:@"Yes"]) {
+//            [[NSNotificationCenter defaultCenter] postNotificationName:@"RemoveStatus"
+//                                                                object:@"success"
+//                                                              userInfo:nil];
+//        }
+//        else
+//        {
+//            NSLog(@"failure");
+//            [[NSNotificationCenter defaultCenter] postNotificationName:@"RemoveStatus"
+//                                                                object:@"failure"
+//                                                              userInfo:nil];
+//        }
+//        
+//    }
+//    
+//    [HUD hide:YES];
+//    [self.navigationController popViewControllerAnimated:YES];
+//    
+//}
 
 -(void)viewDidDisappear:(BOOL)animated
 {

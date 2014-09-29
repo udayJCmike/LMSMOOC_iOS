@@ -49,17 +49,18 @@
     
     
     
-    UIButton *button1 =  [UIButton buttonWithType:UIButtonTypeCustom];
-    [button1 setImage:[UIImage imageNamed:@"menu_icon.png"] forState:UIControlStateNormal];
+   // UIButton *button1 =  [UIButton buttonWithType:UIButtonTypeCustom];
+  //  [button1 setImage:[UIImage imageNamed:@"add.png"] forState:UIControlStateNormal];
     //[button setTitle:@"Add Categories" forState:UIControlStateNormal];
-    [button1 addTarget:self action:@selector(addCategories) forControlEvents:UIControlEventTouchUpInside];
-    [button1 setFrame:CGRectMake(0, 0, 100, 32)];
-    [button1 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button1];
+   // [button1 addTarget:self action:@selector(addCategories) forControlEvents:UIControlEventTouchUpInside];
+   // [button1 setFrame:CGRectMake(200, 0, 100, 32)];
+   // [button1 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+  //  self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button1];
     du=[[databaseurl alloc]init];
    [self loadDatas];
     [category_tableView reloadData];
 }
+
 
 -(void)loadDatas
 {
@@ -85,11 +86,20 @@
     }
     
 }
--(void)addCategories
-{
-     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(additemslistener:) name:@"Addcategories" object:nil];
-    [self performSegueWithIdentifier:@"addcategories" sender:self];
+
+
+- (IBAction)addcategory:(id)sender {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(additemslistener:) name:@"Addcategories" object:nil];
+     [self performSegueWithIdentifier:@"addcategories" sender:self];
 }
+
+
+//Method removed edited by Uday
+//-(void)addCategories
+//{
+  //   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(additemslistener:) name:@"Addcategories" object:nil];
+  //  [self performSegueWithIdentifier:@"addcategories" sender:self];
+//}
 
 - (void)additemslistener:(id)sender {
    // NSLog(@"selected list in receiver sdie %@",[sender valueForKey:@"object"]);

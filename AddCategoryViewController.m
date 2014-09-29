@@ -37,13 +37,13 @@
     category_tableView.delegate=self;
     categorylist=[[NSMutableArray alloc]init];
     selectedlist=[[NSMutableArray alloc]init];
-    UIButton *button =  [UIButton buttonWithType:UIButtonTypeCustom];
+  //  UIButton *button =  [UIButton buttonWithType:UIButtonTypeCustom];
    // [button setImage:[UIImage imageNamed:@"menu_icon.png"] forState:UIControlStateNormal];
-    [button setTitle:@"Add to" forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(menulistener:) forControlEvents:UIControlEventTouchUpInside];
-    [button setFrame:CGRectMake(0, 0,150, 32)];
-    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+ //   [button setTitle:@"Add to" forState:UIControlStateNormal];
+ //   [button addTarget:self action:@selector(menulistener:) forControlEvents:UIControlEventTouchUpInside];
+  //  [button setFrame:CGRectMake(0, 0,150, 32)];
+  //  [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+  //  self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     du=[[databaseurl alloc]init];
     [self loadDatas];
     [category_tableView reloadData];
@@ -73,14 +73,12 @@
     }
     
 }
-
-
-- (void)menulistener:(id)sender {
+- (IBAction)savecategory:(id)sender {
     
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"Addcategories"  object:selectedlist   userInfo:nil];
-//    NSLog(@"seleted cell %@",selectedlist);
-      NSString*  studentid=[[NSUserDefaults standardUserDefaults]objectForKey:@"userid"];
+    //    NSLog(@"seleted cell %@",selectedlist);
+    NSString*  studentid=[[NSUserDefaults standardUserDefaults]objectForKey:@"userid"];
     NSString *response=[self HttpPostEntityFirstAdd:@"studentid" ForValue1:studentid  EntitySecond:@"authkey" ForValue2:@"rzTFevN099Km39PV"];
     NSError *error;
     //  NSLog(@"response %@",response);
@@ -98,13 +96,13 @@
     {
         NSDictionary* menu = [parsedvalue objectForKey:@"serviceresponse"];
         if([[menu objectForKey:@"success"]isEqualToString:@"Yes"])
-        
+            
         {
-//             NSLog(@"category inserted ");
+            //             NSLog(@"category inserted ");
         }
         else
         {
-//           NSLog(@"category failed ");
+            //           NSLog(@"category failed ");
         }
         
         
@@ -112,10 +110,51 @@
         [self.navigationController popToRootViewControllerAnimated:YES];
         
     }
-    
 
-   
 }
+
+// Method removed by Uday
+//- (void)menulistener:(id)sender {
+//    
+//    
+//    [[NSNotificationCenter defaultCenter] postNotificationName:@"Addcategories"  object:selectedlist   userInfo:nil];
+////    NSLog(@"seleted cell %@",selectedlist);
+//      NSString*  studentid=[[NSUserDefaults standardUserDefaults]objectForKey:@"userid"];
+//    NSString *response=[self HttpPostEntityFirstAdd:@"studentid" ForValue1:studentid  EntitySecond:@"authkey" ForValue2:@"rzTFevN099Km39PV"];
+//    NSError *error;
+//    //  NSLog(@"response %@",response);
+//    SBJSON *json = [[SBJSON new] autorelease];
+//    NSDictionary *parsedvalue = [json objectWithString:response error:&error];
+//    
+//    // NSLog(@"%@ parsedvalue",parsedvalue);
+//    if (parsedvalue == nil)
+//    {
+//        
+//        //NSLog(@"parsedvalue == nil");
+//        
+//    }
+//    else
+//    {
+//        NSDictionary* menu = [parsedvalue objectForKey:@"serviceresponse"];
+//        if([[menu objectForKey:@"success"]isEqualToString:@"Yes"])
+//        
+//        {
+////             NSLog(@"category inserted ");
+//        }
+//        else
+//        {
+////           NSLog(@"category failed ");
+//        }
+//        
+//        
+//        
+//        [self.navigationController popToRootViewControllerAnimated:YES];
+//        
+//    }
+//    
+//
+//   
+//}
 -(void)getList
 {
     

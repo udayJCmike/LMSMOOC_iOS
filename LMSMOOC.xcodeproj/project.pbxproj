@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D1A273E19D9302E008E7EA9 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D1A273D19D9302E008E7EA9 /* logo.png */; };
+		0D1A274019D938FD008E7EA9 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D1A273F19D938FD008E7EA9 /* add.png */; };
 		0D2E930A19C42C00005C4E67 /* important.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D2E930819C42C00005C4E67 /* important.png */; };
 		0D2E930B19C42C00005C4E67 /* unimportant.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D2E930919C42C00005C4E67 /* unimportant.png */; };
 		0D3C958E19C31C9C0065A4B4 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0D3C958D19C31C9C0065A4B4 /* bg.jpg */; };
@@ -164,6 +166,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D1A273D19D9302E008E7EA9 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		0D1A273F19D938FD008E7EA9 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
 		0D2E930819C42C00005C4E67 /* important.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = important.png; sourceTree = "<group>"; };
 		0D2E930919C42C00005C4E67 /* unimportant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unimportant.png; sourceTree = "<group>"; };
 		0D3C958D19C31C9C0065A4B4 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
@@ -505,6 +509,7 @@
 				847635D219C03FCC00F45CEF /* ban4.png */,
 				0D2E930819C42C00005C4E67 /* important.png */,
 				0D2E930919C42C00005C4E67 /* unimportant.png */,
+				0D1A273D19D9302E008E7EA9 /* logo.png */,
 				84F59B6819C2AE28009EF252 /* ban5.png */,
 				84F59B6919C2AE28009EF252 /* bantab5.png */,
 				847635D319C03FCC00F45CEF /* bantab1.png */,
@@ -614,6 +619,7 @@
 			children = (
 				845B109D19BF2D5B00AAE3E4 /* checkBox.png */,
 				0DFCDC3219CAB990002D317D /* 1star.png */,
+				0D1A273F19D938FD008E7EA9 /* add.png */,
 				0DFCDC3C19CABE0F002D317D /* 0star.png */,
 				0DFCDC3319CAB990002D317D /* 2star.png */,
 				0DFCDC3419CAB990002D317D /* 3star.png */,
@@ -1069,6 +1075,7 @@
 			files = (
 				849CE1A119D00086001F78C0 /* CourseDetailiPad.storyboard in Resources */,
 				0DFCDC3A19CAB990002D317D /* 4star.png in Resources */,
+				0D1A273E19D9302E008E7EA9 /* logo.png in Resources */,
 				847635DA19C03FCC00F45CEF /* ban4.png in Resources */,
 				845B10A319BF2D5B00AAE3E4 /* checkBoxMarked.png in Resources */,
 				0D2E930A19C42C00005C4E67 /* important.png in Resources */,
@@ -1094,6 +1101,7 @@
 				849C795619D2CBD80009F3DD /* play_button.png in Resources */,
 				84F59B6B19C2AE28009EF252 /* bantab5.png in Resources */,
 				84082A6419C834490039F4E8 /* btn_close_selected.png in Resources */,
+				0D1A274019D938FD008E7EA9 /* add.png in Resources */,
 				849C795519D2CBD80009F3DD /* pause_button@2x.png in Resources */,
 				8470B50E19CD6423008A5809 /* BrowseCourses_iPad.storyboard in Resources */,
 				845B10A419BF2D5B00AAE3E4 /* checkBoxMarked@2x.png in Resources */,

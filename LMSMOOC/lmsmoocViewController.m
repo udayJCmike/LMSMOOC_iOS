@@ -30,14 +30,15 @@
   
     
     UIButton *button =  [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setTitle:@"Ready to go!!" forState:UIControlStateNormal];
+    [button setTitle:@"Ready to start!" forState:UIControlStateNormal];
     button.titleLabel.font = [UIFont systemFontOfSize:15.0];
     [button addTarget:self action:@selector(showinfo) forControlEvents:UIControlEventTouchUpInside];
-    [button setFrame:CGRectMake(0, 0, 100, 32)];
+    [button setFrame:CGRectMake(50, 0, 150, 30)];
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     UIImageView *imagevc=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 75, 32)];
-    imagevc.image=[UIImage imageNamed:@"navlogo.png"];
+    imagevc.image=[UIImage imageNamed:@"logo.png"];
+    [imagevc setFrame:CGRectMake(0, 0, 100, 30)];
     self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc]initWithCustomView:imagevc];
     
     // Create page view controller
@@ -69,21 +70,21 @@
     if(index==5)
     {
         UIButton *button =  [UIButton buttonWithType:UIButtonTypeCustom];
-        [button setTitle:@"Explore Courses!!" forState:UIControlStateNormal];
+        [button setTitle:@"Explore Courses!" forState:UIControlStateNormal];
         button.titleLabel.font = [UIFont systemFontOfSize:15.0];
         button.titleLabel.font = [UIFont systemFontOfSize:15.0];
         [button addTarget:self action:@selector(showcourse) forControlEvents:UIControlEventTouchUpInside];
-        [button setFrame:CGRectMake(0, 0, 150, 32)];
+        [button setFrame:CGRectMake(50, 0, 150, 30)];
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     }
     else  {
         UIButton *button =  [UIButton buttonWithType:UIButtonTypeCustom];
-        [button setTitle:@"Ready to go!!" forState:UIControlStateNormal];
+        [button setTitle:@"Ready to start!" forState:UIControlStateNormal];
         button.titleLabel.font = [UIFont systemFontOfSize:15.0];
         button.titleLabel.font = [UIFont systemFontOfSize:15.0];
         [button addTarget:self action:@selector(showinfo) forControlEvents:UIControlEventTouchUpInside];
-        [button setFrame:CGRectMake(0, 0, 100, 32)];
+        [button setFrame:CGRectMake(50, 0, 150, 30)];
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
         
@@ -107,11 +108,11 @@
         }
     }
     UIButton *button =  [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setTitle:@"Explore Courses!!" forState:UIControlStateNormal];
+    [button setTitle:@"Explore Courses!" forState:UIControlStateNormal];
     button.titleLabel.font = [UIFont systemFontOfSize:15.0];
     button.titleLabel.font = [UIFont systemFontOfSize:15.0];
     [button addTarget:self action:@selector(showcourse) forControlEvents:UIControlEventTouchUpInside];
-    [button setFrame:CGRectMake(0, 0, 150, 32)];
+    [button setFrame:CGRectMake(50, 0, 150, 30)];
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     

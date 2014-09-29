@@ -122,7 +122,7 @@
                 [billing addObject:arrayList1];
                 
             }
-            // NSLog(@"category values %@",categorylist);
+            NSLog(@"category values %@",billing);
         }
         
        

@@ -157,7 +157,7 @@ int loadcompleted;
     NSString *url1=@"AllCourse.php";
      NSString *  studentid=[[NSUserDefaults standardUserDefaults]objectForKey:@"userid"];
     NSString *URLString=[NSString stringWithFormat:@"%@%@?offset=%d&studentid=%@",urltemp,url1,offset,studentid];
-    
+    NSLog(@"URL %@",URLString);
     NSMutableArray *search = [du MultipleCharacters:URLString];
     
     NSDictionary* menu = [search valueForKey:@"serviceresponse"];
@@ -177,7 +177,7 @@ int loadcompleted;
             mess = [mess stringByReplacingOccurrencesOfString: @"<br>" withString: @"\n"];
             mess = [mess stringByReplacingOccurrencesOfString: @"<br>" withString: @"\n"];
             [temp setValue:mess forKey:@"course_description"];
-           // NSLog(@"Received Values %@",temp);
+         // NSLog(@"Received Values %@",temp);
             [courselist addObject:temp];
             
             

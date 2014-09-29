@@ -21,6 +21,7 @@
     int loadcompleted;
     NSString *studentid;
     NSMutableArray *mycategories;
+    IBOutlet UIBarButtonItem *categorybutton;
 }
 @property (retain, nonatomic) IBOutlet UITableView *category_tableView;
 @property(retain,nonatomic)NSMutableArray *categorylist;
