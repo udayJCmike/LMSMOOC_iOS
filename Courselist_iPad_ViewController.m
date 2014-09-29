@@ -85,6 +85,26 @@ int loadcompleted;
         // Add it to the navigation bar
         self.navigationItem.titleView = course_type;*/
     }
+
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self callsegment];
+    
+    
+    
+    
+}
+-(void)callsegment
+{
+    if (course_type.selectedSegmentIndex==3) {
+        
+        [course_type setSelectedSegmentIndex:0];
+        [course_type sendActionsForControlEvents:UIControlEventValueChanged];
+        
+    }
+}
 -(void)loadDatas
 {
     HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
@@ -96,8 +116,8 @@ int loadcompleted;
     {
         
         if (course_type.selectedSegmentIndex==0) {
-           // [self performSelector:@selector(getCourseList) withObject:self afterDelay:0.0f];
-            [self getCourseList];
+          [self performSelector:@selector(getCourseList) withObject:self afterDelay:0.2f];
+         //   [self getCourseList];
             
         }
         else  if (course_type.selectedSegmentIndex==1) {

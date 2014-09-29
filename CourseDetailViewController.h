@@ -13,11 +13,13 @@
 #import "SyllabusViewController.h"
 #import "AboutauthorViewController.h"
 #import "AboutcourseViewController.h"
+#import "MBProgressHUD.h"
 #define  AppDelegate (lmsmoocAppDelegate *)[[UIApplication sharedApplication] delegate]
 
-@interface CourseDetailViewController : ViewPagerController<ViewPagerDataSource, ViewPagerDelegate>
+@interface CourseDetailViewController : ViewPagerController<ViewPagerDataSource, ViewPagerDelegate,MBProgressHUDDelegate>
 {
      lmsmoocAppDelegate *delegate;
+    MBProgressHUD *HUD;
 }
 @property(nonatomic,retain)NSDictionary *SelectedCourse;
 @property(nonatomic,retain)IBOutlet UILabel *coursename;

@@ -197,9 +197,11 @@
         navigationController.viewControllers = @[secondViewController2];
     }
     
-    else
+    else if(indexPath.section == 0 && indexPath.row == 9)
     {
         [self.navigationController popToRootViewControllerAnimated:NO];
+        [self.frostedViewController hideMenuViewController];
+        return;
         
     }
     

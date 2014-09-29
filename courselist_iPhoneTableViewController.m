@@ -118,8 +118,8 @@ int loadcompleted;
     {
         
         if (course_type.selectedSegmentIndex==0) {
-         //  [self performSelector:@selector(getCourseList) withObject:self afterDelay:0.0f];
-            [self getCourseList];
+          [self performSelector:@selector(getCourseList) withObject:self afterDelay:0.2f];
+            //[self getCourseList];
             
         }
         else  if (course_type.selectedSegmentIndex==1) {

@@ -110,6 +110,24 @@ int loadcompleted;
     }
     
 }
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self callsegment];
+    
+   
+   
+
+}
+-(void)callsegment
+{
+    if (course_type.selectedSegmentIndex==3) {
+        
+        [course_type setSelectedSegmentIndex:0];
+        [course_type sendActionsForControlEvents:UIControlEventValueChanged];
+        
+    }
+}
 -(void)getCourseList
 {
     
@@ -466,10 +484,7 @@ int loadcompleted;
                                          inView:self.view
                        permittedArrowDirections:UIPopoverArrowDirectionUp
                                        animated:YES];
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(categorylistener:)
-                                                     name:@"Categorylist"
-                                                   object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self  selector:@selector(categorylistener:)   name:@"Categorylist"   object:nil];
         
         
     }
@@ -502,6 +517,7 @@ int loadcompleted;
 {
     [super dealloc];
     HUD.delegate = nil;
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"Categorylist" object:nil];
 }
 
 @end

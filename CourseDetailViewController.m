@@ -7,9 +7,11 @@
 //
 
 #import "CourseDetailViewController.h"
-
+#import <MediaPlayer/MediaPlayer.h>
+#import <MediaPlayer/MPMoviePlayerViewController.h>
 @interface CourseDetailViewController ()
-
+@property (strong, nonatomic) MPMoviePlayerController *videoPlayer;
+@property (strong, nonatomic) MPMoviePlayerViewController *videoViewController;
 @end
 
 @implementation CourseDetailViewController
@@ -59,13 +61,20 @@
     enrolledstu.text= [SelectedCourse objectForKey:@"numofpurchased"];
     review.image=[UIImage imageNamed:[self setimage:[SelectedCourse objectForKey:@"ratings"]]];
     coursename.text=[SelectedCourse objectForKey:@"course_name"];
+    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+    [self.navigationController.view addSubview:HUD];
+    HUD.delegate = self;
+    HUD.labelText = @"Please wait...";
+    [HUD show:YES];
+    [self performSelector:@selector(loadContent) withObject:nil afterDelay:0.1f];
+    
+
     // Do any additional setup after loading the view.
 }
 - (void)viewDidAppear:(BOOL)animated {
     
     [super viewDidAppear:animated];
     
-    [self performSelector:@selector(loadContent) withObject:nil afterDelay:0.1f];
     
 }
 #pragma mark - Setters
@@ -81,7 +90,48 @@
 
 - (void)loadContent {
     self.numberOfTabs = 3;
+    NSString *videoname=[SelectedCourse objectForKey:@"course_promo_video"];
+     NSString*courseid= [SelectedCourse objectForKey:@"course_id"];
+    NSString *imageUrlString = [[NSString alloc]initWithFormat:@"%@%@/%@",delegate.course_image_url,courseid,videoname];
+   // NSLog(@"promo video url %@",imageUrlString);
+ NSURL *url = [NSURL URLWithString:imageUrlString];
+    if (![HUD isHidden]) {
+        [HUD hide:YES];
+    }
+    MPMoviePlayerController *player = [[MPMoviePlayerController alloc] initWithContentURL:url];
+    player.view.frame = CGRectMake(16, 95, 289, 106);
+    if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad) {
+        player.view.frame = CGRectMake(33, 141, 425, 178);
+    }
+    [self.view addSubview:player.view];
+    [player prepareToPlay];
+    [player play];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(movieFinishedCallback:)
+                                                 name:MPMoviePlayerPlaybackDidFinishNotification
+                                               object:player];
 }
+    - (void)movieFinishedCallback:(NSNotification*)aNotification
+    {
+        // Obtain the reason why the movie playback finished
+        NSNumber *finishReason = [[aNotification userInfo] objectForKey:MPMoviePlayerPlaybackDidFinishReasonUserInfoKey];
+        
+        // Dismiss the view controller ONLY when the reason is not "playback ended"
+        if ([finishReason intValue] != MPMovieFinishReasonPlaybackEnded)
+        {
+            MPMoviePlayerController *moviePlayer = [aNotification object];
+            
+            // Remove this class from the observers
+            [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                            name:MPMoviePlayerPlaybackDidFinishNotification
+                                                          object:moviePlayer];
+            
+            // Dismiss the view controller
+//            [self dismissMoviePlayerViewControllerAnimated];
+//            [self.navigationController popViewControllerAnimated:YES];
+        }
+    }
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

@@ -242,7 +242,7 @@ static databaseurl * appInstance;
 {
     NSMutableURLRequest *request =[[NSMutableURLRequest alloc]initWithURL:[NSURL URLWithString:url]];
     NSData *returnData = [ NSURLConnection sendSynchronousRequest:request returningResponse: nil error: nil ];
-    NSLog(@"return string %@",returnData);
+   // NSLog(@"return string %@",returnData);
     NSString *returnString = [[NSString alloc]initWithData:returnData encoding:NSUTF8StringEncoding];
     NSError *err = nil;
  // NSLog(@"return string %@",returnString);

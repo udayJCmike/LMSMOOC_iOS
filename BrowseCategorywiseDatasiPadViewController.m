@@ -45,8 +45,8 @@ int loadcompleted;
 -(void)loadDatas
 {
     
-    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
-    [self.navigationController.view addSubview:HUD];
+    HUD = [[MBProgressHUD alloc] initWithView:self.view];
+    [self.view addSubview:HUD];
     HUD.delegate = self;
     HUD.labelText = @"Please wait...";
     [HUD show:YES];
