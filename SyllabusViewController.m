@@ -99,11 +99,11 @@
                 
                 [syllabus_details setValue:temp forKey:[arrayList1 objectForKey:@"ParentCategory"]];
                 [sectionContentDict setValue:temp2 forKey:[arrayList1 objectForKey:@"ParentCategory"]];
-                [arrayForBool insertObject:[NSNumber numberWithBool:NO] atIndex:i];
+                [arrayForBool insertObject:[NSNumber numberWithBool:YES] atIndex:i];
                                
                 
             }
-            
+          
             
         }
         else
@@ -149,7 +149,8 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UIView *headerView              = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
     headerView.tag                  = section;
-    headerView.backgroundColor      = [UIColor whiteColor];
+    headerView.backgroundColor      = [UIColor colorWithRed:224/255.0f green:224/255.0f blue:224/255.0f alpha:1.0f];
+    
     UILabel *headerString           = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, self.view.frame.size.width-20, 50)];
     BOOL manyCells                  = [[arrayForBool objectAtIndex:section] boolValue];
     if (!manyCells) {
@@ -234,14 +235,16 @@
     {
        
        cell.textLabel.text=@"";
+      
         NSDictionary *selectedrow=[[syllabus_details valueForKey:[sectionTitleArray objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row];
         NSString *typename=[selectedrow valueForKey:@"type_lecture"];
         NSArray *content = [sectionContentDict valueForKey:[sectionTitleArray objectAtIndex:indexPath.section]];
         cell.textLabel.text = [content objectAtIndex:indexPath.row];
         cell.lecturetype.image=[UIImage imageNamed:[self setimage:typename]];
+      
     }
    
-    
+   
     
     return cell;
 }

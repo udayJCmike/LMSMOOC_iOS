@@ -232,7 +232,7 @@
         case ViewPagerTabsView:
             return [[UIColor whiteColor] colorWithAlphaComponent:0.64];
         case ViewPagerContent:
-            return [[UIColor whiteColor] colorWithAlphaComponent:0.64];
+            return [UIColor whiteColor] ;
         default:
             return color;
     }

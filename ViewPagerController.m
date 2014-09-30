@@ -24,7 +24,8 @@
 
 #define kIndicatorColor [UIColor colorWithRed:178.0/255.0 green:203.0/255.0 blue:57.0/255.0 alpha:0.75]
 #define kTabsViewBackgroundColor [UIColor colorWithRed:234.0/255.0 green:234.0/255.0 blue:234.0/255.0 alpha:0.75]
-#define kContentViewBackgroundColor [UIColor colorWithRed:248.0/255.0 green:248.0/255.0 blue:248.0/255.0 alpha:0.75]
+#define kContentViewBackgroundColor [UIColor whiteColor]
+//[UIColor colorWithRed:227.0/255.0 green:226.0/255.0 blue:229.0/255.0 alpha:0.75]
 
 #pragma mark - UIColor+Equality
 @interface UIColor (Equality)
@@ -724,6 +725,8 @@
         
         // Update this, too, to check again later
         self.contentViewBackgroundColor = contentViewBackgroundColor;
+        
+       
     }
     
 }
