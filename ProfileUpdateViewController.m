@@ -700,28 +700,63 @@
         
     }
 }
-- (IBAction)upload:(id)sender {
+- (IBAction)upload:(id)sender
+
+{
     
-   
+    
+    HUD = [MBProgressHUD showHUDAddedTo:self.view  animated:YES];
+    
+    HUD.mode=MBProgressHUDModeIndeterminate;
+    
+    HUD.delegate = self;
+    
+    HUD.labelText = @"Please wait";
+    
+    [HUD show:YES];
+    
+    [self performSelector:@selector(uploadfile) withObject:self afterDelay:0.1f];
+    
+    
+    
+}
+
+-(void)uploadfile
+
+{
+    
     NSString *userid=[[NSUserDefaults standardUserDefaults]valueForKey:@"userid"];
+    
     NSString* name=[NSString stringWithFormat:@"S%@.jpg",userid ];
     
+    
+    
     NSString *res=[self uploadClicked:name data: [[NSUserDefaults standardUserDefaults]valueForKey:@"myimage"]];
-    HUD = [MBProgressHUD showHUDAddedTo:self.view  animated:YES];
-    HUD.mode=MBProgressHUDModeIndeterminate;
-    HUD.delegate = self;
-    HUD.labelText = @"Please wait";
-    [HUD show:YES];
+    
+    
+    
     if (res) {
-       
+        
+        
+        
         uploaded=true;
+        
     }
+    
     else
+        
     {
+        
         uploaded=false;
+        
     }
-     [HUD hide:YES];
+    
+    [HUD hide:YES];
+    
+    
+    
 }
+
 
 -(void)signupdata
 {

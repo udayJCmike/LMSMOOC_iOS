@@ -32,6 +32,7 @@
     du=[[databaseurl alloc]init];
     unread=0;
     count=0;
+    self.navigationItem.title=[NSString stringWithFormat:@"Inbox (%d/%d)",unread,count];
     if (self.navigationController.navigationBar.hidden == YES)
     {
         // Show the Navigation Bar
@@ -50,7 +51,7 @@
     
     [self loadDatas];
     
-    self.navigationItem.title=[NSString stringWithFormat:@"Inbox (%d/%d)",unread,count];
+    
     
 }
 -(void)viewWillAppear:(BOOL)animated
@@ -125,7 +126,7 @@
         [self.tableView reloadData];
        
     }
-    
+    self.navigationItem.title=[NSString stringWithFormat:@"Inbox (%d/%d)",unread,count];
      [HUD hide:YES];
     
     
