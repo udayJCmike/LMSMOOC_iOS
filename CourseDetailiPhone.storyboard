@@ -106,7 +106,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8i-Gl-5XW">
-                                        <rect key="frame" x="6" y="104" width="309" height="168"/>
+                                        <rect key="frame" x="6" y="104" width="309" height="99"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -116,6 +116,16 @@
                                         <rect key="frame" x="270" y="53" width="37" height="37"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8CG-Pl-wxN">
+                                        <rect key="frame" x="84" y="211" width="152" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Unfollow Author">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="removeauthorfromfav:" destination="qaq-9k-7wz" eventType="touchUpInside" id="Qtk-jv-yDR"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -127,6 +137,7 @@
                         <outlet property="authorname" destination="I51-08-grs" id="L60-VD-XnM"/>
                         <outlet property="avatar" destination="V8s-WJ-BwK" id="rNC-l4-uqT"/>
                         <outlet property="edu" destination="rxf-VE-67t" id="Dce-6i-H10"/>
+                        <outlet property="followbutton" destination="8CG-Pl-wxN" id="h7b-Nt-cEE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="guU-OU-PzE" userLabel="First Responder" sceneMemberID="firstResponder"/>

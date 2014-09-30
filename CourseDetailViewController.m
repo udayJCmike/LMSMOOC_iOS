@@ -10,11 +10,12 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import <MediaPlayer/MPMoviePlayerViewController.h>
 @interface CourseDetailViewController ()
-@property (strong, nonatomic) MPMoviePlayerController *videoPlayer;
-@property (strong, nonatomic) MPMoviePlayerViewController *videoViewController;
+@property (strong, nonatomic) MPMoviePlayerController *player;
+
 @end
 
 @implementation CourseDetailViewController
+@synthesize player;
 @synthesize coursename;
 @synthesize enrolledstu;
 @synthesize review;
@@ -98,7 +99,7 @@
     if (![HUD isHidden]) {
         [HUD hide:YES];
     }
-    MPMoviePlayerController *player = [[MPMoviePlayerController alloc] initWithContentURL:url];
+    player = [[MPMoviePlayerController alloc] initWithContentURL:url];
     player.view.frame = CGRectMake(16, 95, 289, 106);
     if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad) {
         player.view.frame = CGRectMake(33, 141, 425, 178);
@@ -234,15 +235,11 @@
 }
 
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+-(void)dealloc
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    [super dealloc];
+    [player stop];
+    [player release];
 }
-*/
 
 @end

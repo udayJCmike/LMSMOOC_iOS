@@ -22,7 +22,7 @@ static databaseurl * appInstance;
 -(NSString*)DBurl
 {
    NSString * link=@"http://208.109.248.89/mobile/ios/Services/";
-//  NSString * link=@"http://localhost:8888/LmsmoocIos/Services/";
+ //NSString * link=@"http://localhost:8888/LmsmoocIos/Services/";
     return link;
     
 }
@@ -256,17 +256,17 @@ static databaseurl * appInstance;
 {
     NSMutableURLRequest *request =[[NSMutableURLRequest alloc]initWithURL:[NSURL URLWithString:url]];
     NSData *returnData = [ NSURLConnection sendSynchronousRequest:request returningResponse: nil error: nil ];
-   
+    
     NSString *returnString = [[NSString alloc]initWithData:returnData encoding:NSUTF8StringEncoding];
-//    NSLog(@"return string %@",returnString);
+    //  NSLog(@"return string %@",returnString);
     returnString=[returnString stringByReplacingOccurrencesOfString:@"\\" withString:@""];
     returnString=[returnString stringByReplacingOccurrencesOfString:@"\"<" withString:@"<"];
-   returnString=[returnString stringByReplacingOccurrencesOfString:@">\"" withString:@">"];
+    returnString=[returnString stringByReplacingOccurrencesOfString:@">\"" withString:@">"];
     NSError *err = nil;
-//    NSLog(@"return string replaced %@",returnString);
+    // NSLog(@"return string replaced %@",returnString);
     
-//    NSMutableArray *search = [NSJSONSerialization JSONObjectWithData:[returnString dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:&err];
-  //  NSLog(@"search response %@",search);
+    //    NSMutableArray *search = [NSJSONSerialization JSONObjectWithData:[returnString dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:&err];
+    //  NSLog(@"search response %@",search);
     return returnString;
 }
 

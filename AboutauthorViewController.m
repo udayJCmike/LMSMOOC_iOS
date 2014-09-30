@@ -17,6 +17,7 @@
 @synthesize edu;
 @synthesize aboutme;
 @synthesize avatar;
+@synthesize followbutton;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -66,12 +67,13 @@
 {
     
     NSString*instructorid=[delegate.CourseDetail valueForKey:@"instructor_id"];
+    NSString *userid=[[NSUserDefaults standardUserDefaults]valueForKey:@"userid"];
     NSLog(@"instructor id %@",instructorid);
     
     NSString *urltemp=[[databaseurl sharedInstance]DBurl];
     NSString *url1=@"InstructorDetails.php";
     
-    NSString *URLString=[NSString stringWithFormat:@"%@%@?insid=%@",urltemp,url1,instructorid];
+    NSString *URLString=[NSString stringWithFormat:@"%@%@?insid=%@&stuid=%@",urltemp,url1,instructorid,userid];
     
     NSMutableArray *search = [du MultipleCharacters:URLString];
     
@@ -79,7 +81,7 @@
     
     NSString *imagepath;
     
-    
+  //  NSLog(@"menu %@",menu);
     
     if ([menu count]>0)
     {
@@ -88,9 +90,13 @@
        authorname.text= [NSString stringWithFormat:@"%@ %@",fname,lname];
         edu.text= [menu valueForKey:@"education"];
         aboutme.text= [menu valueForKey:@"aboutme"];
-       
+        follow= [menu valueForKey:@"follow"];
         imagepath=[NSString stringWithFormat:@"%@%@",delegate.avatharURL,[menu valueForKey:@"avatar"]];
-        
+        if ([follow isEqualToString:@"0"]) {
+            [followbutton setTitle:@"Follow Author" forState:UIControlStateNormal];
+        }
+        else
+        [followbutton setTitle:@"Unfollow Author" forState:UIControlStateNormal];
     }
     else
     {
@@ -134,7 +140,84 @@
     
     
 }
+- (IBAction)removeauthorfromfav:(UIButton*)sender {
+    
+    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+    [self.navigationController.view addSubview:HUD];
+    HUD.delegate = self;
+    HUD.labelText = @"Please wait...";
+    [HUD show:YES];
+    NSString* studentid=[[NSUserDefaults standardUserDefaults]objectForKey:@"userid"];
+    NSString *response;
+    if ([sender.titleLabel.text isEqualToString:@"Follow Author"])
+    {
+     response=[self HttpPostEntityFirstfollow1:@"studentid" ForValue1:studentid  EntitySecond:@"authkey" ForValue2:@"rzTFevN099Km39PV"];
+        [followbutton setTitle:@"Unfollow Author" forState:UIControlStateNormal];
+    }
+    else if ([sender.titleLabel.text isEqualToString:@"Unfollow Author"])   {
+        response=[self HttpPostEntityFirst1:@"studentid" ForValue1:studentid  EntitySecond:@"authkey" ForValue2:@"rzTFevN099Km39PV"];
+        [followbutton setTitle:@"Follow Author" forState:UIControlStateNormal];
+    }
+    
+  
+    NSError *error;
+    //  NSLog(@"response %@",response);
+    SBJSON *json = [[SBJSON new] autorelease];
+    NSDictionary *parsedvalue = [json objectWithString:response error:&error];
+    
+    // NSLog(@"%@ parsedvalue",parsedvalue);
+    if (parsedvalue == nil)
+    {
+        
+        //NSLog(@"parsedvalue == nil");
+        
+    }
+    else
+    {
+        NSDictionary* menu = [parsedvalue objectForKey:@"serviceresponse"];
+        if ([[menu objectForKey:@"success"]isEqualToString:@"Yes"]) {
+           
+        }
+        else
+        {
+            NSLog(@"failure");
+    
+        }
+        
+    }
+    
+    [HUD hide:YES];
+   
+    
+    
+}
 
+-(NSString *)HttpPostEntityFirst1:(NSString*)firstEntity ForValue1:(NSString*)value1 EntitySecond:(NSString*)secondEntity ForValue2:(NSString*)value2
+{
+    
+    
+    NSString *urltemp=[[databaseurl sharedInstance]DBurl];
+    NSString *url1=@"Myauthor.php?service=RemoveAuthor";
+    NSString *url2=[NSString stringWithFormat:@"%@%@",urltemp,url1];
+    NSString *post =[[NSString alloc] initWithFormat:@"%@=%@&authorid=%@&%@=%@",firstEntity,value1,[delegate.CourseDetail valueForKey:@"instructor_id"],secondEntity,value2];
+   // NSLog(@"Post for remove author %@",post);
+    NSURL *url = [NSURL URLWithString:url2];
+    
+    return [du returndbresult:post URL:url];
+}
+-(NSString *)HttpPostEntityFirstfollow1:(NSString*)firstEntity ForValue1:(NSString*)value1 EntitySecond:(NSString*)secondEntity ForValue2:(NSString*)value2
+{
+    
+    
+    NSString *urltemp=[[databaseurl sharedInstance]DBurl];
+    NSString *url1=@"Myauthor.php?service=AddAuthor";
+    NSString *url2=[NSString stringWithFormat:@"%@%@",urltemp,url1];
+    NSString *post =[[NSString alloc] initWithFormat:@"%@=%@&authorid=%@&authorname=%@&%@=%@",firstEntity,value1,[delegate.CourseDetail valueForKey:@"instructor_id"],authorname.text,secondEntity,value2];
+   // NSLog(@"Post for add author %@",post);
+    NSURL *url = [NSURL URLWithString:url2];
+    
+    return [du returndbresult:post URL:url];
+}
 -(void)viewDidDisappear:(BOOL)animated
 {
      [_imageOperationQueue cancelAllOperations];
