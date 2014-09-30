@@ -20,6 +20,7 @@
 @synthesize enrolledstu;
 @synthesize review;
 @synthesize SelectedCourse;
+@synthesize price;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -57,9 +58,11 @@
    
     delegate=AppDelegate;
    SelectedCourse= delegate.CourseDetail;
+   // NSLog(@"Selected course values: %@",SelectedCourse);
     self.dataSource = self;
     self.delegate = self;
     enrolledstu.text= [SelectedCourse objectForKey:@"numofpurchased"];
+    price.text=[SelectedCourse objectForKey:@"course_price"];
     review.image=[UIImage imageNamed:[self setimage:[SelectedCourse objectForKey:@"ratings"]]];
     coursename.text=[SelectedCourse objectForKey:@"course_name"];
     HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
@@ -100,7 +103,7 @@
         [HUD hide:YES];
     }
     player = [[MPMoviePlayerController alloc] initWithContentURL:url];
-    player.view.frame = CGRectMake(16, 95, 289, 106);
+    player.view.frame = CGRectMake(0, 100, 320, 100);
     if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad) {
         player.view.frame = CGRectMake(33, 141, 425, 178);
     }
@@ -224,11 +227,11 @@
     
     switch (component) {
         case ViewPagerIndicator:
-            return [[UIColor redColor] colorWithAlphaComponent:0.64];
+            return [[UIColor grayColor] colorWithAlphaComponent:0.32];
         case ViewPagerTabsView:
-            return [[UIColor lightGrayColor] colorWithAlphaComponent:0.32];
+            return [[UIColor whiteColor] colorWithAlphaComponent:0.64];
         case ViewPagerContent:
-            return [[UIColor darkGrayColor] colorWithAlphaComponent:0.32];
+            return [[UIColor whiteColor] colorWithAlphaComponent:0.64];
         default:
             return color;
     }

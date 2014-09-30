@@ -25,5 +25,6 @@
 @property(nonatomic,retain)IBOutlet UILabel *coursename;
 @property(nonatomic,retain)IBOutlet UILabel *enrolledstu;
 @property(nonatomic,retain)IBOutlet UIImageView*review;
+@property (retain, nonatomic) IBOutlet UILabel *price;
 @property (nonatomic) NSUInteger numberOfTabs;
 @end

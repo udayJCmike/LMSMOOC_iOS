@@ -7,6 +7,7 @@
 //
 
 #import "AboutauthorViewController.h"
+#import "UIButton+Bootstrap.h"
 
 @interface AboutauthorViewController ()
 
@@ -38,6 +39,7 @@
     
     du=[[databaseurl alloc]init];
        [self loadDatas];
+    
 }
 -(void)loadDatas
 {
@@ -68,7 +70,7 @@
     
     NSString*instructorid=[delegate.CourseDetail valueForKey:@"instructor_id"];
     NSString *userid=[[NSUserDefaults standardUserDefaults]valueForKey:@"userid"];
-    NSLog(@"instructor id %@",instructorid);
+    //NSLog(@"instructor id %@",instructorid);
     
     NSString *urltemp=[[databaseurl sharedInstance]DBurl];
     NSString *url1=@"InstructorDetails.php";
@@ -93,10 +95,14 @@
         follow= [menu valueForKey:@"follow"];
         imagepath=[NSString stringWithFormat:@"%@%@",delegate.avatharURL,[menu valueForKey:@"avatar"]];
         if ([follow isEqualToString:@"0"]) {
+            [self.followbutton successStyle];
             [followbutton setTitle:@"Follow Author" forState:UIControlStateNormal];
         }
-        else
+        else 
+        {
+            [self.followbutton warningStyle];
         [followbutton setTitle:@"Unfollow Author" forState:UIControlStateNormal];
+        }
     }
     else
     {
@@ -149,13 +155,17 @@
     [HUD show:YES];
     NSString* studentid=[[NSUserDefaults standardUserDefaults]objectForKey:@"userid"];
     NSString *response;
+    
     if ([sender.titleLabel.text isEqualToString:@"Follow Author"])
     {
      response=[self HttpPostEntityFirstfollow1:@"studentid" ForValue1:studentid  EntitySecond:@"authkey" ForValue2:@"rzTFevN099Km39PV"];
+         [self.followbutton warningStyle];
         [followbutton setTitle:@"Unfollow Author" forState:UIControlStateNormal];
     }
-    else if ([sender.titleLabel.text isEqualToString:@"Unfollow Author"])   {
+    else if ([sender.titleLabel.text isEqualToString:@"Unfollow Author"])
+    {
         response=[self HttpPostEntityFirst1:@"studentid" ForValue1:studentid  EntitySecond:@"authkey" ForValue2:@"rzTFevN099Km39PV"];
+         [self.followbutton successStyle];
         [followbutton setTitle:@"Follow Author" forState:UIControlStateNormal];
     }
     

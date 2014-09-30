@@ -222,6 +222,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ymR-MA-qnV">
                         <nil key="title"/>
+                        <barButtonItem key="backBarButtonItem" title="Back" id="t6n-le-zre"/>
                         <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" minimumFontSize="17" clearButtonMode="whileEditing" id="Lql-ta-cmM">
                             <rect key="frame" x="70" y="7" width="180" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -991,6 +992,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Categories" id="7DY-ZU-ZsI">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="BPB-Xj-eTh"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="K6h-fF-cDG">
                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                             <connections>
@@ -1117,7 +1119,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Courses" id="Hbb-gi-Co1"/>
+                    <navigationItem key="navigationItem" title="Courses" id="Hbb-gi-Co1">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="8Ee-qf-9WM"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="category_tableView" destination="qzD-Rb-gPC" id="zxS-X5-scC"/>
                         <outlet property="course_type" destination="QHw-Rg-c2U" id="vLf-Jr-PUI"/>
@@ -1216,7 +1220,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Categorywise Datas" id="vlQ-fn-X3i"/>
+                    <navigationItem key="navigationItem" title="Categorywise Datas" id="vlQ-fn-X3i">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="CSe-67-khg"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="yXH-Sc-39W" id="LPs-7A-eDm"/>
                     </connections>
@@ -1311,7 +1317,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="My Courses" id="mrL-U5-lud"/>
+                    <navigationItem key="navigationItem" title="My Courses" id="mrL-U5-lud">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="jMG-XD-l7v"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="4eX-iX-GJl" id="R25-SL-YBY"/>
                     </connections>
@@ -1502,6 +1510,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Category List" id="Rt6-3Y-k0X">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="Kqu-RN-O5i"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="x00-cf-XMb">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
