@@ -388,7 +388,7 @@ int loadcompleted;
   else
         return [categorylist count];
 
-    // Return the number of rows in the section.
+    // Return the number of rows in the section. 
     
 }
 
@@ -402,7 +402,7 @@ int loadcompleted;
     CourseDesignTableViewCell *cell = (CourseDesignTableViewCell*)[self.tableView dequeueReusableCellWithIdentifier:@"CourseList" forIndexPath:indexPath];
     NSDictionary *course;
 
-
+ [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     course=[courselist objectAtIndex:indexPath.row];
     cell.coursename.text=[course objectForKey:@"course_name"];
     cell.authorname.text=[course objectForKey:@"course_author"];

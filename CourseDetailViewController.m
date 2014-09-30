@@ -75,12 +75,13 @@
 
     // Do any additional setup after loading the view.
 }
-- (void)viewDidAppear:(BOOL)animated {
+-(void)viewWillDisappear:(BOOL)animated {
     
-    [super viewDidAppear:animated];
-    
+    [super viewWillDisappear:animated];
+    [player pause];
     
 }
+
 #pragma mark - Setters
 - (void)setNumberOfTabs:(NSUInteger)numberOfTabs {
     

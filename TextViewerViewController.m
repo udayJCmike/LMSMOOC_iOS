@@ -72,13 +72,16 @@
     
     NSString *URLString=[NSString stringWithFormat:@"%@%@?courseid=%@&sectionid=%@&lectureid=%@",urltemp,url1,courseid,secid,lecid];
     
-    NSString *search = [du MultipleCharactersHTML:URLString];
+//    NSString *search = [du MultipleCharactersHTML:URLString];
+//    
+//   
+//    
+//    [webView loadHTMLString:search baseURL:nil];
     
-   
+    NSURLRequest *requestObj = [NSURLRequest requestWithURL:[NSURL URLWithString:URLString]];
     
-    [webView loadHTMLString:search baseURL:nil];
-    
-    
+    //Load the request in the UIWebView.
+    [webView loadRequest:requestObj];
 
     
         if (![HUD isHidden]) {
