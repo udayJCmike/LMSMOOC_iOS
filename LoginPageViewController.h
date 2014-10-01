@@ -15,5 +15,6 @@
 @property (strong, nonatomic) IBOutlet UIButton *reminder;
 @property (retain, nonatomic) IBOutlet UIButton *login;
 @property (retain, nonatomic) IBOutlet UIButton *back;
+@property (retain, nonatomic) IBOutlet UIView *bg;
 
 @end

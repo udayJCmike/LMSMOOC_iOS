@@ -15,6 +15,7 @@
 @implementation ChangePasswordViewController
 @synthesize cfm_pwd;
 @synthesize cur_pwd;
+@synthesize bg;
 @synthesize new_pwd;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -52,6 +53,8 @@
                                              selector:@selector(menulistener:)
                                                  name:@"Showmenu"
                                                object:nil];
+    bg.layer.cornerRadius=10;
+    bg.layer.masksToBounds=YES;
 }
     - (void)menulistener:(id)sender {
         

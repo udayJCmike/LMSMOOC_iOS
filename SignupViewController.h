@@ -19,5 +19,6 @@
 @property (strong, nonatomic) IBOutlet UITextField *cpassword;
 @property (retain, nonatomic) IBOutlet UIButton *signup;
 @property (retain, nonatomic) IBOutlet UIButton *back;
+@property (retain, nonatomic) IBOutlet UIView *bg;
 
 @end

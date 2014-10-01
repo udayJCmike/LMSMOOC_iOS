@@ -28,5 +28,6 @@
 @property(nonatomic,retain)IBOutlet UITextField *cfm_pwd;
 @property(nonatomic,retain)IBOutlet UITextField *new_pwd;
 @property(nonatomic,retain)IBOutlet UIButton *getpassword;
+@property (retain, nonatomic) IBOutlet UIView *bg;
 
 @end

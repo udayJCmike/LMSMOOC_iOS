@@ -30,6 +30,7 @@
 @synthesize password;
 @synthesize cpassword;
 @synthesize terms;
+@synthesize bg;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -56,6 +57,8 @@
     [self performSelector:@selector(downloadURL) withObject:self afterDelay:0.0f];
     UITapGestureRecognizer *get=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:get];
+    bg.layer.cornerRadius=10;
+    bg.layer.masksToBounds=YES;
     // Do any additional setup after loading the view.
 }
 -(void)downloadURL

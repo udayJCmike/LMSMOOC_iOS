@@ -38,4 +38,6 @@
 @property (retain, nonatomic) IBOutlet UIButton *browse;
 @property (retain, nonatomic) IBOutlet UIButton *upload;
 @property(retain,nonatomic)IBOutlet UILabel *urllabel;
+@property (retain, nonatomic) IBOutlet UIView *bg;
+
 @end

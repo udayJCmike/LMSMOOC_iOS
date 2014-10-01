@@ -32,6 +32,7 @@
 @synthesize password;
 @synthesize upload;
 @synthesize urllabel;
+@synthesize bg;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -92,7 +93,9 @@
     {
         [self setvalues];
     }
-
+    
+    bg.layer.cornerRadius=10;
+    bg.layer.masksToBounds=YES;
     
 }
 
@@ -1157,6 +1160,7 @@
 
 -(void)dealloc
 {
+
     [super dealloc];
     if ( HUD!=nil) {
         
