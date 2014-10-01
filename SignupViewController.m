@@ -12,8 +12,11 @@
 #import "JSON.h"
 #import "UIButton+Bootstrap.h"
 #import "DXAlertView.h"
+#import "lmsmoocAppDelegate.h"
+#define  AppDelegate (lmsmoocAppDelegate *)[[UIApplication sharedApplication] delegate]
 @interface SignupViewController ()
 {
+       lmsmoocAppDelegate *delegate;
     databaseurl *du;
     MBProgressHUD *HUD;
 }
@@ -49,11 +52,60 @@
     password.delegate = self;
     cpassword.delegate=self;
     email.delegate=self;
-    
+    delegate=AppDelegate;
+    [self performSelector:@selector(downloadURL) withObject:self afterDelay:0.0f];
     UITapGestureRecognizer *get=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:get];
     // Do any additional setup after loading the view.
 }
+-(void)downloadURL
+{
+    
+    NSString *response=[self HttpPostEntityFirstURL1:@"name" ForValue1:@"lms"  EntitySecond:@"authkey" ForValue2:@"rzTFevN099Km39PV"];
+    NSError *error;
+    
+    SBJSON *json = [[SBJSON new] autorelease];
+    NSDictionary *parsedvalue = [json objectWithString:response error:&error];
+    
+    //  NSLog(@"%@ parsedvalue",parsedvalue);
+    if (parsedvalue == nil)
+    {
+        
+        //NSLog(@"parsedvalue == nil");
+        
+    }
+    else
+    {
+        
+        NSDictionary* menu = [parsedvalue objectForKey:@"serviceresponse"];
+        
+        if ([[menu objectForKey:@"success"] isEqualToString:@"Yes"])
+        {
+            delegate.course_image_url=[menu objectForKey:@"courseURL"];
+            delegate.avatharURL=[menu objectForKey:@"avatarURL"];
+            delegate.course_detail_url=[menu objectForKey:@"coursedetailURL"];
+            delegate.common_url=[menu objectForKey:@"CommonUrl"];
+            
+        }
+        
+        
+    }
+    
+}
+-(NSString *)HttpPostEntityFirstURL1:(NSString*)firstEntity ForValue1:(NSString*)value1 EntitySecond:(NSString*)secondEntity ForValue2:(NSString*)value2
+{
+    
+    
+    NSString *urltemp=[[databaseurl sharedInstance]DBurl];
+    NSString *url1=@"Login.php?service=URL";
+    NSString *url2=[NSString stringWithFormat:@"%@%@",urltemp,url1];
+    NSString *post =[[NSString alloc] initWithFormat:@"%@=%@&%@=%@",firstEntity,value1,secondEntity,value2];
+    NSURL *url = [NSURL URLWithString:url2];
+    
+    return [du returndbresult:post URL:url];
+}
+
+
 -(void)dismissKeyboard
 {
     [fname resignFirstResponder];
@@ -74,7 +126,7 @@
 
 }
 - (IBAction)termsOfservice:(id)sender {
-     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://208.109.248.89:8087/OnlineCourse/user_view_Termsofuses" ]];
+     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@user_view_Termsofuses",delegate.common_url]]];
 }
 - (IBAction)signup:(id)sender {
     int c=1;

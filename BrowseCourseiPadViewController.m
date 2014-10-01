@@ -84,7 +84,7 @@ int loadcompleted;
     SBJSON *json = [[SBJSON new] autorelease];
     NSDictionary *parsedvalue = [json objectWithString:response error:&error];
     
-    NSLog(@"%@ parsedvalue",parsedvalue);
+   // NSLog(@"%@ parsedvalue",parsedvalue);
     if (parsedvalue == nil)
     {
         
@@ -98,22 +98,16 @@ int loadcompleted;
         
         if ([[menu objectForKey:@"success"] isEqualToString:@"Yes"])
         {
+           
             delegate.course_image_url=[menu objectForKey:@"courseURL"];
             delegate.avatharURL=[menu objectForKey:@"avatarURL"];
-        }
-        else if ([[menu objectForKey:@"success"] isEqualToString:@"No"])
-            
-        {
-            
-            
-            [HUD hide:YES];
-            
-            
+            delegate.course_detail_url=[menu objectForKey:@"coursedetailURL"];
+            delegate.common_url=[menu objectForKey:@"CommonUrl"];
         }
         
         
     }
-    [HUD hide:YES];
+    
 }
 -(NSString *)HttpPostEntityFirstURL1:(NSString*)firstEntity ForValue1:(NSString*)value1 EntitySecond:(NSString*)secondEntity ForValue2:(NSString*)value2
 {
@@ -362,9 +356,9 @@ int loadcompleted;
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     //     NSMutableArray *indexPaths = [NSMutableArray arrayWithObject:indexPath];
-    NSLog(@"clicked at index %d",indexPath.row);
+   // NSLog(@"clicked at index %d",indexPath.row);
     NSDictionary *temp=[courselist objectAtIndex:indexPath.row];
-    NSString *url=[NSString stringWithFormat:@"http://208.109.248.89:8087/OnlineCourse/student_view_Course?course_id=%@&authorid=%@&pur=%@&catcourse=&coursetype=",[temp objectForKey:@"course_id"], [temp objectForKey:@"instructor_id"],[temp objectForKey:@"numofpurchased"]];
+    NSString *url=[NSString stringWithFormat:@"%@?course_id=%@&authorid=%@&pur=%@&catcourse=&coursetype=",delegate.course_detail_url,[temp objectForKey:@"course_id"], [temp objectForKey:@"instructor_id"],[temp objectForKey:@"numofpurchased"]];
     // NSLog(@"URL %@",url);
     [[UIApplication sharedApplication]openURL:[NSURL URLWithString:url]];
 }

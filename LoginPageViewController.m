@@ -13,9 +13,11 @@
 #import "lmsmoocAppDelegate.h"
 #import "UIButton+Bootstrap.h"
 #import "DXAlertView.h"
+
 #define  AppDelegate (lmsmoocAppDelegate *)[[UIApplication sharedApplication] delegate]
 @interface LoginPageViewController ()
 {
+       lmsmoocAppDelegate *delegate;
     MBProgressHUD *HUD;
     databaseurl *du;
 }
@@ -57,10 +59,61 @@
     }
    
     du=[[databaseurl alloc]init];
+    delegate=AppDelegate;
+ 
+    [self performSelector:@selector(downloadURL) withObject:self afterDelay:0.0f];
     UITapGestureRecognizer *get=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:get];
   
 }
+-(void)downloadURL
+{
+    
+    NSString *response=[self HttpPostEntityFirstURL1:@"name" ForValue1:@"lms"  EntitySecond:@"authkey" ForValue2:@"rzTFevN099Km39PV"];
+    NSError *error;
+    
+    SBJSON *json = [[SBJSON new] autorelease];
+    NSDictionary *parsedvalue = [json objectWithString:response error:&error];
+    
+    //  NSLog(@"%@ parsedvalue",parsedvalue);
+    if (parsedvalue == nil)
+    {
+        
+        //NSLog(@"parsedvalue == nil");
+        
+    }
+    else
+    {
+        
+        NSDictionary* menu = [parsedvalue objectForKey:@"serviceresponse"];
+        
+        if ([[menu objectForKey:@"success"] isEqualToString:@"Yes"])
+        {
+            delegate.course_image_url=[menu objectForKey:@"courseURL"];
+            delegate.avatharURL=[menu objectForKey:@"avatarURL"];
+            delegate.course_detail_url=[menu objectForKey:@"coursedetailURL"];
+            delegate.common_url=[menu objectForKey:@"CommonUrl"];
+            
+        }
+        
+        
+    }
+    
+}
+-(NSString *)HttpPostEntityFirstURL1:(NSString*)firstEntity ForValue1:(NSString*)value1 EntitySecond:(NSString*)secondEntity ForValue2:(NSString*)value2
+{
+    
+    
+    NSString *urltemp=[[databaseurl sharedInstance]DBurl];
+    NSString *url1=@"Login.php?service=URL";
+    NSString *url2=[NSString stringWithFormat:@"%@%@",urltemp,url1];
+    NSString *post =[[NSString alloc] initWithFormat:@"%@=%@&%@=%@",firstEntity,value1,secondEntity,value2];
+    NSURL *url = [NSURL URLWithString:url2];
+    
+    return [du returndbresult:post URL:url];
+}
+
+
 -(void)dismissKeyboard
 {
     [username resignFirstResponder];
@@ -71,7 +124,7 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (IBAction)forgotpassword:(id)sender {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://208.109.248.89:8087/OnlineCourse/Student/signup" ]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@Student/signup",delegate.common_url]]];
 }
 - (IBAction)login:(id)sender
 {
@@ -198,7 +251,7 @@
             if ([[menu objectForKey:@"success"] isEqualToString:@"Yes"])
             {
               
-                lmsmoocAppDelegate *delegate=AppDelegate;
+               
                 delegate.Profiledetails=[[NSMutableDictionary alloc]init];
                 
                 [[NSUserDefaults standardUserDefaults]setValue:username.text forKey:@"username"];

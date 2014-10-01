@@ -982,7 +982,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <navigationItem key="navigationItem" title="My Favorites" id="RWt-w1-k3a"/>
+                    <navigationItem key="navigationItem" title="My Favorites" id="RWt-w1-k3a">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="G1f-zq-2hJ"/>
+                    </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="ipadcollection" destination="8zj-fo-HOY" id="4HZ-Cd-nFt"/>
