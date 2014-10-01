@@ -94,13 +94,67 @@ int loadcompleted;
     
     du=[[databaseurl alloc]init];
     delegate=AppDelegate;
-   
+    [self performSelector:@selector(downloadURL) withObject:self afterDelay:0.0f];
     _imageOperationQueue = [[NSOperationQueue alloc]init];
     _imageOperationQueue.maxConcurrentOperationCount = 4;
     self.imageCache = [[NSCache alloc] init];
     [self loadDatas];
     self.category_tableView.hidden=YES;
 }
+-(void)downloadURL
+{
+    
+    NSString *response=[self HttpPostEntityFirstURL1:@"name" ForValue1:@"lms"  EntitySecond:@"authkey" ForValue2:@"rzTFevN099Km39PV"];
+    NSError *error;
+    
+    SBJSON *json = [[SBJSON new] autorelease];
+    NSDictionary *parsedvalue = [json objectWithString:response error:&error];
+    
+    NSLog(@"%@ parsedvalue",parsedvalue);
+    if (parsedvalue == nil)
+    {
+        
+        //NSLog(@"parsedvalue == nil");
+        
+    }
+    else
+    {
+        
+        NSDictionary* menu = [parsedvalue objectForKey:@"serviceresponse"];
+        
+        if ([[menu objectForKey:@"success"] isEqualToString:@"Yes"])
+        {
+            delegate.course_image_url=[menu objectForKey:@"courseURL"];
+            delegate.avatharURL=[menu objectForKey:@"avatarURL"];
+        }
+        else if ([[menu objectForKey:@"success"] isEqualToString:@"No"])
+            
+        {
+            
+            
+            [HUD hide:YES];
+            
+            
+        }
+        
+        
+    }
+    [HUD hide:YES];
+}
+-(NSString *)HttpPostEntityFirstURL1:(NSString*)firstEntity ForValue1:(NSString*)value1 EntitySecond:(NSString*)secondEntity ForValue2:(NSString*)value2
+{
+    
+    
+    NSString *urltemp=[[databaseurl sharedInstance]DBurl];
+    NSString *url1=@"Login.php?service=URL";
+    NSString *url2=[NSString stringWithFormat:@"%@%@",urltemp,url1];
+    NSString *post =[[NSString alloc] initWithFormat:@"%@=%@&%@=%@",firstEntity,value1,secondEntity,value2];
+    NSURL *url = [NSURL URLWithString:url2];
+    
+    return [du returndbresult:post URL:url];
+}
+
+
 - (void)searchaction:(id)sender
 {
     [self performSegueWithIdentifier:@"CourseSearch" sender:self];
@@ -594,11 +648,7 @@ int loadcompleted;
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"Showmenu" object:nil];
-    
-    
-    
-    
-        HUD.delegate = nil;
+            HUD.delegate = nil;
     
     
     [super dealloc];
