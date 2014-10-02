@@ -7,7 +7,9 @@
 //
 
 #import "MyauthorsTableViewController.h"
-
+#define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
+#define SCREEN_35 (SCREEN_HEIGHT == 480)
+#define SCREEN_40 (SCREEN_HEIGHT == 568)
 @interface MyauthorsTableViewController ()
 
 @end
@@ -26,6 +28,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+  
+
     
     myauthors=[[NSMutableArray alloc]init];
     if (self.navigationController.navigationBar.hidden == YES)

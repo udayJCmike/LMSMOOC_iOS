@@ -17,10 +17,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="139" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ySf-n7-Lyy">
+                            <tableView opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" tag="1" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="139" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ySf-n7-Lyy">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="568" id="apH-ea-6Mz"/>
+                                    <constraint firstAttribute="width" constant="320" id="xtl-4o-eAO"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CourseList" rowHeight="139" id="yV9-9G-Cta" customClass="CourseDesignTableViewCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="139"/>
@@ -90,6 +94,11 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ySf-n7-Lyy" secondAttribute="trailing" id="XY3-kc-OSH"/>
+                            <constraint firstItem="ySf-n7-Lyy" firstAttribute="top" secondItem="IWA-4e-CQ9" secondAttribute="top" id="YZx-5Y-jvJ"/>
+                            <constraint firstItem="ySf-n7-Lyy" firstAttribute="leading" secondItem="IWA-4e-CQ9" secondAttribute="leading" id="ds3-d3-u23"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ku9-qZ-ArZ">
                         <nil key="title"/>
@@ -106,6 +115,7 @@
                     <connections>
                         <outlet property="coursename" destination="ix1-dD-c0S" id="gQC-Nc-b25"/>
                         <outlet property="tableView" destination="ySf-n7-Lyy" id="4fw-Hg-DgI"/>
+                        <outlet property="tableheightConstraint" destination="apH-ea-6Mz" id="c9d-l8-xYW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="buO-Nk-InF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -138,10 +148,14 @@
                                     <action selector="course_type:" destination="nls-Ea-Yd1" eventType="valueChanged" id="2nl-z7-4O3"/>
                                 </connections>
                             </segmentedControl>
-                            <tableView opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="139" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="tq5-VC-yJr">
+                            <tableView opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" tag="1" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="139" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="tq5-VC-yJr">
                                 <rect key="frame" x="0.0" y="98" width="320" height="475"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="hEz-pA-YGW"/>
+                                    <constraint firstAttribute="height" constant="475" id="ogi-Yd-eSj"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CourseList" rowHeight="139" id="vql-O0-O5j" customClass="CourseDesignTableViewCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="139"/>
@@ -209,10 +223,14 @@
                                     <outlet property="delegate" destination="nls-Ea-Yd1" id="bGi-lz-fbM"/>
                                 </connections>
                             </tableView>
-                            <tableView clipsSubviews="YES" tag="2" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5mV-Y8-zQb">
+                            <tableView clipsSubviews="YES" tag="2" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5mV-Y8-zQb">
                                 <rect key="frame" x="0.0" y="98" width="320" height="475"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="475" id="xmh-G6-Srb"/>
+                                    <constraint firstAttribute="width" constant="320" id="yWr-Mt-gCt"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="dataSource" destination="nls-Ea-Yd1" id="ukA-CB-g6p"/>
                                     <outlet property="delegate" destination="nls-Ea-Yd1" id="3sI-e2-iE2"/>
@@ -220,12 +238,22 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="tq5-VC-yJr" secondAttribute="trailing" id="7g8-r7-pkM"/>
+                            <constraint firstItem="5mV-Y8-zQb" firstAttribute="top" secondItem="pLi-Ej-LSE" secondAttribute="top" constant="98" id="8as-x1-Ytd"/>
+                            <constraint firstItem="5mV-Y8-zQb" firstAttribute="leading" secondItem="pLi-Ej-LSE" secondAttribute="leading" id="B00-W7-gcs"/>
+                            <constraint firstAttribute="trailing" secondItem="5mV-Y8-zQb" secondAttribute="trailing" id="BN5-vH-1vJ"/>
+                            <constraint firstItem="tq5-VC-yJr" firstAttribute="top" secondItem="pLi-Ej-LSE" secondAttribute="top" constant="98" id="WV9-q4-OoN"/>
+                            <constraint firstItem="tq5-VC-yJr" firstAttribute="leading" secondItem="pLi-Ej-LSE" secondAttribute="leading" id="veH-4x-OXn"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Courses" id="JWl-bd-Jtd"/>
                     <connections>
                         <outlet property="category_tableView" destination="5mV-Y8-zQb" id="hUq-5R-zXP"/>
+                        <outlet property="categorytableheightConstraint" destination="xmh-G6-Srb" id="GRm-fh-7fR"/>
                         <outlet property="course_type" destination="a91-EE-FuQ" id="h39-si-vRo"/>
                         <outlet property="tableView" destination="tq5-VC-yJr" id="hwK-bx-OXJ"/>
+                        <outlet property="tableheightConstraint" destination="ogi-Yd-eSj" id="ero-4H-peb"/>
                         <segue destination="3K6-Hh-ZR0" kind="push" identifier="CourseDatas" id="muc-K7-qOC"/>
                         <segue destination="Dmk-bB-P9Z" kind="push" identifier="CourseSearch" id="okD-xY-oSe"/>
                     </connections>
@@ -246,10 +274,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="139" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="PiD-Kv-Amb">
+                            <tableView opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" tag="1" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="139" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="PiD-Kv-Amb">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="568" id="JW1-jm-ybX"/>
+                                    <constraint firstAttribute="width" constant="320" id="dIk-1C-ElE"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CourseList" rowHeight="139" id="xjr-5I-SHp" customClass="CourseDesignTableViewCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="139"/>
@@ -319,10 +351,16 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PiD-Kv-Amb" firstAttribute="leading" secondItem="0rL-mm-Adm" secondAttribute="leading" id="OhA-uN-6hy"/>
+                            <constraint firstAttribute="trailing" secondItem="PiD-Kv-Amb" secondAttribute="trailing" id="aLg-Q5-Hmc"/>
+                            <constraint firstItem="PiD-Kv-Amb" firstAttribute="top" secondItem="0rL-mm-Adm" secondAttribute="top" id="iiU-Jc-wJb"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Categorywise Datas" id="FFK-BA-aEX"/>
                     <connections>
                         <outlet property="tableView" destination="PiD-Kv-Amb" id="gnP-rM-db9"/>
+                        <outlet property="tableheightConstraint" destination="JW1-jm-ybX" id="QXi-aP-Pq7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GWu-bv-TRS" userLabel="First Responder" sceneMemberID="firstResponder"/>

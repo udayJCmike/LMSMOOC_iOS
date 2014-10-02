@@ -8,6 +8,9 @@
 #import "MBProgressHUD.h"
 #import "MycategoriesViewController.h"
 #import "databaseurl.h"
+#define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
+#define SCREEN_35 (SCREEN_HEIGHT == 480)
+#define SCREEN_40 (SCREEN_HEIGHT == 568)
 @interface MycategoriesViewController ()
 {
     databaseurl *du;
@@ -29,6 +32,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if (SCREEN_35) {
+        for (NSLayoutConstraint *con in self.view.constraints)
+        {
+            if (con.firstItem == self.category_tableView && con.firstAttribute == NSLayoutAttributeTop) {
+               
+                self.tableheightConstraint.constant = 480;
+                [self.category_tableView needsUpdateConstraints];
+                
+                
+            }
+        }
+    }
     loadcompleted=0;
     category_tableView.dataSource=self;
     category_tableView.delegate=self;

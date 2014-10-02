@@ -27,7 +27,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-   
+    if (SCREEN_35) {
+        for (NSLayoutConstraint *con in self.view.constraints)
+        {
+            if (con.firstItem == self.SyllabustableView && con.firstAttribute == NSLayoutAttributeTop) {
+                
+                self.tableheightConstraint.constant = 200;
+                [self.SyllabustableView needsUpdateConstraints];
+                
+                
+            }
+        }
+    }
     du=[[databaseurl alloc]init];
     sectionTitleArray=[[NSMutableArray alloc]init];
     arrayForBool=[[NSMutableArray alloc]init];

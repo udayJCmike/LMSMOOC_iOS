@@ -15,7 +15,9 @@
 #import "UIButton+Bootstrap.h"
 #import "DXAlertView.h"
 #define  AppDelegate (lmsmoocAppDelegate *)[[UIApplication sharedApplication] delegate]
-
+#define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
+#define SCREEN_35 (SCREEN_HEIGHT == 480)
+#define SCREEN_40 (SCREEN_HEIGHT == 568)
 @interface ProfileUpdateViewController ()
 {
     DashboardContentListTableViewController *list;
@@ -50,7 +52,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     [self.saveprofile primaryStyle];
     [self.browse primaryStyle];
     [self.upload primaryStyle];
@@ -1101,6 +1103,7 @@
 -(void)dealloc
 {
 
+   
     [super dealloc];
     if ( HUD!=nil) {
         

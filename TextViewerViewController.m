@@ -25,7 +25,18 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+    [super viewDidLoad]; if (SCREEN_35) {
+        for (NSLayoutConstraint *con in self.view.constraints)
+        {
+            if (con.firstItem == self.webView && con.firstAttribute == NSLayoutAttributeTop) {
+                
+                self.webviewheight.constant = 500;
+                [self.webView needsUpdateConstraints];
+                
+                
+            }
+        }
+    }
     du=[[databaseurl alloc]init];
     delegate=AppDelegate;
  //  NSLog(@"value received %@",delegate.lectureDetail);

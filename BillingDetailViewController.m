@@ -7,7 +7,9 @@
 //
 
 #import "BillingDetailViewController.h"
-
+#define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
+#define SCREEN_35 (SCREEN_HEIGHT == 480)
+#define SCREEN_40 (SCREEN_HEIGHT == 568)
 @interface BillingDetailViewController ()
 
 @end
@@ -35,6 +37,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if (SCREEN_35) {
+//        for (NSLayoutConstraint *con in self.view.constraints)
+//        {
+//            if (con.firstItem == tableView && con.firstAttribute == NSLayoutAttributeTop) {
+//                con.constant = 98;
+//                self.tableheightConstraint.constant = 480;
+//                [self.tableView needsUpdateConstraints];
+//                
+//                
+//            }
+//        }
+    }
     coursename.text=[billdatas valueForKey:@"course_name"];
        authorname.text=[billdatas valueForKey:@"course_author"];
        dateofpurchase.text=[billdatas valueForKey:@"purchased_date"];

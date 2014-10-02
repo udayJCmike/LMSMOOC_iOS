@@ -16,5 +16,6 @@
 @property NSUInteger pageIndex;
 @property NSString *titleText;
 @property NSString *imageFile;
-
+@property (retain, nonatomic) IBOutlet NSLayoutConstraint *imagebottom;
+@property (retain, nonatomic) IBOutlet NSLayoutConstraint *toplogin;
 @end

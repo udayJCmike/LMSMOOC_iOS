@@ -7,7 +7,9 @@
 //
 
 #import "BillingTableViewController.h"
-
+#define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
+#define SCREEN_35 (SCREEN_HEIGHT == 480)
+#define SCREEN_40 (SCREEN_HEIGHT == 568)
 @interface BillingTableViewController ()
 
 @end
@@ -26,7 +28,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    if (SCREEN_35) {
+//        for (NSLayoutConstraint *con in self.view.constraints)
+//        {
+//            if (con.firstItem == tableView && con.firstAttribute == NSLayoutAttributeTop) {
+//                con.constant = 98;
+//                self.tableheightConstraint.constant = 383;
+//                [self.tableView needsUpdateConstraints];
+//                
+//                
+//            }
+//        }
+    }
     billing=[[NSMutableArray alloc]init];
     if (self.navigationController.navigationBar.hidden == YES)
     {

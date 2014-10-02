@@ -14,7 +14,9 @@
 #import <MobileCoreServices/UTCoreTypes.h>
 #import <MessageUI/MessageUI.h>
 #import <MobileCoreServices/UTCoreTypes.h>
-
+#define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
+#define SCREEN_35 (SCREEN_HEIGHT == 480)
+#define SCREEN_40 (SCREEN_HEIGHT == 568)
 @interface ProfileUpdateViewController : UIViewController<UITextFieldDelegate,MBProgressHUDDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIPopoverControllerDelegate>
 {
     MBProgressHUD *HUD;
@@ -40,4 +42,5 @@
 @property(retain,nonatomic)IBOutlet UILabel *urllabel;
 @property (retain, nonatomic) IBOutlet UIView *bg;
 
+@property (retain, nonatomic) IBOutlet UIScrollView *scrollview;
 @end

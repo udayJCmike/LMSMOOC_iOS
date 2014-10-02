@@ -8,7 +8,9 @@
 
 #import "PageContentViewController.h"
 #import "UIButton+Bootstrap.h"
-
+#define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
+#define SCREEN_35 (SCREEN_HEIGHT == 480)
+#define SCREEN_40 (SCREEN_HEIGHT == 568)
 @interface PageContentViewController ()
 
 @end
@@ -16,6 +18,8 @@
 @implementation PageContentViewController
 @synthesize imageview;
 @synthesize labelcontent;
+@synthesize imagebottom;
+@synthesize toplogin;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -55,7 +59,22 @@
     
     //[self.favoriteButton warningStyle];
     //[self.favoriteButton addAwesomeIcon:FAIconStar beforeTitle:NO];
+    if (SCREEN_35) {
+        for (NSLayoutConstraint *con in self.view.constraints)
+        {
+            if (con.firstItem == imageview && con.firstAttribute == NSLayoutAttributeBottom) {
+                imagebottom.constant = 35;
+            }
+            if (con.firstItem == _login && con.firstAttribute == NSLayoutAttributeTop) {
+               con.constant = 350;
+            }
+            if (con.firstItem == _signup && con.firstAttribute == NSLayoutAttributeTop) {
+                con.constant = 400;
+            }
+        }
 
+    }
+    
     self.imageview.image = [UIImage imageNamed:self.imageFile];
     self.labelcontent.text = self.titleText;
     _login.hidden=YES;
@@ -146,4 +165,8 @@
 }
 */
 
+- (void)dealloc {
+ 
+    [super dealloc];
+}
 @end

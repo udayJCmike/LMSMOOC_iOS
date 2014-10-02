@@ -8,6 +8,9 @@
 #import "MBProgressHUD.h"
 #import "AddCategoryViewController.h"
 #import "AddCategoriesTableViewCell.h"
+#define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
+#define SCREEN_35 (SCREEN_HEIGHT == 480)
+#define SCREEN_40 (SCREEN_HEIGHT == 568)
 @interface AddCategoryViewController ()
 {
     databaseurl *du;
@@ -29,6 +32,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if (SCREEN_35) {
+        for (NSLayoutConstraint *con in self.view.constraints)
+        {
+            if (con.firstItem == category_tableView && con.firstAttribute == NSLayoutAttributeTop) {
+                
+                self.tableheightConstraint.constant = 480;
+                [self.category_tableView needsUpdateConstraints];
+                
+                
+            }
+        }
+    }
+    self.navigationItem.title=@"Add Categories";
     // Do any additional setup after loading the view.
     selectedimage=[UIImage imageNamed:@"checkBoxMarked.png"];
     unselectedimage=[UIImage imageNamed:@"checkBox.png"];

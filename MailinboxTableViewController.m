@@ -9,6 +9,9 @@
 #import "MailinboxTableViewController.h"
 #import "lmsmoocAppDelegate.h"
 #define  AppDelegate (lmsmoocAppDelegate *)[[UIApplication sharedApplication] delegate]
+#define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
+#define SCREEN_35 (SCREEN_HEIGHT == 480)
+#define SCREEN_40 (SCREEN_HEIGHT == 568)
 @interface MailinboxTableViewController ()
 {
     databaseurl *du;
@@ -30,6 +33,9 @@
 {
     [super viewDidLoad];
     du=[[databaseurl alloc]init];
+    if (SCREEN_35) {
+        
+    }
     unread=0;
     count=0;
     self.navigationItem.title=[NSString stringWithFormat:@"Inbox (%d/%d)",unread,count];

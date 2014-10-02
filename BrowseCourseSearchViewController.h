@@ -25,7 +25,7 @@
 @property (retain, nonatomic)    NSCache *imageCache;
 
 @property (retain, nonatomic) IBOutlet UITextField *coursename;
-
+@property(retain,nonatomic)IBOutlet NSLayoutConstraint *tableheightConstraint;
 @end
 
 

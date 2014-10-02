@@ -24,7 +24,7 @@
 @property (retain, nonatomic) IBOutlet UITableView *tableView;
 @property (retain, nonatomic)  NSOperationQueue *imageOperationQueue;
 @property (retain, nonatomic)    NSCache *imageCache;
-
+@property (retain, nonatomic) IBOutlet NSLayoutConstraint *tableheightConstraint;
 
 
 @end

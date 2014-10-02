@@ -8,7 +8,9 @@
 
 #import "MailDetailsViewController.h"
 #import "UIButton+Bootstrap.h"
-
+#define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
+#define SCREEN_35 (SCREEN_HEIGHT == 480)
+#define SCREEN_40 (SCREEN_HEIGHT == 568)
 @interface MailDetailsViewController ()
 
 @end
@@ -32,7 +34,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-   
+    if (SCREEN_35) {
+//        for (NSLayoutConstraint *con in self.view.constraints)
+//        {
+//            if (con.firstItem == tableView && con.firstAttribute == NSLayoutAttributeTop) {
+//                con.constant = 98;
+//                self.tableheightConstraint.constant = 383;
+//                [self.tableView needsUpdateConstraints];
+//                
+            
+//            }
+//        }
+    }
     du=[[databaseurl alloc]init];
     if ([selectedrow count]>0) {
         from.text=[selectedrow objectForKey:@"sender_name"];

@@ -7,7 +7,9 @@
 //
 
 #import "ChangePasswordViewController.h"
-
+#define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
+#define SCREEN_35 (SCREEN_HEIGHT == 480)
+#define SCREEN_40 (SCREEN_HEIGHT == 568)
 @interface ChangePasswordViewController ()
 
 @end
@@ -29,6 +31,46 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if (SCREEN_35) {
+        for (NSLayoutConstraint *con in self.view.constraints)
+        {
+            if (con.firstItem ==_cur_pwdlab && con.firstAttribute == NSLayoutAttributeTop)
+            {
+                con.constant=143;
+                
+            }
+            if (con.firstItem ==cur_pwd && con.firstAttribute == NSLayoutAttributeTop)
+            {
+                con.constant=180;
+                
+            }
+            if (con.firstItem ==_new_pwdlab && con.firstAttribute == NSLayoutAttributeTop)
+            {
+                con.constant=218;
+                
+            }
+            if (con.firstItem ==new_pwd && con.firstAttribute == NSLayoutAttributeTop)
+            {
+                con.constant=247;
+                
+            }
+            if (con.firstItem ==_cfm_pwdlab && con.firstAttribute == NSLayoutAttributeTop)
+            {
+                con.constant=287;
+                
+            }
+            if (con.firstItem ==cfm_pwd && con.firstAttribute == NSLayoutAttributeTop)
+            {
+                con.constant=321;
+                
+            }
+            if (con.firstItem ==_getpassword && con.firstAttribute == NSLayoutAttributeTop)
+            {
+                con.constant=377;
+                
+            }
+        }
+    }
     [self.getpassword primaryStyle];
     du=[[databaseurl alloc]init];
     delegate=AppDelegate;

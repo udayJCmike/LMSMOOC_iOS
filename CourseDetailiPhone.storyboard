@@ -17,10 +17,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ZF9-tR-Kqy">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ZF9-tR-Kqy">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="277"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.79607843137254897" green="0.792156862745098" blue="0.81176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="277" id="2AO-tc-E1S"/>
+                                    <constraint firstAttribute="width" constant="320" id="M8o-R8-4oj"/>
+                                </constraints>
                                 <color key="sectionIndexBackgroundColor" red="0.79607843137254897" green="0.792156862745098" blue="0.81176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChildIdentifier" id="had-zG-DoL" customClass="SyllabusLectureTableViewCell">
@@ -48,9 +52,15 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.79607843137254897" green="0.792156862745098" blue="0.81176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="ZF9-tR-Kqy" firstAttribute="leading" secondItem="ooc-z9-Dvq" secondAttribute="leading" id="0q8-Aw-E1o"/>
+                            <constraint firstItem="ZF9-tR-Kqy" firstAttribute="top" secondItem="ooc-z9-Dvq" secondAttribute="top" id="7Po-N4-Dwz"/>
+                            <constraint firstAttribute="trailing" secondItem="ZF9-tR-Kqy" secondAttribute="trailing" id="KGs-Kf-m5M"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="SyllabustableView" destination="ZF9-tR-Kqy" id="NSJ-aN-4Cw"/>
+                        <outlet property="tableheightConstraint" destination="2AO-tc-E1S" id="p2L-E2-uoa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Ap-9q-uPT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -69,55 +79,80 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mju-CL-8oi">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cv5-vX-p9Q">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="280"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I51-08-grs">
-                                        <rect key="frame" x="90" y="20" width="225" height="25"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxf-VE-67t">
-                                        <rect key="frame" x="90" y="45" width="170" height="20"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8i-Gl-5XW">
-                                        <rect key="frame" x="5" y="95" width="310" height="100"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V8s-WJ-BwK">
-                                        <rect key="frame" x="5" y="5" width="75" height="75"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8CG-Pl-wxN">
-                                        <rect key="frame" x="84" y="211" width="152" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Unfollow Author">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="removeauthorfromfav:" destination="qaq-9k-7wz" eventType="touchUpInside" id="Qtk-jv-yDR"/>
-                                        </connections>
-                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mju-CL-8oi">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="280"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I51-08-grs">
+                                                <rect key="frame" x="90" y="20" width="225" height="25"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxf-VE-67t">
+                                                <rect key="frame" x="90" y="45" width="170" height="20"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8i-Gl-5XW">
+                                                <rect key="frame" x="5" y="95" width="310" height="100"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V8s-WJ-BwK">
+                                                <rect key="frame" x="5" y="5" width="75" height="75"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8CG-Pl-wxN">
+                                                <rect key="frame" x="84" y="211" width="152" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Unfollow Author">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="removeauthorfromfav:" destination="qaq-9k-7wz" eventType="touchUpInside" id="q18-rx-Vdt"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="8dQ-ZO-oUw"/>
+                                            <constraint firstAttribute="height" constant="280" id="XjT-Ug-WeA"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
-                            </view>
+                                <constraints>
+                                    <constraint firstItem="mju-CL-8oi" firstAttribute="leading" secondItem="cv5-vX-p9Q" secondAttribute="leading" id="fvL-IM-Bqn"/>
+                                    <constraint firstAttribute="bottom" secondItem="mju-CL-8oi" secondAttribute="bottom" id="tIQ-Wy-knL"/>
+                                    <constraint firstAttribute="trailing" secondItem="mju-CL-8oi" secondAttribute="trailing" id="vGN-mV-NBH"/>
+                                    <constraint firstItem="mju-CL-8oi" firstAttribute="top" secondItem="cv5-vX-p9Q" secondAttribute="top" id="xQw-d8-zVs"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pLn-8Z-2rc" firstAttribute="top" secondItem="cv5-vX-p9Q" secondAttribute="bottom" constant="288" id="Eiw-tF-qWb"/>
+                            <constraint firstAttribute="trailing" secondItem="cv5-vX-p9Q" secondAttribute="trailing" id="NCz-2P-5j6"/>
+                            <constraint firstItem="cv5-vX-p9Q" firstAttribute="leading" secondItem="9PU-Ub-WdJ" secondAttribute="leading" id="tZg-uI-zku"/>
+                            <constraint firstItem="cv5-vX-p9Q" firstAttribute="top" secondItem="9PU-Ub-WdJ" secondAttribute="top" id="y0E-Ib-bRY"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="aboutme" destination="t8i-Gl-5XW" id="XhP-Ce-dRt"/>
-                        <outlet property="authorname" destination="I51-08-grs" id="L60-VD-XnM"/>
-                        <outlet property="avatar" destination="V8s-WJ-BwK" id="rNC-l4-uqT"/>
-                        <outlet property="edu" destination="rxf-VE-67t" id="Dce-6i-H10"/>
-                        <outlet property="followbutton" destination="8CG-Pl-wxN" id="h7b-Nt-cEE"/>
+                        <outlet property="aboutme" destination="t8i-Gl-5XW" id="JIz-wM-Foa"/>
+                        <outlet property="authorname" destination="I51-08-grs" id="Rzn-qa-xPl"/>
+                        <outlet property="avatar" destination="V8s-WJ-BwK" id="Qxn-lj-SVm"/>
+                        <outlet property="edu" destination="rxf-VE-67t" id="pyk-46-9F5"/>
+                        <outlet property="followbutton" destination="8CG-Pl-wxN" id="jzl-mf-Q1b"/>
+                        <outlet property="innerview" destination="mju-CL-8oi" id="6a6-C9-Lqi"/>
+                        <outlet property="scrollbottom" destination="Eiw-tF-qWb" id="roc-KG-2CG"/>
+                        <outlet property="scrollheight" destination="cv5-vX-p9Q" id="1MZ-G0-UwW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="guU-OU-PzE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -155,17 +190,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Azx-Xd-jco">
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Azx-Xd-jco">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="KOP-YY-tCM"/>
+                                    <constraint firstAttribute="height" constant="568" id="NPH-ie-Yl7"/>
+                                </constraints>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Azx-Xd-jco" secondAttribute="trailing" id="IdT-Tw-wRS"/>
+                            <constraint firstItem="Azx-Xd-jco" firstAttribute="leading" secondItem="dsU-WS-aLU" secondAttribute="leading" id="MHt-7a-Na2"/>
+                            <constraint firstAttribute="bottom" secondItem="Azx-Xd-jco" secondAttribute="bottom" id="UgF-ec-qYu"/>
+                            <constraint firstItem="Azx-Xd-jco" firstAttribute="top" secondItem="dsU-WS-aLU" secondAttribute="top" id="sD7-wY-3Hh"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Text Lecture" id="EaP-Q9-zPh"/>
                     <connections>
                         <outlet property="webView" destination="Azx-Xd-jco" id="Rde-43-whQ"/>
+                        <outlet property="webviewheight" destination="NPH-ie-Yl7" id="4HT-uu-fQJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lRe-ke-gBS" userLabel="First Responder" sceneMemberID="firstResponder"/>

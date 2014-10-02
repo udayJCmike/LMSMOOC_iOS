@@ -14,6 +14,7 @@
 #import "AboutauthorViewController.h"
 #import "AboutcourseViewController.h"
 #import "MBProgressHUD.h"
+
 #define  AppDelegate (lmsmoocAppDelegate *)[[UIApplication sharedApplication] delegate]
 
 @interface CourseDetailViewController : ViewPagerController<ViewPagerDataSource, ViewPagerDelegate,MBProgressHUDDelegate>

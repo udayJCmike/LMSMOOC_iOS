@@ -34,5 +34,6 @@
 @property (retain, nonatomic)    NSCache *imageCache;
 @property (retain, nonatomic) IBOutlet UITableView *category_tableView;
 @property(retain,nonatomic)NSMutableArray *categorylist;
-
+@property(retain,nonatomic)IBOutlet NSLayoutConstraint *tableheightConstraint;
+@property(retain,nonatomic)IBOutlet NSLayoutConstraint *categorytableheightConstraint;
 @end

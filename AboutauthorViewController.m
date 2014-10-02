@@ -31,6 +31,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if (SCREEN_35) {
+        for (NSLayoutConstraint *con in self.view.constraints)
+        {
+            if (con.firstItem == self.scrollheight && con.firstAttribute == NSLayoutAttributeTop) {
+                
+            self.scrollbottom.constant = 100;
+                [self.scrollheight needsUpdateConstraints];
+                
+                
+            }
+        }
+    }
      delegate=AppDelegate;
     _imageOperationQueue = [[NSOperationQueue alloc]init];
     _imageOperationQueue.maxConcurrentOperationCount = 4;
@@ -249,4 +261,8 @@
 }
 */
 
+- (void)dealloc {
+  
+    [super dealloc];
+}
 @end

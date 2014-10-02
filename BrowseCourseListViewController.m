@@ -7,7 +7,9 @@
 //
 
 #import "BrowseCourseListViewController.h"
-
+#define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
+#define SCREEN_35 (SCREEN_HEIGHT == 480)
+#define SCREEN_40 (SCREEN_HEIGHT == 568)
 #define  AppDelegate (lmsmoocAppDelegate *)[[UIApplication sharedApplication] delegate]
 @interface BrowseCourseListViewController ()
 {
@@ -75,7 +77,30 @@ int loadcompleted;
     offset=0;
     offset_free=0;
     offset_paid=0;
-    // if Navigation Bar is already hidden
+    if (SCREEN_35) {
+        for (NSLayoutConstraint *con in self.view.constraints)
+        {
+            if (con.firstItem == tableView && con.firstAttribute == NSLayoutAttributeTop) {
+                con.constant = 98;
+                self.tableheightConstraint.constant = 383;
+                [self.tableView needsUpdateConstraints];
+                
+                
+            }
+            if (con.firstItem == category_tableView && con.firstAttribute == NSLayoutAttributeTop) {
+                con.constant = 98;
+                self.categorytableheightConstraint.constant = 383;
+                [self.category_tableView needsUpdateConstraints];
+                
+                
+            }
+            
+            
+            
+        }
+        
+    }
+
     
     loadcompleted=0;
     courselist=[[NSMutableArray alloc]init];

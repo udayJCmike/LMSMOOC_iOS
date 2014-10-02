@@ -8,6 +8,9 @@
 
 #import "MyfavoritesViewController.h"
 #define  AppDelegate (lmsmoocAppDelegate *)[[UIApplication sharedApplication] delegate]
+#define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
+#define SCREEN_35 (SCREEN_HEIGHT == 480)
+#define SCREEN_40 (SCREEN_HEIGHT == 568)
 @interface MyfavoritesViewController ()
 
 @end
@@ -21,6 +24,18 @@ int loadcompleted;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if (SCREEN_35) {
+        for (NSLayoutConstraint *con in self.view.constraints)
+        {
+            if (con.firstItem == self.tableView && con.firstAttribute == NSLayoutAttributeTop) {
+               
+                self.tableheightConstraint.constant = 480;
+                [self.tableView needsUpdateConstraints];
+                
+                
+            }
+        }
+    }
     offset=0;
     loadcompleted=0;
     courselist=[[NSMutableArray alloc]init];

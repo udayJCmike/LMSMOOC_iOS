@@ -15,6 +15,9 @@
 #import "SBJSON.h"
 #import "AuthorTableViewCell.h"
 #import "MyauthorcoursesViewController.h"
+#define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
+#define SCREEN_35 (SCREEN_HEIGHT == 480)
+#define SCREEN_40 (SCREEN_HEIGHT == 568)
 #define  AppDelegate (lmsmoocAppDelegate *)[[UIApplication sharedApplication] delegate]
 @interface MyauthorsTableViewController : UITableViewController<MBProgressHUDDelegate>
 {
@@ -25,4 +28,5 @@
  
 
 }
+
 @end

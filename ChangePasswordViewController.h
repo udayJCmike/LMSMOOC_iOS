@@ -25,8 +25,12 @@
     lmsmoocAppDelegate *delegate;
 }
 @property(nonatomic,retain)IBOutlet UITextField *cur_pwd;
-@property(nonatomic,retain)IBOutlet UITextField *cfm_pwd;
 @property(nonatomic,retain)IBOutlet UITextField *new_pwd;
+@property(nonatomic,retain)IBOutlet UITextField *cfm_pwd;
+
+@property(nonatomic,retain)IBOutlet UILabel *cur_pwdlab;
+@property(nonatomic,retain)IBOutlet UILabel *new_pwdlab;
+@property(nonatomic,retain)IBOutlet UILabel *cfm_pwdlab;
 @property(nonatomic,retain)IBOutlet UIButton *getpassword;
 @property (retain, nonatomic) IBOutlet UIView *bg;
 
