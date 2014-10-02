@@ -183,8 +183,7 @@
                 {
                     if ([du validateEmailForSignupPage:email.text])
                     {
-                        if ([du validatePasswordForSignupPage:password.text])
-                        {
+                        
                             if (![interestedval isEqualToString:@"null"] && [interestedval length]!=0) {
                                 if (![genderval isEqualToString:@"null"]&& [genderval length]!=0) {
                                     c=1;
@@ -192,13 +191,13 @@
                                 else
                                 {
                                     c=0;
-                                    [self ShowAlert:@"Enter gender"];
+                                    [self ShowAlert:@"Enter gender." title:@"Gender"];
                                 }
                             }
                             else
                             {
                                 c=0;
-                                [self ShowAlert:@"Enter interested in"];
+                                [self ShowAlert:@"Enter interested in." title:@"Interested in"];
                             }
                             
                             [delegate.Profiledetails setValue:fname.text forKey:@"firstname"];
@@ -212,31 +211,16 @@
                            
                     
                             NSLog(@"dictionary values %@",delegate.Profiledetails);
-                        }
-                        else
-                        {
-                            c = 0;
-                            if ([password.text length]==0) {
-                                [self ShowAlert:@"Enter the password."];
-                            }
-                            else
-                            {
-                                [self ShowAlert:@"Should contain 1 alphabet.\nShould contain 1 number.\nShould contain 1 special character.\nShould be 8 to 25 characters."];
-                                
-                            }
-                            //  NSLog(@"ENTER VALID password");
-                            
-                        }
                     }
-                    else
+                   else
                     {
                         c = 0;
                         if ([email.text length]==0) {
-                            [self ShowAlert:@"Enter the email ID."];
+                            [self ShowAlert:@"Enter the email ID." title:@"Email id"];
                         }
                         else
                         {
-                            [self ShowAlert:@"Should contain alphabets.\nShould contain numbers.\nShould contain 1 special character.\nShould be 10 to 40 characters."];
+                            [self ShowAlert:@"Should contain alphabets.\nShould contain numbers.\nShould contain 1 special character.\nShould be 10 to 40 characters." title:@"Email id"];
                             
                         }
                         // NSLog(@"ENTER VALID email id");
@@ -247,11 +231,11 @@
                 {
                     c = 0;
                     if ([username.text length]==0) {
-                        [self ShowAlert:@"Enter the username."];
+                        [self ShowAlert:@"Enter the username." title:@"Username"];
                     }
                     else
                     {
-                        [self ShowAlert:@"Should contain alphabets.\nShould contain numbers.\nShould contain special characters @_-.\nShould be 6 to 25 characters."];
+                        [self ShowAlert:@"Should contain alphabets.\nShould contain numbers.\nShould contain special characters @_-.\nShould be 6 to 25 characters." title:@"Username"];
                         
                     }
                     NSLog(@"ENTER VALID username");
@@ -262,11 +246,11 @@
             {
                 c=0;
                 if ([lname.text length]==0) {
-                    [self ShowAlert:@"Enter the lastname."];
+                    [self ShowAlert:@"Enter the lastname." title:@"Lastname"];
                 }
                 else
                 {
-                    [self ShowAlert:@"Should contain alphabets.\nShould be 3 to 15 characters."];
+                    [self ShowAlert:@"Should contain alphabets.\nShould be 3 to 15 characters." title:@"Lastname"];
                     
                 }
                 // NSLog(@"ENTER VALID LAST NAME");
@@ -277,11 +261,11 @@
         {
             c=0;
             if ([fname.text length]==0) {
-                [self ShowAlert:@"Enter the firstname."];
+                [self ShowAlert:@"Enter the firstname." title:@"Firstname"];
             }
             else
             {
-                [self ShowAlert:@"Should contain alphabets.\nShould be 3 to 15 characters."];
+                [self ShowAlert:@"Should contain alphabets.\nShould be 3 to 15 characters." title:@"Firstname"];
                 
             }
             //  NSLog(@"ENTER VALID FIRST NAME");
@@ -292,7 +276,7 @@
     {
         c=0;
         //enter all required fields
-       [self ShowAlert:@"Enter all required fields."];
+       [self ShowAlert:@"Enter all required fields." title:@"Info"];
         
         
     }
@@ -333,11 +317,11 @@
             {
                 
                 if ([fname.text length]==0) {
-                    [self ShowAlert:@"Enter the firstname."];
+                    [self ShowAlert:@"Enter the firstname." title:@"Firstname"];
                 }
                 else
                 {
-                    [self ShowAlert:@"Should contain only alphabets.\nShould be 3 to 15 characters."];
+                    [self ShowAlert:@"Should contain only alphabets.\nShould be 3 to 15 characters." title:@"Firstname"];
                     
                 }
                 
@@ -352,11 +336,11 @@
             {
                 
                 if ([lname.text length]==0) {
-                    [self ShowAlert:@"Enter the lastname."];
+                    [self ShowAlert:@"Enter the lastname."title:@"Lastname"];
                 }
                 else
                 {
-                    [self ShowAlert:@"Should contain only alphabets.\nShould be 3 to 15 characters."];
+                    [self ShowAlert:@"Should contain only alphabets.\nShould be 3 to 15 characters."title:@"Lastname"];
                     
                 }
                 // NSLog(@"ENTER VALID LAST NAME");
@@ -394,7 +378,7 @@
                     }
                     else  if ([[menu objectForKey:@"emaill"] isEqualToString:@"usernameexist"])
                     {
-                        [self ShowAlert:@"Username exist."];
+                        [self ShowAlert:@"Username exist." title:@"Username"];
                     }
                 }
                 
@@ -404,11 +388,11 @@
             {
                 
                 if ([username.text length]==0) {
-                    [self ShowAlert:@"Enter the username."];
+                    [self ShowAlert:@"Enter the username." title:@"Username"];
                 }
                 else
                 {
-                    [self ShowAlert:@"Should contain alphabets.\nShould contain numbers.\nShould contain special characters @_-.\nShould be 6 to 25 characters."];
+                    [self ShowAlert:@"Should contain alphabets.\nShould contain numbers.\nShould contain special characters @_-.\nShould be 6 to 25 characters." title:@"Username"];
                     
                 }
                 //  NSLog(@"ENTER VALID username");
@@ -450,7 +434,7 @@
                     }
                     else  if ([[menu objectForKey:@"emaill"] isEqualToString:@"emailexist"])
                     {
-                        [self ShowAlert:@"Email id exist."];
+                        [self ShowAlert:@"Email id exist." title:@"Email id"];
                     }
                 }
                 }
@@ -459,36 +443,18 @@
             {
                 
                 if ([email.text length]==0) {
-                    [self ShowAlert:@"Enter the email ID."];
+                    [self ShowAlert:@"Enter the email ID." title:@"Email id"];
                 }
                 else
                 {
-                    [self ShowAlert:@"Should contain alphabets.\nShould contain numbers.\nShould contain 1 special character.\nShould be 10 to 40 characters."];
+                    [self ShowAlert:@"Should contain alphabets.\nShould contain numbers.\nShould contain 1 special character.\nShould be 10 to 40 characters."title:@"Email id"];
                     
                 }
                 // NSLog(@"ENTER VALID email id");
                 
             }
             break;
-        case 5:
-            if ([du validatePasswordForSignupPage:password.text])
-            {
-            }
-            else
-            {
-                if ([password.text length]==0) {
-                    [self ShowAlert:@"Enter the password."];
-                }
-                else
-                {
-                    [self ShowAlert:@"Should contain 1 alphabet.\nShould contain 1 number.\nShould contain 1 special character.\nShould be 8 to 25 characters."];
-                    
-                }
-                //  NSLog(@"ENTER VALID password");
-                
-            }
-            break;
-       
+            
         default:
             break;
     }
@@ -937,27 +903,7 @@
             }
         }
     }
-    else if(textField == password)
-    {
-        NSString *rangeOfString = @" ";
-        NSCharacterSet *rangeOfCharacters = [NSCharacterSet characterSetWithCharactersInString:rangeOfString];
-        if(![string isEqualToString:@""])
-        {
-            if (range.location == 0 && [rangeOfCharacters characterIsMember:[string characterAtIndex:0]] )
-            {
-                
-                return NO;
-            }
-            for (int i = 0; i<[string length]; i++)
-            {
-                UniChar c1 = [string characterAtIndex:i];
-                if ([rangeOfCharacters characterIsMember:c1])
-                {
-                    return NO;
-                }
-            }
-        }
-    }
+
     else if (textField == fname)
     {
         NSString *rangeOfString = @" ";
@@ -1105,16 +1051,10 @@
    
    
 }
--(void)ShowAlert:(NSString*)message
+-(void)ShowAlert:(NSString*)message title:(NSString *)title
 {
-    DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"Info" contentText:[NSString stringWithFormat:@"%@",message] leftButtonTitle:nil rightButtonTitle:@"Close"];
+    UIAlertView *alert=[[UIAlertView alloc]initWithTitle:title message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
     [alert show];
-    alert.rightBlock = ^() {
-        
-    };
-    alert.dismissBlock = ^() {
-        
-    };
     
 }
 -(NSString *)HttpPostEntityUsername:(NSString*)firstEntity ForValue1:(NSString*)value1 EntitySecond:(NSString*)secondEntity ForValue2:(NSString*)value2

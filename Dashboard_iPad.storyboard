@@ -287,7 +287,9 @@
                             <outlet property="delegate" destination="Xi1-7U-yej" id="SB1-6L-W37"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Inbox" id="hjL-GG-6vA"/>
+                    <navigationItem key="navigationItem" title="Inbox" id="hjL-GG-6vA">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="e1M-bj-Uwe"/>
+                    </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <segue destination="Bfh-z1-kC9" kind="push" identifier="DetailView" id="Y6S-5y-gj9"/>
@@ -467,7 +469,9 @@
                             <outlet property="delegate" destination="Ger-kY-RCL" id="VLS-O5-nTu"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Billings" id="VZJ-Ux-iHv"/>
+                    <navigationItem key="navigationItem" title="Billings" id="VZJ-Ux-iHv">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="10x-Wi-afB"/>
+                    </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <segue destination="6iS-5A-qyf" kind="push" identifier="BillingDetails" id="DLD-Id-Obd"/>
@@ -679,7 +683,9 @@
                             <outlet property="delegate" destination="VpM-Ls-ugp" id="7p4-ME-UtM"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="My Authors" id="TzO-bP-Gjc"/>
+                    <navigationItem key="navigationItem" title="My Authors" id="TzO-bP-Gjc">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="Czs-nD-fp5"/>
+                    </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <segue destination="VNR-JD-nvw" kind="push" identifier="MyAuthorDatas" id="v1J-99-ek2"/>
@@ -947,7 +953,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <navigationItem key="navigationItem" title="My Courses" id="elP-Bi-Bo7"/>
+                    <navigationItem key="navigationItem" title="My Courses" id="elP-Bi-Bo7">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="geQ-jx-whe"/>
+                    </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="ipadcollection" destination="CLv-ym-HLM" id="yvP-ng-mtY"/>
@@ -1113,6 +1121,7 @@
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Categories" id="9i6-Ln-WPf">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="hxN-O6-DOx"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="7Cv-Np-OYK">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -1369,7 +1378,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Catergory" id="pkM-g4-AyE"/>
+                    <navigationItem key="navigationItem" title="Catergory" id="pkM-g4-AyE">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="zvi-uG-Tfu"/>
+                    </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="ipadcollection" destination="99c-Jq-fLD" id="8JC-jq-ifL"/>
@@ -1659,6 +1670,7 @@
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Categories" id="Hvc-x2-d38">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="u5v-OK-ymX"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="ehV-Cm-h43">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -1845,6 +1857,7 @@
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Author" id="tQ0-7t-5O7">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="9mr-Ur-tQG"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="6Cd-IM-MQ1">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>

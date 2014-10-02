@@ -177,8 +177,9 @@
         ([password.text length]==0))
     {
         c=0;
-        DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"Info" contentText:@"Enter username and password." leftButtonTitle:nil rightButtonTitle:@"Close"];
-        [alert show];
+
+        [self ShowAlert:@"Enter username and password." title:@"Info"];
+
       
        
     }
@@ -187,8 +188,8 @@
         
     {
         c=0;
-        DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"Info" contentText:@"Enter the password." leftButtonTitle:nil rightButtonTitle:@"Close"];
-        [alert show];
+     
+       [self ShowAlert:@"Enter the password." title:@"Password"];
        
        
 
@@ -201,11 +202,18 @@
              ([password.text length]>0))
     {
         c=0;
-        DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"Info" contentText:@"Enter the username." leftButtonTitle:nil rightButtonTitle:@"Close"];
-        [alert show];
+        [self ShowAlert:@"Enter the username." title:@"Username"];
+       
        
         
     }
+    
+}
+-(void)ShowAlert:(NSString*)message title:(NSString *)title
+{
+   
+    UIAlertView *alert=[[UIAlertView alloc]initWithTitle:title message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+    [alert show];
     
 }
 - (IBAction)checkbox:(UIButton*)sender {
@@ -312,15 +320,8 @@
                 
                 [HUD hide:YES];
                // NSLog(@"invalid username or password");
-                DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"Sorry User!" contentText:@"Invalid username or password." leftButtonTitle:nil rightButtonTitle:@"Close"];
-                [alert show];
-                alert.rightBlock = ^() {
-                    
-                };
-                alert.dismissBlock = ^() {
-                    
-                };
-                username.text=@"";
+                  [self ShowAlert:@"Invalid username or password." title:@"Sorry User!" ];
+             username.text=@"";
                 password.text=@"";
                 
             }

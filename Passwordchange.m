@@ -356,16 +356,10 @@
     return YES;
     
 }
--(void)ShowAlert:(NSString*)message
+-(void)ShowAlert:(NSString*)message title:(NSString *)title
 {
-    DXAlertView *alert = [[DXAlertView alloc] initWithTitle:@"Info" contentText:[NSString stringWithFormat:@"%@",message] leftButtonTitle:nil rightButtonTitle:@"Close"];
+    UIAlertView *alert=[[UIAlertView alloc]initWithTitle:title message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
     [alert show];
-    alert.rightBlock = ^() {
-        
-    };
-    alert.dismissBlock = ^() {
-        
-    };
     
 }
 - (void)textFieldDidEndEditing:(UITextField *)textField
@@ -379,11 +373,11 @@
             else
             {
                 if ([cur_pwd.text length]==0) {
-                    [self ShowAlert:@"Enter the password."];
+                    [self ShowAlert:@"Enter the password." title:@""];
                 }
                 else
                 {
-                    [self ShowAlert:@"Should contain 1 alphabet.\nShould contain 1 number.\nShould contain 1 special character.\nShould be 8 to 25 characters."];
+                    [self ShowAlert:@"Should contain 1 alphabet.\nShould contain 1 number.\nShould contain 1 special character.\nShould be 8 to 25 characters." title:@"Current Password"];
                     
                 }
                 //  NSLog(@"ENTER VALID password");
@@ -397,11 +391,11 @@
             else
             {
                 if ([new_pwd.text length]==0) {
-                    [self ShowAlert:@"Enter the password."];
+                    [self ShowAlert:@"Enter the password." title:@""];
                 }
                 else
                 {
-                    [self ShowAlert:@"Should contain 1 alphabet.\nShould contain 1 number.\nShould contain 1 special character.\nShould be 8 to 25 characters."];
+                    [self ShowAlert:@"Should contain 1 alphabet.\nShould contain 1 number.\nShould contain 1 special character.\nShould be 8 to 25 characters." title:@"New Password"];
                     
                 }
                 //  NSLog(@"ENTER VALID password");
@@ -416,7 +410,7 @@
             {
                 
                 
-                [self ShowAlert:@"Password and Confirm Password should be same."];
+                [self ShowAlert:@"Password and Confirm Password should be same." title:@"Password"];
                 
                 
                 //  NSLog(@"Password mismatch");
