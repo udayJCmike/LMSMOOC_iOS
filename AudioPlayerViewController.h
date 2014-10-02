@@ -20,6 +20,7 @@
 @property(nonatomic,retain)NSString *audioname;
 @property (strong, nonatomic) IBOutlet UILabel *durationoutlet;
 @property (strong, nonatomic) IBOutlet UIButton *toggleplaypause;
+@property (retain, nonatomic) IBOutlet UIView *bg;
 @property (strong, nonatomic) IBOutlet UISlider *slider;
 @property (strong, nonatomic) IBOutlet UILabel *totaltime;
 @end

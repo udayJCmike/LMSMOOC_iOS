@@ -32,6 +32,7 @@
     // Do any additional setup after loading the view.
    
     [self loadDatas];
+     self.navigationItem.title=@"Text Lecture";
 }
 -(void)loadDatas
 {

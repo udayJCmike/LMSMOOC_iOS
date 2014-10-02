@@ -227,7 +227,7 @@
     if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad) {
         CGRect frame1,frame2;
         frame1=self.tabsView.frame;
-        frame1.origin.y +=350;
+        frame1.origin.y +=200;
         self.tabsView.frame=frame1;
         frame2=CGRectMake(0, self.tabsView.frame.origin.y+50, 1024, 527);
         self.contentView.frame = frame2;

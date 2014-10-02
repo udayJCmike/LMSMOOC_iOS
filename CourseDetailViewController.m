@@ -106,7 +106,7 @@
     player = [[MPMoviePlayerController alloc] initWithContentURL:url];
     player.view.frame = CGRectMake(0, 100, 320, 100);
     if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad) {
-        player.view.frame = CGRectMake(33, 141, 425, 178);
+        player.view.frame = CGRectMake(570, 97, 315, 116);
     }
     [self.view addSubview:player.view];
     [player prepareToPlay];

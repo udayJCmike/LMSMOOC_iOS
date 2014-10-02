@@ -291,6 +291,7 @@
     {
         UIViewController *initialvc=[self.storyboard instantiateViewControllerWithIdentifier:identifiername];
         [self.navigationController pushViewController:initialvc animated:YES];
+        
     }
     if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPhone)
     {

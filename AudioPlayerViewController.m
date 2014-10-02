@@ -26,6 +26,7 @@
 @synthesize slider;
 @synthesize durationoutlet;
 @synthesize totaltime;
+@synthesize bg;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -45,6 +46,9 @@
     
     durationoutlet.text=@"00:00";
     [self loadDatas];
+    bg.layer.cornerRadius=5;
+    bg.layer.masksToBounds=YES;
+    self.navigationItem.title=@"Audio Lecture";
 }
 -(void)loadDatas
 {
@@ -212,4 +216,7 @@
 
 
 
+- (void)dealloc {
+
+}
 @end
