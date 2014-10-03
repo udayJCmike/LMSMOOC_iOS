@@ -65,7 +65,13 @@
     [self.frostedViewController presentMenuViewController];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"Showmenu" object:nil];
 }
-
+-(void)ShowAlert:(NSString*)message title:(NSString *)title
+{
+    
+    UIAlertView *alert=[[UIAlertView alloc]initWithTitle:title message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+    [alert show];
+    
+}
 
 -(void)loadDatas
 {
@@ -144,6 +150,10 @@
     }
     else
     {
+        if ((loadcompleted==0)&&([courselist count]==0))  {
+            [self ShowAlert:@"No data found." title:@"Info"];
+            
+        }
         loadcompleted=1;
         NSLog(@"No Datas found");
     }
@@ -304,6 +314,7 @@
 -(void)dealloc
 {
     [super dealloc];
+     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(loadDatas) object:self];
     HUD.delegate = nil;
 }
 @end

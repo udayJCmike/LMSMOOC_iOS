@@ -192,7 +192,7 @@ int loadcompleted;
     
     NSArray *Listofdatas=[menu objectForKey:@"Course List"];
     
-    NSMutableArray *olddata=courselist;
+   
     //  NSLog(@"array values in all course b4 updating %@",courselist);
     if ([Listofdatas count]>0)
     {
@@ -207,7 +207,7 @@ int loadcompleted;
             mess = [mess stringByReplacingOccurrencesOfString: @"<br>" withString: @"\n"];
             [temp setValue:mess forKey:@"course_description"];
             
-            [olddata addObject:temp];
+            [courselist addObject:temp];
             
             
         }
@@ -217,6 +217,10 @@ int loadcompleted;
     }
     else
     {
+        if ((loadcompleted==0)&&([courselist count]==0)) {
+            [self ShowAlert:@"No data found." title:@"Info"];
+            
+        }
         loadcompleted=1;
     }
     if (![HUD isHidden])
@@ -225,15 +229,18 @@ int loadcompleted;
         
     }
     
-    courselist=[[NSMutableArray alloc]init];
-    courselist=olddata;
+   
     offset+=10;
     // NSLog(@"array values in all course after updating %@",courselist);
     [self performSelector:@selector(reloaddatas) withObject:nil afterDelay:0.5f];
+ 
     
+}
+-(void)ShowAlert:(NSString*)message title:(NSString *)title
+{
     
-    
-    
+    UIAlertView *alert=[[UIAlertView alloc]initWithTitle:title message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+    [alert show];
     
 }
 -(void)getFreeCourseList
@@ -277,6 +284,10 @@ int loadcompleted;
     }
     else
     {
+        if ((loadcompleted==0)&&([courselist count]==0))  {
+            [self ShowAlert:@"No data found." title:@"Info"];
+            
+        }
         loadcompleted=1;
     }
     if (![HUD isHidden]) {
@@ -328,6 +339,10 @@ int loadcompleted;
     }
     else
     {
+        if ((loadcompleted==0)&&([courselist count]==0))  {
+            [self ShowAlert:@"No data found." title:@"Info"];
+            
+        }
         loadcompleted=1;
     }
     
@@ -566,6 +581,7 @@ int loadcompleted;
     [super dealloc];
     HUD.delegate = nil;
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"Categorylist" object:nil];
+     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(loadDatas) object:self];
 }
 
 @end

@@ -72,7 +72,13 @@
     
     }
 
-
+-(void)ShowAlert:(NSString*)message title:(NSString *)title
+{
+    
+    UIAlertView *alert=[[UIAlertView alloc]initWithTitle:title message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+    [alert show];
+    
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -81,8 +87,8 @@
 
 - (IBAction)trashauthorfromfav:(id)sender {
     
-    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
-    [self.navigationController.view addSubview:HUD];
+    HUD = [[MBProgressHUD alloc] initWithView:self.view];
+    [self.view addSubview:HUD];
     HUD.delegate = self;
     HUD.labelText = @"Please wait...";
     [HUD show:YES];
@@ -269,6 +275,10 @@
     }
     else
     {
+        if ((loadcompleted==0)&&([courselist count]==0))  {
+            [self ShowAlert:@"No data found." title:@"Info"];
+            
+        }
         loadcompleted=1;
         NSLog(@"No Datas found");
     }
@@ -428,6 +438,7 @@
 -(void)dealloc
 {
     [super dealloc];
+     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(loadDatas) object:self];
     HUD.delegate = nil;
 }
 

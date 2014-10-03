@@ -158,14 +158,20 @@
 
 
 
-
+-(void)ShowAlert:(NSString*)message title:(NSString *)title
+{
+    
+    UIAlertView *alert=[[UIAlertView alloc]initWithTitle:title message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+    [alert show];
+    
+}
 
 // Do any additional setup after loading the view.
 
 -(void)loadDatas
 {
-    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
-    [self.navigationController.view addSubview:HUD];
+    HUD = [[MBProgressHUD alloc] initWithView:self.view];
+    [self.view addSubview:HUD];
     HUD.delegate = self;
     HUD.labelText = @"Please wait...";
     [HUD show:YES];
@@ -233,6 +239,10 @@
     }
     else
     {
+        if ((loadcompleted==0)&&([courselist count]==0))  {
+            [self ShowAlert:@"No data found." title:@"Info"];
+            
+        }
         loadcompleted=1;
         NSLog(@"No Datas found");
     }
@@ -390,6 +400,7 @@
 {
     [super dealloc];
     HUD.delegate = nil;
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(loadDatas) object:self];
 }
 
 @end

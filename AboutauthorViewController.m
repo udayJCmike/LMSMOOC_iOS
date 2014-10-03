@@ -43,6 +43,19 @@
             }
         }
     }
+    else if(SCREEN_40)
+    {
+        for (NSLayoutConstraint *con in self.view.constraints)
+        {
+            if (con.firstItem == self.scrollheight && con.firstAttribute == NSLayoutAttributeTop) {
+                
+                self.scrollbottom.constant = 50;
+                [self.scrollheight needsUpdateConstraints];
+                
+                
+            }
+        }
+    }
      delegate=AppDelegate;
     _imageOperationQueue = [[NSOperationQueue alloc]init];
     _imageOperationQueue.maxConcurrentOperationCount = 4;

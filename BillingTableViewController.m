@@ -62,7 +62,13 @@
     [self loadDatas];
 
 }
-
+-(void)ShowAlert:(NSString*)message title:(NSString *)title
+{
+    
+    UIAlertView *alert=[[UIAlertView alloc]initWithTitle:title message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+    [alert show];
+    
+}
     - (void)menulistener:(id)sender {
         
         
@@ -135,7 +141,14 @@
                 [billing addObject:arrayList1];
                 
             }
-            NSLog(@"category values %@",billing);
+//            NSLog(@"category values %@",billing);
+        }
+        else
+        {
+            if ([billing count]==0)  {
+                [self ShowAlert:@"No data found." title:@"Info"];
+                
+            }
         }
         
        

@@ -35,7 +35,7 @@ int loadcompleted;
     if ([[du submitvalues]isEqualToString:@"Success"])
     {
         
-        [self performSelector:@selector(getList) withObject:self afterDelay:0.2f];
+        [self performSelector:@selector(getList) withObject:self afterDelay:0.0f];
         
     }
 

@@ -243,7 +243,7 @@
 {
     [super dealloc];
     [player stop];
-    [player release];
+   // [player release];
 }
 
 @end

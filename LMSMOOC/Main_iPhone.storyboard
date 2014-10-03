@@ -110,7 +110,7 @@
                                                 <rect key="frame" x="111" y="108" width="197" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="IBq-TA-IOn" id="hPg-K1-mcC"/>
                                                 </connections>
@@ -126,7 +126,7 @@
                                                 <rect key="frame" x="111" y="155" width="197" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="IBq-TA-IOn" id="Hp4-Tu-sgK"/>
                                                 </connections>
@@ -359,7 +359,7 @@
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="yui-YP-4Em">
                                                 <rect key="frame" x="114" y="179" width="188" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="tintColor" patternImage="645F905B-83AB-4199-8594-AFFD39D38127" colorSpace="pattern"/>
+                                                <color key="tintColor" patternImage="3B3B62FB-3409-44E7-AD38-4788F58D39CD" colorSpace="pattern"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
@@ -369,7 +369,7 @@
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="0Cx-TW-OFk">
                                                 <rect key="frame" x="114" y="227" width="188" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="tintColor" patternImage="645F905B-83AB-4199-8594-AFFD39D38127" colorSpace="pattern"/>
+                                                <color key="tintColor" patternImage="3B3B62FB-3409-44E7-AD38-4788F58D39CD" colorSpace="pattern"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                 <connections>
@@ -530,7 +530,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="645F905B-83AB-4199-8594-AFFD39D38127" width="320" height="460">
+        <image name="3B3B62FB-3409-44E7-AD38-4788F58D39CD" width="320" height="460">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

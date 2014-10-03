@@ -128,6 +128,13 @@
     }
 
 }
+-(void)ShowAlert:(NSString*)message title:(NSString *)title
+{
+    
+    UIAlertView *alert=[[UIAlertView alloc]initWithTitle:title message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+    [alert show];
+    
+}
 
 // Method removed by Uday
 //- (void)menulistener:(id)sender {
@@ -209,6 +216,10 @@
         }
         else
         {
+            if ([categorylist count]==0)  {
+                [self ShowAlert:@"No data found." title:@"Info"];
+                
+            }
             NSLog(@"No datas found");
         }
         

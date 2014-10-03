@@ -114,6 +114,13 @@
             }
             // NSLog(@"category values %@",categorylist);
         }
+        else
+        {
+            if ([myauthors count]==0)  {
+                [self ShowAlert:@"No data found." title:@"Info"];
+                
+            }
+        }
        
         [HUD hide:YES];
         [self performSelector:@selector(relodtable) withObject:self afterDelay:0.5f];
@@ -123,6 +130,13 @@
         [HUD hide:YES];
     }
     
+    
+}
+-(void)ShowAlert:(NSString*)message title:(NSString *)title
+{
+    
+    UIAlertView *alert=[[UIAlertView alloc]initWithTitle:title message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+    [alert show];
     
 }
 -(void)relodtable

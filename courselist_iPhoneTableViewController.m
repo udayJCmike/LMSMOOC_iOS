@@ -186,6 +186,13 @@ int loadcompleted;
 {
     [self performSegueWithIdentifier:@"CourseSearch" sender:self];
 }
+-(void)ShowAlert:(NSString*)message title:(NSString *)title
+{
+    
+    UIAlertView *alert=[[UIAlertView alloc]initWithTitle:title message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+    [alert show];
+    
+}
 -(void)loadDatas
 {
     HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
@@ -267,6 +274,10 @@ int loadcompleted;
     }
     else
     {
+        if ((loadcompleted==0)&&([courselist count]==0))  {
+            [self ShowAlert:@"No data found." title:@"Info"];
+            
+        }
         loadcompleted=1;
     }
     if (![HUD isHidden]) {
@@ -320,6 +331,10 @@ int loadcompleted;
     }
     else
     {
+        if ((loadcompleted==0)&&([courselist count]==0))  {
+            [self ShowAlert:@"No data found." title:@"Info"];
+            
+        }
         loadcompleted=1;
     }
     if (![HUD isHidden]) {
@@ -373,6 +388,10 @@ int loadcompleted;
     }
     else
     {
+        if ((loadcompleted==0)&&([courselist count]==0))  {
+            [self ShowAlert:@"No data found." title:@"Info"];
+            
+        }
         loadcompleted=1;
     }
     if (![HUD isHidden]) {
@@ -419,7 +438,13 @@ int loadcompleted;
                 
             }
         }
-        
+        else
+        {
+            if ([categorylist count]==0)  {
+                [self ShowAlert:@"No data found." title:@"Info"];
+                
+            }
+        }
         [HUD hide:YES];
         [category_tableView reloadData];
         // NSLog(@"list values %@",inbox);
@@ -699,7 +724,7 @@ int loadcompleted;
 
 - (void)dealloc {
      [[NSNotificationCenter defaultCenter] removeObserver:self name:@"Showmenu" object:nil];
-   
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(loadDatas) object:self];
     [HUD release];
     
 

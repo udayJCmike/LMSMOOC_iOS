@@ -84,13 +84,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Toe-fM-PiV">
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Toe-fM-PiV">
                                 <rect key="frame" x="50" y="200" width="220" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <connections>
-                                    <outlet property="delegate" destination="O4I-cz-xgl" id="tZI-dJ-kjw"/>
+                                    <outlet property="delegate" destination="O4I-cz-xgl" id="4UZ-RB-mcW"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Confirm New Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WnC-w5-3jv">
@@ -105,7 +105,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <connections>
-                                    <outlet property="delegate" destination="O4I-cz-xgl" id="EzW-S4-waU"/>
+                                    <outlet property="delegate" destination="O4I-cz-xgl" id="E3g-3E-oJf"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKJ-CP-OE2">
@@ -358,7 +358,7 @@
                                                 <rect key="frame" x="30" y="36" width="258" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="29E-oz-Do0" id="tbs-PL-EYJ"/>
                                                 </connections>
@@ -367,7 +367,7 @@
                                                 <rect key="frame" x="30" y="81" width="258" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                 <connections>
                                                     <outlet property="delegate" destination="29E-oz-Do0" id="zuQ-p9-PTD"/>
                                                 </connections>
@@ -799,7 +799,7 @@
             </objects>
             <point key="canvasLocation" x="331" y="573"/>
         </scene>
-        <!--Billing Detail View Controller - Billing Details-->
+        <!--Billing Detail View Controller - Billing-->
         <scene sceneID="Cuu-d8-utx">
             <objects>
                 <viewController id="jnc-IU-rcH" customClass="BillingDetailViewController" sceneMemberID="viewController">
@@ -960,7 +960,7 @@
                             <constraint firstAttribute="trailing" secondItem="2W2-d5-mWw" secondAttribute="trailing" id="mfJ-WM-SQs"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Billing Details" id="8x6-RN-yPS"/>
+                    <navigationItem key="navigationItem" title="Billing" id="8x6-RN-yPS"/>
                     <connections>
                         <outlet property="amountpaid" destination="jXl-ct-GYy" id="Kil-6i-JCx"/>
                         <outlet property="authorname" destination="egd-2U-lMh" id="MJw-ax-Dec"/>

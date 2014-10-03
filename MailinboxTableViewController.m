@@ -67,6 +67,13 @@
     
     self.navigationItem.title=[NSString stringWithFormat:@"Inbox (%d/%d)",unread,count];
 }
+-(void)ShowAlert:(NSString*)message title:(NSString *)title
+{
+    
+    UIAlertView *alert=[[UIAlertView alloc]initWithTitle:title message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+    [alert show];
+    
+}
 -(void)loadDatas
 {
          HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
@@ -131,6 +138,13 @@
         }
         [self.tableView reloadData];
        
+    }
+    else
+    {
+        if ([inbox count]==0)  {
+            [self ShowAlert:@"No data found." title:@"Info"];
+            
+        }
     }
     self.navigationItem.title=[NSString stringWithFormat:@"Inbox (%d/%d)",unread,count];
      [HUD hide:YES];

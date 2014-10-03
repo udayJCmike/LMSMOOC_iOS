@@ -76,7 +76,13 @@
     [category_tableView reloadData];
 }
 
-
+-(void)ShowAlert:(NSString*)message title:(NSString *)title
+{
+    
+    UIAlertView *alert=[[UIAlertView alloc]initWithTitle:title message:message delegate:self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+    [alert show];
+    
+}
 -(void)loadDatas
 {
     HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
@@ -170,6 +176,10 @@
         }
         else
         {
+            if ([categorylist count]==0)  {
+                [self ShowAlert:@"No data found." title:@"Info"];
+                
+            }
             loadcompleted=1;
         }
         

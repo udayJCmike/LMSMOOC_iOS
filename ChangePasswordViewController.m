@@ -74,7 +74,7 @@
     [self.getpassword primaryStyle];
     du=[[databaseurl alloc]init];
     delegate=AppDelegate;
-     cur_pwd.text=[delegate.Profiledetails objectForKey:@"password"];
+    
     NSLog(@"password %@",[delegate.Profiledetails objectForKey:@"password"]);
     // Do any additional setup after loading the view.
     UITapGestureRecognizer *get=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
@@ -124,6 +124,9 @@
 {
    
     int c=1;
+    if ([cur_pwd.text isEqualToString:[delegate.Profiledetails objectForKey:@"password"]] && [du validatePasswordForSignupPage:cur_pwd.text])
+    {
+   
     if ([du validatePasswordForSignupPage:new_pwd.text])
     {
         if ([du validatePasswordForSignupPage:cfm_pwd.text])
@@ -164,7 +167,7 @@
         {
             c = 0;
             if ([cfm_pwd.text length]==0) {
-                [self ShowAlert:@"Enter the password."title:@"Confirm Password"];
+                [self ShowAlert:@"Enter the confirm new password."title:@"Confirm new password"];
             }
             else
             {
@@ -179,7 +182,7 @@
     {
         c = 0;
         if ([new_pwd.text length]==0) {
-            [self ShowAlert:@"Enter the password."title:@"Password"];
+            [self ShowAlert:@"Enter the new password."title:@"New password"];
         }
         else
         {
@@ -188,6 +191,19 @@
         }
 
         
+    }
+    }
+    else
+    {
+        c = 0;
+        if ([cur_pwd.text length]==0) {
+            [self ShowAlert:@"Enter the current password."title:@"Current password"];
+        }
+        else
+        {
+            [self ShowAlert:@"Invalid current password." title:@"Current password"];
+            
+        }
     }
     
 }
@@ -277,18 +293,22 @@
     NSLog(@"tag number %d",textField.tag);
     switch (textField.tag) {
         case 1:
-            if ([du validatePasswordForSignupPage:cur_pwd.text])
+            if ([cur_pwd.text isEqualToString:[delegate.Profiledetails objectForKey:@"password"]] && [du validatePasswordForSignupPage:cur_pwd.text])
             {
             }
             else
             {
                 if ([cur_pwd.text length]==0) {
-                    [self ShowAlert:@"Enter the password." title:@"Current Password"];
+                    [self ShowAlert:@"Enter the current password." title:@"Current password"];
                 }
-                else
+                else if(![du validatePasswordForSignupPage:cur_pwd.text])
                 {
                     [self ShowAlert:@"Should contain 1 alphabet.\nShould contain 1 number.\nShould contain 1 special character.\nShould be 8 to 25 characters."title:@"Current Password"];
                     
+                }
+                else if(![cur_pwd.text isEqualToString:[delegate.Profiledetails objectForKey:@"password"]])
+                {
+                     [self ShowAlert:@"Invalid current password." title:@"Current password"];
                 }
                 //  NSLog(@"ENTER VALID password");
                 
@@ -301,11 +321,11 @@
             else
             {
                 if ([new_pwd.text length]==0) {
-                    [self ShowAlert:@"Enter the password."title:@"New Password"];
+                    [self ShowAlert:@"Enter the new password."title:@"New password"];
                 }
                 else
                 {
-                    [self ShowAlert:@"Should contain 1 alphabet.\nShould contain 1 number.\nShould contain 1 special character.\nShould be 8 to 25 characters."title:@"New Password"];
+                    [self ShowAlert:@"Should contain 1 alphabet.\nShould contain 1 number.\nShould contain 1 special character.\nShould be 8 to 25 characters."title:@"New password"];
                     
                 }
                 //  NSLog(@"ENTER VALID password");
@@ -313,14 +333,28 @@
             }
             break;
         case 3:
-            if ([new_pwd.text isEqualToString:cfm_pwd.text])
+            if ([du validatePasswordForSignupPage:cfm_pwd.text]&&[new_pwd.text isEqualToString:cfm_pwd.text])
             {
+                
             }
             else
             {
+                if ([cfm_pwd.text length]==0)
+                {
+                    [self ShowAlert:@"Enter the confirm password."title:@"Confirm password"];
+                }
+                else if(![du validatePasswordForSignupPage:cfm_pwd.text])
+                {
+                    
+                    [self ShowAlert:@"Should contain 1 alphabet.\nShould contain 1 number.\nShould contain 1 special character.\nShould be 8 to 25 characters."title:@"Confirm password"];
+                    
+                }
+                else if(![new_pwd.text isEqualToString:cfm_pwd.text])
+                {
+                    [self ShowAlert:@"Password and Confirm Password should be same."title:@"Password"];
+                }
                 
-                
-                [self ShowAlert:@"Password and Confirm Password should be same."title:@"Password"];
+               
                 
                 
                 //  NSLog(@"Password mismatch");

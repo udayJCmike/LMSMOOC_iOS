@@ -183,11 +183,11 @@
                                 {
                                     c = 0;
                                     if ([cpassword.text length]==0) {
-                                        [self ShowAlert:@"Enter the confirm password."title:@"Confirm Password"];
+                                        [self ShowAlert:@"Enter the confirm password."title:@"Confirm password"];
                                     }
                                     else
                                     {
-                                        [self ShowAlert:@"Password and Confirm Password should be same."title:@"Confirm Password"];
+                                        [self ShowAlert:@"Should contain 1 alphabet.\nShould contain 1 number.\nShould contain 1 special character.\nShould be 8 to 25 characters."title:@"Confirm password"];
                                         
                                     }
                                   //  NSLog(@"ENTER VALID confirm password");
@@ -334,8 +334,7 @@
 
 -(void)signupdata
 {
-   NSString *first= [fname.text stringByReplacingOccurrencesOfString:@" " withString:@""];
-   first= [first uppercaseString];
+   NSString *first= [fname.text capitalizedString];
     NSString *response=[self HttpPostEntityFirst1:@"firstname" ForValue1:first  EntitySecond:@"authkey" ForValue2:@"rzTFevN099Km39PV"];
   
     NSError *error;
@@ -402,8 +401,7 @@
 }
 -(NSString *)HttpPostEntityFirst1:(NSString*)firstEntity ForValue1:(NSString*)value1 EntitySecond:(NSString*)secondEntity ForValue2:(NSString*)value2
 {
-    NSString *second= [lname.text stringByReplacingOccurrencesOfString:@" " withString:@""];
-    second= [second uppercaseString];
+    NSString *second= [lname.text capitalizedString];
     NSString *urltemp=[[databaseurl sharedInstance]DBurl];
     NSString *url1=@"Signup.php?service=signup";
     NSString *url2=[NSString stringWithFormat:@"%@%@",urltemp,url1];
@@ -771,19 +769,35 @@
             }
             break;
         case 6:
-            if ([password.text isEqualToString:cpassword.text])
+           
+            if ([du validatePasswordForSignupPage:cpassword.text]&&[password.text isEqualToString:cpassword.text])
             {
+                
             }
             else
             {
-               
+                if ([cpassword.text length]==0)
+                {
+                    [self ShowAlert:@"Enter the confirm password."title:@"Confirm password"];
+                }
+                else if(![du validatePasswordForSignupPage:cpassword.text])
+                {
+                    
+                    [self ShowAlert:@"Should contain 1 alphabet.\nShould contain 1 number.\nShould contain 1 special character.\nShould be 8 to 25 characters."title:@"Confirm password"];
+                    
+                }
+                else if(![password.text isEqualToString:cpassword.text])
+                {
+                    [self ShowAlert:@"Password and Confirm Password should be same."title:@"Password"];
+                }
                 
-                [self ShowAlert:@"Password and Confirm Password should be same."title:@"Password"];
+                
                 
                 
                 //  NSLog(@"Password mismatch");
                 
             }
+
             break;
         default:
             break;

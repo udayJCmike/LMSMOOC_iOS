@@ -172,7 +172,6 @@
     if (fname.text.length>0 &&
         lname.text.length>0 &&
         username.text.length>0 &&
-        password.text.length>0 &&
         email.text.length>0
          )
     {
@@ -187,6 +186,7 @@
                     {
                         
                             if (![interestedval isEqualToString:@"null"] && [interestedval length]!=0) {
+                                
                                 if (![genderval isEqualToString:@"null"]&& [genderval length]!=0) {
                                     c=1;
                                 }
@@ -731,8 +731,7 @@
 
 -(void)signupdata
 {
-    NSString *first= [fname.text stringByReplacingOccurrencesOfString:@" " withString:@""];
-    first= [first uppercaseString];
+    NSString *first= [fname.text capitalizedString];
    
     NSString *response=[self HttpPostEntityFirst1:@"firstname" ForValue1:first  EntitySecond:@"authkey" ForValue2:@"rzTFevN099Km39PV"];
     
@@ -792,8 +791,7 @@
 {
     NSString *avatar;
     NSString *userid=[[NSUserDefaults standardUserDefaults]valueForKey:@"userid"];
-    NSString *second= [lname.text stringByReplacingOccurrencesOfString:@" " withString:@""];
-    second= [second uppercaseString];
+    NSString *second= [lname.text capitalizedString];
   
     if (uploaded) {
         avatar=[NSString stringWithFormat:@"S%@.jpg",userid ];
@@ -1105,6 +1103,7 @@
 
    
     [super dealloc];
+   
     if ( HUD!=nil) {
         
         HUD . Delegate = nil ;

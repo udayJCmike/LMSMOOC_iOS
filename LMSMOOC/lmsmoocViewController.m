@@ -216,7 +216,7 @@
 }
 
 @end
-@implementation UIPageViewController (Additions)
+/*@implementation UIPageViewController (Additions)
 
 - (void)setViewControllers:(NSArray *)viewControllers direction:(UIPageViewControllerNavigationDirection)direction invalidateCache:(BOOL)invalidateCache animated:(BOOL)animated completion:(void (^)(BOOL finished))completion {
     NSArray *vcs = viewControllers;
@@ -235,4 +235,4 @@
     }
 }
 
-@end
+@end*/
