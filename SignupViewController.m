@@ -380,13 +380,17 @@
             {
                 [HUD hide:YES];
                 NSString *response=[menu objectForKey:@"emaill"];
-                if ([response isEqualToString:@"emailexist"]) {
+                if ([response isEqualToString:@"emailexist"])
+                {
+                    email.text=@"";
+                   
                 
-                     [self ShowAlert:@"Email id exist." title:@"Email id"];
+                     [self ShowAlert:@"Email id already exist." title:@"Email id"];
                 }
-                else if ([response isEqualToString:@"usernameexist"]) {
-                    
-                     [self ShowAlert:@"Username exist." title:@"Username"];
+                else if ([response isEqualToString:@"usernameexist"])
+                {
+                     username.text=@"";
+                     [self ShowAlert:@"Username already exist." title:@"Username"];
                 }
                 else
                 {
@@ -678,7 +682,8 @@
                         }
                     else  if ([[menu objectForKey:@"emaill"] isEqualToString:@"usernameexist"])
                     {
-                        [self ShowAlert:@"Username exist." title:@"Username"];
+                        username.text=@"";
+                        [self ShowAlert:@"Username already exist." title:@"Username"];
                     }
                 }
 
@@ -731,7 +736,8 @@
                     }
                     else  if ([[menu objectForKey:@"emaill"] isEqualToString:@"emailexist"])
                     {
-                        [self ShowAlert:@"Email id exist."title:@"Email id"];
+                        email.text=@"";
+                        [self ShowAlert:@"Email id already exist."title:@"Email id"];
                     }
                 }
             }
