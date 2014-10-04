@@ -75,7 +75,7 @@
         [view addSubview:label];
         view;
     });
-    titles = [[NSArray alloc]initWithObjects:@"Home", @"Profile", @"Inbox",@"My Courses",@"My Favorites",@"My Categories",@"My Authors",@"Billing",@"Change Password",@"Logout",nil];
+    titles = [[NSArray alloc]initWithObjects:@"Home", @"Profile",@"Change Password", @"Inbox",@"My Courses",@"My Favorites",@"My Categories",@"My Authors",@"Billing",@"Logout",nil];
 
 }
 -(void)reloadTableContent
@@ -163,39 +163,40 @@
     }
     else if(indexPath.section == 0 && indexPath.row == 2) {
         
-        MailinboxTableViewController *secondViewController2 = [self.storyboard instantiateViewControllerWithIdentifier:@"mailinbox"];
+        ChangePasswordViewController *secondViewController2 = [self.storyboard instantiateViewControllerWithIdentifier:@"ChangePassword"];
         navigationController.viewControllers = @[secondViewController2];
     }
     else if(indexPath.section == 0 && indexPath.row == 3) {
         
-        MycoursesViewController *secondViewController2 = [self.storyboard instantiateViewControllerWithIdentifier:@"mycourse"];
+        MailinboxTableViewController *secondViewController2 = [self.storyboard instantiateViewControllerWithIdentifier:@"mailinbox"];
         navigationController.viewControllers = @[secondViewController2];
     }
     else if(indexPath.section == 0 && indexPath.row == 4) {
         
-        MyfavoritesViewController *secondViewController2 = [self.storyboard instantiateViewControllerWithIdentifier:@"myfavorites"];
+        MycoursesViewController *secondViewController2 = [self.storyboard instantiateViewControllerWithIdentifier:@"mycourse"];
         navigationController.viewControllers = @[secondViewController2];
     }
     else if(indexPath.section == 0 && indexPath.row == 5) {
         
-        MycategoriesViewController *secondViewController2 = [self.storyboard instantiateViewControllerWithIdentifier:@"mycategories"];
+        MyfavoritesViewController *secondViewController2 = [self.storyboard instantiateViewControllerWithIdentifier:@"myfavorites"];
         navigationController.viewControllers = @[secondViewController2];
     }
     else if(indexPath.section == 0 && indexPath.row == 6) {
         
-        MyauthorsTableViewController *secondViewController2 = [self.storyboard instantiateViewControllerWithIdentifier:@"myauthors"];
+        MycategoriesViewController *secondViewController2 = [self.storyboard instantiateViewControllerWithIdentifier:@"mycategories"];
         navigationController.viewControllers = @[secondViewController2];
     }
     else if(indexPath.section == 0 && indexPath.row == 7) {
         
-        BillingTableViewController *secondViewController2 = [self.storyboard instantiateViewControllerWithIdentifier:@"Billing"];
+        MyauthorsTableViewController *secondViewController2 = [self.storyboard instantiateViewControllerWithIdentifier:@"myauthors"];
         navigationController.viewControllers = @[secondViewController2];
     }
     else if(indexPath.section == 0 && indexPath.row == 8) {
         
-        ChangePasswordViewController *secondViewController2 = [self.storyboard instantiateViewControllerWithIdentifier:@"ChangePassword"];
+        BillingTableViewController *secondViewController2 = [self.storyboard instantiateViewControllerWithIdentifier:@"Billing"];
         navigationController.viewControllers = @[secondViewController2];
     }
+   
     
     else if(indexPath.section == 0 && indexPath.row == 9)
     {
