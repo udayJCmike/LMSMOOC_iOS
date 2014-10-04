@@ -10,29 +10,29 @@
 	<string>LMSMOOC</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>3DA27936-7E6E-4798-8916-B46324239461</key>
+		<key>02B2F51A1C76A8C332527164D67F5D2AE9D99971</key>
 		<string>https://github.com/udayJCmike/LMSMOOC_iOS.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>LMSMOOC.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>3DA27936-7E6E-4798-8916-B46324239461</key>
+		<key>02B2F51A1C76A8C332527164D67F5D2AE9D99971</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/udayJCmike/LMSMOOC_iOS.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>3DA27936-7E6E-4798-8916-B46324239461</string>
+	<string>02B2F51A1C76A8C332527164D67F5D2AE9D99971</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>3DA27936-7E6E-4798-8916-B46324239461</string>
+			<string>02B2F51A1C76A8C332527164D67F5D2AE9D99971</string>
 			<key>IDESourceControlWCCName</key>
 			<string>LMSMOOC_iOS</string>
 		</dict>

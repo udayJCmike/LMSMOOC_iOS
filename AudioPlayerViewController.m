@@ -216,7 +216,10 @@
 
 
 
-- (void)dealloc {
-
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.player pause];
+    
 }
 @end

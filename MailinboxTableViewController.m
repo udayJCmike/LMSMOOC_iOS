@@ -123,7 +123,7 @@
         {
             NSDictionary *arrayList1= [Listofdatas objectAtIndex:i];
             NSDictionary *temp=[arrayList1 objectForKey:@"serviceresponse"];
-            NSLog(@"%@",[temp objectForKey:@"inbox_id"]);
+//            NSLog(@"%@",[temp objectForKey:@"inbox_id"]);
             if([[temp objectForKey:@"read_status"]isEqualToString:@"0"])
             {
                 unread++;

@@ -18,6 +18,10 @@
 		0D9870D319DAAF1100D498B6 /* audioarts.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D9870D219DAAF1100D498B6 /* audioarts.png */; };
 		0D9870D619DAE1A100D498B6 /* downArrowBlack.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D9870D419DAE1A100D498B6 /* downArrowBlack.png */; };
 		0D9870D719DAE1A100D498B6 /* upArrowBlack.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D9870D519DAE1A100D498B6 /* upArrowBlack.png */; };
+		0DA598AC19DFD8470004CD2C /* checkBox.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DA598A819DFD8470004CD2C /* checkBox.png */; };
+		0DA598AD19DFD8470004CD2C /* checkBox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DA598A919DFD8470004CD2C /* checkBox@2x.png */; };
+		0DA598AE19DFD8470004CD2C /* checkBoxMarked.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DA598AA19DFD8470004CD2C /* checkBoxMarked.png */; };
+		0DA598AF19DFD8470004CD2C /* checkBoxMarked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DA598AB19DFD8470004CD2C /* checkBoxMarked@2x.png */; };
 		0DAFD00219BEC75500A1E509 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DAFD00119BEC75500A1E509 /* CoreGraphics.framework */; };
 		0DAFD00419BEC75500A1E509 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DAFD00319BEC75500A1E509 /* UIKit.framework */; };
 		0DAFD00A19BEC75500A1E509 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0DAFD00819BEC75500A1E509 /* InfoPlist.strings */; };
@@ -57,10 +61,6 @@
 		844A9CB419C19A4D000A5449 /* Avatarimagecell.m in Sources */ = {isa = PBXBuildFile; fileRef = 844A9CB319C19A4D000A5449 /* Avatarimagecell.m */; };
 		844A9CB619C1A2BB000A5449 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 844A9CB519C1A2BB000A5449 /* placeholder.png */; };
 		844A9CB819C1A765000A5449 /* photo-frame.png in Resources */ = {isa = PBXBuildFile; fileRef = 844A9CB719C1A765000A5449 /* photo-frame.png */; };
-		845B10A119BF2D5B00AAE3E4 /* checkBox.png in Resources */ = {isa = PBXBuildFile; fileRef = 845B109D19BF2D5B00AAE3E4 /* checkBox.png */; };
-		845B10A219BF2D5B00AAE3E4 /* checkBox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 845B109E19BF2D5B00AAE3E4 /* checkBox@2x.png */; };
-		845B10A319BF2D5B00AAE3E4 /* checkBoxMarked.png in Resources */ = {isa = PBXBuildFile; fileRef = 845B109F19BF2D5B00AAE3E4 /* checkBoxMarked.png */; };
-		845B10A419BF2D5B00AAE3E4 /* checkBoxMarked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 845B10A019BF2D5B00AAE3E4 /* checkBoxMarked@2x.png */; };
 		8470B50A19CD40FF008A5809 /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8470B50919CD40FF008A5809 /* ChangePasswordViewController.m */; };
 		8470B50C19CD624E008A5809 /* BrowseCourses.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8470B50B19CD624E008A5809 /* BrowseCourses.storyboard */; };
 		8470B50E19CD6423008A5809 /* BrowseCourses_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8470B50D19CD6423008A5809 /* BrowseCourses_iPad.storyboard */; };
@@ -180,6 +180,10 @@
 		0D9870D219DAAF1100D498B6 /* audioarts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = audioarts.png; sourceTree = "<group>"; };
 		0D9870D419DAE1A100D498B6 /* downArrowBlack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = downArrowBlack.png; sourceTree = "<group>"; };
 		0D9870D519DAE1A100D498B6 /* upArrowBlack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upArrowBlack.png; sourceTree = "<group>"; };
+		0DA598A819DFD8470004CD2C /* checkBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkBox.png; sourceTree = "<group>"; };
+		0DA598A919DFD8470004CD2C /* checkBox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkBox@2x.png"; sourceTree = "<group>"; };
+		0DA598AA19DFD8470004CD2C /* checkBoxMarked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkBoxMarked.png; sourceTree = "<group>"; };
+		0DA598AB19DFD8470004CD2C /* checkBoxMarked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkBoxMarked@2x.png"; sourceTree = "<group>"; };
 		0DAFCFFC19BEC75500A1E509 /* LMSMOOC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LMSMOOC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DAFCFFF19BEC75500A1E509 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0DAFD00119BEC75500A1E509 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -234,10 +238,6 @@
 		844A9CB319C19A4D000A5449 /* Avatarimagecell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Avatarimagecell.m; sourceTree = "<group>"; };
 		844A9CB519C1A2BB000A5449 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
 		844A9CB719C1A765000A5449 /* photo-frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo-frame.png"; sourceTree = "<group>"; };
-		845B109D19BF2D5B00AAE3E4 /* checkBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = checkBox.png; path = LMSMOOC/checkBox.png; sourceTree = "<group>"; };
-		845B109E19BF2D5B00AAE3E4 /* checkBox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "checkBox@2x.png"; path = "LMSMOOC/checkBox@2x.png"; sourceTree = "<group>"; };
-		845B109F19BF2D5B00AAE3E4 /* checkBoxMarked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = checkBoxMarked.png; path = LMSMOOC/checkBoxMarked.png; sourceTree = "<group>"; };
-		845B10A019BF2D5B00AAE3E4 /* checkBoxMarked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "checkBoxMarked@2x.png"; path = "LMSMOOC/checkBoxMarked@2x.png"; sourceTree = "<group>"; };
 		8470B50819CD40FF008A5809 /* ChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordViewController.h; sourceTree = "<group>"; };
 		8470B50919CD40FF008A5809 /* ChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordViewController.m; sourceTree = "<group>"; };
 		8470B50B19CD624E008A5809 /* BrowseCourses.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BrowseCourses.storyboard; sourceTree = "<group>"; };
@@ -442,6 +442,10 @@
 		0DAFCFF319BEC75500A1E509 = {
 			isa = PBXGroup;
 			children = (
+				0DA598A819DFD8470004CD2C /* checkBox.png */,
+				0DA598A919DFD8470004CD2C /* checkBox@2x.png */,
+				0DA598AA19DFD8470004CD2C /* checkBoxMarked.png */,
+				0DA598AB19DFD8470004CD2C /* checkBoxMarked@2x.png */,
 				84EDDB6819D28C5E00FEAE95 /* LectureDetails */,
 				849CE1AC19D00399001F78C0 /* ViewPager */,
 				849CE1A219D000CC001F78C0 /* Course Detail */,
@@ -619,7 +623,6 @@
 		845B10A519BF2D5E00AAE3E4 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				845B109D19BF2D5B00AAE3E4 /* checkBox.png */,
 				0DFCDC3219CAB990002D317D /* 1star.png */,
 				0D9870D219DAAF1100D498B6 /* audioarts.png */,
 				0D1A273F19D938FD008E7EA9 /* add.png */,
@@ -629,9 +632,6 @@
 				0DFCDC3519CAB990002D317D /* 4star.png */,
 				0DFCDC3619CAB990002D317D /* 5star.png */,
 				0D3C959619C329C80065A4B4 /* edit.png */,
-				845B109E19BF2D5B00AAE3E4 /* checkBox@2x.png */,
-				845B109F19BF2D5B00AAE3E4 /* checkBoxMarked.png */,
-				845B10A019BF2D5B00AAE3E4 /* checkBoxMarked@2x.png */,
 				840B833819BF23340065B678 /* navlogo.png */,
 			);
 			name = Images;
@@ -1044,9 +1044,6 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = deemsys;
 				TargetAttributes = {
-					0DAFCFFB19BEC75500A1E509 = {
-						DevelopmentTeam = 6N5EE6FZH9;
-					};
 					0DAFD01F19BEC75500A1E509 = {
 						TestTargetID = 0DAFCFFB19BEC75500A1E509;
 					};
@@ -1080,11 +1077,11 @@
 				0DFCDC3A19CAB990002D317D /* 4star.png in Resources */,
 				0D1A273E19D9302E008E7EA9 /* logo.png in Resources */,
 				847635DA19C03FCC00F45CEF /* ban4.png in Resources */,
-				845B10A319BF2D5B00AAE3E4 /* checkBoxMarked.png in Resources */,
 				0D2E930A19C42C00005C4E67 /* important.png in Resources */,
+				0DA598AF19DFD8470004CD2C /* checkBoxMarked@2x.png in Resources */,
 				0DFCDC3919CAB990002D317D /* 3star.png in Resources */,
+				0DA598AE19DFD8470004CD2C /* checkBoxMarked.png in Resources */,
 				0DFCDC3119CAB1BB002D317D /* search.png in Resources */,
-				845B10A119BF2D5B00AAE3E4 /* checkBox.png in Resources */,
 				843287C919D57429000925EA /* text.png in Resources */,
 				847635DB19C03FCC00F45CEF /* bantab1.png in Resources */,
 				84FC7D9819C017750001FD7C /* Dashboard_iPhone.storyboard in Resources */,
@@ -1092,7 +1089,6 @@
 				0DAFD01B19BEC75500A1E509 /* Images.xcassets in Resources */,
 				0DFCDC3819CAB990002D317D /* 2star.png in Resources */,
 				84F59B6719C2AD89009EF252 /* Main_iPhone.storyboard in Resources */,
-				845B10A219BF2D5B00AAE3E4 /* checkBox@2x.png in Resources */,
 				847635DD19C03FCC00F45CEF /* bantab3.png in Resources */,
 				847635ED19C07CFC00F45CEF /* menu_icon.png in Resources */,
 				84082A6519C834490039F4E8 /* btn_close_selected@2x.png in Resources */,
@@ -1102,13 +1098,13 @@
 				847635DE19C03FCC00F45CEF /* bantab4.png in Resources */,
 				0D9870D719DAE1A100D498B6 /* upArrowBlack.png in Resources */,
 				84FC7D9A19C017880001FD7C /* Dashboard_iPad.storyboard in Resources */,
+				0DA598AD19DFD8470004CD2C /* checkBox@2x.png in Resources */,
 				849C795619D2CBD80009F3DD /* play_button.png in Resources */,
 				84F59B6B19C2AE28009EF252 /* bantab5.png in Resources */,
 				84082A6419C834490039F4E8 /* btn_close_selected.png in Resources */,
 				0D1A274019D938FD008E7EA9 /* add.png in Resources */,
 				849C795519D2CBD80009F3DD /* pause_button@2x.png in Resources */,
 				8470B50E19CD6423008A5809 /* BrowseCourses_iPad.storyboard in Resources */,
-				845B10A419BF2D5B00AAE3E4 /* checkBoxMarked@2x.png in Resources */,
 				0DFCDC3719CAB990002D317D /* 1star.png in Resources */,
 				84FC7DB919C01C680001FD7C /* Avatar-female.png in Resources */,
 				8470B50C19CD624E008A5809 /* BrowseCourses.storyboard in Resources */,
@@ -1121,6 +1117,7 @@
 				0D9870D619DAE1A100D498B6 /* downArrowBlack.png in Resources */,
 				84F59B6A19C2AE28009EF252 /* ban5.png in Resources */,
 				844A9CB819C1A765000A5449 /* photo-frame.png in Resources */,
+				0DA598AC19DFD8470004CD2C /* checkBox.png in Resources */,
 				849C795719D2CBD80009F3DD /* play_button@2x.png in Resources */,
 				847635D819C03FCC00F45CEF /* ban2.png in Resources */,
 				847635D919C03FCC00F45CEF /* ban3.png in Resources */,
@@ -1302,7 +1299,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "c70b3525-c1f6-4a9d-95d0-89fed509b6f4";
+				PROVISIONING_PROFILE = "E0427A02-CC24-48C6-AE19-C25033B1E771";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1336,7 +1333,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PROVISIONING_PROFILE = "c70b3525-c1f6-4a9d-95d0-89fed509b6f4";
+				PROVISIONING_PROFILE = "E0427A02-CC24-48C6-AE19-C25033B1E771";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1356,7 +1353,7 @@
 				INFOPLIST_FILE = "LMSMOOC/LMSMOOC-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c70b3525-c1f6-4a9d-95d0-89fed509b6f4";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1374,7 +1371,7 @@
 				INFOPLIST_FILE = "LMSMOOC/LMSMOOC-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c70b3525-c1f6-4a9d-95d0-89fed509b6f4";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

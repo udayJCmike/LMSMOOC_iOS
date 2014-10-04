@@ -44,10 +44,15 @@
             }
         }
     }
+    else
+        
+    {
+        self.tableheightConstraint.constant = 568;
+    }
     self.navigationItem.title=@"Add Categories";
     // Do any additional setup after loading the view.
-    selectedimage=[UIImage imageNamed:@"checkBoxMarked.png"];
-    unselectedimage=[UIImage imageNamed:@"checkBox.png"];
+    selectedimage=[UIImage imageNamed:@"checkBoxMarked"];
+    unselectedimage=[UIImage imageNamed:@"checkBox"];
 //  self.category_tableView.allowsMultipleSelection = YES;
     category_tableView.dataSource=self;
     category_tableView.delegate=self;
@@ -212,7 +217,7 @@
                 [categorylist addObject:[arrayList1 objectForKey:@"category_name"]];
                 
             }
-            // NSLog(@"category values %@",categorylist);
+//             NSLog(@"category values %@",categorylist);
         }
         else
         {
@@ -276,6 +281,14 @@
 {
     return 1;
 }
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 44;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 44;
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [categorylist count];
@@ -294,7 +307,11 @@
     }
     
     cell.textLabel.text = [categorylist objectAtIndex:indexPath.row];
-    cell.marked.image=unselectedimage;
+//    NSLog(@"cell for row %@",[categorylist objectAtIndex:indexPath.row]);
+   
+    cell.marked.image=[UIImage imageNamed:@"checkBox"];
+  
+ 
    
    // cell.marked.image = ([selectedlist containsObject:[categorylist objectAtIndex:indexPath.row]]) ? selectedimage : unselectedimage;
     //  NSLog(@"category data %@", cell.textLabel.text);
@@ -312,14 +329,14 @@
     {
         AddCategoriesTableViewCell *tableViewCell =(AddCategoriesTableViewCell*) [tableView cellForRowAtIndexPath:indexPath];
        
-        tableViewCell.marked.image=selectedimage;
+        tableViewCell.marked.image=[UIImage imageNamed:@"checkBoxMarked"];
         [selectedlist addObject:[categorylist objectAtIndex:indexPath.row]];
     }
     else if([selectedlist containsObject:[categorylist objectAtIndex:indexPath.row]])
     {
         AddCategoriesTableViewCell *tableViewCell =(AddCategoriesTableViewCell*) [tableView cellForRowAtIndexPath:indexPath];
         
-        tableViewCell.marked.image=unselectedimage;
+        tableViewCell.marked.image=[UIImage imageNamed:@"checkBox"];
         [selectedlist removeObject:[categorylist objectAtIndex:indexPath.row]];
     }
     
