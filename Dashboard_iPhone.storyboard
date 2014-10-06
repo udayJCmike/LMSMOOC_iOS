@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="A38-Kj-S6y">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="A38-Kj-S6y">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--Dashboardcontainer View Controller-->
@@ -49,9 +49,77 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uZL-99-u3e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-880" y="573"/>
+            <point key="canvasLocation" x="-1208" y="-399"/>
         </scene>
-        <!--Change Password -->
+        <!--About Page View Controller - About us-->
+        <scene sceneID="nCw-6W-JXm">
+            <objects>
+                <viewController storyboardIdentifier="About" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KBJ-KF-72H" customClass="AboutPageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oIz-zU-Wos"/>
+                        <viewControllerLayoutGuide type="bottom" id="h4p-8I-eaC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qVs-C8-PlP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="2HW-Pp-wJN">
+                                <rect key="frame" x="34" y="69" width="252" height="62"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WbW-H3-ejH">
+                                <rect key="frame" x="32" y="139" width="256" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Version No:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSS-du-08c">
+                                <rect key="frame" x="20" y="186" width="123" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AeP-ii-l67">
+                                <rect key="frame" x="141" y="186" width="123" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Build No:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bwg-2J-pJt">
+                                <rect key="frame" x="20" y="226" width="123" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Designed and Developed by" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZJ-vC-OCU">
+                                <rect key="frame" x="20" y="304" width="244" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Deemsys Inc." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pg8-Gn-dTE">
+                                <rect key="frame" x="20" y="327" width="98" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0aS-wN-dLm">
+                                <rect key="frame" x="141" y="226" width="123" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="About us" id="eEk-Lz-cLB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xb4-0w-NB5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-388" y="1136"/>
+        </scene>
+        <!--Change Password View Controller - Change Password -->
         <scene sceneID="vcW-2R-jSD">
             <objects>
                 <viewController storyboardIdentifier="ChangePassword" useStoryboardIdentifierAsRestorationIdentifier="YES" id="O4I-cz-xgl" customClass="ChangePasswordViewController" sceneMemberID="viewController">
@@ -311,13 +379,14 @@
                         <segue destination="uAX-QL-B4W" kind="push" id="R0P-oy-pYt"/>
                         <segue destination="N8q-I8-sSk" kind="push" id="dWY-qc-auO"/>
                         <segue destination="O4I-cz-xgl" kind="push" id="xLT-a4-4vI"/>
+                        <segue destination="KBJ-KF-72H" kind="push" id="hTk-Of-861"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ddr-1k-EAs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-378" y="-550"/>
         </scene>
-        <!--Profile-->
+        <!--Profile Update View Controller - Profile-->
         <scene sceneID="lmI-Gu-0dh">
             <objects>
                 <viewController storyboardIdentifier="Profile" id="29E-oz-Do0" customClass="ProfileUpdateViewController" sceneMemberID="viewController">
@@ -498,7 +567,7 @@
             </objects>
             <point key="canvasLocation" x="229" y="-2439"/>
         </scene>
-        <!--Inbox-->
+        <!--Mailinbox Table View Controller - Inbox-->
         <scene sceneID="dnp-3V-eAW">
             <objects>
                 <tableViewController storyboardIdentifier="mailinbox" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dGE-ak-b0W" customClass="MailinboxTableViewController" sceneMemberID="viewController">
@@ -552,7 +621,7 @@
             </objects>
             <point key="canvasLocation" x="1175" y="-3481"/>
         </scene>
-        <!--Message-->
+        <!--Mail Details View Controller - Message-->
         <scene sceneID="T9H-jq-hZ4">
             <objects>
                 <viewController id="Y6D-Xs-aK5" customClass="MailDetailsViewController" sceneMemberID="viewController">
@@ -655,7 +724,7 @@
             </objects>
             <point key="canvasLocation" x="1640" y="-3515"/>
         </scene>
-        <!--Billings-->
+        <!--Billing Table View Controller - Billings-->
         <scene sceneID="GuO-Se-VLi">
             <objects>
                 <tableViewController storyboardIdentifier="Billing" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nYE-1G-VxJ" customClass="BillingTableViewController" sceneMemberID="viewController">
@@ -745,7 +814,7 @@
             </objects>
             <point key="canvasLocation" x="331" y="573"/>
         </scene>
-        <!--Billing-->
+        <!--Billing Detail View Controller - Billing-->
         <scene sceneID="Cuu-d8-utx">
             <objects>
                 <viewController id="jnc-IU-rcH" customClass="BillingDetailViewController" sceneMemberID="viewController">
@@ -903,7 +972,7 @@
             </objects>
             <point key="canvasLocation" x="805" y="573"/>
         </scene>
-        <!--My Authors-->
+        <!--Myauthors Table View Controller - My Authors-->
         <scene sceneID="ta9-dX-aVI">
             <objects>
                 <tableViewController storyboardIdentifier="myauthors" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7PH-hA-qZK" customClass="MyauthorsTableViewController" sceneMemberID="viewController">
@@ -961,7 +1030,7 @@
             </objects>
             <point key="canvasLocation" x="1057" y="-146"/>
         </scene>
-        <!--My Categories-->
+        <!--Mycategories View Controller - My Categories-->
         <scene sceneID="bQe-Fz-G2Y">
             <objects>
                 <viewController storyboardIdentifier="mycategories" useStoryboardIdentifierAsRestorationIdentifier="YES" id="N8q-I8-sSk" customClass="MycategoriesViewController" sceneMemberID="viewController">
@@ -1023,7 +1092,7 @@
             </objects>
             <point key="canvasLocation" x="1501" y="-908"/>
         </scene>
-        <!--Courses-->
+        <!--Courselist i Phone Table View Controller - Courses-->
         <scene sceneID="gLk-iO-jaQ">
             <objects>
                 <viewController storyboardIdentifier="CourseList" useStoryboardIdentifierAsRestorationIdentifier="YES" id="04v-Vj-C5F" customClass="courselist_iPhoneTableViewController" sceneMemberID="viewController">
@@ -1155,7 +1224,7 @@
             </objects>
             <point key="canvasLocation" x="-825" y="-2063"/>
         </scene>
-        <!--Categorywise Datas-->
+        <!--Categorywise Datas View Controller - Categorywise Datas-->
         <scene sceneID="KBA-Gx-Ic9">
             <objects>
                 <viewController id="1zD-YS-pQU" customClass="CategorywiseDatasViewController" sceneMemberID="viewController">
@@ -1254,7 +1323,7 @@
             </objects>
             <point key="canvasLocation" x="-339" y="-2063"/>
         </scene>
-        <!--My Courses-->
+        <!--Mycourses View Controller - My Courses-->
         <scene sceneID="Qnr-rd-KPd">
             <objects>
                 <viewController storyboardIdentifier="mycourse" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sfE-SX-7GF" customClass="MycoursesViewController" sceneMemberID="viewController">
@@ -1353,7 +1422,7 @@
             </objects>
             <point key="canvasLocation" x="1859" y="-2771"/>
         </scene>
-        <!--My Favorites-->
+        <!--Myfavorites View Controller - My Favorites-->
         <scene sceneID="ojH-iq-fBD">
             <objects>
                 <viewController storyboardIdentifier="myfavorites" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uAX-QL-B4W" customClass="MyfavoritesViewController" sceneMemberID="viewController">
@@ -1452,7 +1521,7 @@
             </objects>
             <point key="canvasLocation" x="1517" y="-1616"/>
         </scene>
-        <!--My Category List-->
+        <!--Mycategories Detail View Controller - My Category List-->
         <scene sceneID="yPN-O6-6XB">
             <objects>
                 <viewController storyboardIdentifier="Mycategorydata" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3Nh-Dm-Aet" customClass="MycategoriesDetailViewController" sceneMemberID="viewController">
@@ -1557,7 +1626,7 @@
             </objects>
             <point key="canvasLocation" x="2306" y="-1307"/>
         </scene>
-        <!--Author Course List-->
+        <!--Myauthorcourses View Controller - Author Course List-->
         <scene sceneID="Faw-25-s00">
             <objects>
                 <viewController storyboardIdentifier="Myauthordata" useStoryboardIdentifierAsRestorationIdentifier="YES" id="c2s-k9-hzr" customClass="MyauthorcoursesViewController" sceneMemberID="viewController">
@@ -1684,14 +1753,14 @@
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="mycourses" rowHeight="50" id="niR-NH-wBK" customClass="AddCategoriesTableViewCell">
-                                        <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="86" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="niR-NH-wBK" id="Rkt-uT-k0f">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6NK-9B-E9z">
-                                                    <rect key="frame" x="274" y="9" width="25" height="25"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6NK-9B-E9z">
+                                                    <rect key="frame" x="274" y="12" width="25" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="KOU-mi-o38"/>
                                                         <constraint firstAttribute="width" constant="25" id="Sqe-U6-gXm"/>
@@ -1742,6 +1811,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="logo.png" width="273" height="70"/>
         <image name="placeholder.png" width="420" height="420"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

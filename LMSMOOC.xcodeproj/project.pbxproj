@@ -105,6 +105,10 @@
 		849CE1AF19D003BE001F78C0 /* ViewPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849CE1AE19D003BE001F78C0 /* ViewPagerController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		849CE1B119D0061E001F78C0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849CE1B019D0061E001F78C0 /* QuartzCore.framework */; };
 		849CE1B419D0303A001F78C0 /* SyllabusLectureTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 849CE1B319D0303A001F78C0 /* SyllabusLectureTableViewCell.m */; };
+		84BEB15519E2B99C00187754 /* AboutPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BEB15419E2B99C00187754 /* AboutPageViewController.m */; };
+		84BEB15719E2BE6900187754 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BEB15619E2BE6900187754 /* logo.png */; };
+		84BEB15919E2CDBA00187754 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BEB15819E2CDBA00187754 /* Twitter.framework */; };
+		84BEB15B19E2CDC300187754 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BEB15A19E2CDC300187754 /* Accounts.framework */; };
 		84CBD4FF19C730C500CB50D1 /* CourseDesignTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CBD4FC19C730C500CB50D1 /* CourseDesignTableViewCell.m */; };
 		84CBD50019C730C500CB50D1 /* courselist_iPhoneTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CBD4FE19C730C500CB50D1 /* courselist_iPhoneTableViewController.m */; };
 		84E52CBD19C9B2440042D07A /* CategorywiseDatasiPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E52CBC19C9B2440042D07A /* CategorywiseDatasiPadViewController.m */; };
@@ -302,6 +306,11 @@
 		849CE1B019D0061E001F78C0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		849CE1B219D03039001F78C0 /* SyllabusLectureTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyllabusLectureTableViewCell.h; sourceTree = "<group>"; };
 		849CE1B319D0303A001F78C0 /* SyllabusLectureTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyllabusLectureTableViewCell.m; sourceTree = "<group>"; };
+		84BEB15319E2B99C00187754 /* AboutPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutPageViewController.h; sourceTree = "<group>"; };
+		84BEB15419E2B99C00187754 /* AboutPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutPageViewController.m; sourceTree = "<group>"; };
+		84BEB15619E2BE6900187754 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		84BEB15819E2CDBA00187754 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		84BEB15A19E2CDC300187754 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		84CBD4FB19C730C500CB50D1 /* CourseDesignTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseDesignTableViewCell.h; sourceTree = "<group>"; };
 		84CBD4FC19C730C500CB50D1 /* CourseDesignTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseDesignTableViewCell.m; sourceTree = "<group>"; };
 		84CBD4FD19C730C500CB50D1 /* courselist_iPhoneTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = courselist_iPhoneTableViewController.h; sourceTree = "<group>"; };
@@ -401,6 +410,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84BEB15B19E2CDC300187754 /* Accounts.framework in Frameworks */,
+				84BEB15919E2CDBA00187754 /* Twitter.framework in Frameworks */,
 				0DD2946119DA87040027E5A3 /* Foundation.framework in Frameworks */,
 				849C795919D2CFA80009F3DD /* AVFoundation.framework in Frameworks */,
 				849C794F19D2C51B0009F3DD /* MediaPlayer.framework in Frameworks */,
@@ -442,6 +453,7 @@
 		0DAFCFF319BEC75500A1E509 = {
 			isa = PBXGroup;
 			children = (
+				84BEB15219E2B98B00187754 /* About */,
 				0DA598A819DFD8470004CD2C /* checkBox.png */,
 				0DA598A919DFD8470004CD2C /* checkBox@2x.png */,
 				0DA598AA19DFD8470004CD2C /* checkBoxMarked.png */,
@@ -490,6 +502,8 @@
 		0DAFCFFE19BEC75500A1E509 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84BEB15A19E2CDC300187754 /* Accounts.framework */,
+				84BEB15819E2CDBA00187754 /* Twitter.framework */,
 				849C795819D2CFA80009F3DD /* AVFoundation.framework */,
 				849C794E19D2C51B0009F3DD /* MediaPlayer.framework */,
 				849CE1B019D0061E001F78C0 /* QuartzCore.framework */,
@@ -792,6 +806,16 @@
 				0D9870D519DAE1A100D498B6 /* upArrowBlack.png */,
 			);
 			name = Syllabus;
+			sourceTree = "<group>";
+		};
+		84BEB15219E2B98B00187754 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				84BEB15619E2BE6900187754 /* logo.png */,
+				84BEB15319E2B99C00187754 /* AboutPageViewController.h */,
+				84BEB15419E2B99C00187754 /* AboutPageViewController.m */,
+			);
+			name = About;
 			sourceTree = "<group>";
 		};
 		84CBD4FA19C730A100CB50D1 /* CourseList_iPhone */ = {
@@ -1123,6 +1147,7 @@
 				847635D919C03FCC00F45CEF /* ban3.png in Resources */,
 				843287CA19D57429000925EA /* video.png in Resources */,
 				843287C819D57429000925EA /* audio.png in Resources */,
+				84BEB15719E2BE6900187754 /* logo.png in Resources */,
 				84F59B6619C2AD89009EF252 /* Main_iPad.storyboard in Resources */,
 				849C795419D2CBD80009F3DD /* pause_button.png in Resources */,
 				0DAFD00A19BEC75500A1E509 /* InfoPlist.strings in Resources */,
@@ -1204,6 +1229,7 @@
 				84E52CBD19C9B2440042D07A /* CategorywiseDatasiPadViewController.m in Sources */,
 				84EC715819CAD77000529168 /* MycategoriesDetailViewController.m in Sources */,
 				84F59B7119C2FC37009EF252 /* MAILinboxTableViewCell.m in Sources */,
+				84BEB15519E2B99C00187754 /* AboutPageViewController.m in Sources */,
 				84E52CC319C9D0A90042D07A /* categorypopoverViewController.m in Sources */,
 				84CBD4FF19C730C500CB50D1 /* CourseDesignTableViewCell.m in Sources */,
 				840B832F19BF074F0065B678 /* LoginPageViewController.m in Sources */,

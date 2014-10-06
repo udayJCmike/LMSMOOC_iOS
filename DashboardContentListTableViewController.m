@@ -75,7 +75,7 @@
         [view addSubview:label];
         view;
     });
-    titles = [[NSArray alloc]initWithObjects:@"Home", @"Profile",@"Change Password", @"Inbox",@"My Courses",@"My Favorites",@"My Categories",@"My Authors",@"Billing",@"Logout",nil];
+    titles = [[NSArray alloc]initWithObjects:@"Home", @"Profile",@"Change Password", @"Inbox",@"My Courses",@"My Favorites",@"My Categories",@"My Authors",@"Billing",@"About",@"Logout",nil];
 
 }
 -(void)reloadTableContent
@@ -196,9 +196,14 @@
         BillingTableViewController *secondViewController2 = [self.storyboard instantiateViewControllerWithIdentifier:@"Billing"];
         navigationController.viewControllers = @[secondViewController2];
     }
+    else if(indexPath.section == 0 && indexPath.row == 9) {
+        
+        AboutPageViewController *secondViewController2 = [self.storyboard instantiateViewControllerWithIdentifier:@"About"];
+        navigationController.viewControllers = @[secondViewController2];
+    }
    
     
-    else if(indexPath.section == 0 && indexPath.row == 9)
+    else if(indexPath.section == 0 && indexPath.row == 10)
     {
         [self.navigationController popToRootViewControllerAnimated:NO];
         [self.frostedViewController hideMenuViewController];

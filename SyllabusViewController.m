@@ -165,9 +165,9 @@
     UILabel *headerString           = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, self.view.frame.size.width-20, 50)];
     BOOL manyCells                  = [[arrayForBool objectAtIndex:section] boolValue];
     if (!manyCells) {
-        headerString.text =[sectionTitleArray objectAtIndex:section];
+        headerString.text =[NSString stringWithFormat:@"%ld. %@",(long)section+1,[sectionTitleArray objectAtIndex:section]];
     }else{
-        headerString.text =[sectionTitleArray objectAtIndex:section];
+         headerString.text =[NSString stringWithFormat:@"%ld. %@",(long)section+1,[sectionTitleArray objectAtIndex:section]];
     }
     headerString.textAlignment      = NSTextAlignmentLeft;
     headerString.textColor          = [UIColor blackColor];
@@ -233,13 +233,13 @@
         cell = [[SyllabusLectureTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-   cell.lecturetype.image=[UIImage imageNamed:nil];
+   //cell.lecturetype.image=[UIImage imageNamed:nil];
     
     BOOL manyCells  = [[arrayForBool objectAtIndex:indexPath.section] boolValue];
     if (!manyCells)
     {
         cell.textLabel.text=@"";
-  cell.lecturetype.image=[UIImage imageNamed:nil];
+ //cell.lecturetype.image=[UIImage imageNamed:nil];
 
     }
     else
@@ -250,7 +250,7 @@
         NSDictionary *selectedrow=[[syllabus_details valueForKey:[sectionTitleArray objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row];
         NSString *typename=[selectedrow valueForKey:@"type_lecture"];
         NSArray *content = [sectionContentDict valueForKey:[sectionTitleArray objectAtIndex:indexPath.section]];
-        cell.textLabel.text = [content objectAtIndex:indexPath.row];
+        cell.textLabel.text =[NSString stringWithFormat:@"%ld. %@",indexPath.row+1,[content objectAtIndex:indexPath.row]];
         cell.lecturetype.image=[UIImage imageNamed:[self setimage:typename]];
       
     }

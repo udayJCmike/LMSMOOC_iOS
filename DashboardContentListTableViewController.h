@@ -18,6 +18,7 @@
 #import "DashboardcontainerViewController.h"
 #import "ProfileUpdateViewController.h"
 #import "ChangePasswordViewController.h"
+#import "AboutPageViewController.h"
 @interface DashboardContentListTableViewController : UITableViewController
 {
     
