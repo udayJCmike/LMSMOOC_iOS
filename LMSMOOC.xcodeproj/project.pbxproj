@@ -55,6 +55,16 @@
 		840B832F19BF074F0065B678 /* LoginPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840B832E19BF074F0065B678 /* LoginPageViewController.m */; };
 		840B833419BF0BC80065B678 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840B833319BF0BC80065B678 /* SignupViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		840B833919BF23340065B678 /* navlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 840B833819BF23340065B678 /* navlogo.png */; };
+		842D990619E3E86A00EEF307 /* promocode.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 842D990519E3E86A00EEF307 /* promocode.jpg */; };
+		842D990C19E4074300EEF307 /* Facebook+ForceDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 842D990819E4074300EEF307 /* Facebook+ForceDialog.m */; };
+		842D990D19E4074300EEF307 /* FacebookLikeView.html in Resources */ = {isa = PBXBuildFile; fileRef = 842D990A19E4074300EEF307 /* FacebookLikeView.html */; };
+		842D990E19E4074300EEF307 /* FacebookLikeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 842D990B19E4074300EEF307 /* FacebookLikeView.m */; };
+		842D991A19E4076200EEF307 /* Facebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 842D991119E4076200EEF307 /* Facebook.m */; };
+		842D991B19E4076200EEF307 /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 842D991319E4076200EEF307 /* FBDialog.bundle */; };
+		842D991C19E4076200EEF307 /* FBDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 842D991519E4076200EEF307 /* FBDialog.m */; };
+		842D991D19E4076200EEF307 /* FBLoginDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 842D991719E4076200EEF307 /* FBLoginDialog.m */; };
+		842D991E19E4076200EEF307 /* FBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 842D991919E4076200EEF307 /* FBRequest.m */; };
+		842D992119E4078000EEF307 /* FacebookLikeViewDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842D992019E4078000EEF307 /* FacebookLikeViewDemoViewController.m */; };
 		843287C819D57429000925EA /* audio.png in Resources */ = {isa = PBXBuildFile; fileRef = 843287C519D57429000925EA /* audio.png */; };
 		843287C919D57429000925EA /* text.png in Resources */ = {isa = PBXBuildFile; fileRef = 843287C619D57429000925EA /* text.png */; };
 		843287CA19D57429000925EA /* video.png in Resources */ = {isa = PBXBuildFile; fileRef = 843287C719D57429000925EA /* video.png */; };
@@ -235,6 +245,23 @@
 		840B833219BF0BC80065B678 /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
 		840B833319BF0BC80065B678 /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
 		840B833819BF23340065B678 /* navlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = navlogo.png; path = LMSMOOC/navlogo.png; sourceTree = "<group>"; };
+		842D990519E3E86A00EEF307 /* promocode.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = promocode.jpg; sourceTree = "<group>"; };
+		842D990819E4074300EEF307 /* Facebook+ForceDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Facebook+ForceDialog.m"; sourceTree = "<group>"; };
+		842D990919E4074300EEF307 /* FacebookLikeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookLikeView.h; sourceTree = "<group>"; };
+		842D990A19E4074300EEF307 /* FacebookLikeView.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = FacebookLikeView.html; sourceTree = "<group>"; };
+		842D990B19E4074300EEF307 /* FacebookLikeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookLikeView.m; sourceTree = "<group>"; };
+		842D991019E4076200EEF307 /* Facebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Facebook.h; sourceTree = "<group>"; };
+		842D991119E4076200EEF307 /* Facebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Facebook.m; sourceTree = "<group>"; };
+		842D991219E4076200EEF307 /* FBConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBConnect.h; sourceTree = "<group>"; };
+		842D991319E4076200EEF307 /* FBDialog.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBDialog.bundle; sourceTree = "<group>"; };
+		842D991419E4076200EEF307 /* FBDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBDialog.h; sourceTree = "<group>"; };
+		842D991519E4076200EEF307 /* FBDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBDialog.m; sourceTree = "<group>"; };
+		842D991619E4076200EEF307 /* FBLoginDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBLoginDialog.h; sourceTree = "<group>"; };
+		842D991719E4076200EEF307 /* FBLoginDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBLoginDialog.m; sourceTree = "<group>"; };
+		842D991819E4076200EEF307 /* FBRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBRequest.h; sourceTree = "<group>"; };
+		842D991919E4076200EEF307 /* FBRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBRequest.m; sourceTree = "<group>"; };
+		842D991F19E4078000EEF307 /* FacebookLikeViewDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookLikeViewDemoViewController.h; sourceTree = "<group>"; };
+		842D992019E4078000EEF307 /* FacebookLikeViewDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookLikeViewDemoViewController.m; sourceTree = "<group>"; };
 		843287C519D57429000925EA /* audio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = audio.png; sourceTree = "<group>"; };
 		843287C619D57429000925EA /* text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = text.png; sourceTree = "<group>"; };
 		843287C719D57429000925EA /* video.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video.png; sourceTree = "<group>"; };
@@ -453,6 +480,7 @@
 		0DAFCFF319BEC75500A1E509 = {
 			isa = PBXGroup;
 			children = (
+				842D990719E406D600EEF307 /* FacebookLike */,
 				84BEB15219E2B98B00187754 /* About */,
 				0DA598A819DFD8470004CD2C /* checkBox.png */,
 				0DA598A919DFD8470004CD2C /* checkBox@2x.png */,
@@ -634,9 +662,41 @@
 			name = Signup;
 			sourceTree = "<group>";
 		};
+		842D990719E406D600EEF307 /* FacebookLike */ = {
+			isa = PBXGroup;
+			children = (
+				842D991F19E4078000EEF307 /* FacebookLikeViewDemoViewController.h */,
+				842D992019E4078000EEF307 /* FacebookLikeViewDemoViewController.m */,
+				842D990F19E4074900EEF307 /* FBConnect */,
+				842D990819E4074300EEF307 /* Facebook+ForceDialog.m */,
+				842D990919E4074300EEF307 /* FacebookLikeView.h */,
+				842D990A19E4074300EEF307 /* FacebookLikeView.html */,
+				842D990B19E4074300EEF307 /* FacebookLikeView.m */,
+			);
+			name = FacebookLike;
+			sourceTree = "<group>";
+		};
+		842D990F19E4074900EEF307 /* FBConnect */ = {
+			isa = PBXGroup;
+			children = (
+				842D991019E4076200EEF307 /* Facebook.h */,
+				842D991119E4076200EEF307 /* Facebook.m */,
+				842D991219E4076200EEF307 /* FBConnect.h */,
+				842D991319E4076200EEF307 /* FBDialog.bundle */,
+				842D991419E4076200EEF307 /* FBDialog.h */,
+				842D991519E4076200EEF307 /* FBDialog.m */,
+				842D991619E4076200EEF307 /* FBLoginDialog.h */,
+				842D991719E4076200EEF307 /* FBLoginDialog.m */,
+				842D991819E4076200EEF307 /* FBRequest.h */,
+				842D991919E4076200EEF307 /* FBRequest.m */,
+			);
+			name = FBConnect;
+			sourceTree = "<group>";
+		};
 		845B10A519BF2D5E00AAE3E4 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				842D990519E3E86A00EEF307 /* promocode.jpg */,
 				0DFCDC3219CAB990002D317D /* 1star.png */,
 				0D9870D219DAAF1100D498B6 /* audioarts.png */,
 				0D1A273F19D938FD008E7EA9 /* add.png */,
@@ -1105,6 +1165,7 @@
 				0DA598AF19DFD8470004CD2C /* checkBoxMarked@2x.png in Resources */,
 				0DFCDC3919CAB990002D317D /* 3star.png in Resources */,
 				0DA598AE19DFD8470004CD2C /* checkBoxMarked.png in Resources */,
+				842D990619E3E86A00EEF307 /* promocode.jpg in Resources */,
 				0DFCDC3119CAB1BB002D317D /* search.png in Resources */,
 				843287C919D57429000925EA /* text.png in Resources */,
 				847635DB19C03FCC00F45CEF /* bantab1.png in Resources */,
@@ -1143,6 +1204,7 @@
 				844A9CB819C1A765000A5449 /* photo-frame.png in Resources */,
 				0DA598AC19DFD8470004CD2C /* checkBox.png in Resources */,
 				849C795719D2CBD80009F3DD /* play_button@2x.png in Resources */,
+				842D991B19E4076200EEF307 /* FBDialog.bundle in Resources */,
 				847635D819C03FCC00F45CEF /* ban2.png in Resources */,
 				847635D919C03FCC00F45CEF /* ban3.png in Resources */,
 				843287CA19D57429000925EA /* video.png in Resources */,
@@ -1154,6 +1216,7 @@
 				840B833919BF23340065B678 /* navlogo.png in Resources */,
 				0DFCDC3B19CAB990002D317D /* 5star.png in Resources */,
 				849CE19F19D00066001F78C0 /* CourseDetailiPhone.storyboard in Resources */,
+				842D990D19E4074300EEF307 /* FacebookLikeView.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1196,6 +1259,7 @@
 				0DAFD00C19BEC75500A1E509 /* main.m in Sources */,
 				84FC7DAB19C0191B0001FD7C /* REFrostedViewController.m in Sources */,
 				849CE1A819D000FE001F78C0 /* AboutauthorViewController.m in Sources */,
+				842D991C19E4076200EEF307 /* FBDialog.m in Sources */,
 				84FC7D9219C0064E0001FD7C /* Reachability.m in Sources */,
 				849CE1AF19D003BE001F78C0 /* ViewPagerController.m in Sources */,
 				84EC716719CB16A200529168 /* BillingTableViewCell.m in Sources */,
@@ -1204,6 +1268,7 @@
 				849CE1A519D000EF001F78C0 /* SyllabusViewController.m in Sources */,
 				84F59B7A19C2FFA9009EF252 /* MailDetailsViewController.m in Sources */,
 				8470B52019CD6555008A5809 /* BrowseCategorywiseDatasiPadViewController.m in Sources */,
+				842D992119E4078000EEF307 /* FacebookLikeViewDemoViewController.m in Sources */,
 				8470B51D19CD6511008A5809 /* BrowseCourseSearchViewController.m in Sources */,
 				84CBD50019C730C500CB50D1 /* courselist_iPhoneTableViewController.m in Sources */,
 				84EC715A19CAD77000529168 /* MyfavoritesViewController.m in Sources */,
@@ -1219,15 +1284,19 @@
 				84FC7D9519C0064E0001FD7C /* SBJsonParser.m in Sources */,
 				84FC7D9319C0064E0001FD7C /* SBJSON.m in Sources */,
 				84EC716119CAFE5F00529168 /* AuthorTableViewCell.m in Sources */,
+				842D991A19E4076200EEF307 /* Facebook.m in Sources */,
 				847635EB19C077BF00F45CEF /* CollectionCellContent.m in Sources */,
 				84FC7DC219C023A80001FD7C /* MailinboxTableViewController.m in Sources */,
 				84EC715D19CAF66500529168 /* MycategoriesViewController.m in Sources */,
 				84EC716419CB087E00529168 /* MyauthorcoursesViewController.m in Sources */,
+				842D990C19E4074300EEF307 /* Facebook+ForceDialog.m in Sources */,
 				8470B50A19CD40FF008A5809 /* ChangePasswordViewController.m in Sources */,
+				842D991D19E4076200EEF307 /* FBLoginDialog.m in Sources */,
 				8470B51719CD64CB008A5809 /* BrowseCourseiPadViewController.m in Sources */,
 				84FC7D9019C0064E0001FD7C /* NSObject+SBJSON.m in Sources */,
 				84E52CBD19C9B2440042D07A /* CategorywiseDatasiPadViewController.m in Sources */,
 				84EC715819CAD77000529168 /* MycategoriesDetailViewController.m in Sources */,
+				842D990E19E4074300EEF307 /* FacebookLikeView.m in Sources */,
 				84F59B7119C2FC37009EF252 /* MAILinboxTableViewCell.m in Sources */,
 				84BEB15519E2B99C00187754 /* AboutPageViewController.m in Sources */,
 				84E52CC319C9D0A90042D07A /* categorypopoverViewController.m in Sources */,
@@ -1243,6 +1312,7 @@
 				84082A5819C80F1E0039F4E8 /* CourseSearchViewController.m in Sources */,
 				8402E0DB19D682B7001B9638 /* AddCategoryViewController.m in Sources */,
 				84FC7D8F19C0064E0001FD7C /* MBProgressHUD.m in Sources */,
+				842D991E19E4076200EEF307 /* FBRequest.m in Sources */,
 				847635F019C095A700F45CEF /* Passwordchange.m in Sources */,
 				84EDDB6B19D28C8400FEAE95 /* AudioPlayerViewController.m in Sources */,
 				84FC7DD919C02B360001FD7C /* BillingTableViewController.m in Sources */,

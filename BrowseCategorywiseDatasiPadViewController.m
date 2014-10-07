@@ -29,6 +29,7 @@ int loadcompleted;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+ 
     NSLog(@"catergory name received %@",categoryname);
     self.navigationItem.title=categoryname;
     offset=0;
@@ -174,6 +175,15 @@ int loadcompleted;
     cell.authorname.text=[course objectForKey:@"course_author"];
     cell.price.text=[course objectForKey:@"course_price"];
     cell.cover.image=[UIImage imageNamed:[course objectForKey:@"course_cover_image"]];
+    NSString *promo=[course objectForKey:@"promocode_available"];
+    if ([promo isEqualToString:@"1"]) {
+        cell.promoimage.hidden=NO;
+    }
+    else
+    {
+       cell.promoimage.hidden=YES;
+    }
+
     //cell.review.image=[UIImage imageNamed:[course objectForKey:@"ratings"]];
     NSString * rating =[course objectForKey:@"ratings"];
     

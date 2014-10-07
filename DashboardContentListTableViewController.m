@@ -198,7 +198,7 @@
     }
     else if(indexPath.section == 0 && indexPath.row == 9) {
         
-        AboutPageViewController *secondViewController2 = [self.storyboard instantiateViewControllerWithIdentifier:@"About"];
+        FacebookLikeViewDemoViewController *secondViewController2 = [self.storyboard instantiateViewControllerWithIdentifier:@"About"];
         navigationController.viewControllers = @[secondViewController2];
     }
    

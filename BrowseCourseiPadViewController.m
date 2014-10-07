@@ -391,6 +391,14 @@ int loadcompleted;
     cell.price.text=[course objectForKey:@"course_price"];
     cell.cover.image=[UIImage imageNamed:[course objectForKey:@"course_cover_image"]];
     
+    NSString *promo=[course objectForKey:@"promocode_available"];
+    if ([promo isEqualToString:@"1"]) {
+       cell.promoimage.hidden=NO;
+    }
+    else
+    {
+        cell.promoimage.hidden=YES;
+    }
     //cell.review.image=[UIImage imageNamed:[course objectForKey:@"1star.png"]];
     
     NSString * rating =[course objectForKey:@"ratings"];

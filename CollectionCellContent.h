@@ -14,5 +14,5 @@
 @property (retain, nonatomic) IBOutlet UILabel *price;
 @property (retain, nonatomic) IBOutlet UIImageView *cover;
 @property (retain, nonatomic) IBOutlet UIImageView *review;
-
+@property (retain, nonatomic) IBOutlet UIImageView *promoimage;
 @end

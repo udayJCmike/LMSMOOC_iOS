@@ -14,4 +14,5 @@
 @property(nonatomic,strong)IBOutlet UILabel *price;
 @property(nonatomic,strong)IBOutlet UIImageView *review;
 @property(nonatomic,strong)IBOutlet UIImageView *cover;
+@property(nonatomic,strong)IBOutlet UIImageView *promoimage;
 @end

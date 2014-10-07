@@ -244,7 +244,8 @@
     }
     else
     {
-       
+        UIFont *myFont = [UIFont fontWithName: @"Helvetica Neue" size: 15.0];
+        cell.textLabel.font  = myFont;
        cell.textLabel.text=@"";
       
         NSDictionary *selectedrow=[[syllabus_details valueForKey:[sectionTitleArray objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row];

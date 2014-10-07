@@ -184,7 +184,7 @@ int loadcompleted;
 
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *identifier = @"mycourse";
+    static NSString *identifier = @"CourseList";
     
     
     CollectionCellContent *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
@@ -223,7 +223,15 @@ int loadcompleted;
         cell.review.image=[UIImage imageNamed:@"0star"];
     }
     
-    
+    NSString *promo=[course objectForKey:@"promocode_available"];
+    if ([promo isEqualToString:@"1"]) {
+        cell.promoimage.hidden=NO;
+    }
+    else
+    {
+        cell.promoimage.hidden=YES;
+    }
+
     NSString *imageUrlString = [[NSString alloc]initWithFormat:@"%@/%@/%@",delegate.course_image_url,[course objectForKey:@"course_id"],[course objectForKey:@"course_cover_image"]];
     
     UIImage *imageFromCache = [self.imageCache objectForKey:imageUrlString];

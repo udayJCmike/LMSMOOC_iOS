@@ -14,6 +14,7 @@
 @synthesize authorname;
 @synthesize price;
 @synthesize review;
+@synthesize promoimage;
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];

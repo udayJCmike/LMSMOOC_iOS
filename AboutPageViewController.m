@@ -7,13 +7,17 @@
 //
 
 #import "AboutPageViewController.h"
-
+#import <QuartzCore/QuartzCore.h>
+#define  AppDelegate (lmsmoocAppDelegate *)[[UIApplication sharedApplication] delegate]
 @interface AboutPageViewController ()
-
+{
+    NSString *privacyurl;
+}
 @end
 
 @implementation AboutPageViewController
-
+@synthesize privacylabel;
+@synthesize privacypolicy;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -22,10 +26,14 @@
     }
     return self;
 }
-
+  
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [privacylabel.layer setCornerRadius:6];
+    delegate=AppDelegate;
+    privacyurl=[NSString stringWithFormat:@"%@user_view_PrivacyPolicy",delegate.common_url];
+    NSLog(@"privacy url %@",privacyurl);
     // Do any additional setup after loading the view.
     if (self.navigationController.navigationBar.hidden == YES)
     {
@@ -42,6 +50,7 @@
                                              selector:@selector(menulistener:)
                                                  name:@"Showmenu"
                                                object:nil];
+    [privacypolicy loadRequest:[NSURLRequest requestWithURL:[[NSURL alloc]initWithString:privacyurl]]];
 }
     - (void)menulistener:(id)sender {
         
@@ -70,4 +79,8 @@
 }
 */
 
+- (void)dealloc {
+ 
+    [super dealloc];
+}
 @end

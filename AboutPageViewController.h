@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "REFrostedViewController.h"
+#import "lmsmoocAppDelegate.h"
 @interface AboutPageViewController : UIViewController
+{
+    lmsmoocAppDelegate *delegate;
+}
+@property (retain, nonatomic) IBOutlet UIWebView *privacypolicy;
+@property (retain, nonatomic) IBOutlet UILabel *privacylabel;
 
 @end
