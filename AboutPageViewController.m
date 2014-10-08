@@ -50,7 +50,7 @@
                                              selector:@selector(menulistener:)
                                                  name:@"Showmenu"
                                                object:nil];
-    [privacypolicy loadRequest:[NSURLRequest requestWithURL:[[NSURL alloc]initWithString:privacyurl]]];
+   // [privacypolicy loadRequest:[NSURLRequest requestWithURL:[[NSURL alloc]initWithString:privacyurl]]];
 }
     - (void)menulistener:(id)sender {
         

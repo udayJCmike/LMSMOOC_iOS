@@ -77,7 +77,7 @@
 {
     [super viewDidLoad];
     
-    self.facebookLikeView.href = [NSURL URLWithString:@"https://www.facebook.com/AmitabhBachchan"];
+    self.facebookLikeView.href = [NSURL URLWithString:@"https://www.facebook.com/pages/Deemsys-Inc/554105444649420"];
     self.facebookLikeView.layout = @"button_count";
     self.facebookLikeView.showFaces = NO;
     self.facebookLikeView.alpha = 0;
@@ -117,8 +117,8 @@
         if(granted) {
             // Get the list of Twitter accounts.
             NSArray *accountsArray = [accountStore accountsWithAccountType:accountType];
-//            NSLog(@"account array %@",accountsArray);
-            // here, I'll assume there is only one Twitter account present.
+//            NSLog(@"account array %@",accountsArray);41077
+                     // here, I'll assume there is only one Twitter account present.
             // You would ideally ask the user which account they want to tweet from, if there is more than one Twitter account present. see Note section below if there are multiple accounts
             if ([accountsArray count] > 0) {
                 // Grab the initial Twitter account to tweet from.
@@ -149,7 +149,7 @@
                                                       initWithTitle:@"No Twitter Accounts"
                                                       message:@"There are no Twitter accounts configured. You can add or create a Twitter account in Settings."
                                                       delegate:self
-                                                      cancelButtonTitle:@"Cancel"
+                                                      cancelButtonTitle:@"Ok"
                                                       otherButtonTitles:nil] autorelease];
                     
                     [alertViewTwitter show];

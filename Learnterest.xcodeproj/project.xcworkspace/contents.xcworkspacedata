@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:LMSMOOC.xcodeproj">
+      location = "self:Learnterest.xcodeproj">
    </FileRef>
 </Workspace>

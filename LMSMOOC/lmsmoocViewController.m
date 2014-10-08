@@ -20,11 +20,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad)
+    if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPhone)
     {
           _pageImages = @[@"ban1.png", @"ban2.png", @"ban3.png", @"ban4.png",@"ban5.png"];
     }
-    if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPhone) {
+    if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad) {
           _pageImages = @[@"bantab1.png", @"bantab2.png", @"bantab3.png", @"bantab4.png", @"bantab5.png"];
     }
   
@@ -37,7 +37,8 @@
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     UIImageView *imagevc=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 75, 32)];
-    imagevc.image=[UIImage imageNamed:@"logo.png"];
+    imagevc.image=[UIImage imageNamed:@"logotab.png"];
+    
     [imagevc setFrame:CGRectMake(0, 0, 100, 30)];
     self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc]initWithCustomView:imagevc];
     

@@ -17,7 +17,7 @@
                BlueprintIdentifier = "0DAFCFFB19BEC75500A1E509"
                BuildableName = "LMSMOOC.app"
                BlueprintName = "LMSMOOC"
-               ReferencedContainer = "container:LMSMOOC.xcodeproj">
+               ReferencedContainer = "container:Learnterest.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "0DAFD01F19BEC75500A1E509"
                BuildableName = "LMSMOOCTests.xctest"
                BlueprintName = "LMSMOOCTests"
-               ReferencedContainer = "container:LMSMOOC.xcodeproj">
+               ReferencedContainer = "container:Learnterest.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -45,7 +45,7 @@
             BlueprintIdentifier = "0DAFCFFB19BEC75500A1E509"
             BuildableName = "LMSMOOC.app"
             BlueprintName = "LMSMOOC"
-            ReferencedContainer = "container:LMSMOOC.xcodeproj">
+            ReferencedContainer = "container:Learnterest.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0DAFCFFB19BEC75500A1E509"
-            BuildableName = "LMSMOOC.app"
+            BuildableName = "Learnterest.app"
             BlueprintName = "LMSMOOC"
-            ReferencedContainer = "container:LMSMOOC.xcodeproj">
+            ReferencedContainer = "container:Learnterest.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -82,7 +82,7 @@
             BlueprintIdentifier = "0DAFCFFB19BEC75500A1E509"
             BuildableName = "LMSMOOC.app"
             BlueprintName = "LMSMOOC"
-            ReferencedContainer = "container:LMSMOOC.xcodeproj">
+            ReferencedContainer = "container:Learnterest.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

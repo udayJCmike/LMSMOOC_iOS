@@ -76,6 +76,8 @@
     }
     
     self.imageview.image = [UIImage imageNamed:self.imageFile];
+   // self.imageview.contentMode = UIViewContentModeScaleAspectFill;
+    
     self.labelcontent.text = self.titleText;
     _login.hidden=YES;
     _signup.hidden=YES;
