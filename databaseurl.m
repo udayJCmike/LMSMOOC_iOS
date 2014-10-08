@@ -21,8 +21,8 @@ static databaseurl * appInstance;
 
 -(NSString*)DBurl
 {
- // NSString * link=@"http://208.109.248.89/mobile/ios/Services/";
- NSString * link=@"http://192.168.1.106:8888/LmsmoocIos/Services/";
+ NSString * link=@"http://208.109.248.89/mobile/ios/Services/";
+// NSString * link=@"http://192.168.1.106:8888/LmsmoocIos/Services/";
     return link;
     
 }
