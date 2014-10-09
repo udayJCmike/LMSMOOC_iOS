@@ -384,13 +384,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Course Details" id="JWo-wW-7gQ"/>
+                    <navigationItem key="navigationItem" title="Course Details" id="JWo-wW-7gQ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="31a-7B-XFY">
+                            <connections>
+                                <action selector="shareaction:" destination="e2p-lz-hre" id="zlw-vw-mDY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="coursename" destination="LXn-HJ-dXW" id="vLj-jK-FjS"/>
                         <outlet property="enrolledstu" destination="8LL-YS-Ezs" id="d1e-t2-1RA"/>
                         <outlet property="price" destination="5Ts-0V-8zJ" id="fi1-Xm-BgR"/>
                         <outlet property="review" destination="qaY-KB-LLU" id="pC0-wr-j8A"/>
+                        <outlet property="sharebutton" destination="31a-7B-XFY" id="5Kc-al-VPG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HV8-d3-Gae" userLabel="First Responder" sceneMemberID="firstResponder"/>

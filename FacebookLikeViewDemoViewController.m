@@ -15,6 +15,7 @@
 
 @property (nonatomic, strong) Facebook *facebook;
 @property (nonatomic, strong) IBOutlet FacebookLikeView *facebookLikeView;
+@property (retain, nonatomic) IBOutlet UIWebView *webview;
 
 @end
 
@@ -55,19 +56,19 @@
 
 - (void)facebookLikeViewDidLike:(FacebookLikeView *)aFacebookLikeView {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Liked"
-                                                     message:@"You liked learnterest. Thanks!"
-                                                    delegate:self 
-                                           cancelButtonTitle:@"Ok"
-                                           otherButtonTitles:nil];
+                                                    message:@"You liked learnterest. Thanks!"
+                                                   delegate:self
+                                          cancelButtonTitle:@"Ok"
+                                          otherButtonTitles:nil];
     [alert show];
 }
 
 - (void)facebookLikeViewDidUnlike:(FacebookLikeView *)aFacebookLikeView {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Unliked"
-                                                     message:@"You unliked learnterest. Where's the love?"
-                                                    delegate:self 
-                                           cancelButtonTitle:@"Ok"
-                                           otherButtonTitles:nil];
+                                                    message:@"You unliked learnterest. Where's the love?"
+                                                   delegate:self
+                                          cancelButtonTitle:@"Ok"
+                                          otherButtonTitles:nil];
     [alert show];
 }
 
@@ -97,8 +98,11 @@
                                              selector:@selector(menulistener:)
                                                  name:@"Showmenu"
                                                object:nil];
-  
-
+    //    NSString *twitterFollowButton = @"<a href='https://twitter.com/Udayjcdev' class='twitter-follow-button' data-show-count='false' data-size='large'>Follow @Udayjcdev</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>";
+    //
+    //
+    //
+    //    [self.webview loadHTMLString:twitterFollowButton baseURL:nil];
 }
 - (void)menulistener:(id)sender {
     
@@ -110,6 +114,20 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"Showmenu" object:nil];
 }
 -(IBAction)FollowUsOnTwitter:(id)sender {
+    
+    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+    [self.navigationController.view addSubview:HUD];
+    HUD.delegate = self;
+    HUD.labelText = @"Please wait...";
+    [HUD show:YES];
+    [self performSelector:@selector(postontwitter) withObject:self afterDelay:0.2f];
+    
+    
+    
+    
+}
+-(void)postontwitter
+{
     ACAccountStore *accountStore = [[ACAccountStore alloc] init];
     ACAccountType *accountType = [accountStore
                                   accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
@@ -117,8 +135,8 @@
         if(granted) {
             // Get the list of Twitter accounts.
             NSArray *accountsArray = [accountStore accountsWithAccountType:accountType];
-//            NSLog(@"account array %@",accountsArray);41077
-                     // here, I'll assume there is only one Twitter account present.
+            //            NSLog(@"account array %@",accountsArray);41077
+            // here, I'll assume there is only one Twitter account present.
             // You would ideally ask the user which account they want to tweet from, if there is more than one Twitter account present. see Note section below if there are multiple accounts
             if ([accountsArray count] > 0) {
                 // Grab the initial Twitter account to tweet from.
@@ -132,11 +150,14 @@
                     NSString *output = [NSString stringWithFormat:@"HTTP response status: %i", [urlResponse statusCode]];
                     NSLog(@"%@", output);
                     if ([urlResponse statusCode] == 200) {
-                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Follow us successfull" message:nil delegate:nil cancelButtonTitle:@"Thanx" otherButtonTitles:nil, nil];
+                        [HUD hide:YES];
+                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Follow us successfull!" message:nil delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
                         [alert show];
+                        
                     }
                     else {
-                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Follow us Failed" message:nil delegate:nil cancelButtonTitle:@"Thanx" otherButtonTitles:nil, nil];
+                        [HUD hide:YES];
+                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Follow us Failed!" message:nil delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
                         [alert show];
                     }
                     
@@ -145,6 +166,7 @@
             else
             {
                 if (![TWTweetComposeViewController canSendTweet]) {
+                    [HUD hide:YES];
                     UIAlertView *alertViewTwitter = [[[UIAlertView alloc]
                                                       initWithTitle:@"No Twitter Accounts"
                                                       message:@"There are no Twitter accounts configured. You can add or create a Twitter account in Settings."
@@ -153,31 +175,30 @@
                                                       otherButtonTitles:nil] autorelease];
                     
                     [alertViewTwitter show];
+                    
                 }
             }
             
         }
     }];
-
-
-     
+    
     
 }
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-//    
-//    if (buttonIndex==0) {
-//        TWTweetComposeViewController *ctrl = [[TWTweetComposeViewController alloc] init];
-//        if ([ctrl respondsToSelector:@selector(alertView:clickedButtonAtIndex:)])
-//        {
-//         //FOR iOS 8
-//            //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
-//            if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"twitter://"]])
-//            {
-//                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"twitter://"]];
-//            }
-//        }
-//        [ctrl release];
-//    }
+    //
+    //    if (buttonIndex==0) {
+    //        TWTweetComposeViewController *ctrl = [[TWTweetComposeViewController alloc] init];
+    //        if ([ctrl respondsToSelector:@selector(alertView:clickedButtonAtIndex:)])
+    //        {
+    //         //FOR iOS 8
+    //            //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+    //            if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"twitter://"]])
+    //            {
+    //                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"twitter://"]];
+    //            }
+    //        }
+    //        [ctrl release];
+    //    }
 }
 
 - (void)viewDidUnload
@@ -187,4 +208,8 @@
     self.facebookLikeView = nil;
 }
 
+- (void)dealloc {
+    [_webview release];
+    [super dealloc];
+}
 @end

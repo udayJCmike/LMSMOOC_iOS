@@ -56,6 +56,11 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Course Details" id="aTY-8S-yFO">
                         <barButtonItem key="backBarButtonItem" title="Back" id="bou-ax-rAI"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="naO-II-EQ2">
+                            <connections>
+                                <action selector="shareaction:" destination="EmX-DF-bT3" id="CCJ-za-3UU"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -64,6 +69,7 @@
                         <outlet property="coursename" destination="BH2-Qa-hlo" id="I5M-72-s6K"/>
                         <outlet property="enrolledstu" destination="Udf-y0-3YJ" id="aVL-eR-9gb"/>
                         <outlet property="review" destination="3nQ-wN-q0c" id="YK6-qf-d73"/>
+                        <outlet property="sharebutton" destination="naO-II-EQ2" id="fnS-ru-470"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LzY-kp-hpp" userLabel="First Responder" sceneMemberID="firstResponder"/>

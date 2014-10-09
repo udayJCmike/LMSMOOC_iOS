@@ -97,6 +97,8 @@
 		8470B51D19CD6511008A5809 /* BrowseCourseSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8470B51C19CD6511008A5809 /* BrowseCourseSearchViewController.m */; };
 		8470B52019CD6555008A5809 /* BrowseCategorywiseDatasiPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8470B51F19CD6555008A5809 /* BrowseCategorywiseDatasiPadViewController.m */; };
 		8470B52319CD656E008A5809 /* BrowseCourseSearchiPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8470B52219CD656E008A5809 /* BrowseCourseSearchiPadViewController.m */; };
+		8474C57A19E6B141008FB907 /* RDActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8474C57819E6B141008FB907 /* RDActivityViewController.m */; };
+		8474C57C19E6B1AB008FB907 /* Twitter-Follow-Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 8474C57B19E6B1AB008FB907 /* Twitter-Follow-Button.png */; };
 		847635E519C0733C00F45CEF /* Mycourses_iPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847635E419C0733C00F45CEF /* Mycourses_iPadViewController.m */; };
 		847635E819C0735900F45CEF /* Myfavorites_iPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847635E719C0735900F45CEF /* Myfavorites_iPadViewController.m */; };
 		847635EB19C077BF00F45CEF /* CollectionCellContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 847635EA19C077BF00F45CEF /* CollectionCellContent.m */; };
@@ -308,6 +310,10 @@
 		8470B51F19CD6555008A5809 /* BrowseCategorywiseDatasiPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowseCategorywiseDatasiPadViewController.m; sourceTree = "<group>"; };
 		8470B52119CD656E008A5809 /* BrowseCourseSearchiPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowseCourseSearchiPadViewController.h; sourceTree = "<group>"; };
 		8470B52219CD656E008A5809 /* BrowseCourseSearchiPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowseCourseSearchiPadViewController.m; sourceTree = "<group>"; };
+		8474C57719E6B141008FB907 /* RDActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDActivityViewController.h; sourceTree = "<group>"; };
+		8474C57819E6B141008FB907 /* RDActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDActivityViewController.m; sourceTree = "<group>"; };
+		8474C57919E6B141008FB907 /* RDActivityViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDActivityViewControllerDelegate.h; sourceTree = "<group>"; };
+		8474C57B19E6B1AB008FB907 /* Twitter-Follow-Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Twitter-Follow-Button.png"; sourceTree = "<group>"; };
 		847635E319C0733C00F45CEF /* Mycourses_iPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mycourses_iPadViewController.h; sourceTree = "<group>"; };
 		847635E419C0733C00F45CEF /* Mycourses_iPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mycourses_iPadViewController.m; sourceTree = "<group>"; };
 		847635E619C0735900F45CEF /* Myfavorites_iPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Myfavorites_iPadViewController.h; sourceTree = "<group>"; };
@@ -498,6 +504,7 @@
 		0DAFCFF319BEC75500A1E509 = {
 			isa = PBXGroup;
 			children = (
+				8474C57619E6B128008FB907 /* ShareAmongSocialNetwork */,
 				842D990719E406D600EEF307 /* FacebookLike */,
 				84BEB15219E2B98B00187754 /* About */,
 				0DA598A819DFD8470004CD2C /* checkBox.png */,
@@ -709,6 +716,7 @@
 		845B10A519BF2D5E00AAE3E4 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				8474C57B19E6B1AB008FB907 /* Twitter-Follow-Button.png */,
 				84406B3919E55DB1002CAEE9 /* logo.png */,
 				84406B3A19E55DB1002CAEE9 /* logotab.png */,
 				84406B2519E55D25002CAEE9 /* ban1.png */,
@@ -771,6 +779,16 @@
 				8470B50D19CD6423008A5809 /* BrowseCourses_iPad.storyboard */,
 			);
 			name = iPad;
+			sourceTree = "<group>";
+		};
+		8474C57619E6B128008FB907 /* ShareAmongSocialNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				8474C57719E6B141008FB907 /* RDActivityViewController.h */,
+				8474C57819E6B141008FB907 /* RDActivityViewController.m */,
+				8474C57919E6B141008FB907 /* RDActivityViewControllerDelegate.h */,
+			);
+			name = ShareAmongSocialNetwork;
 			sourceTree = "<group>";
 		};
 		8491B9FA19CBED2900B649ED /* iPad */ = {
@@ -1186,6 +1204,7 @@
 				0D2E930A19C42C00005C4E67 /* important.png in Resources */,
 				0DA598AF19DFD8470004CD2C /* checkBoxMarked@2x.png in Resources */,
 				0DFCDC3919CAB990002D317D /* 3star.png in Resources */,
+				8474C57C19E6B1AB008FB907 /* Twitter-Follow-Button.png in Resources */,
 				0DA598AE19DFD8470004CD2C /* checkBoxMarked.png in Resources */,
 				842D990619E3E86A00EEF307 /* promocode.jpg in Resources */,
 				0DFCDC3119CAB1BB002D317D /* search.png in Resources */,
@@ -1322,6 +1341,7 @@
 				84EC715819CAD77000529168 /* MycategoriesDetailViewController.m in Sources */,
 				842D990E19E4074300EEF307 /* FacebookLikeView.m in Sources */,
 				84F59B7119C2FC37009EF252 /* MAILinboxTableViewCell.m in Sources */,
+				8474C57A19E6B141008FB907 /* RDActivityViewController.m in Sources */,
 				84BEB15519E2B99C00187754 /* AboutPageViewController.m in Sources */,
 				84E52CC319C9D0A90042D07A /* categorypopoverViewController.m in Sources */,
 				84CBD4FF19C730C500CB50D1 /* CourseDesignTableViewCell.m in Sources */,

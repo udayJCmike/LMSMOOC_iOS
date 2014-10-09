@@ -11,6 +11,10 @@
 #import <Accounts/Accounts.h>
 #import "REFrostedViewController.h"
 #import <QuartzCore/QuartzCore.h>
-@interface FacebookLikeViewDemoViewController : UIViewController
+#import "MBProgressHUD.h"
+@interface FacebookLikeViewDemoViewController : UIViewController<MBProgressHUDDelegate>
+{
+    MBProgressHUD *HUD;
+}
 
 @end

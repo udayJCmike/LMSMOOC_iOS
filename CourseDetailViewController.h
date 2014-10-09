@@ -14,12 +14,12 @@
 #import "AboutauthorViewController.h"
 #import "AboutcourseViewController.h"
 #import "MBProgressHUD.h"
-
+#import "RDActivityViewController.h"
 #define  AppDelegate (lmsmoocAppDelegate *)[[UIApplication sharedApplication] delegate]
 
-@interface CourseDetailViewController : ViewPagerController<ViewPagerDataSource, ViewPagerDelegate,MBProgressHUDDelegate>
+@interface CourseDetailViewController : ViewPagerController<ViewPagerDataSource, ViewPagerDelegate,MBProgressHUDDelegate,UIActivityItemSource,RDActivityViewControllerDelegate>
 {
-     lmsmoocAppDelegate *delegate;
+    lmsmoocAppDelegate *delegate;
     MBProgressHUD *HUD;
 }
 @property(nonatomic,retain)NSDictionary *SelectedCourse;
@@ -27,5 +27,6 @@
 @property(nonatomic,retain)IBOutlet UILabel *enrolledstu;
 @property(nonatomic,retain)IBOutlet UIImageView*review;
 @property (retain, nonatomic) IBOutlet UILabel *price;
+@property (retain, nonatomic) IBOutlet UIBarButtonItem *sharebutton;
 @property (nonatomic) NSUInteger numberOfTabs;
 @end

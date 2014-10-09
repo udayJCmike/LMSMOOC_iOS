@@ -21,6 +21,7 @@
 @synthesize review;
 @synthesize SelectedCourse;
 @synthesize price;
+@synthesize sharebutton;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -55,10 +56,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-   
+    
     delegate=AppDelegate;
-   SelectedCourse= delegate.CourseDetail;
-   // NSLog(@"Selected course values: %@",SelectedCourse);
+    SelectedCourse= delegate.CourseDetail;
+    //  NSLog(@"Selected course values: %@",SelectedCourse);
     self.dataSource = self;
     self.delegate = self;
     enrolledstu.text= [SelectedCourse objectForKey:@"numofpurchased"];
@@ -72,9 +73,10 @@
     [HUD show:YES];
     [self performSelector:@selector(loadContent) withObject:nil afterDelay:0.1f];
     
-
+    
     // Do any additional setup after loading the view.
 }
+
 -(void)viewWillDisappear:(BOOL)animated {
     
     [super viewWillDisappear:animated];
@@ -96,10 +98,10 @@
 - (void)loadContent {
     self.numberOfTabs = 3;
     NSString *videoname=[SelectedCourse objectForKey:@"course_promo_video"];
-     NSString*courseid= [SelectedCourse objectForKey:@"course_id"];
+    NSString*courseid= [SelectedCourse objectForKey:@"course_id"];
     NSString *imageUrlString = [[NSString alloc]initWithFormat:@"%@%@/%@",delegate.course_image_url,courseid,videoname];
-   // NSLog(@"promo video url %@",imageUrlString);
- NSURL *url = [NSURL URLWithString:imageUrlString];
+    // NSLog(@"promo video url %@",imageUrlString);
+    NSURL *url = [NSURL URLWithString:imageUrlString];
     if (![HUD isHidden]) {
         [HUD hide:YES];
     }
@@ -117,26 +119,26 @@
                                                  name:MPMoviePlayerPlaybackDidFinishNotification
                                                object:player];
 }
-    - (void)movieFinishedCallback:(NSNotification*)aNotification
+- (void)movieFinishedCallback:(NSNotification*)aNotification
+{
+    // Obtain the reason why the movie playback finished
+    NSNumber *finishReason = [[aNotification userInfo] objectForKey:MPMoviePlayerPlaybackDidFinishReasonUserInfoKey];
+    
+    // Dismiss the view controller ONLY when the reason is not "playback ended"
+    if ([finishReason intValue] != MPMovieFinishReasonPlaybackEnded)
     {
-        // Obtain the reason why the movie playback finished
-        NSNumber *finishReason = [[aNotification userInfo] objectForKey:MPMoviePlayerPlaybackDidFinishReasonUserInfoKey];
+        MPMoviePlayerController *moviePlayer = [aNotification object];
         
-        // Dismiss the view controller ONLY when the reason is not "playback ended"
-        if ([finishReason intValue] != MPMovieFinishReasonPlaybackEnded)
-        {
-            MPMoviePlayerController *moviePlayer = [aNotification object];
-            
-            // Remove this class from the observers
-            [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                            name:MPMoviePlayerPlaybackDidFinishNotification
-                                                          object:moviePlayer];
-            
-            // Dismiss the view controller
-//            [self dismissMoviePlayerViewControllerAnimated];
-//            [self.navigationController popViewControllerAnimated:YES];
-        }
+        // Remove this class from the observers
+        [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                        name:MPMoviePlayerPlaybackDidFinishNotification
+                                                      object:moviePlayer];
+        
+        // Dismiss the view controller
+        //            [self dismissMoviePlayerViewControllerAnimated];
+        //            [self.navigationController popViewControllerAnimated:YES];
     }
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -159,10 +161,10 @@
     label.backgroundColor = [UIColor clearColor];
     label.font = [UIFont systemFontOfSize:12.0];
     if (index==0) {
-       label.text = [NSString stringWithFormat:@"Syllabus"];
+        label.text = [NSString stringWithFormat:@"Syllabus"];
     }
     if (index==1) {
-       label.text = [NSString stringWithFormat:@"About Course"];
+        label.text = [NSString stringWithFormat:@"About Course"];
     }
     if (index==2) {
         label.text = [NSString stringWithFormat:@"About Author"];
@@ -178,7 +180,7 @@
 - (UIViewController *)viewPager:(ViewPagerController *)viewPager contentViewControllerForTabAtIndex:(NSUInteger)index {
     SyllabusViewController *cvc = [self.storyboard instantiateViewControllerWithIdentifier:@"SyllabusViewController"];
     if (index==0) {
-          SyllabusViewController *cvc = [self.storyboard instantiateViewControllerWithIdentifier:@"SyllabusViewController"];
+        SyllabusViewController *cvc = [self.storyboard instantiateViewControllerWithIdentifier:@"SyllabusViewController"];
         return cvc;
         
     }
@@ -186,16 +188,16 @@
         AboutcourseViewController *cvc = [self.storyboard instantiateViewControllerWithIdentifier:@"AboutcourseViewController"];
         return cvc;
         
-            
-        }
+        
+    }
     else if (index==2) {
         
         AboutauthorViewController *cvc = [self.storyboard instantiateViewControllerWithIdentifier:@"AboutauthorViewController"];
         return cvc;
     }
-  
     
-   
+    
+    
     
     return cvc;
 }
@@ -238,12 +240,57 @@
     }
 }
 
+- (IBAction)shareaction:(id)sender {
+    //    if(UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad)
+    //    {
+    //        RDActivityViewController *viewController = [[RDActivityViewController alloc] initWithDelegate:self];
+    //        //    [viewController setValue:@"Your email Subject" forKey:@"subject"];
+    //
+    //
+    ////        viewController.completionHandler = ^(NSString *activityType, BOOL completed){
+    ////            [self.popup dismissPopoverAnimated:YES];
+    ////        };
+    //        [self.parentViewController presentViewController:viewController   animated:YES completion:nil];
+    //    }
+    //    else if(UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPhone)
+    //    {
+    //    }
+    
+    RDActivityViewController *viewController = [[RDActivityViewController alloc] initWithDelegate:self];
+    //    [viewController setValue:@"Your email Subject" forKey:@"subject"];
+    [self.parentViewController presentViewController:viewController   animated:YES completion:nil];
+}
+
+
+- (NSArray *)activityViewController:(NSArray *)activityViewController itemsForActivityType:(NSString *)activityType {
+    NSString *returnString=[NSString stringWithFormat:@"%@User_view_Course?kfkgd=%@",delegate.common_url,[SelectedCourse valueForKey:@"course_id"]];
+    // NSString *returnString=@"http://deemgpstracker.com/";
+    //course_cover_image
+    NSURL *url=[NSURL URLWithString:returnString];
+    /*if ([activityType isEqualToString:UIActivityTypePostToFacebook]) {
+     
+     return @[
+     @"This is the message which appears",
+     @"...in the mail sharing dialog.",
+     [UIImage imageNamed:@"girl.jpg"]
+     ];
+     }
+     else  {
+     return @[@"Default message"];
+     }
+     */
+    return @[url];
+}
+
+
+
 
 -(void)dealloc
 {
+    
     [super dealloc];
     [player stop];
-   // [player release];
+    // [player release];
 }
 
 @end
