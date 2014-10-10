@@ -23,7 +23,7 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
-        self.facebook = [[Facebook alloc] initWithAppId:@"839464456086590" andDelegate:self];
+        self.facebook = [[Facebook alloc] initWithAppId:@"775632699174713" andDelegate:self];
     }
     return self;
 }
@@ -78,7 +78,7 @@
 {
     [super viewDidLoad];
     
-    self.facebookLikeView.href = [NSURL URLWithString:@"https://www.facebook.com/pages/Deemsys-Inc/554105444649420"];
+    self.facebookLikeView.href = [NSURL URLWithString:@"https://www.facebook.com/pages/Learnterest-Best-Online-Learning-Marketplace/280656465457314"];
     self.facebookLikeView.layout = @"button_count";
     self.facebookLikeView.showFaces = NO;
     self.facebookLikeView.alpha = 0;
@@ -142,7 +142,7 @@
                 // Grab the initial Twitter account to tweet from.
                 ACAccount *twitterAccount = [accountsArray objectAtIndex:0];
                 NSMutableDictionary *tempDict = [[NSMutableDictionary alloc] init];
-                [tempDict setValue:@"deemsys" forKey:@"screen_name"];
+                [tempDict setValue:@"Learnterest" forKey:@"screen_name"];
                 [tempDict setValue:@"true" forKey:@"follow"];
                 TWRequest *postRequest = [[TWRequest alloc] initWithURL:[NSURL URLWithString:@"https://api.twitter.com/1/friendships/create.json"]  parameters:tempDict requestMethod:TWRequestMethodPOST];
                 [postRequest setAccount:twitterAccount];
