@@ -30,7 +30,7 @@ int loadcompleted;
 {
     [super viewDidLoad];
  
-    NSLog(@"catergory name received %@",categoryname);
+   // NSLog(@"catergory name received %@",categoryname);
     self.navigationItem.title=categoryname;
     offset=0;
     loadcompleted=0;
@@ -124,7 +124,7 @@ int loadcompleted;
             
         }
         loadcompleted=1;
-        NSLog(@"No Data found");
+       // NSLog(@"No Data found");
     }
     if (![HUD isHidden]) {
         [HUD hide:YES];
@@ -155,7 +155,7 @@ int loadcompleted;
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     //     NSMutableArray *indexPaths = [NSMutableArray arrayWithObject:indexPath];
-    NSLog(@"clicked at index %d",indexPath.row);
+   // NSLog(@"clicked at index %d",indexPath.row);
     NSDictionary *temp=[courselist objectAtIndex:indexPath.row];
      NSString *url=[NSString stringWithFormat:@"%@?course_id=%@&authorid=%@&pur=%@&catcourse=&coursetype=",delegate.course_detail_url,[temp objectForKey:@"course_id"], [temp objectForKey:@"instructor_id"],[temp objectForKey:@"numofpurchased"]];
     

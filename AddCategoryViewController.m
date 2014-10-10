@@ -225,7 +225,7 @@
                 [self ShowAlert:@"No data found." title:@"Info"];
                 
             }
-            NSLog(@"No datas found");
+           // NSLog(@"No datas found");
         }
         
         

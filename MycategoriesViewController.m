@@ -205,7 +205,7 @@
     NSString *url2=[NSString stringWithFormat:@"%@%@",urltemp,url1];
     NSString *post =[[NSString alloc] initWithFormat:@"%@=%@&%@=%@",firstEntity,value1,secondEntity,value2];
     NSURL *url = [NSURL URLWithString:url2];
-    NSLog(@"%@ url %@ post",url2 ,post    );
+  //  NSLog(@"%@ url %@ post",url2 ,post    );
     return [du returndbresult:post URL:url];
 }
 - (void)didReceiveMemoryWarning

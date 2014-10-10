@@ -311,7 +311,7 @@
         unread--;
     }
 
-    NSLog(@"read %@",[[inbox objectAtIndex:indexPath.row] objectForKey:@"read_status"]);
+   // NSLog(@"read %@",[[inbox objectAtIndex:indexPath.row] objectForKey:@"read_status"]);
   NSMutableDictionary *dict=[inbox objectAtIndex:indexPath.row];
     [dict setValue:@"1" forKey:@"read_status"];
     [inbox replaceObjectAtIndex:indexPath.row withObject:dict];
@@ -328,7 +328,7 @@
     
     dispatch_group_async(imageQueue, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
                          ^{
-                             NSLog(@"read updad1 %@",[selectedrow objectForKey:@"read_status"]);
+                           //  NSLog(@"read updad1 %@",[selectedrow objectForKey:@"read_status"]);
                              
 //                             if([[selectedrow objectForKey:@"read_status"]isEqualToString:@"0"])
 //                             {

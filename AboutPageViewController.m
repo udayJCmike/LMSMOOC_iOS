@@ -33,7 +33,7 @@
     [privacylabel.layer setCornerRadius:6];
     delegate=AppDelegate;
     privacyurl=[NSString stringWithFormat:@"%@user_view_PrivacyPolicy",delegate.common_url];
-    NSLog(@"privacy url %@",privacyurl);
+   // NSLog(@"privacy url %@",privacyurl);
     // Do any additional setup after loading the view.
     if (self.navigationController.navigationBar.hidden == YES)
     {

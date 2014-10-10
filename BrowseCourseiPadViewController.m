@@ -548,7 +548,7 @@ int loadcompleted;
         userDataPopover = [[UIPopoverController alloc] initWithContentViewController:testViewController];
         userDataPopover.popoverContentSize = CGSizeMake(320.0, 400.0);
         CGRect newFrame=[(UIButton*)sender frame];
-        NSLog(@"%@", NSStringFromCGRect(newFrame));
+      //  NSLog(@"%@", NSStringFromCGRect(newFrame));
         newFrame.origin.x=475;
         newFrame.origin.y=30;
         [userDataPopover presentPopoverFromRect:newFrame
@@ -567,7 +567,7 @@ int loadcompleted;
 - (void)categorylistener:(id)sender
 {
     categoryname=[sender valueForKey:@"object"];
-    NSLog(@"catergory name %@",categoryname);
+   // NSLog(@"catergory name %@",categoryname);
     [userDataPopover dismissPopoverAnimated:NO];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"Categorylist" object:nil];
     [self performSegueWithIdentifier:@"CourseDatas" sender:self];

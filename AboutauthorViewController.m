@@ -132,7 +132,7 @@
     else
     {
         
-        NSLog(@"No Datas found");
+       // NSLog(@"No Datas found");
     }
     
     UIImage *imageFromCache = [self.imageCache objectForKey:imagepath];
@@ -215,7 +215,7 @@
         }
         else
         {
-            NSLog(@"failure");
+           // NSLog(@"failure");
     
         }
         

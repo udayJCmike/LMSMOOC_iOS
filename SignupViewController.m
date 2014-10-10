@@ -235,7 +235,7 @@
                         [self ShowAlert:@"Should contain alphabets.\nShould contain numbers.\nShould contain special characters @_-.\nShould be 6 to 25 characters."title:@"Username"];
                         
                     }
-                      NSLog(@"ENTER VALID username");
+                    //  NSLog(@"ENTER VALID username");
                     
                 }
             }

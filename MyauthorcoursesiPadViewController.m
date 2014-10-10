@@ -36,7 +36,7 @@
     _imageOperationQueue = [[NSOperationQueue alloc]init];
     _imageOperationQueue.maxConcurrentOperationCount = 4;
     self.imageCache = [[NSCache alloc] init];
-    NSLog(@"authorid received %@",authorid);
+ //   NSLog(@"authorid received %@",authorid);
     //UIButton *button2 =  [UIButton buttonWithType:UIButtonTypeCustom];
     //[button2 setTitle:@"Remove From favorites" forState:UIControlStateNormal];
     // [button2 setTitle:@"Add to favorites" forState:UIControlStateSelected];

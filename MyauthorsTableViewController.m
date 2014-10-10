@@ -83,7 +83,7 @@
   NSString *  studentid=[[NSUserDefaults standardUserDefaults]objectForKey:@"userid"];
     NSString *response=[self HttpPostEntityFirst1:@"studentid" ForValue1:studentid  EntitySecond:@"authkey" ForValue2:@"rzTFevN099Km39PV"];
     NSError *error;
-   NSLog(@"response %@",response);
+ //  NSLog(@"response %@",response);
     SBJSON *json = [[SBJSON new] autorelease];
     NSDictionary *parsedvalue = [json objectWithString:response error:&error];
     
@@ -152,7 +152,7 @@
     NSString *url2=[NSString stringWithFormat:@"%@%@",urltemp,url1];
     NSString *post =[[NSString alloc] initWithFormat:@"%@=%@&%@=%@",firstEntity,value1,secondEntity,value2];
     NSURL *url = [NSURL URLWithString:url2];
-    NSLog(@"%@ url %@ post",url2 ,post    );
+ //   NSLog(@"%@ url %@ post",url2 ,post    );
     return [du returndbresult:post URL:url];
 }
 

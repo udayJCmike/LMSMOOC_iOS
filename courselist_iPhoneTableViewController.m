@@ -243,7 +243,7 @@ int loadcompleted;
     NSString *url1=@"AllCourse.php";
      NSString *  studentid=[[NSUserDefaults standardUserDefaults]objectForKey:@"userid"];
     NSString *URLString=[NSString stringWithFormat:@"%@%@?offset=%d&studentid=%@",urltemp,url1,offset,studentid];
-    NSLog(@"URL %@",URLString);
+   // NSLog(@"URL %@",URLString);
     NSMutableArray *search = [du MultipleCharacters:URLString];
     
     NSDictionary* menu = [search valueForKey:@"serviceresponse"];
@@ -465,7 +465,7 @@ int loadcompleted;
     NSString *url2=[NSString stringWithFormat:@"%@%@",urltemp,url1];
     NSString *post =[[NSString alloc] initWithFormat:@"%@=%@&%@=%@",firstEntity,value1,secondEntity,value2];
     NSURL *url = [NSURL URLWithString:url2];
-    NSLog(@"%@ url",url2     );
+   // NSLog(@"%@ url",url2     );
     return [du returndbresult:post URL:url];
 }
 

@@ -32,7 +32,7 @@ int loadcompleted;
 {
     [super viewDidLoad];
     
-    NSLog(@"catergory name received %@",categoryname);
+   // NSLog(@"catergory name received %@",categoryname);
     if (SCREEN_35) {
         for (NSLayoutConstraint *con in self.view.constraints)
         {
@@ -141,7 +141,7 @@ int loadcompleted;
             
         }
         loadcompleted=1;
-        NSLog(@"No Datas found");
+       // NSLog(@"No Datas found");
     }
     offset+=10;
     if (![HUD isHidden]) {

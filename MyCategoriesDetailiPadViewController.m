@@ -26,7 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"catergory name received %@",categoryname);
+  //  NSLog(@"catergory name received %@",categoryname);
     self.navigationItem.title=categoryname;
     offset=0;
     loadcompleted=0;
@@ -271,7 +271,7 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     //     NSMutableArray *indexPaths = [NSMutableArray arrayWithObject:indexPath];
-    NSLog(@"clicked at index %d",indexPath.row);
+ //   NSLog(@"clicked at index %d",indexPath.row);
     NSDictionary *temp=[courselist objectAtIndex:indexPath.row];
     if([[temp objectForKey:@"studentenrolled"]isEqualToString:@"0"])
     {

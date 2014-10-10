@@ -212,7 +212,7 @@
 //                            [delegate.Profiledetails setValue:[menu objectForKey:@"logins"] forKey:@"logins"];
                            
                     
-                            NSLog(@"dictionary values %@",delegate.Profiledetails);
+                       //     NSLog(@"dictionary values %@",delegate.Profiledetails);
                     }
                    else
                     {

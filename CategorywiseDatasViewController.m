@@ -31,7 +31,7 @@ int loadcompleted;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"catergory name received %@",categoryname);
+  //  NSLog(@"catergory name received %@",categoryname);
     if (SCREEN_35) {
         for (NSLayoutConstraint *con in self.view.constraints)
         {
@@ -284,7 +284,7 @@ int loadcompleted;
     }
     else
     {
-        NSLog(@"Student enrolled");
+       // NSLog(@"Student enrolled");
         delegate.CourseDetail=[courselist objectAtIndex:indexPath.row];
         
         

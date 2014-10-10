@@ -75,7 +75,7 @@
     du=[[databaseurl alloc]init];
     delegate=AppDelegate;
     
-    NSLog(@"password %@",[delegate.Profiledetails objectForKey:@"password"]);
+   // NSLog(@"password %@",[delegate.Profiledetails objectForKey:@"password"]);
     // Do any additional setup after loading the view.
     UITapGestureRecognizer *get=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:get];
@@ -290,7 +290,7 @@
 }
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
-    NSLog(@"tag number %d",textField.tag);
+   // NSLog(@"tag number %d",textField.tag);
     switch (textField.tag) {
         case 1:
             if ([cur_pwd.text isEqualToString:[delegate.Profiledetails objectForKey:@"password"]] && [du validatePasswordForSignupPage:cur_pwd.text])
@@ -377,7 +377,7 @@
     SBJSON *json = [[SBJSON new] autorelease];
     NSDictionary *parsedvalue = [json objectWithString:response error:&error];
     
-     NSLog(@"%@ parsed valued",parsedvalue);
+    // NSLog(@"%@ parsed valued",parsedvalue);
     if (parsedvalue == nil)
     {
         //NSLog(@"parsedvalue == nil");
@@ -437,7 +437,7 @@
     NSString *url1=@"Signup.php?service=Passwordupdate";
     NSString *url2=[NSString stringWithFormat:@"%@%@",urltemp,url1];
     NSString *post =[[NSString alloc] initWithFormat:@"%@=%@&id=%@&password=%@&%@=%@",firstEntity,value1,userid,new_pwd.text,secondEntity,value2];
-     NSLog(@"POST %@",post);
+    // NSLog(@"POST %@",post);
     NSURL *url = [NSURL URLWithString:url2];
     return [du returndbresult:post URL:url];
 }

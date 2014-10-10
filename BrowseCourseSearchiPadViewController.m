@@ -171,7 +171,7 @@ int loadcompleted;
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     //     NSMutableArray *indexPaths = [NSMutableArray arrayWithObject:indexPath];
-    NSLog(@"clicked at index %d",indexPath.row);
+  //  NSLog(@"clicked at index %d",indexPath.row);
     NSDictionary *temp=[courselist objectAtIndex:indexPath.row];
     NSString *url=[NSString stringWithFormat:@"%@?course_id=%@&authorid=%@&pur=%@&catcourse=&coursetype=",delegate.course_detail_url,[temp objectForKey:@"course_id"], [temp objectForKey:@"instructor_id"],[temp objectForKey:@"numofpurchased"]];
     // NSLog(@"URL %@",url);
