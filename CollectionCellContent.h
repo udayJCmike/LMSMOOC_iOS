@@ -15,4 +15,5 @@
 @property (retain, nonatomic) IBOutlet UIImageView *cover;
 @property (retain, nonatomic) IBOutlet UIImageView *review;
 @property (retain, nonatomic) IBOutlet UIImageView *promoimage;
+@property(nonatomic,retain)IBOutlet UILabel *enrolled;
 @end

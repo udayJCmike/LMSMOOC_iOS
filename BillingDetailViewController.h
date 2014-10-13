@@ -19,5 +19,6 @@
 @property(nonatomic,retain)IBOutlet UILabel *amountpaid;
 @property(nonatomic,retain)IBOutlet UILabel *transactiondate;
 @property(nonatomic,retain)IBOutlet UILabel *transactionid;
+@property(nonatomic,retain)IBOutlet UILabel *paidamount;
 
 @end

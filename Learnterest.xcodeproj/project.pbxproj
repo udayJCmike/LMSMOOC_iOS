@@ -1170,6 +1170,13 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = deemsys;
 				TargetAttributes = {
+					0DAFCFFB19BEC75500A1E509 = {
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
 					0DAFD01F19BEC75500A1E509 = {
 						TestTargetID = 0DAFCFFB19BEC75500A1E509;
 					};

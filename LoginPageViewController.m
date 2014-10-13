@@ -178,7 +178,7 @@
     {
         c=0;
 
-        [self ShowAlert:@"Enter username and password." title:@"Info"];
+        [self ShowAlert:@"Enter all fields." title:@"Sorry User"];
 
       
        
@@ -189,7 +189,7 @@
     {
         c=0;
      
-       [self ShowAlert:@"Enter the password." title:@"Password"];
+       [self ShowAlert:@"Enter password." title:@"Sorry User"];
        
        
 
@@ -202,7 +202,7 @@
              ([password.text length]>0))
     {
         c=0;
-        [self ShowAlert:@"Enter the username." title:@"Username"];
+        [self ShowAlert:@"Enter username." title:@"Sorry User"];
        
        
         
@@ -320,7 +320,7 @@
                 
                 [HUD hide:YES];
                // NSLog(@"invalid username or password");
-                  [self ShowAlert:@"Invalid username or password." title:@"Sorry User!" ];
+                  [self ShowAlert:@"Invalid username or password." title:@"Sorry User" ];
              username.text=@"";
                 password.text=@"";
                 

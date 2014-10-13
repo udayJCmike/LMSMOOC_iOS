@@ -25,6 +25,7 @@
 @synthesize transactiondate;
 @synthesize transactionid;
 @synthesize billdatas;
+@synthesize paidamount;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -53,17 +54,30 @@
        authorname.text=[billdatas valueForKey:@"course_author"];
        dateofpurchase.text=[billdatas valueForKey:@"purchased_date"];
        price.text=[NSString stringWithFormat:@"$%@",[billdatas valueForKey:@"amount_paid"]];
-    if ([[billdatas valueForKey:@"promocode"]isEqualToString:@"1"]) {
-        promo.text=@"Yes";
-    }
-    else if([[billdatas valueForKey:@"promocode"]isEqualToString:@"0"])
+//    if ([[billdatas valueForKey:@"promocode"]isEqualToString:@"1"]) {
+//        promo.text=@"Yes";
+//    }
+//    else
+    if([[billdatas valueForKey:@"promocode"]isEqualToString:@"0"])
     {
-        promo.text=@"No";
+        promo.text=@"";
+    }
+    else
+    {
+        promo.text=[billdatas valueForKey:@"promocode"];
     }
     
       // promo.text=[billdatas valueForKey:@"promocode"];
        reduction.text=[NSString stringWithFormat:@"$%@",[billdatas valueForKey:@"reduction"]];
+    if ([[billdatas valueForKey:@"reduction"]isEqualToString:@""]) {
+        reduction.text=[NSString stringWithFormat:@"$0"];
+    }
+    
        amountpaid.text=[NSString stringWithFormat:@"$%@",[billdatas valueForKey:@"amount_paid"]];
+    int red=[[billdatas valueForKey:@"reduction"] intValue];
+   int total= [[billdatas valueForKey:@"amount_paid"]intValue];
+    int paid=total-red;
+    paidamount.text=[NSString stringWithFormat:@"$%d",paid];
        transactiondate.text=[billdatas valueForKey:@"transaction_date"];
        transactionid.text=[billdatas valueForKey:@"transaction_id"];
     

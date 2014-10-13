@@ -127,9 +127,9 @@
     if ([cur_pwd.text isEqualToString:[delegate.Profiledetails objectForKey:@"password"]] && [du validatePasswordForSignupPage:cur_pwd.text])
     {
    
-    if ([du validatePasswordForSignupPage:new_pwd.text])
+    if ([du validatePasswordForSignupPage:new_pwd.text]&& ![cur_pwd.text isEqualToString:new_pwd.text])
     {
-        if ([du validatePasswordForSignupPage:cfm_pwd.text])
+        if ([cfm_pwd.text length]>0)//[du validatePasswordForSignupPage:cfm_pwd.text])
         {
             if ([new_pwd.text isEqualToString:cfm_pwd.text])
             {
@@ -159,7 +159,7 @@
             else
             {
                 c = 0;
-                [self ShowAlert:@"Password and Confirm Password should be same."title:@"Password"];
+                [self ShowAlert:@"Password do not match."title:@"Sorry User"];
                 
             }
         }
@@ -167,11 +167,12 @@
         {
             c = 0;
             if ([cfm_pwd.text length]==0) {
-                [self ShowAlert:@"Enter the confirm new password."title:@"Confirm new password"];
+                [self ShowAlert:@"Enter confirm new password."title:@"Sorry User"];
             }
             else
             {
-                [self ShowAlert:@"Should contain 1 alphabet.\nShould contain 1 number.\nShould contain 1 special character.\nShould be 8 to 25 characters."title:@"Confirm Password"];
+              // [self ShowAlert:@"Should contain 1 alphabet.\nShould contain 1 number.\nShould contain 1 special character.\nShould be 8 to 25 characters."title:@"Confirm Password"];
+                 [self ShowAlert:@"Enter confirm new password."title:@"Sorry User"];
                 
             }
 
@@ -182,12 +183,22 @@
     {
         c = 0;
         if ([new_pwd.text length]==0) {
-            [self ShowAlert:@"Enter the new password."title:@"New password"];
+            [self ShowAlert:@"Enter new password."title:@"Sorry User"];
         }
-        else
+        else if ([new_pwd.text length]>0)
         {
-            [self ShowAlert:@"Should contain 1 alphabet.\nShould contain 1 number.\nShould contain 1 special character.\nShould be 8 to 25 characters." title:@"Password"];
+            if (![du validatePasswordForSignupPage:new_pwd.text]) {
             
+            
+         //   [self ShowAlert:@"Should contain 1 alphabet.\nShould contain 1 number.\nShould contain 1 special character.\nShould be 8 to 25 characters." title:@"Password"];
+                  [self ShowAlert:@"Enter new password."title:@"Sorry User"];
+            
+            }
+            else if([cur_pwd.text isEqualToString:new_pwd.text])
+            {
+              [self ShowAlert:@"Current password,New password should not be same." title:@"Sorry User"];
+                
+            }
         }
 
         
@@ -197,11 +208,11 @@
     {
         c = 0;
         if ([cur_pwd.text length]==0) {
-            [self ShowAlert:@"Enter the current password."title:@"Current password"];
+            [self ShowAlert:@"Enter current password."title:@"Sorry User"];
         }
         else
         {
-            [self ShowAlert:@"Invalid current password." title:@"Current password"];
+            [self ShowAlert:@"The current password you gave is incorrect." title:@"Sorry User"];
             
         }
     }
@@ -299,35 +310,47 @@
             else
             {
                 if ([cur_pwd.text length]==0) {
-                    [self ShowAlert:@"Enter the current password." title:@"Current password"];
+                    [self ShowAlert:@"Enter current password." title:@"Sorry User"];
                 }
                 else if(![du validatePasswordForSignupPage:cur_pwd.text])
                 {
-                    [self ShowAlert:@"Should contain 1 alphabet.\nShould contain 1 number.\nShould contain 1 special character.\nShould be 8 to 25 characters."title:@"Current Password"];
+                  //  [self ShowAlert:@"Should contain 1 alphabet.\nShould contain 1 number.\nShould contain 1 special character.\nShould be 8 to 25 characters."title:@"Sorry User"];
+                      [self ShowAlert:@"Enter current password." title:@"Sorry User"];
                     
                 }
                 else if(![cur_pwd.text isEqualToString:[delegate.Profiledetails objectForKey:@"password"]])
                 {
-                     [self ShowAlert:@"Invalid current password." title:@"Current password"];
+                     [self ShowAlert:@"The current password you gave is incorrect." title:@"Sorry User"];
                 }
                 //  NSLog(@"ENTER VALID password");
                 
             }
             break;
         case 2:
-            if ([du validatePasswordForSignupPage:new_pwd.text])
+            if ([du validatePasswordForSignupPage:new_pwd.text] && ![cur_pwd.text isEqualToString:new_pwd.text])
             {
             }
             else
             {
                 if ([new_pwd.text length]==0) {
-                    [self ShowAlert:@"Enter the new password."title:@"New password"];
+                    [self ShowAlert:@"Enter new password."title:@"Sorry User"];
                 }
-                else
+                else if ([new_pwd.text length]>0)
                 {
-                    [self ShowAlert:@"Should contain 1 alphabet.\nShould contain 1 number.\nShould contain 1 special character.\nShould be 8 to 25 characters."title:@"New password"];
-                    
+                    if (![du validatePasswordForSignupPage:new_pwd.text]) {
+                        
+                        
+                      //  [self ShowAlert:@"Should contain 1 alphabet.\nShould contain 1 number.\nShould contain 1 special character.\nShould be 8 to 25 characters." title:@"Sorry User"];
+                        [self ShowAlert:@"Enter new password."title:@"Sorry User"];
+                        
+                    }
+                    else if([cur_pwd.text isEqualToString:new_pwd.text])
+                    {
+                        [self ShowAlert:@"Current password,New password should not be same." title:@"Sorry User"];
+                        
+                    }
                 }
+
                 //  NSLog(@"ENTER VALID password");
                 
             }
@@ -341,17 +364,18 @@
             {
                 if ([cfm_pwd.text length]==0)
                 {
-                    [self ShowAlert:@"Enter the confirm password."title:@"Confirm password"];
+                    [self ShowAlert:@"Enter confirm password."title:@"Sorry User"];
                 }
-                else if(![du validatePasswordForSignupPage:cfm_pwd.text])
-                {
-                    
-                    [self ShowAlert:@"Should contain 1 alphabet.\nShould contain 1 number.\nShould contain 1 special character.\nShould be 8 to 25 characters."title:@"Confirm password"];
-                    
-                }
+//                else if(![du validatePasswordForSignupPage:cfm_pwd.text])
+//                {
+//                    
+////                    [self ShowAlert:@"Should contain 1 alphabet.\nShould contain 1 number.\nShould contain 1 special character.\nShould be 8 to 25 characters."title:@"Sorry User"];
+//                        [self ShowAlert:@"Enter confirm password."title:@"Sorry User"];
+//                    
+//                }
                 else if(![new_pwd.text isEqualToString:cfm_pwd.text])
                 {
-                    [self ShowAlert:@"Password and Confirm Password should be same."title:@"Password"];
+                    [self ShowAlert:@"Password do not match."title:@"Sorry User"];
                 }
                 
                
@@ -395,10 +419,10 @@
                 NSLog(@"Updation  Succecssful");
                 cfm_pwd.text=@"";
                 new_pwd.text=@"";
-               cur_pwd.text=[delegate.Profiledetails objectForKey:@"password"];
-                
+               cur_pwd.text=@"";
+                //[delegate.Profiledetails objectForKey:@"password"]
                 [HUD hide:YES];
-                
+                [self ShowAlert:@"Password updation successful."title:@"Success"];
                 
                 
                 //                if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad)
@@ -420,7 +444,7 @@
                 [HUD hide:YES];
                 
                 NSLog(@"Updation failed");
-                
+                 [self ShowAlert:@"Password updation failed."title:@"Sorry User"];
                 
             }
             

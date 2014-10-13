@@ -923,17 +923,17 @@
                                                             <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ratings:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xup-vZ-JmG">
-                                                            <rect key="frame" x="175" y="195" width="61" height="21"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="promocode.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="vUO-CD-Y8l">
                                                             <rect key="frame" x="211" y="161" width="118" height="26"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         </imageView>
+                                                        <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enrolled" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DEI-gZ-v57">
+                                                            <rect key="frame" x="138" y="195" width="56" height="18"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <color key="textColor" red="0.1033044473" green="0.58841811129999999" blue="0.066911944409999993" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 </view>
@@ -944,6 +944,7 @@
                                             <outlet property="authorname" destination="IlD-E5-2rM" id="kFB-xO-bnD"/>
                                             <outlet property="coursename" destination="Edl-j0-Tmf" id="ZOh-fX-rbt"/>
                                             <outlet property="cover" destination="eb3-v8-x9J" id="Pvq-o6-JsF"/>
+                                            <outlet property="enrolled" destination="DEI-gZ-v57" id="Hxp-sJ-WDW"/>
                                             <outlet property="price" destination="gaw-X0-Mjm" id="YKn-xw-E69"/>
                                             <outlet property="promoimage" destination="vUO-CD-Y8l" id="lhZ-cP-WWa"/>
                                             <outlet property="review" destination="NKp-5j-71A" id="4og-7q-sAk"/>
@@ -1048,17 +1049,17 @@
                                                             <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ratings:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJ1-EY-fcO">
-                                                            <rect key="frame" x="175" y="195" width="61" height="21"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="promocode.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="97N-0N-iYO">
                                                             <rect key="frame" x="211" y="161" width="118" height="26"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         </imageView>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enrolled" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4D-lp-mWR">
+                                                            <rect key="frame" x="138" y="195" width="56" height="18"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <color key="textColor" red="0.1033044473" green="0.58841811129999999" blue="0.066911944409999993" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 </view>
@@ -1069,6 +1070,7 @@
                                             <outlet property="authorname" destination="kFW-6i-20Q" id="f7v-3Y-TCa"/>
                                             <outlet property="coursename" destination="A59-8z-VqS" id="CHn-JA-OsH"/>
                                             <outlet property="cover" destination="duM-wx-Q2U" id="Tbk-hB-lg4"/>
+                                            <outlet property="enrolled" destination="g4D-lp-mWR" id="Gp9-WA-6ti"/>
                                             <outlet property="price" destination="yyi-yo-X2S" id="Cja-DA-AhK"/>
                                             <outlet property="promoimage" destination="97N-0N-iYO" id="gJd-ax-LM7"/>
                                             <outlet property="review" destination="SPw-6V-roi" id="hcH-fp-Nz9"/>
@@ -1210,6 +1212,13 @@
                                                             <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enrolled" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Oy-BR-XBw">
+                                                            <rect key="frame" x="138" y="195" width="56" height="18"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <color key="textColor" red="0.1033044473" green="0.58841811129999999" blue="0.066911944409999993" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JMr-qF-fZu">
                                                             <rect key="frame" x="234" y="197" width="92" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1228,13 +1237,6 @@
                                                             <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ratings:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Bs-Eo-eSw">
-                                                            <rect key="frame" x="175" y="195" width="61" height="21"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="promocode.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="WyP-I4-LuB">
                                                             <rect key="frame" x="211" y="161" width="118" height="26"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1249,6 +1251,7 @@
                                             <outlet property="authorname" destination="HXc-Bl-Tll" id="Ll3-ZV-tCp"/>
                                             <outlet property="coursename" destination="Nkb-na-zdy" id="uob-hh-2qX"/>
                                             <outlet property="cover" destination="yiT-Ft-03A" id="o8x-MZ-MDM"/>
+                                            <outlet property="enrolled" destination="7Oy-BR-XBw" id="wdS-av-2Vt"/>
                                             <outlet property="price" destination="L9Z-Ay-UF6" id="97W-7E-jVb"/>
                                             <outlet property="promoimage" destination="WyP-I4-LuB" id="AbZ-0U-Ra9"/>
                                             <outlet property="review" destination="JMr-qF-fZu" id="9Oo-wb-GtM"/>
@@ -1363,17 +1366,17 @@
                                                             <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ratings:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxX-O5-MKJ">
-                                                            <rect key="frame" x="175" y="195" width="61" height="21"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="promocode.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="tk8-T2-Xnj">
                                                             <rect key="frame" x="211" y="161" width="118" height="26"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         </imageView>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enrolled" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ggy-rt-Zoa">
+                                                            <rect key="frame" x="138" y="195" width="56" height="18"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <color key="textColor" red="0.1033044473" green="0.58841811129999999" blue="0.066911944409999993" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 </view>
@@ -1384,6 +1387,7 @@
                                             <outlet property="authorname" destination="HWN-vd-fOH" id="Qpe-UZ-GuG"/>
                                             <outlet property="coursename" destination="3V2-Qf-ZNQ" id="vXn-H1-dP2"/>
                                             <outlet property="cover" destination="vjZ-NW-s0D" id="Prm-Fp-1k7"/>
+                                            <outlet property="enrolled" destination="ggy-rt-Zoa" id="Ytt-rr-acg"/>
                                             <outlet property="price" destination="ght-wd-hlV" id="PRH-TF-eyX"/>
                                             <outlet property="promoimage" destination="tk8-T2-Xnj" id="Xrg-yr-Kjl"/>
                                             <outlet property="review" destination="Aso-U1-u0o" id="CkI-KQ-4R8"/>
@@ -1522,17 +1526,17 @@
                                                             <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ratings:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIw-ec-qMY">
-                                                            <rect key="frame" x="175" y="195" width="61" height="21"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="promocode.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="4rM-OL-wgk">
                                                             <rect key="frame" x="211" y="161" width="118" height="26"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         </imageView>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enrolled" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SXe-Ne-kkt">
+                                                            <rect key="frame" x="138" y="195" width="56" height="18"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <color key="textColor" red="0.1033044473" green="0.58841811129999999" blue="0.066911944409999993" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 </view>
@@ -1543,6 +1547,7 @@
                                             <outlet property="authorname" destination="lJB-XQ-USv" id="c3n-ae-46n"/>
                                             <outlet property="coursename" destination="3Vq-UK-5Ef" id="rHg-ZM-kp0"/>
                                             <outlet property="cover" destination="4uv-1R-nxV" id="0f5-Gp-l4Z"/>
+                                            <outlet property="enrolled" destination="SXe-Ne-kkt" id="fDa-ZU-2bU"/>
                                             <outlet property="price" destination="dVv-tP-Hpt" id="dCD-JD-mV3"/>
                                             <outlet property="promoimage" destination="4rM-OL-wgk" id="7ot-vy-hao"/>
                                             <outlet property="review" destination="kan-zs-9pn" id="bJd-AN-GZX"/>
@@ -1664,17 +1669,17 @@
                                                             <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ratings:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CPb-9m-Fhs">
-                                                            <rect key="frame" x="175" y="195" width="61" height="21"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="promocode.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="IkV-di-wyR">
                                                             <rect key="frame" x="211" y="161" width="118" height="26"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         </imageView>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enrolled" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozm-Ul-RbY">
+                                                            <rect key="frame" x="138" y="195" width="56" height="18"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <color key="textColor" red="0.1033044473" green="0.58841811129999999" blue="0.066911944409999993" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 </view>
@@ -1685,6 +1690,7 @@
                                             <outlet property="authorname" destination="kxC-pB-EBa" id="gda-rt-MUK"/>
                                             <outlet property="coursename" destination="ZjI-Ln-bm4" id="xcH-Ws-DAw"/>
                                             <outlet property="cover" destination="X4A-Nc-q7h" id="Sdp-S8-Jhq"/>
+                                            <outlet property="enrolled" destination="ozm-Ul-RbY" id="nJO-rm-efy"/>
                                             <outlet property="price" destination="EUf-r0-ZPc" id="LTJ-9r-lVl"/>
                                             <outlet property="promoimage" destination="IkV-di-wyR" id="TrM-0L-3AP"/>
                                             <outlet property="review" destination="s8x-i8-ufN" id="VG1-9x-KRQ"/>
@@ -1856,17 +1862,17 @@
                                                             <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ratings:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pTC-s0-5km">
-                                                            <rect key="frame" x="175" y="195" width="61" height="21"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="promocode.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="S0m-ET-Xpu">
                                                             <rect key="frame" x="211" y="161" width="118" height="26"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         </imageView>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enrolled" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TmR-Z7-u5R">
+                                                            <rect key="frame" x="138" y="195" width="56" height="18"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <color key="textColor" red="0.1033044473" green="0.58841811129999999" blue="0.066911944409999993" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 </view>
@@ -1877,6 +1883,7 @@
                                             <outlet property="authorname" destination="1h7-IN-M7K" id="NRs-q7-4ca"/>
                                             <outlet property="coursename" destination="hYb-b7-MFd" id="QZn-OS-4Wm"/>
                                             <outlet property="cover" destination="uIo-V3-xhb" id="KaN-L3-Uq2"/>
+                                            <outlet property="enrolled" destination="TmR-Z7-u5R" id="lid-Ti-orb"/>
                                             <outlet property="price" destination="t91-eT-Pq4" id="Tai-t0-IC2"/>
                                             <outlet property="promoimage" destination="S0m-ET-Xpu" id="M2b-ZE-3CO"/>
                                             <outlet property="review" destination="C9X-2H-phM" id="2PC-GT-d4Z"/>

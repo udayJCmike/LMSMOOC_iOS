@@ -78,7 +78,7 @@ static databaseurl * appInstance;
 {
     BOOL lowerCaseLetter=FALSE,upperCaseLetter=FALSE,digit=FALSE,specialCharacter=FALSE;
     int asciiValue;
-    if(([password length] >= 8) && ([password length] <=25 ))
+    if(([password length] >=6) && ([password length] <=25 ))
     {
         for (int i = 0; i < [password length]; i++)
         {
@@ -140,7 +140,7 @@ static databaseurl * appInstance;
 -(BOOL)validateNameForSignupPage:(NSString *)firstname
 
 {
-    NSString *userFormat1 =@"[A-Za-z ]{3,15}";
+    NSString *userFormat1 =@"[A-Za-z ]{2,84}";
     //[(UITextField*)[self.view viewWithTag:101] resignFirstResponder];
     NSPredicate *test = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", userFormat1];
     return [test evaluateWithObject:firstname];
@@ -148,7 +148,7 @@ static databaseurl * appInstance;
 
 -(BOOL)validateUserNameForSignupPage:(NSString *)firstname
 {
-    NSString *userFormat1 =@"[A-Za-z0-9@_-]{6,25}";
+    NSString *userFormat1 =@"[A-Za-z0-9@_-]{6,84}";
     //[(UITextField*)[self.view viewWithTag:101] resignFirstResponder];
     NSPredicate *test = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", userFormat1];
     return [test evaluateWithObject:firstname];
@@ -180,9 +180,16 @@ static databaseurl * appInstance;
 
 -(BOOL)validateEmailForSignupPage:(NSString*)candidate
 {
+    if ([candidate length]>0 && ([candidate length]<=84))
+    {
+        
+   
     NSString *emailFormat1 = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
     NSPredicate *emailTest1 = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailFormat1];
     return [emailTest1 evaluateWithObject:candidate];
+    }
+    else
+     return 0;
 }
 
 -(NSString *)returndbresult:(NSString *)post URL:(NSURL *)url
@@ -240,16 +247,20 @@ static databaseurl * appInstance;
 }
 -(NSMutableArray *)MultipleCharacters:(NSString *)url
 {
-    NSMutableURLRequest *request =[[NSMutableURLRequest alloc]initWithURL:[NSURL URLWithString:url]];
+//    NSLog(@"url in multiple %@",url);
+    NSString *myurl=[url stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+    NSMutableURLRequest *request =[[NSMutableURLRequest alloc]initWithURL:[NSURL URLWithString:myurl]];
+//     NSLog(@"return request %@",request);
     NSData *returnData = [ NSURLConnection sendSynchronousRequest:request returningResponse: nil error: nil ];
-   // NSLog(@"return string %@",returnData);
+   
+
+   //  NSLog(@"return string %@",returnData);
+    
     NSString *returnString = [[NSString alloc]initWithData:returnData encoding:NSUTF8StringEncoding];
     NSError *err = nil;
  // NSLog(@"return string %@",returnString);
-
- 
     NSMutableArray *search = [NSJSONSerialization JSONObjectWithData:[returnString dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:&err];
-//  NSLog(@"search response %@",search);
+ // NSLog(@"search response %@",search);
     return search;
 }
 -(NSString *)MultipleCharactersHTML:(NSString *)url

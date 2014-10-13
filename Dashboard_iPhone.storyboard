@@ -302,12 +302,20 @@
                                                     <rect key="frame" x="194" y="163" width="137" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enrolled" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tu5-99-Jnu">
+                                                    <rect key="frame" x="1" y="159" width="65" height="25"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.1033044473" green="0.58841811129999999" blue="0.066911944409999993" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="authorname" destination="Ls6-uW-g1s" id="ldz-gd-dlW"/>
                                             <outlet property="coursename" destination="3XM-Zg-aMg" id="dCA-ZV-G7n"/>
                                             <outlet property="cover" destination="dac-lf-Pcj" id="cpr-6j-7Yg"/>
+                                            <outlet property="enrolled" destination="tu5-99-Jnu" id="XCl-sd-cir"/>
                                             <outlet property="price" destination="PKE-Zg-koB" id="atQ-di-tWO"/>
                                             <outlet property="promoimage" destination="m0P-Yy-eoT" id="Big-3v-KaF"/>
                                             <outlet property="review" destination="bDc-eK-R8E" id="nUm-l4-sG8"/>
@@ -931,8 +939,8 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Amount Paid:" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="115" translatesAutoresizingMaskIntoConstraints="NO" id="Vej-ts-OzV">
-                                                <rect key="frame" x="20" y="310" width="115" height="35"/>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Course amount:" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="123" translatesAutoresizingMaskIntoConstraints="NO" id="Vej-ts-OzV">
+                                                <rect key="frame" x="20" y="315" width="123" height="25"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.20000000000000001" green="0.46666666670000001" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -942,25 +950,36 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Paid amount:" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="108" translatesAutoresizingMaskIntoConstraints="NO" id="RvT-NU-hQ1">
+                                                <rect key="frame" x="20" y="355" width="108" height="29"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.20000000000000001" green="0.46666666670000001" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Course Name:" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="170" translatesAutoresizingMaskIntoConstraints="NO" id="i5W-IN-eMz">
+                                                <rect key="frame" x="142" y="352" width="170" height="35"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Transaction Date:" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="114" translatesAutoresizingMaskIntoConstraints="NO" id="uxr-SU-7B7">
-                                                <rect key="frame" x="20" y="350" width="114" height="48"/>
+                                                <rect key="frame" x="20" y="394" width="114" height="48"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.20000000000000001" green="0.46666666670000001" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Course Name:" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="170" translatesAutoresizingMaskIntoConstraints="NO" id="v60-Vd-hYS">
-                                                <rect key="frame" x="142" y="356" width="170" height="54"/>
+                                                <rect key="frame" x="142" y="400" width="170" height="54"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Transaction id:" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="115" translatesAutoresizingMaskIntoConstraints="NO" id="GsR-iA-FHa">
-                                                <rect key="frame" x="20" y="406" width="115" height="35"/>
+                                                <rect key="frame" x="20" y="450" width="115" height="35"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.20000000000000001" green="0.46666666670000001" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Course Name:" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="170" translatesAutoresizingMaskIntoConstraints="NO" id="h68-jF-6wM">
-                                                <rect key="frame" x="142" y="394" width="170" height="59"/>
+                                                <rect key="frame" x="142" y="438" width="170" height="59"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -994,6 +1013,7 @@
                         <outlet property="authorname" destination="egd-2U-lMh" id="MJw-ax-Dec"/>
                         <outlet property="coursename" destination="QKy-AI-4Sy" id="ubG-ap-VZW"/>
                         <outlet property="dateofpurchase" destination="CHy-FT-kHB" id="2w8-XS-uU8"/>
+                        <outlet property="paidamount" destination="i5W-IN-eMz" id="9HQ-oR-xfP"/>
                         <outlet property="price" destination="Cew-zE-sNd" id="Wgh-0L-Gq8"/>
                         <outlet property="promo" destination="4IY-qY-n78" id="ZXM-ng-1gY"/>
                         <outlet property="reduction" destination="1V6-8Q-lqZ" id="lgy-el-Nuz"/>
@@ -1212,12 +1232,20 @@
                                                     <rect key="frame" x="194" y="163" width="137" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enrolled" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uzb-yj-myY">
+                                                    <rect key="frame" x="1" y="159" width="65" height="25"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.1033044473" green="0.58841811129999999" blue="0.066911944409999993" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="authorname" destination="5Ts-ys-xkf" id="Dxi-yG-Jn3"/>
                                             <outlet property="coursename" destination="SEy-Zp-WY2" id="pKk-n5-30a"/>
                                             <outlet property="cover" destination="Atu-Cz-G0p" id="Dnl-d7-ODA"/>
+                                            <outlet property="enrolled" destination="Uzb-yj-myY" id="2dp-EH-UeY"/>
                                             <outlet property="price" destination="ape-kU-EuO" id="Rf3-jk-zWx"/>
                                             <outlet property="promoimage" destination="pRf-hZ-40b" id="Z8H-Nx-6DY"/>
                                             <outlet property="review" destination="ZK6-zP-AB2" id="AZT-P1-xC3"/>
@@ -1317,6 +1345,13 @@
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enrolled" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ul-4k-U2P">
+                                                    <rect key="frame" x="1" y="159" width="65" height="25"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.1033044473" green="0.58841811129999999" blue="0.066911944409999993" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q4F-PN-Ihe">
                                                     <rect key="frame" x="0.0" y="32" width="320" height="100"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1349,6 +1384,7 @@
                                             <outlet property="authorname" destination="45f-jj-ofC" id="xSO-qc-95A"/>
                                             <outlet property="coursename" destination="QaE-Oc-3eI" id="ScF-mx-VAa"/>
                                             <outlet property="cover" destination="q4F-PN-Ihe" id="PHT-up-xtx"/>
+                                            <outlet property="enrolled" destination="8Ul-4k-U2P" id="HLo-rN-G2J"/>
                                             <outlet property="price" destination="TeG-Wm-8v8" id="de8-AV-bam"/>
                                             <outlet property="promoimage" destination="99Y-hQ-JKL" id="Zby-Za-0TX"/>
                                             <outlet property="review" destination="brk-8D-6fu" id="osL-Ld-HXj"/>
@@ -1428,6 +1464,13 @@
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enrolled" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nVG-Bs-U4y">
+                                                    <rect key="frame" x="1" y="159" width="65" height="25"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.1033044473" green="0.58841811129999999" blue="0.066911944409999993" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qPE-Gm-t6P">
                                                     <rect key="frame" x="0.0" y="32" width="320" height="100"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1460,6 +1503,7 @@
                                             <outlet property="authorname" destination="0pd-ad-eqz" id="EWf-r5-eQj"/>
                                             <outlet property="coursename" destination="bf2-Pr-4Gc" id="zTZ-Wb-ZMc"/>
                                             <outlet property="cover" destination="qPE-Gm-t6P" id="T6q-uH-hUY"/>
+                                            <outlet property="enrolled" destination="nVG-Bs-U4y" id="A7o-91-Fiv"/>
                                             <outlet property="price" destination="Mnt-rv-wDm" id="1eh-FB-DDT"/>
                                             <outlet property="promoimage" destination="45d-R7-ze6" id="v61-co-4uo"/>
                                             <outlet property="review" destination="31z-v5-3Q6" id="XSe-6d-1d1"/>
@@ -1565,12 +1609,20 @@
                                                     <rect key="frame" x="194" y="163" width="137" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enrolled" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GoQ-JG-DZq">
+                                                    <rect key="frame" x="1" y="159" width="65" height="25"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.1033044473" green="0.58841811129999999" blue="0.066911944409999993" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="authorname" destination="7is-Kz-fqs" id="sNf-tT-ChO"/>
                                             <outlet property="coursename" destination="RPZ-Mb-HUg" id="3Cz-u1-cai"/>
                                             <outlet property="cover" destination="q8u-qa-Ni5" id="v3S-7Y-eja"/>
+                                            <outlet property="enrolled" destination="GoQ-JG-DZq" id="MD2-Zt-red"/>
                                             <outlet property="price" destination="E5d-aY-X1g" id="epw-zG-sIR"/>
                                             <outlet property="promoimage" destination="3yt-03-ZK5" id="Eo9-Yh-FgA"/>
                                             <outlet property="review" destination="DAp-fT-BmC" id="sdR-SQ-4vf"/>
@@ -1676,12 +1728,20 @@
                                                     <rect key="frame" x="194" y="163" width="137" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enrolled" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fy-tX-1ZN">
+                                                    <rect key="frame" x="1" y="159" width="65" height="25"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.1033044473" green="0.58841811129999999" blue="0.066911944409999993" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="authorname" destination="XAl-L4-6u5" id="Nb2-9t-ybW"/>
                                             <outlet property="coursename" destination="aTR-up-X7j" id="df7-75-Gm6"/>
                                             <outlet property="cover" destination="4Gw-ON-WJv" id="gv5-Cc-9pN"/>
+                                            <outlet property="enrolled" destination="0fy-tX-1ZN" id="iEO-rh-Y9z"/>
                                             <outlet property="price" destination="qNP-tX-4hr" id="pH2-fD-KgG"/>
                                             <outlet property="promoimage" destination="peU-4A-UGn" id="Blc-S9-zuH"/>
                                             <outlet property="review" destination="rAW-04-xTZ" id="7NN-yr-ekk"/>
@@ -1793,12 +1853,20 @@
                                                     <rect key="frame" x="194" y="163" width="137" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enrolled" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCy-GL-Amj">
+                                                    <rect key="frame" x="1" y="159" width="65" height="25"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.1033044473" green="0.58841811129999999" blue="0.066911944409999993" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="authorname" destination="fQe-rM-74z" id="jTF-TU-Tv8"/>
                                             <outlet property="coursename" destination="5FW-FH-MIm" id="aSN-sv-qPq"/>
                                             <outlet property="cover" destination="imm-YN-I1k" id="xDX-BC-3n3"/>
+                                            <outlet property="enrolled" destination="OCy-GL-Amj" id="pqA-zm-Z44"/>
                                             <outlet property="price" destination="G1m-OI-mux" id="kdR-Ni-d8C"/>
                                             <outlet property="promoimage" destination="UTP-cO-Sqz" id="YJw-ao-yoI"/>
                                             <outlet property="review" destination="WmA-tj-j26" id="9xf-Mx-st4"/>

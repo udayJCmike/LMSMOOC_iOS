@@ -195,12 +195,12 @@
     NSDictionary *temp=[billing objectAtIndex:indexPath.row];
     cell.coursename.text=[temp valueForKey:@"course_name"];
     cell.purchaseddate.text=[temp valueForKey:@"purchased_date"];
-    if ([[temp valueForKey:@"promocode"]isEqualToString:@"1"]) {
-         cell.promocode.text=@"Yes";
-    }
-    else if([[temp valueForKey:@"promocode"]isEqualToString:@"0"])
-    {
+    if ([[temp valueForKey:@"promocode"]isEqualToString:@"0"]) {
          cell.promocode.text=@"No";
+    }
+    else
+    {
+         cell.promocode.text=@"Yes";
     }
    
     cell.reduction.text=[NSString stringWithFormat:@"$%@",[temp valueForKey:@"reduction"]];

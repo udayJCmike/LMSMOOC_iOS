@@ -32,7 +32,7 @@ int loadcompleted;
 {
     [super viewDidLoad];
     
-   // NSLog(@"catergory name received %@",categoryname);
+   NSLog(@"catergory name received %@",categoryname);
     if (SCREEN_35) {
         for (NSLayoutConstraint *con in self.view.constraints)
         {
@@ -105,6 +105,7 @@ int loadcompleted;
     NSString *url1=@"BrowseCategorywiseDatas.php";
   
     NSString *URLString=[NSString stringWithFormat:@"%@%@?offset=%d&category=%@",urltemp,url1,offset,categoryname];
+    NSLog(@"URL String %@",URLString);
     
     NSMutableArray *search = [du MultipleCharacters:URLString];
     

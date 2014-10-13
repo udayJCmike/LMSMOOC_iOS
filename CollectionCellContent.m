@@ -15,6 +15,7 @@
 @synthesize price;
 @synthesize review;
 @synthesize promoimage;
+@synthesize enrolled;
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];

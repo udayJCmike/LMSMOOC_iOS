@@ -8,8 +8,14 @@
 
 #import "lmsmoocAppDelegate.h"
 #import<MediaPlayer/MediaPlayer.h>
-
+#import "SBJSON.h"
+#import "databaseurl.h"
+#define  AppDelegate (lmsmoocAppDelegate *)[[UIApplication sharedApplication] delegate]
 @implementation lmsmoocAppDelegate
+{
+     databaseurl *du;
+    
+}
 @synthesize avatharURL;
 @synthesize av_image;
 @synthesize Profiledetails;
@@ -17,13 +23,16 @@
 @synthesize course_image_url;
 @synthesize CourseDetail;
 @synthesize lectureDetail;
+@synthesize deviceid;
+@synthesize tockenid;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     UIPageControl *pageControl = [UIPageControl appearance];
     pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
     pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
     pageControl.backgroundColor=[UIColor clearColor];
-//    [[UISegmentedControl appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor redColor]} forState:UIControlStateSelected];
+ [application registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
+    
       return YES;
 }
 							
@@ -50,12 +59,19 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+   
 }
+
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
  
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+// tockenid=@"0f744707bebcf74f9b7c25d48e3358945f6aa01da5ddb387462c7eaf61bbad78";
+//    deviceid= [self getUniqueDeviceIdentifierAsString];
+//    if (([deviceid length]>0)&&([tockenid length]>0)) {
+//        NSLog(@"resign activity");
+//        [self updateid];
+//    }
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
@@ -109,7 +125,91 @@
     
     
 }
+//- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+//    NSLog(@"Did Register for Remote Notifications with Device Token (%@)", deviceToken);
+//    [self getUniqueDeviceIdentifierAsString];
+//}
+//- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+//    NSLog(@"Did Fail to Register for Remote Notifications");
+//    NSLog(@"%@, %@", error, error.localizedDescription);
+//    
+//}
+//-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+//{
+//    NSLog(@" Remote Notifications(%@)", userInfo);
+//    
+//}
+-(NSString *)getUniqueDeviceIdentifierAsString
+{
+    
+    
+    
+    NSString *strApplicationUUID ;
+    
+        strApplicationUUID  = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+        NSLog(@"UUID %@",strApplicationUUID);
+    
+    
+    
+    return strApplicationUUID;
+}
+-(void)updateid
+{
+    du=[[databaseurl alloc]init];
+  
+   dispatch_group_t imageQueue = dispatch_group_create();
+    
+    dispatch_group_async(imageQueue, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
+                         ^{
+                             NSString *response=[self HttpPostEntityFirstURL1:@"name" ForValue1:@"lms"  EntitySecond:@"authkey" ForValue2:@"rzTFevN099Km39PV"];
+                             NSError *error;
+                             
+                             SBJSON *json = [[SBJSON new] autorelease];
+                             NSDictionary *parsedvalue = [json objectWithString:response error:&error];
+                             
+                              NSLog(@"%@ parsedvalue",response);
+                             if (parsedvalue == nil)
+                             {
+                                 
+                                 //NSLog(@"parsedvalue == nil");
+                                 
+                             }
+                             else
+                             {
+                                 
+                                 NSDictionary* menu = [parsedvalue objectForKey:@"serviceresponse"];
+                                 
+                                 if ([[menu objectForKey:@"success"] isEqualToString:@"Yes"])
+                                 {
+                                     NSLog(@"succesful");
+                                     
+                                 }
+                                 else
+                                 {
+                                      NSLog(@"failure");
+                                 }
+                                 
+                             }
+                             
 
+                             
+        dispatch_async(dispatch_get_main_queue(), ^{
+            //Your code to execute on UIthread (main thread)
+        });
+    });
+}
+-(NSString *)HttpPostEntityFirstURL1:(NSString*)firstEntity ForValue1:(NSString*)value1 EntitySecond:(NSString*)secondEntity ForValue2:(NSString*)value2
+{
+    
+    
+    NSString *urltemp=[[databaseurl sharedInstance]DBurl];
+    NSString *url1=@"Device_tocken_id.php?service=tockeninsert";
+    NSString *url2=[NSString stringWithFormat:@"%@%@",urltemp,url1];
+    NSString *post =[[NSString alloc] initWithFormat:@"%@=%@&deviceid=%@&tockenid=%@&%@=%@",firstEntity,value1,deviceid,tockenid,secondEntity,value2];
+    NSURL *url = [NSURL URLWithString:url2];
+    
+    return [du returndbresult:post URL:url];
+}
 
 
 @end
