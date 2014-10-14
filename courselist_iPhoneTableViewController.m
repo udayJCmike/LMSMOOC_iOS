@@ -548,6 +548,14 @@ int loadcompleted;
         {
             cell.promoimage.hidden=YES;
         }
+        NSString *enroll=[course objectForKey:@"studentenrolled"];
+        if ([enroll isEqualToString:@"1"]) {
+            cell.enrolled.hidden=NO;
+        }
+        else
+        {
+            cell.enrolled.hidden=YES;
+        }
  
         
    // cell.review.image=[UIImage imageNamed:@"1star"];

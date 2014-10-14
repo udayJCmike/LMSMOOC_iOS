@@ -15,7 +15,7 @@
 #import "SBJSON.h"
 #import "UIButton+Bootstrap.h"
 #define  AppDelegate (lmsmoocAppDelegate *)[[UIApplication sharedApplication] delegate]
-@interface Myfavorites_iPadViewController : UIViewController<MBProgressHUDDelegate,UICollectionViewDataSource,UICollectionViewDelegate>
+@interface Myfavorites_iPadViewController : UIViewController<MBProgressHUDDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UIGestureRecognizerDelegate,UIAlertViewDelegate>
 {
     NSMutableArray*courselist;
     MBProgressHUD *HUD;
@@ -23,6 +23,8 @@
     lmsmoocAppDelegate *delegate;
     int offset;
     int loadcompleted;
+    NSIndexPath *deleteatindexPath;
+    NSString *removeitem_courseid;
 }
 
 @property (retain, nonatomic) IBOutlet UICollectionView *ipadcollection;

@@ -55,7 +55,54 @@
     self.imageCache = [[NSCache alloc] init];
     
     [self loadDatas];
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(activateDeletionMode:)];
+    longPress.delegate = self;
+    [self.ipadcollection addGestureRecognizer:longPress];
 }
+#pragma mark - gesture-recognition action methods
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+{
+    CGPoint touchPoint = [touch locationInView:self.ipadcollection];
+    deleteatindexPath = [self.ipadcollection indexPathForItemAtPoint:touchPoint];
+    if (deleteatindexPath && [gestureRecognizer isKindOfClass:[UITapGestureRecognizer class]])
+    {
+        return NO;
+    }
+    return YES;
+}
+
+- (void)activateDeletionMode:(UILongPressGestureRecognizer *)gr
+{
+    if (gr.state == UIGestureRecognizerStateBegan)
+    {
+        deleteatindexPath = [self.ipadcollection indexPathForItemAtPoint:[gr locationInView:self.ipadcollection]];
+        if (deleteatindexPath)
+        {
+            UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"Remove from favorites" message:@"Would you like to remove the course from favorites?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
+            [alert show];
+        }
+    }
+}
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex) {
+        removeitem_courseid=[[courselist objectAtIndex:deleteatindexPath.row] objectForKey:@"course_id"];
+        NSLog(@"remove courseid=%@",removeitem_courseid);
+        [[NSUserDefaults standardUserDefaults]setValue:removeitem_courseid forKey:@"removeitemcourseid"];
+        [[NSUserDefaults standardUserDefaults]synchronize];
+        [courselist removeObjectAtIndex:deleteatindexPath.row];
+        HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+        [self.navigationController.view addSubview:HUD];
+        HUD.delegate = self;
+        HUD.labelText = @"Please wait...";
+        [HUD show:YES];
+        [self performSelector:@selector(removeCourse) withObject:self afterDelay:0.1f];
+        [self.ipadcollection reloadData];
+        
+    }
+}
+
 - (void)menulistener:(id)sender {
     
     
@@ -261,7 +308,14 @@
     {
         cell.promoimage.hidden=YES;
     }
-
+    NSString *enroll=[course objectForKey:@"studentenrolled"];
+    if ([enroll isEqualToString:@"1"]) {
+        cell.enrolled.hidden=NO;
+    }
+    else
+    {
+        cell.enrolled.hidden=YES;
+    }
     NSString *imageUrlString = [[NSString alloc]initWithFormat:@"%@/%@/%@",delegate.course_image_url,[course objectForKey:@"course_id"],[course objectForKey:@"course_cover_image"]];
     
     UIImage *imageFromCache = [self.imageCache objectForKey:imageUrlString];
@@ -313,7 +367,57 @@
     
 }
 
+- (void)removeCourse {
+    
+   
+    
+    
+    NSString* studentid=[[NSUserDefaults standardUserDefaults]objectForKey:@"userid"];
+    NSString *response=[self HttpPostEntityFirst1:@"studentid" ForValue1:studentid  EntitySecond:@"authkey" ForValue2:@"rzTFevN099Km39PV"];
+    NSError *error;
+    //  NSLog(@"response %@",response);
+    SBJSON *json = [[SBJSON new] autorelease];
+    NSDictionary *parsedvalue = [json objectWithString:response error:&error];
+    
+    // NSLog(@"%@ parsedvalue",parsedvalue);
+    if (parsedvalue == nil)
+    {
+        
+        //NSLog(@"parsedvalue == nil");
+        
+    }
+    else
+    {
+        NSDictionary* menu = [parsedvalue objectForKey:@"serviceresponse"];
+        if ([[menu objectForKey:@"success"]isEqualToString:@"Yes"]) {
+                   }
+        else
+        {
+            NSLog(@"failure");
+           
+        }
+        
+    }
+    
+    [HUD hide:YES];
+   
+}
 
+
+-(NSString *)HttpPostEntityFirst1:(NSString*)firstEntity ForValue1:(NSString*)value1 EntitySecond:(NSString*)secondEntity ForValue2:(NSString*)value2
+{
+    
+    
+    NSString *urltemp=[[databaseurl sharedInstance]DBurl];
+    NSString *url1=@"Myfavorites_remove.php?service=RemoveCourse";
+    NSString *url2=[NSString stringWithFormat:@"%@%@",urltemp,url1];
+//   NSLog(@"in psot method %@",[[NSUserDefaults standardUserDefaults]valueForKey:@"removeitemcourseid"]);
+    NSString *post =[[NSString alloc] initWithFormat:@"%@=%@&courseid=%@&%@=%@",firstEntity,value1,[[NSUserDefaults standardUserDefaults]valueForKey:@"removeitemcourseid"],secondEntity,value2];
+   //    NSLog(@"in psot method %@",post);
+    NSURL *url = [NSURL URLWithString:url2];
+    
+    return [du returndbresult:post URL:url];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

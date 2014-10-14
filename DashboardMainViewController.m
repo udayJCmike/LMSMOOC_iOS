@@ -27,7 +27,7 @@
 {
     [super viewDidLoad];
   
-    [self.view addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureRecognized:)]];
+   // [self.view addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureRecognized:)]];
     UIButton *button =  [UIButton buttonWithType:UIButtonTypeCustom];
     [button setImage:[UIImage imageNamed:@"menu_icon.png"] forState:UIControlStateNormal];
     [button addTarget:self action:@selector(menu:) forControlEvents:UIControlEventTouchUpInside];
@@ -56,7 +56,9 @@
     [self.frostedViewController panGestureRecognized:sender];
     
 }
-
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    return YES;
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

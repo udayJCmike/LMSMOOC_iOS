@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "REFrostedViewController.h"
-@interface DashboardMainViewController : UINavigationController
+@interface DashboardMainViewController : UINavigationController<UIGestureRecognizerDelegate>
 - (void)panGestureRecognized:(UIPanGestureRecognizer *)sender;
 -(void)perform:(NSString*)name;
 @end

@@ -10,6 +10,7 @@
 #import<MediaPlayer/MediaPlayer.h>
 #import "SBJSON.h"
 #import "databaseurl.h"
+
 #define  AppDelegate (lmsmoocAppDelegate *)[[UIApplication sharedApplication] delegate]
 @implementation lmsmoocAppDelegate
 {
@@ -32,6 +33,7 @@
     pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
     pageControl.backgroundColor=[UIColor clearColor];
  [application registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
+    
     
       return YES;
 }

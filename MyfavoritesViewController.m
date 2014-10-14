@@ -7,6 +7,7 @@
 //
 
 #import "MyfavoritesViewController.h"
+#import "SBJSON.h"
 #define  AppDelegate (lmsmoocAppDelegate *)[[UIApplication sharedApplication] delegate]
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
 #define SCREEN_35 (SCREEN_HEIGHT == 480)
@@ -45,7 +46,7 @@ int loadcompleted;
     _imageOperationQueue = [[NSOperationQueue alloc]init];
     _imageOperationQueue.maxConcurrentOperationCount = 4;
     self.imageCache = [[NSCache alloc] init];
-    
+
     
     if (self.navigationController.navigationBar.hidden == YES)
     {
@@ -112,6 +113,9 @@ int loadcompleted;
 //    [courselist removeAllObjects];
     [_imageOperationQueue cancelAllOperations];
     
+}
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    return YES;
 }
 -(void)getCourseList
 {
@@ -215,7 +219,9 @@ int loadcompleted;
     }
     return @"0star.png";
 }
-
+-(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return @"Remove";
+}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
@@ -240,7 +246,14 @@ int loadcompleted;
     {
         cell.promoimage.hidden=YES;
     }
-
+    NSString *enroll=[course objectForKey:@"studentenrolled"];
+    if ([enroll isEqualToString:@"1"]) {
+        cell.enrolled.hidden=NO;
+    }
+    else
+    {
+        cell.enrolled.hidden=YES;
+    }
     NSString *imageUrlString = [[NSString alloc]initWithFormat:@"%@/%@/%@",delegate.course_image_url,[course objectForKey:@"course_id"],[course objectForKey:@"course_cover_image"]];
     
     UIImage *imageFromCache = [self.imageCache objectForKey:imageUrlString];
@@ -326,6 +339,76 @@ int loadcompleted;
     }
     
 }
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        NSString* removeitem_courseid=[[courselist objectAtIndex:indexPath.row] objectForKey:@"course_id"];
+        [[NSUserDefaults standardUserDefaults]setValue:removeitem_courseid forKey:@"removeitemcourseid"];
+        [[NSUserDefaults standardUserDefaults]synchronize];
+        [courselist removeObjectAtIndex:indexPath.row];
+        HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+        [self.navigationController.view addSubview:HUD];
+        HUD.delegate = self;
+        HUD.labelText = @"Please wait...";
+        [HUD show:YES];
+        [self performSelector:@selector(removeCourse) withObject:self afterDelay:0.1f];
+        [tableView reloadData];
+    }
+    
+}
+- (void)removeCourse {
+    
+   
+    
+    
+    NSString* studentid=[[NSUserDefaults standardUserDefaults]objectForKey:@"userid"];
+    NSString *response=[self HttpPostEntityFirst1:@"studentid" ForValue1:studentid  EntitySecond:@"authkey" ForValue2:@"rzTFevN099Km39PV"];
+    NSError *error;
+    //  NSLog(@"response %@",response);
+    SBJSON *json = [[SBJSON new] autorelease];
+    NSDictionary *parsedvalue = [json objectWithString:response error:&error];
+    
+    // NSLog(@"%@ parsedvalue",parsedvalue);
+    if (parsedvalue == nil)
+    {
+        
+        //NSLog(@"parsedvalue == nil");
+        
+    }
+    else
+    {
+        NSDictionary* menu = [parsedvalue objectForKey:@"serviceresponse"];
+        if ([[menu objectForKey:@"success"]isEqualToString:@"Yes"]) {
+        }
+        else
+        {
+            NSLog(@"failure");
+            
+        }
+        
+    }
+    
+    [HUD hide:YES];
+    
+}
+
+
+-(NSString *)HttpPostEntityFirst1:(NSString*)firstEntity ForValue1:(NSString*)value1 EntitySecond:(NSString*)secondEntity ForValue2:(NSString*)value2
+{
+    
+    
+    NSString *urltemp=[[databaseurl sharedInstance]DBurl];
+    NSString *url1=@"Myfavorites_remove.php?service=RemoveCourse";
+    NSString *url2=[NSString stringWithFormat:@"%@%@",urltemp,url1];
+    //   NSLog(@"in psot method %@",[[NSUserDefaults standardUserDefaults]valueForKey:@"removeitemcourseid"]);
+    NSString *post =[[NSString alloc] initWithFormat:@"%@=%@&courseid=%@&%@=%@",firstEntity,value1,[[NSUserDefaults standardUserDefaults]valueForKey:@"removeitemcourseid"],secondEntity,value2];
+   // NSLog(@"in psot method %@",post);
+    NSURL *url = [NSURL URLWithString:url2];
+    
+    return [du returndbresult:post URL:url];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

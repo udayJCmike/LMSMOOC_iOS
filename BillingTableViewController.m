@@ -204,6 +204,9 @@
     }
    
     cell.reduction.text=[NSString stringWithFormat:@"$%@",[temp valueForKey:@"reduction"]];
+    if ([[temp valueForKey:@"reduction"]isEqualToString:@""]) {
+        cell.reduction.text=[NSString stringWithFormat:@"$0"];
+    }
      cell.amount.text=[NSString stringWithFormat:@"$%@",[temp valueForKey:@"amount_paid"]];
     return cell;
 }

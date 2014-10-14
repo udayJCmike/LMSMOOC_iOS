@@ -12,7 +12,7 @@
 #import "lmsmoocAppDelegate.h"
 #import "databaseurl.h"
 #import "CourseDesignTableViewCell.h"
-@interface MyfavoritesViewController : UIViewController <MBProgressHUDDelegate,UITableViewDataSource,UITableViewDelegate>
+@interface MyfavoritesViewController : UIViewController <MBProgressHUDDelegate,UITableViewDataSource,UITableViewDelegate,UIGestureRecognizerDelegate>
 {
     NSMutableArray*courselist;
     MBProgressHUD *HUD;

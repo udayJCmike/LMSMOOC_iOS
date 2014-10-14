@@ -233,7 +233,14 @@ int loadcompleted;
         cell.promoimage.hidden=YES;
     }
 
-    
+    NSString *enroll=[course objectForKey:@"studentenrolled"];
+    if ([enroll isEqualToString:@"1"]) {
+        cell.enrolled.hidden=NO;
+    }
+    else
+    {
+        cell.enrolled.hidden=YES;
+    }
     NSString *imageUrlString = [[NSString alloc]initWithFormat:@"%@/%@/%@",delegate.course_image_url,[course objectForKey:@"course_id"],[course objectForKey:@"course_cover_image"]];
     
     UIImage *imageFromCache = [self.imageCache objectForKey:imageUrlString];
