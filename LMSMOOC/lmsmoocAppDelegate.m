@@ -14,7 +14,7 @@
 #define  AppDelegate (lmsmoocAppDelegate *)[[UIApplication sharedApplication] delegate]
 @implementation lmsmoocAppDelegate
 {
-     databaseurl *du;
+    databaseurl *du;
     
 }
 @synthesize avatharURL;
@@ -32,12 +32,12 @@
     pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
     pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
     pageControl.backgroundColor=[UIColor clearColor];
- [application registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
+    [application registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
+    // [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     
-    
-      return YES;
+    return YES;
 }
-							
+
 
 
 
@@ -55,25 +55,20 @@
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-  
+    
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-   
+    
 }
 
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
- 
-// tockenid=@"0f744707bebcf74f9b7c25d48e3358945f6aa01da5ddb387462c7eaf61bbad78";
-//    deviceid= [self getUniqueDeviceIdentifierAsString];
-//    if (([deviceid length]>0)&&([tockenid length]>0)) {
-//        NSLog(@"resign activity");
-//        [self updateid];
-//    }
+    
+    
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
@@ -83,64 +78,98 @@
 }
 
 - (NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
- 
+    
     
     if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPhone) {
         
-    if ([[self.window.rootViewController presentedViewController] isKindOfClass:[MPMoviePlayerViewController class]]) {
-        
-        return UIInterfaceOrientationMaskAllButUpsideDown;
-    }
-    else {
-       
-        if ([[self.window.rootViewController presentedViewController]
-             isKindOfClass:[UINavigationController class]])
-        {
+        if ([[self.window.rootViewController presentedViewController] isKindOfClass:[MPMoviePlayerViewController class]]) {
             
-            // look for it inside UINavigationController
-            UINavigationController *nc = (UINavigationController *)[self.window.rootViewController presentedViewController];
+            return UIInterfaceOrientationMaskAllButUpsideDown;
+        }
+        else {
             
-            // is at the top?
-            if ([nc.topViewController isKindOfClass:[MPMoviePlayerViewController class]])
+            if ([[self.window.rootViewController presentedViewController]
+                 isKindOfClass:[UINavigationController class]])
             {
                 
-                return UIInterfaceOrientationMaskAllButUpsideDown;
+                // look for it inside UINavigationController
+                UINavigationController *nc = (UINavigationController *)[self.window.rootViewController presentedViewController];
                 
-                // or it's presented from the top?
-            }
-            else if ([[nc.topViewController presentedViewController]isKindOfClass:[MPMoviePlayerViewController class]])
-            {
+                // is at the top?
+                if ([nc.topViewController isKindOfClass:[MPMoviePlayerViewController class]])
+                {
+                    
+                    return UIInterfaceOrientationMaskAllButUpsideDown;
+                    
+                    // or it's presented from the top?
+                }
+                else if ([[nc.topViewController presentedViewController]isKindOfClass:[MPMoviePlayerViewController class]])
+                {
+                    
+                    return UIInterfaceOrientationMaskAllButUpsideDown;
+                }
                 
-                return UIInterfaceOrientationMaskAllButUpsideDown;
+                
+                
+                
             }
-            
-            
-            
             
         }
-       
-    }
         return UIInterfaceOrientationMaskPortrait;
     }
-   return UIInterfaceOrientationMaskLandscape;
-        
+    return UIInterfaceOrientationMaskLandscape;
+    
     
     
 }
-//- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-//    NSLog(@"Did Register for Remote Notifications with Device Token (%@)", deviceToken);
-//    [self getUniqueDeviceIdentifierAsString];
-//}
-//- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
-//    NSLog(@"Did Fail to Register for Remote Notifications");
-//    NSLog(@"%@, %@", error, error.localizedDescription);
-//    
-//}
-//-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
-//{
-//    NSLog(@" Remote Notifications(%@)", userInfo);
-//    
-//}
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    // NSLog(@"Did Register for Remote Notifications with Device Token (%@)", deviceToken);
+    NSString *newToken = [deviceToken description];
+	newToken = [newToken stringByReplacingOccurrencesOfString:@"<" withString:@""];
+    newToken = [newToken stringByReplacingOccurrencesOfString:@">" withString:@""];
+	newToken = [newToken stringByReplacingOccurrencesOfString:@" " withString:@""];
+    tockenid=newToken;
+    // NSLog(@"content---%@", newToken);
+    [[NSUserDefaults standardUserDefaults]setValue:tockenid forKey:@"tockenid"];
+    deviceid= [self getUniqueDeviceIdentifierAsString];
+    [[NSUserDefaults standardUserDefaults]setValue:deviceid forKey:@"deviceid"];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+    if (([deviceid length]>0)&&([[NSUserDefaults standardUserDefaults]valueForKey:@"tockenid"])) {
+        // NSLog(@"resign activity");
+        [self updateid];
+    }
+    
+    
+}
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    NSLog(@"Did Fail to Register for Remote Notifications");
+    NSLog(@"%@, %@", error, error.localizedDescription);
+    
+}
+-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    NSLog(@" Remote Notifications(%@)", userInfo);
+    UIApplicationState state = [application applicationState];
+    if (state == UIApplicationStateActive) {
+        
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Learnterest"
+                                                        message:[[userInfo objectForKey:@"aps"] objectForKey:@"alert"]
+                                                       delegate:self cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil];
+        [alert show];
+        
+//        UILocalNotification* localNotification = [[UILocalNotification alloc] init];
+//        localNotification.fireDate = [NSDate date];
+//        localNotification.alertBody = [[userInfo objectForKey:@"aps"] objectForKey:@"alert"];
+//        localNotification.timeZone = [NSTimeZone defaultTimeZone];
+//        
+//        [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+        
+    }
+    
+    
+}
 -(NSString *)getUniqueDeviceIdentifierAsString
 {
     
@@ -148,8 +177,8 @@
     
     NSString *strApplicationUUID ;
     
-        strApplicationUUID  = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
-        NSLog(@"UUID %@",strApplicationUUID);
+    strApplicationUUID  = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+    //NSLog(@"UUID %@",strApplicationUUID);
     
     
     
@@ -158,8 +187,8 @@
 -(void)updateid
 {
     du=[[databaseurl alloc]init];
-  
-   dispatch_group_t imageQueue = dispatch_group_create();
+    
+    dispatch_group_t imageQueue = dispatch_group_create();
     
     dispatch_group_async(imageQueue, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
                          ^{
@@ -169,7 +198,7 @@
                              SBJSON *json = [[SBJSON new] autorelease];
                              NSDictionary *parsedvalue = [json objectWithString:response error:&error];
                              
-                              NSLog(@"%@ parsedvalue",response);
+                             // NSLog(@"%@ parsedvalue",response);
                              if (parsedvalue == nil)
                              {
                                  
@@ -188,17 +217,17 @@
                                  }
                                  else
                                  {
-                                      NSLog(@"failure");
+                                     NSLog(@"failure");
                                  }
                                  
                              }
                              
-
                              
-        dispatch_async(dispatch_get_main_queue(), ^{
-            //Your code to execute on UIthread (main thread)
-        });
-    });
+                             
+                             dispatch_async(dispatch_get_main_queue(), ^{
+                                 //Your code to execute on UIthread (main thread)
+                             });
+                         });
 }
 -(NSString *)HttpPostEntityFirstURL1:(NSString*)firstEntity ForValue1:(NSString*)value1 EntitySecond:(NSString*)secondEntity ForValue2:(NSString*)value2
 {
@@ -207,7 +236,8 @@
     NSString *urltemp=[[databaseurl sharedInstance]DBurl];
     NSString *url1=@"Device_tocken_id.php?service=tockeninsert";
     NSString *url2=[NSString stringWithFormat:@"%@%@",urltemp,url1];
-    NSString *post =[[NSString alloc] initWithFormat:@"%@=%@&deviceid=%@&tockenid=%@&%@=%@",firstEntity,value1,deviceid,tockenid,secondEntity,value2];
+    
+    NSString *post =[[NSString alloc] initWithFormat:@"%@=%@&deviceid=%@&tockenid=%@&%@=%@",firstEntity,value1,[[NSUserDefaults standardUserDefaults]valueForKey:@"deviceid"],[[NSUserDefaults standardUserDefaults]valueForKey:@"tockenid"],secondEntity,value2];
     NSURL *url = [NSURL URLWithString:url2];
     
     return [du returndbresult:post URL:url];

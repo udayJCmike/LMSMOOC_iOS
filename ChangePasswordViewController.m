@@ -312,12 +312,12 @@
                 if ([cur_pwd.text length]==0) {
                     [self ShowAlert:@"Enter current password." title:@"Sorry User"];
                 }
-                else if(![du validatePasswordForSignupPage:cur_pwd.text])
-                {
-                  //  [self ShowAlert:@"Should contain 1 alphabet.\nShould contain 1 number.\nShould contain 1 special character.\nShould be 8 to 25 characters."title:@"Sorry User"];
-                      [self ShowAlert:@"Enter current password." title:@"Sorry User"];
-                    
-                }
+//                else if(![du validatePasswordForSignupPage:cur_pwd.text])
+//                {
+//                  //  [self ShowAlert:@"Should contain 1 alphabet.\nShould contain 1 number.\nShould contain 1 special character.\nShould be 8 to 25 characters."title:@"Sorry User"];
+//                      [self ShowAlert:@"Enter current password." title:@"Sorry User"];
+//                    
+//                }
                 else if(![cur_pwd.text isEqualToString:[delegate.Profiledetails objectForKey:@"password"]])
                 {
                      [self ShowAlert:@"The current password you gave is incorrect." title:@"Sorry User"];

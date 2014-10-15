@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0DAFCFFB19BEC75500A1E509"
-            BuildableName = "LMSMOOC.app"
+            BuildableName = "Learnterest.app"
             BlueprintName = "LMSMOOC"
-            ReferencedContainer = "container:LMSMOOC.xcodeproj">
+            ReferencedContainer = "container:Learnterest.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0DAFCFFB19BEC75500A1E509"
-            BuildableName = "LMSMOOC.app"
+            BuildableName = "Learnterest.app"
             BlueprintName = "LMSMOOC"
-            ReferencedContainer = "container:LMSMOOC.xcodeproj">
+            ReferencedContainer = "container:Learnterest.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0DAFCFFB19BEC75500A1E509"
-            BuildableName = "LMSMOOC.app"
+            BuildableName = "Learnterest.app"
             BlueprintName = "LMSMOOC"
-            ReferencedContainer = "container:LMSMOOC.xcodeproj">
+            ReferencedContainer = "container:Learnterest.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
