@@ -162,6 +162,7 @@
                                                        delegate:self cancelButtonTitle:@"Ok"
                                               otherButtonTitles:nil];
         [alert show];
+         [self updateBadgeNumber];
         
 //        UILocalNotification* localNotification = [[UILocalNotification alloc] init];
 //        localNotification.fireDate = [NSDate date];
