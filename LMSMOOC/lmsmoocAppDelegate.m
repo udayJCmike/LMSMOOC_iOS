@@ -34,7 +34,9 @@
     pageControl.backgroundColor=[UIColor clearColor];
     [application registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
     // [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
-    
+    deviceid= [self getUniqueDeviceIdentifierAsString];
+    [[NSUserDefaults standardUserDefaults]setValue:deviceid forKey:@"deviceid"];
+    [[NSUserDefaults standardUserDefaults]synchronize];
     return YES;
 }
 
@@ -68,6 +70,8 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     
+    [UIApplication sharedApplication].applicationIconBadgeNumber=0;
+    [self updateBadgeNumber];
     
 }
 
@@ -154,7 +158,7 @@
         
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Learnterest"
-                                                        message:[[userInfo objectForKey:@"aps"] objectForKey:@"alert"]
+                                                        message:[[[userInfo objectForKey:@"aps"] objectForKey:@"alert"]objectForKey:@"body"]
                                                        delegate:self cancelButtonTitle:@"Ok"
                                               otherButtonTitles:nil];
         [alert show];
@@ -229,6 +233,54 @@
                              });
                          });
 }
+-(void)updateBadgeNumber
+{
+    du=[[databaseurl alloc]init];
+    
+    dispatch_group_t imageQueue = dispatch_group_create();
+    
+    dispatch_group_async(imageQueue, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
+                         ^{
+                           
+                             NSString *response=[self HttpPostEntityFirstURLBadge1:@"deviceid" ForValue1:[[NSUserDefaults standardUserDefaults]valueForKey:@"deviceid"]  EntitySecond:@"authkey" ForValue2:@"rzTFevN099Km39PV"];
+                             NSError *error;
+                             
+                             SBJSON *json = [[SBJSON new] autorelease];
+                             NSDictionary *parsedvalue = [json objectWithString:response error:&error];
+                             
+                             //NSLog(@"%@ parsedvalue",response);
+                             if (parsedvalue == nil)
+                             {
+                                 
+                                 //NSLog(@"parsedvalue == nil");
+                                 
+                             }
+                             else
+                             {
+                                 
+                                 NSDictionary* menu = [parsedvalue objectForKey:@"serviceresponse"];
+                                 
+                                 if ([[menu objectForKey:@"success"] isEqualToString:@"Yes"])
+                                 {
+                                     NSLog(@"succesful");
+                                     
+                                 }
+                                 else
+                                 {
+                                     NSLog(@"failure");
+                                 }
+                                 
+                             }
+                             
+                             
+                             
+                             dispatch_async(dispatch_get_main_queue(), ^{
+                                 //Your code to execute on UIthread (main thread)
+                             });
+                         });
+
+
+}
 -(NSString *)HttpPostEntityFirstURL1:(NSString*)firstEntity ForValue1:(NSString*)value1 EntitySecond:(NSString*)secondEntity ForValue2:(NSString*)value2
 {
     
@@ -242,6 +294,21 @@
     
     return [du returndbresult:post URL:url];
 }
-
+-(NSString *)HttpPostEntityFirstURLBadge1:(NSString*)firstEntity ForValue1:(NSString*)value1 EntitySecond:(NSString*)secondEntity ForValue2:(NSString*)value2
+{
+    
+    
+    NSString *urltemp=[[databaseurl sharedInstance]DBurl];
+    NSString *url1=@"Device_tocken_id.php?service=Badgeupdate";
+    NSString *url2=[NSString stringWithFormat:@"%@%@",urltemp,url1];
+   // NSLog(@"url %@",url2);
+    
+    NSString *post =[[NSString alloc] initWithFormat:@"%@=%@&%@=%@",firstEntity,value1,secondEntity,value2];
+    
+    // NSLog(@"post %@",post);
+    NSURL *url = [NSURL URLWithString:url2];
+    
+    return [du returndbresult:post URL:url];
+}
 
 @end
