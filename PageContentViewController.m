@@ -8,11 +8,14 @@
 
 #import "PageContentViewController.h"
 #import "UIButton+Bootstrap.h"
+#import "SBJSON.h"
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
 #define SCREEN_35 (SCREEN_HEIGHT == 480)
 #define SCREEN_40 (SCREEN_HEIGHT == 568)
 @interface PageContentViewController ()
-
+{
+    databaseurl *du;
+}
 @end
 
 @implementation PageContentViewController
@@ -126,8 +129,44 @@
 
     }
   
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self  selector:@selector(sendMail) name:@"SignupComplete"object:nil];
     [self presentViewController:loginVC animated:YES completion:nil];
+}
+-(void)sendMail
+{
+    
+    du=[[databaseurl alloc]init];
+    
+    dispatch_group_t imageQueue = dispatch_group_create();
+    
+    dispatch_group_async(imageQueue, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
+                         ^{
+                             
+                             NSString *urltemp=[[databaseurl sharedInstance]DBurl];
+                             NSString *url1=@"SendMail.php";
+                             
+                             NSString *URLString=[NSString stringWithFormat:@"%@%@?emailid=%@&firstname=%@&lastname=%@",urltemp,url1,[[NSUserDefaults standardUserDefaults]valueForKey:@"emailid"],[[NSUserDefaults standardUserDefaults]valueForKey:@"firstname"],[[NSUserDefaults standardUserDefaults]valueForKey:@"lastname"]];
+                         
+                             NSLog(@"url  %@",URLString);
+                             NSMutableArray *search = [du MultipleCharacters:URLString];
+                             // NSLog(@"search  %@",search);
+                             NSDictionary* menu = [search valueForKey:@"serviceresponse"];
+                             
+                             if ([[menu objectForKey:@"success"]isEqualToString:@"Yes"]) {
+                                 NSLog(@"sent email");
+                             }
+                             else
+                             {
+                                  NSLog(@"sent failure");
+                             }
+                             
+                             
+                             dispatch_async(dispatch_get_main_queue(), ^{
+                                 //Your code to execute on UIthread (main thread)
+                             });
+                         });
+    
+    
 }
 - (void)didReceiveMemoryWarning
 {
@@ -168,7 +207,7 @@
 */
 
 - (void)dealloc {
- 
+  [[NSNotificationCenter defaultCenter] removeObserver:self name:@"SignupComplete" object:nil];
     [super dealloc];
 }
 @end

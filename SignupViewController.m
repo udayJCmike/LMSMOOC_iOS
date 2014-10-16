@@ -361,12 +361,16 @@
         {
             if ([[menu objectForKey:@"success"] isEqualToString:@"Yes"])
             {
-               
+                [[NSUserDefaults standardUserDefaults]setValue:email.text forKey:@"emailid"];
+                 [[NSUserDefaults standardUserDefaults]setValue:fname.text forKey:@"firstname"];
+                 [[NSUserDefaults standardUserDefaults]setValue:lname.text forKey:@"lastname"];
+                [[NSUserDefaults standardUserDefaults]synchronize];
                NSLog(@"Inserting  Succecssful");
-              
+               [[NSNotificationCenter defaultCenter] postNotificationName:@"SignupComplete"                                                                    object:self userInfo:nil];
                 [HUD hide:YES];
                  [self reset];
                 [self back:nil];
+               
                 
                 //                if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad)
                 //                {

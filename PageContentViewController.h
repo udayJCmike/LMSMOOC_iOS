@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "databaseurl.h"
 
 @interface PageContentViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UIImageView *imageview;
