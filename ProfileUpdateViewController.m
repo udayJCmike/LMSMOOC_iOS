@@ -187,8 +187,14 @@
                         
                             if (![interestedval isEqualToString:@"null"] && [interestedval length]!=0) {
                                 
-                                if (![genderval isEqualToString:@"null"]&& [genderval length]!=0) {
+                                if (![genderval isEqualToString:@"null"]&& [genderval length]!=0)
+                                {
                                     c=1;
+                                    [delegate.Profiledetails setValue:fname.text forKey:@"firstname"];
+                                    [delegate.Profiledetails setValue:lname.text forKey:@"lastname"];
+                                    [delegate.Profiledetails setValue:email.text forKey:@"email"];
+                                    [delegate.Profiledetails setValue:interestedval forKey:@"interested_in"];
+                                    [delegate.Profiledetails setValue:genderval forKey:@"gender"];
                                 }
                                 else
                                 {
@@ -202,11 +208,7 @@
                                 [self ShowAlert:@"Enter interested in." title:@"Sorry User"];
                             }
                             
-                            [delegate.Profiledetails setValue:fname.text forKey:@"firstname"];
-                            [delegate.Profiledetails setValue:lname.text forKey:@"lastname"];
-                            [delegate.Profiledetails setValue:email.text forKey:@"email"];
-                            [delegate.Profiledetails setValue:interestedval forKey:@"interested_in"];
-                            [delegate.Profiledetails setValue:genderval forKey:@"gender"];
+                        
 //                            [delegate.Profiledetails setValue:[menu objectForKey:@"avatarURL"] forKey:@"avatarURL"];
 //                            [delegate.Profiledetails setValue:[menu objectForKey:@"avatarImage"] forKey:@"avatarImage"];
 //                            [delegate.Profiledetails setValue:[menu objectForKey:@"logins"] forKey:@"logins"];
@@ -840,7 +842,7 @@
 //    @catch (NSException *exception) {
 //        NSLog(@"exception %@",exception);
 //    }
-   
+   delegate.profileimage=[UIImage imageWithData:imageData];
    
     NSString *urltemp=[[databaseurl sharedInstance]DBurl];
     NSString *url1=@"Signup.php?service=imageUpload";

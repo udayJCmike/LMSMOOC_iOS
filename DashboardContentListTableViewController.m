@@ -50,6 +50,13 @@
     self.tableView.opaque = NO;
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.allowsSelection=YES;
+       titles = [[NSArray alloc]initWithObjects:@"Home", @"Profile",@"Change Password", @"Inbox",@"My Courses",@"My Favorites",@"My Categories",@"My Authors",@"Billing",@"About",@"Logout",nil];
+   // NSLog(@"did load called in tablelist");
+
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     self.tableView.tableHeaderView = ({
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 184.0f)];
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 40, 100, 100)];
@@ -75,8 +82,9 @@
         [view addSubview:label];
         view;
     });
-    titles = [[NSArray alloc]initWithObjects:@"Home", @"Profile",@"Change Password", @"Inbox",@"My Courses",@"My Favorites",@"My Categories",@"My Authors",@"Billing",@"About",@"Logout",nil];
 
+    // NSLog(@"view will appear in tablelist");
+    
 }
 -(void)reloadTableContent
 {

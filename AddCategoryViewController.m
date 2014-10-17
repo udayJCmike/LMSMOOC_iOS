@@ -96,6 +96,9 @@
 }
 - (IBAction)savecategory:(id)sender {
     
+    if ([selectedlist count]>0)
+    {
+        
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"Addcategories"  object:selectedlist   userInfo:nil];
     //    NSLog(@"seleted cell %@",selectedlist);
@@ -130,6 +133,12 @@
         
         [self.navigationController popToRootViewControllerAnimated:YES];
         
+    }
+        
+    }
+    else
+    {
+        [self ShowAlert:@"No category selected." title:@"Sorry User"];
     }
 
 }
