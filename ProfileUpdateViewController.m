@@ -297,7 +297,8 @@
         [HUD show:YES];
         if ([[du submitvalues]isEqualToString:@"Success"])
         {
-            [self signupdata];
+            
+                [self performSelector:@selector(signupdata) withObject:self afterDelay:0.2f];
         }
         else
         {
@@ -687,6 +688,9 @@
 {
     
     
+   
+    
+    [self performSelector:@selector(uploadfile) withObject:self afterDelay:0.2f];
     HUD = [MBProgressHUD showHUDAddedTo:self.view  animated:YES];
     
     HUD.mode=MBProgressHUDModeIndeterminate;
@@ -696,8 +700,6 @@
     HUD.labelText = @"Please wait";
     
     [HUD show:YES];
-    
-    [self performSelector:@selector(uploadfile) withObject:self afterDelay:0.1f];
     
     
     
@@ -809,11 +811,14 @@
         avatar=[NSString stringWithFormat:@"S%@.jpg",userid ];
        
     }
-    else if ([genderval isEqualToString:@"female"]) {
+    else if ([genderval isEqualToString:@"female"])
+             //&&(![imagename isEqualToString:[NSString stringWithFormat:@"S%@.jpg",userid ]]))
+             {
        
         avatar=@"Sgdefault.jpg";
     }
     else if ([genderval isEqualToString:@"male"])
+        //&&(![imagename isEqualToString:[NSString stringWithFormat:@"S%@.jpg",userid ]]))
     {
        avatar=@"Sbdefault.jpg";
     }
@@ -823,6 +828,8 @@
     }
     
     [delegate.Profiledetails setValue:avatar forKey:@"avatarImage"];
+    delegate.av_image=[NSString stringWithFormat:@"%@%@",delegate.avatharURL,avatar];
+    delegate.profileimage=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:delegate.av_image]]];
     NSString *urltemp=[[databaseurl sharedInstance]DBurl];
     NSString *url1=@"Signup.php?service=signupupdate";
     NSString *url2=[NSString stringWithFormat:@"%@%@",urltemp,url1];

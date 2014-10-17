@@ -133,6 +133,7 @@
 		847635ED19C07CFC00F45CEF /* menu_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 847635EC19C07CFC00F45CEF /* menu_icon.png */; };
 		847635F019C095A700F45CEF /* Passwordchange.m in Sources */ = {isa = PBXBuildFile; fileRef = 847635EF19C095A700F45CEF /* Passwordchange.m */; };
 		8476E7F419C17EE8002DB513 /* AvatarImagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476E7F319C17EE8002DB513 /* AvatarImagesViewController.m */; };
+		84795A4E19F0FD890067E2DC /* defaultprofile.png in Resources */ = {isa = PBXBuildFile; fileRef = 84795A4D19F0FD890067E2DC /* defaultprofile.png */; };
 		8491BA0419CBF3F900B649ED /* MyCategoriesDetailiPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8491BA0319CBF3F900B649ED /* MyCategoriesDetailiPadViewController.m */; };
 		8491BA0719CBF94B00B649ED /* MyauthorcoursesiPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8491BA0619CBF94B00B649ED /* MyauthorcoursesiPadViewController.m */; };
 		8491BA0919CC5B9200B649ED /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8491BA0819CC5B9100B649ED /* MessageUI.framework */; };
@@ -197,7 +198,6 @@
 		84FC7DAE19C0191B0001FD7C /* UIViewController+REFrostedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FC7DA819C0191B0001FD7C /* UIViewController+REFrostedViewController.m */; };
 		84FC7DB119C01A210001FD7C /* DashboardMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FC7DB019C01A210001FD7C /* DashboardMainViewController.m */; };
 		84FC7DB419C01A550001FD7C /* DashboardContentListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FC7DB319C01A550001FD7C /* DashboardContentListTableViewController.m */; };
-		84FC7DB919C01C680001FD7C /* Avatar-female.png in Resources */ = {isa = PBXBuildFile; fileRef = 84FC7DB819C01C680001FD7C /* Avatar-female.png */; };
 		84FC7DBC19C021180001FD7C /* ProfileUpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FC7DBB19C021180001FD7C /* ProfileUpdateViewController.m */; };
 		84FC7DC219C023A80001FD7C /* MailinboxTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FC7DC119C023A80001FD7C /* MailinboxTableViewController.m */; };
 		84FC7DCE19C023F30001FD7C /* MyauthorsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FC7DCD19C023F30001FD7C /* MyauthorsTableViewController.m */; };
@@ -381,6 +381,7 @@
 		847635EF19C095A700F45CEF /* Passwordchange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Passwordchange.m; sourceTree = "<group>"; };
 		8476E7F219C17EE8002DB513 /* AvatarImagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvatarImagesViewController.h; sourceTree = "<group>"; };
 		8476E7F319C17EE8002DB513 /* AvatarImagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvatarImagesViewController.m; sourceTree = "<group>"; };
+		84795A4D19F0FD890067E2DC /* defaultprofile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultprofile.png; sourceTree = "<group>"; };
 		8491BA0219CBF3F900B649ED /* MyCategoriesDetailiPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCategoriesDetailiPadViewController.h; sourceTree = "<group>"; };
 		8491BA0319CBF3F900B649ED /* MyCategoriesDetailiPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCategoriesDetailiPadViewController.m; sourceTree = "<group>"; };
 		8491BA0519CBF94B00B649ED /* MyauthorcoursesiPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyauthorcoursesiPadViewController.h; sourceTree = "<group>"; };
@@ -491,7 +492,6 @@
 		84FC7DB019C01A210001FD7C /* DashboardMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardMainViewController.m; sourceTree = "<group>"; };
 		84FC7DB219C01A550001FD7C /* DashboardContentListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardContentListTableViewController.h; sourceTree = "<group>"; };
 		84FC7DB319C01A550001FD7C /* DashboardContentListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardContentListTableViewController.m; sourceTree = "<group>"; };
-		84FC7DB819C01C680001FD7C /* Avatar-female.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Avatar-female.png"; sourceTree = "<group>"; };
 		84FC7DBA19C021180001FD7C /* ProfileUpdateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileUpdateViewController.h; sourceTree = "<group>"; };
 		84FC7DBB19C021180001FD7C /* ProfileUpdateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileUpdateViewController.m; sourceTree = "<group>"; };
 		84FC7DC019C023A80001FD7C /* MailinboxTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailinboxTableViewController.h; sourceTree = "<group>"; };
@@ -1196,9 +1196,9 @@
 			isa = PBXGroup;
 			children = (
 				847635EC19C07CFC00F45CEF /* menu_icon.png */,
+				84795A4D19F0FD890067E2DC /* defaultprofile.png */,
 				84FC7DDA19C02E4A0001FD7C /* DashboardcontainerViewController.h */,
 				84FC7DDB19C02E4A0001FD7C /* DashboardcontainerViewController.m */,
-				84FC7DB819C01C680001FD7C /* Avatar-female.png */,
 				84FC7DB219C01A550001FD7C /* DashboardContentListTableViewController.h */,
 				84FC7DB319C01A550001FD7C /* DashboardContentListTableViewController.m */,
 				84FC7DAF19C01A210001FD7C /* DashboardMainViewController.h */,
@@ -1318,6 +1318,7 @@
 				0DA598AE19DFD8470004CD2C /* checkBoxMarked.png in Resources */,
 				842D990619E3E86A00EEF307 /* promocode.jpg in Resources */,
 				0DFCDC3119CAB1BB002D317D /* search.png in Resources */,
+				84795A4E19F0FD890067E2DC /* defaultprofile.png in Resources */,
 				0DFF63CA19ED6EC600F06D77 /* icon-80.png in Resources */,
 				0DFF63CC19ED6EC600F06D77 /* icon-114.png in Resources */,
 				843287C919D57429000925EA /* text.png in Resources */,
@@ -1352,7 +1353,6 @@
 				84406B3B19E55DB1002CAEE9 /* logo.png in Resources */,
 				0DFCDC3719CAB990002D317D /* 1star.png in Resources */,
 				84406B4419E57794002CAEE9 /* bantab4.png in Resources */,
-				84FC7DB919C01C680001FD7C /* Avatar-female.png in Resources */,
 				0DFF63E519ED718600F06D77 /* Default-Landscape~ipad.png in Resources */,
 				8470B50C19CD624E008A5809 /* BrowseCourses.storyboard in Resources */,
 				0DFF63C819ED6EC600F06D77 /* icon-72.png in Resources */,

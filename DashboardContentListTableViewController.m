@@ -36,8 +36,8 @@
     if (!delegate.profileimage)
     {
          NSLog(@"avatar URL not found");
-        delegate.profileimage=[UIImage imageNamed:@"Avatar-female.png"];
-        delegate.av_image=[NSString stringWithFormat:@"Avatar-female.png"];
+        delegate.profileimage=[UIImage imageNamed:@"defaultprofile.png"];
+        delegate.av_image=[NSString stringWithFormat:@"defaultprofile.png"];
     }
     else
     {
