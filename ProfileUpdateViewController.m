@@ -849,7 +849,7 @@
 //    @catch (NSException *exception) {
 //        NSLog(@"exception %@",exception);
 //    }
-   delegate.profileimage=[UIImage imageWithData:imageData];
+  // delegate.profileimage=[UIImage imageWithData:imageData];
    
     NSString *urltemp=[[databaseurl sharedInstance]DBurl];
     NSString *url1=@"Signup.php?service=imageUpload";
