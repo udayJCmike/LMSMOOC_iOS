@@ -56,6 +56,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+  
     
     delegate=AppDelegate;
     SelectedCourse= delegate.CourseDetail;
@@ -288,6 +289,7 @@
 -(void)dealloc
 {
     
+  
     [super dealloc];
     [player stop];
     // [player release];

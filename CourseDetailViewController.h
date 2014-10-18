@@ -21,6 +21,7 @@
 {
     lmsmoocAppDelegate *delegate;
     MBProgressHUD *HUD;
+   
 }
 @property(nonatomic,retain)NSDictionary *SelectedCourse;
 @property(nonatomic,retain)IBOutlet UILabel *coursename;

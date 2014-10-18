@@ -31,6 +31,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    avatar.layer.cornerRadius=5.0f;
+    avatar.layer.masksToBounds=TRUE;
     if (SCREEN_35) {
         for (NSLayoutConstraint *con in self.view.constraints)
         {

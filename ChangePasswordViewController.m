@@ -124,7 +124,45 @@
 {
    
     int c=1;
-    if ([cur_pwd.text isEqualToString:[delegate.Profiledetails objectForKey:@"password"]] && [du validatePasswordForSignupPage:cur_pwd.text])
+    if (([cur_pwd.text length]>0)
+    &&([new_pwd.text length]>0)
+    &&([cfm_pwd.text length]>0))
+    {
+        
+        [delegate.Profiledetails setValue:new_pwd.text forKey:@"password"];
+        [[NSUserDefaults standardUserDefaults]setValue:new_pwd.text forKey:@"password"];
+        [[NSUserDefaults standardUserDefaults]synchronize];
+        HUD = [MBProgressHUD showHUDAddedTo:self.view  animated:YES];
+        HUD.mode=MBProgressHUDModeIndeterminate;
+        HUD.delegate = self;
+        HUD.labelText = @"Please wait";
+        [HUD show:YES];
+        if ([[du submitvalues]isEqualToString:@"Success"])
+        {
+            
+            [self performSelector:@selector(signupdata) withObject:self afterDelay:0.2f];
+        }
+        else
+        {
+            //[HUD hide:YES];
+            HUD.labelText = @"Check network connection";
+            HUD.customView = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@""]] autorelease];
+            HUD.mode = MBProgressHUDModeCustomView;
+            [HUD hide:YES afterDelay:1];
+        }
+        
+
+    }
+    else
+    {
+        c=0;
+        //enter all required fields
+        [self ShowAlert:@"Enter all fields." title:@"Sorry User"];
+        
+        
+    }
+
+ /*   if ([cur_pwd.text isEqualToString:[delegate.Profiledetails objectForKey:@"password"]] && [du validatePasswordForSignupPage:cur_pwd.text])
     {
    
     if ([du validatePasswordForSignupPage:new_pwd.text]&& ![cur_pwd.text isEqualToString:new_pwd.text])
@@ -216,6 +254,7 @@
             
         }
     }
+  */
     
 }
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -323,7 +362,7 @@
                      [self ShowAlert:@"The current password you gave is incorrect." title:@"Sorry User"];
                 }
                 //  NSLog(@"ENTER VALID password");
-                
+                cur_pwd.text=@"";
             }
             break;
         case 2:
@@ -341,7 +380,7 @@
                         
                         
                       //  [self ShowAlert:@"Should contain 1 alphabet.\nShould contain 1 number.\nShould contain 1 special character.\nShould be 8 to 25 characters." title:@"Sorry User"];
-                        [self ShowAlert:@"Enter new password."title:@"Sorry User"];
+                        [self ShowAlert:@"Enter a valid new password."title:@"Sorry User"];
                         
                     }
                     else if([cur_pwd.text isEqualToString:new_pwd.text])
@@ -351,6 +390,8 @@
                     }
                 }
 
+                new_pwd.text=@"";
+                
                 //  NSLog(@"ENTER VALID password");
                 
             }
@@ -379,7 +420,7 @@
                 }
                 
                
-                
+                cfm_pwd.text=@"";
                 
                 //  NSLog(@"Password mismatch");
                 

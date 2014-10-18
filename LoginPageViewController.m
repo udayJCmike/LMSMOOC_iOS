@@ -36,7 +36,24 @@
     }
     return self;
 }
-
+//-(void)viewWillAppear:(BOOL)animated
+//{
+//    [super viewWillAppear:animated];
+//    NSString *keepmeres=[[NSUserDefaults standardUserDefaults]objectForKey:@"keepmesign"];
+//    if ([keepmeres isEqualToString:@"1"]) {
+//        username.text=[[NSUserDefaults standardUserDefaults]objectForKey:@"username"];
+//        password.text=[[NSUserDefaults standardUserDefaults]objectForKey:@"password"];
+//        reminder.selected=YES;
+//        [reminder setImage:[UIImage imageNamed:@"checkBoxMarked.png"] forState:UIControlStateNormal];
+//        
+//    }
+//    else{
+//        username.text=@"";
+//        password.text=@"";
+//        reminder.selected=NO;
+//        [reminder setImage:[UIImage imageNamed:@"checkBox.png"] forState:UIControlStateNormal];
+//    }
+//}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
