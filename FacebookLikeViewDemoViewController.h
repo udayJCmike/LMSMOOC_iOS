@@ -12,9 +12,12 @@
 #import "REFrostedViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "MBProgressHUD.h"
-@interface FacebookLikeViewDemoViewController : UIViewController<MBProgressHUDDelegate>
+#import "MTPopupWindow.h"
+@interface FacebookLikeViewDemoViewController : UIViewController<MBProgressHUDDelegate,MTPopupWindowDelegate>
 {
     MBProgressHUD *HUD;
 }
-
+@property (retain, nonatomic) IBOutlet UIButton *terms;
+@property (retain, nonatomic) IBOutlet UIButton *privacy;
+@property (retain, nonatomic) IBOutlet UIButton *whylearnterest;
 @end

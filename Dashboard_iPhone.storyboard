@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="A38-Kj-S6y">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="A38-Kj-S6y">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -21,7 +21,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iE5-V2-ouQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-933" y="-1170"/>
+            <point key="canvasLocation" x="-1404" y="-1182"/>
         </scene>
         <!--Dashboard Content List Table View Controller-->
         <scene sceneID="07z-IR-ySK">
@@ -49,7 +49,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uZL-99-u3e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1208" y="-399"/>
+            <point key="canvasLocation" x="-1679" y="-411"/>
         </scene>
         <!--Facebook Like View Demo View Controller - About us-->
         <scene sceneID="nCw-6W-JXm">
@@ -68,50 +68,80 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loreal Ipsum Loreal Ipsum Loreal Ipsum" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WbW-H3-ejH">
-                                <rect key="frame" x="14" y="125" width="300" height="20"/>
+                                <rect key="frame" x="14" y="117" width="300" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Version No:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSS-du-08c">
-                                <rect key="frame" x="14" y="153" width="71" height="21"/>
+                                <rect key="frame" x="14" y="145" width="71" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1.0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AeP-ii-l67">
-                                <rect key="frame" x="87" y="153" width="43" height="21"/>
+                                <rect key="frame" x="87" y="145" width="43" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Build No:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bwg-2J-pJt">
-                                <rect key="frame" x="14" y="181" width="58" height="21"/>
+                                <rect key="frame" x="14" y="173" width="58" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Designed and Developed by" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZJ-vC-OCU">
-                                <rect key="frame" x="14" y="211" width="244" height="21"/>
+                                <rect key="frame" x="14" y="203" width="244" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Deemsys Inc." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pg8-Gn-dTE">
-                                <rect key="frame" x="14" y="234" width="98" height="21"/>
+                                <rect key="frame" x="14" y="226" width="98" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Corporate Office:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xT7-jQ-ZHI">
+                                <rect key="frame" x="14" y="255" width="127" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1.0.1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0aS-wN-dLm">
-                                <rect key="frame" x="87" y="182" width="54" height="21"/>
+                                <rect key="frame" x="87" y="174" width="54" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Deemsys Inc," lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRY-9R-mUs">
+                                <rect key="frame" x="14" y="282" width="88" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="800, Cross Pointe Road,Suite A, " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HzM-eR-cBk">
+                                <rect key="frame" x="14" y="305" width="198" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="614-322-9928 " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PPa-M0-4rG">
+                                <rect key="frame" x="14" y="355" width="98" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gahanna, OH 43230,U.S.A." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6BE-Vx-yhi">
+                                <rect key="frame" x="14" y="329" width="165" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WHk-u9-SFw" customClass="FacebookLikeView">
-                                <rect key="frame" x="189" y="285" width="124" height="30"/>
+                                <rect key="frame" x="189" y="417" width="124" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
@@ -119,7 +149,7 @@
                                 </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fNj-gF-u4T">
-                                <rect key="frame" x="14" y="281" width="150" height="30"/>
+                                <rect key="frame" x="14" y="413" width="150" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="Twitter-Follow-Button.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -128,17 +158,220 @@
                                     <action selector="FollowUsOnTwitter:" destination="KBJ-KF-72H" eventType="touchUpInside" id="Y22-dJ-ZBD"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hEk-fm-Iv8">
+                                <rect key="frame" x="20" y="451" width="280" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Terms of Use">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="termsofuse:" destination="KBJ-KF-72H" eventType="touchUpInside" id="M02-94-weH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vDg-FT-3Qd">
+                                <rect key="frame" x="20" y="488" width="280" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Privacy Policy">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="privacy:" destination="KBJ-KF-72H" eventType="touchUpInside" id="Sfq-az-JJH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JOX-eJ-GVX">
+                                <rect key="frame" x="20" y="527" width="280" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Why Learnterest">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="whylearnterest:" destination="KBJ-KF-72H" eventType="touchUpInside" id="9mQ-pE-riN"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="lmssupport@deemsysinc.com" translatesAutoresizingMaskIntoConstraints="NO" id="qBd-YJ-2aD">
+                                <rect key="frame" x="10" y="373" width="234" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="About us" id="eEk-Lz-cLB"/>
                     <connections>
                         <outlet property="facebookLikeView" destination="WHk-u9-SFw" id="MW0-zu-2GC"/>
+                        <outlet property="privacy" destination="vDg-FT-3Qd" id="Uf9-Fv-TtX"/>
+                        <outlet property="terms" destination="hEk-fm-Iv8" id="XsU-lt-n5R"/>
+                        <outlet property="whylearnterest" destination="JOX-eJ-GVX" id="z2h-Vc-cvN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xb4-0w-NB5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-388" y="1136"/>
+        </scene>
+        <!--Help View Controller - Help-->
+        <scene sceneID="0IY-bc-MlI">
+            <objects>
+                <viewController storyboardIdentifier="HelpVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UBE-Ad-FFW" customClass="HelpViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rsk-hR-LOI"/>
+                        <viewControllerLayoutGuide type="bottom" id="IDs-xv-ZvZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bC9-Me-Sdq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K4B-3W-jHJ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nss-dq-XXB">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="830"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="How to use Learnterest" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="51K-L5-Xxy">
+                                                <rect key="frame" x="8" y="20" width="172" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="301" translatesAutoresizingMaskIntoConstraints="NO" id="pRW-nq-NyX">
+                                                <rect key="frame" x="8" y="45" width="301" height="48"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <string key="text">1.	Use side menu icon at top or swipe right gesture to navigate between pages.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="301" translatesAutoresizingMaskIntoConstraints="NO" id="e8U-Ps-Pjg">
+                                                <rect key="frame" x="8" y="89" width="301" height="48"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <string key="text">2.	Use segments to navigate between all, free and paid courses.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="301" translatesAutoresizingMaskIntoConstraints="NO" id="kZ5-WZ-bsW">
+                                                <rect key="frame" x="8" y="211" width="301" height="55"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <string key="text">5.	To upload profile picture navigate to profile page, select picture and click upload. Press save changes to update your profile.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="301" translatesAutoresizingMaskIntoConstraints="NO" id="WHE-tY-4KA">
+                                                <rect key="frame" x="8" y="275" width="301" height="55"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <string key="text">6.	Navigate to Inbox page and get the messages. Mark message as important or unimportant in Inbox detail page.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="301" translatesAutoresizingMaskIntoConstraints="NO" id="fUP-K0-Q1c">
+                                                <rect key="frame" x="8" y="338" width="301" height="37"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <string key="text">7.	Update password in change password page.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="301" translatesAutoresizingMaskIntoConstraints="NO" id="6sa-PK-H6d">
+                                                <rect key="frame" x="8" y="383" width="301" height="55"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <string key="text">8.	Get the list of enrolled courses in course detail page. Tap a course and view course details and course lectures.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="301" translatesAutoresizingMaskIntoConstraints="NO" id="7pC-Z3-HfR">
+                                                <rect key="frame" x="8" y="446" width="301" height="37"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <string key="text">9.	Use top button in course detail page to share your courses.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="301" translatesAutoresizingMaskIntoConstraints="NO" id="s9T-Ot-wmv">
+                                                <rect key="frame" x="8" y="491" width="301" height="39"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <string key="text">10.	Use top corner button to add courses to your favourites.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="301" translatesAutoresizingMaskIntoConstraints="NO" id="oDr-K7-w3R">
+                                                <rect key="frame" x="8" y="536" width="301" height="37"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <string key="text">11.	Follow or unfollow author in about author page.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="301" translatesAutoresizingMaskIntoConstraints="NO" id="Cxk-cX-VeV">
+                                                <rect key="frame" x="8" y="581" width="301" height="39"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <string key="text">12.	View course description in about course page.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="301" translatesAutoresizingMaskIntoConstraints="NO" id="cif-8i-KOP">
+                                                <rect key="frame" x="8" y="628" width="301" height="75"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <string key="text">13.	Click my favourites to get list of your favourite courses. Swipe left in iPhone or press and hold in iPad to remove courses from favourites list.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="301" translatesAutoresizingMaskIntoConstraints="NO" id="wrB-N1-GWA">
+                                                <rect key="frame" x="8" y="709" width="301" height="39"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <string key="text">14.	Click my billing to get your paid bill details.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="301" translatesAutoresizingMaskIntoConstraints="NO" id="QQG-DH-sus">
+                                                <rect key="frame" x="8" y="748" width="301" height="39"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <string key="text">15.	Click About and follow us on twitter and like us on Facebook.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="301" translatesAutoresizingMaskIntoConstraints="NO" id="3ke-wl-1Fm">
+                                                <rect key="frame" x="8" y="134" width="301" height="33"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <string key="text">3.	Click category to get the list of category.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="301" translatesAutoresizingMaskIntoConstraints="NO" id="maf-9C-nvm">
+                                                <rect key="frame" x="8" y="167" width="301" height="39"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <string key="text">4.	Use search icon at the top to search for courses.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="cJf-sU-8Y4"/>
+                                            <constraint firstAttribute="height" constant="830" id="j6J-Yu-8JT"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="nss-dq-XXB" secondAttribute="trailing" id="7e4-0l-MSD"/>
+                                    <constraint firstItem="nss-dq-XXB" firstAttribute="top" secondItem="K4B-3W-jHJ" secondAttribute="top" id="EjL-9y-W7p"/>
+                                    <constraint firstAttribute="bottom" secondItem="nss-dq-XXB" secondAttribute="bottom" id="ZIJ-Wa-gbV"/>
+                                    <constraint firstItem="nss-dq-XXB" firstAttribute="leading" secondItem="K4B-3W-jHJ" secondAttribute="leading" id="gyF-UW-eFN"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IDs-xv-ZvZ" firstAttribute="top" secondItem="K4B-3W-jHJ" secondAttribute="bottom" id="ApW-mn-pQE"/>
+                            <constraint firstItem="K4B-3W-jHJ" firstAttribute="leading" secondItem="bC9-Me-Sdq" secondAttribute="leading" id="EvI-J7-fqD"/>
+                            <constraint firstAttribute="trailing" secondItem="K4B-3W-jHJ" secondAttribute="trailing" id="btN-lb-JHF"/>
+                            <constraint firstItem="K4B-3W-jHJ" firstAttribute="top" secondItem="bC9-Me-Sdq" secondAttribute="top" id="oqL-rY-Bla"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Help" id="Zkb-ei-kOR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QGP-P4-Mdh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1013" y="372"/>
         </scene>
         <!--Change Password View Controller - Change Password -->
         <scene sceneID="vcW-2R-jSD">
@@ -421,11 +654,12 @@
                         <segue destination="N8q-I8-sSk" kind="push" id="dWY-qc-auO"/>
                         <segue destination="O4I-cz-xgl" kind="push" id="xLT-a4-4vI"/>
                         <segue destination="KBJ-KF-72H" kind="push" id="hTk-Of-861"/>
+                        <segue destination="UBE-Ad-FFW" kind="push" id="UrZ-Pb-Xve"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ddr-1k-EAs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-378" y="-550"/>
+            <point key="canvasLocation" x="-730" y="-630"/>
         </scene>
         <!--Profile Update View Controller - Profile-->
         <scene sceneID="lmI-Gu-0dh">
@@ -765,7 +999,7 @@
             </objects>
             <point key="canvasLocation" x="1640" y="-3515"/>
         </scene>
-        <!--Billing Table View Controller - Billings-->
+        <!--Billing Table View Controller - My Billing-->
         <scene sceneID="GuO-Se-VLi">
             <objects>
                 <tableViewController storyboardIdentifier="Billing" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nYE-1G-VxJ" customClass="BillingTableViewController" sceneMemberID="viewController">
@@ -844,7 +1078,7 @@
                             <outlet property="delegate" destination="nYE-1G-VxJ" id="ipi-Ua-IlU"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Billings" id="AeV-pY-mea">
+                    <navigationItem key="navigationItem" title="My Billing" id="AeV-pY-mea">
                         <barButtonItem key="backBarButtonItem" title="Back" id="5zN-aZ-9Zc"/>
                     </navigationItem>
                     <connections>
@@ -855,7 +1089,7 @@
             </objects>
             <point key="canvasLocation" x="331" y="573"/>
         </scene>
-        <!--Billing Detail View Controller - Billing-->
+        <!--Billing Detail View Controller - Detail Billing-->
         <scene sceneID="Cuu-d8-utx">
             <objects>
                 <viewController id="jnc-IU-rcH" customClass="BillingDetailViewController" sceneMemberID="viewController">
@@ -1007,7 +1241,7 @@
                             <constraint firstAttribute="trailing" secondItem="2W2-d5-mWw" secondAttribute="trailing" id="mfJ-WM-SQs"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Billing" id="8x6-RN-yPS"/>
+                    <navigationItem key="navigationItem" title="Detail Billing" id="8x6-RN-yPS"/>
                     <connections>
                         <outlet property="amountpaid" destination="jXl-ct-GYy" id="Kil-6i-JCx"/>
                         <outlet property="authorname" destination="egd-2U-lMh" id="MJw-ax-Dec"/>

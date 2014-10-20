@@ -22,6 +22,7 @@
 @synthesize SelectedCourse;
 @synthesize price;
 @synthesize sharebutton;
+@synthesize coursesubtitle;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -64,6 +65,7 @@
     self.dataSource = self;
     self.delegate = self;
     enrolledstu.text= [SelectedCourse objectForKey:@"numofpurchased"];
+    coursesubtitle.text= [SelectedCourse objectForKey:@"course_sub_title"];
     price.text=[SelectedCourse objectForKey:@"course_price"];
     review.image=[UIImage imageNamed:[self setimage:[SelectedCourse objectForKey:@"ratings"]]];
     coursename.text=[SelectedCourse objectForKey:@"course_name"];
@@ -107,7 +109,7 @@
         [HUD hide:YES];
     }
     player = [[MPMoviePlayerController alloc] initWithContentURL:url];
-    player.view.frame = CGRectMake(0, 100, 320, 100);
+    player.view.frame = CGRectMake(0, 120, 320, 100);
     if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad) {
         player.view.frame = CGRectMake(570, 97, 315, 116);
     }

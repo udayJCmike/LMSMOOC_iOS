@@ -238,9 +238,9 @@
 //       NSLog(@"tabview %@", NSStringFromCGRect(self.tabsView.frame));
       CGRect frame1,frame2;
       frame1=self.tabsView.frame;
-      frame1.origin.y +=180;
+      frame1.origin.y +=200;
       self.tabsView.frame=frame1;
-       frame2=CGRectMake(0, self.tabsView.frame.origin.y+50, 320, 320);
+       frame2=CGRectMake(0, self.tabsView.frame.origin.y+50, 320, 320-20);
        self.contentView.frame = frame2;
 //      NSLog(@"content view1 %@", NSStringFromCGRect(self.contentView.frame));
 //      NSLog(@"tabview1 %@", NSStringFromCGRect(self.tabsView.frame));

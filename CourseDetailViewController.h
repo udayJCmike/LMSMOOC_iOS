@@ -30,4 +30,5 @@
 @property (retain, nonatomic) IBOutlet UILabel *price;
 @property (retain, nonatomic) IBOutlet UIBarButtonItem *sharebutton;
 @property (nonatomic) NSUInteger numberOfTabs;
+@property(nonatomic,retain)IBOutlet UILabel *coursesubtitle;
 @end

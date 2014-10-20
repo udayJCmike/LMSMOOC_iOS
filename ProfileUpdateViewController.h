@@ -27,6 +27,7 @@
     UIPopoverController *popovercontroller;
      UIToolbar *toolbar;
     
+    
 }
 @property (nonatomic, retain) UIPopoverController *popovercontroller;
 @property (strong, nonatomic) IBOutlet UITextField *fname;
@@ -43,4 +44,6 @@
 @property (retain, nonatomic) IBOutlet UIView *bg;
 
 @property (retain, nonatomic) IBOutlet UIScrollView *scrollview;
+@property (retain, nonatomic)  NSOperationQueue *imageOperationQueue;
+@property (retain, nonatomic)    NSCache *imageCache;
 @end

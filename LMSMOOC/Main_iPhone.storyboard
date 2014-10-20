@@ -230,7 +230,7 @@
                                                 </items>
                                             </navigationBar>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logotab.png" translatesAutoresizingMaskIntoConstraints="NO" id="P2I-8d-Ht8">
-                                                <rect key="frame" x="80" y="10" width="150" height="35"/>
+                                                <rect key="frame" x="80" y="13" width="150" height="35"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                         </subviews>
@@ -359,7 +359,7 @@
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="yui-YP-4Em">
                                                 <rect key="frame" x="114" y="179" width="188" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="tintColor" patternImage="5A305426-5518-489C-9030-F7AAA3374A98" colorSpace="pattern"/>
+                                                <color key="tintColor" patternImage="18DCFF7E-67EF-4A3D-B7B4-BFAEE1B3267A" colorSpace="pattern"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
@@ -369,7 +369,7 @@
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="0Cx-TW-OFk">
                                                 <rect key="frame" x="114" y="227" width="188" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="tintColor" patternImage="5A305426-5518-489C-9030-F7AAA3374A98" colorSpace="pattern"/>
+                                                <color key="tintColor" patternImage="18DCFF7E-67EF-4A3D-B7B4-BFAEE1B3267A" colorSpace="pattern"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                 <connections>
@@ -412,7 +412,7 @@
                                                 </items>
                                             </navigationBar>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logotab.png" translatesAutoresizingMaskIntoConstraints="NO" id="zRq-K7-DnT">
-                                                <rect key="frame" x="80" y="10" width="150" height="35"/>
+                                                <rect key="frame" x="80" y="13" width="150" height="35"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                         </subviews>
@@ -530,7 +530,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="5A305426-5518-489C-9030-F7AAA3374A98" width="320" height="460">
+        <image name="18DCFF7E-67EF-4A3D-B7B4-BFAEE1B3267A" width="320" height="460">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQsLzI4O1UkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

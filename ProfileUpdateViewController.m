@@ -43,9 +43,51 @@
     }
     return self;
 }
+-(void)showsize
+{
+    NSString *imageUrlString = [[NSString alloc]initWithFormat:@"https://dl.dropboxusercontent.com/u/13765416/aa.png"];
+    
+    UIImage *imageFromCache = [self.imageCache objectForKey:imageUrlString];
+    
+    if (imageFromCache) {
+       
+        NSData *imgData = UIImageJPEGRepresentation(imageFromCache, 0);
+        NSLog(@"Size of Image(bytes) cache:%d",[imgData length]);
+        // set your frame accordingly
+    }
+    else
+    {
+      
+        
+        
+        [self.imageOperationQueue addOperationWithBlock:^{
+            NSURL *imageurl = [NSURL URLWithString:imageUrlString];
+            UIImage *img = [UIImage imageWithData:[NSData dataWithContentsOfURL:imageurl]];
+            
+            if (img != nil) {
+                
+                // update cache
+                [self.imageCache setObject:img forKey:imageUrlString];
+                
+                // now update UI in main queue
+                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                   
+                   
+                    NSData *imgData = UIImageJPEGRepresentation(img, 0);
+                    NSLog(@"Size of Image(bytes) download:%d ",[imgData length]);
+                }];
+            }
+        }];
+    }
+
+}
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     password.text=[delegate.Profiledetails objectForKey:@"password"];
+    _imageOperationQueue = [[NSOperationQueue alloc]init];
+    _imageOperationQueue.maxConcurrentOperationCount = 4;
+    self.imageCache = [[NSCache alloc] init];
+    //[self showsize];
      
 //    NSLog(@"value image %@",[delegate.Profiledetails valueForKey:@"avatarImage"]);
 }
@@ -677,7 +719,7 @@
         [popovercontroller release];
         NSString *mediaType = [info  objectForKey:UIImagePickerControllerMediaType];
         if ([mediaType isEqualToString:(NSString *)kUTTypeImage]) {
-        originalImage = [info objectForKey:UIImagePickerControllerEditedImage];
+        originalImage = [info objectForKey:UIImagePickerControllerOriginalImage];
             
         }
         
@@ -688,21 +730,49 @@
         }
   
    
-    NSData *newda = UIImageJPEGRepresentation(originalImage,1.0f);
-    [[NSUserDefaults standardUserDefaults]setValue:newda forKey:@"myimage"];
-    [[NSUserDefaults standardUserDefaults]synchronize];
-    NSURL *imagePath = [info objectForKey:@"UIImagePickerControllerReferenceURL"];
-    urllabel.text=[NSString stringWithFormat:@"%@",imagePath];
-    upload.hidden=NO;
-    urllabel.hidden=NO;
-//    NSString *imageName = [imagePath lastPathComponent];
+    CGFloat compression = 0.9f;
+    CGFloat maxCompression = 0.1f;
+    int maxFileSize = 100*100;
     
+    NSData *imageData = UIImageJPEGRepresentation(originalImage, compression);
     
-    [[picker parentViewController] dismissViewControllerAnimated:YES completion:nil];
-    UINavigationController* navController = self.navigationController;
-    UIViewController* controller = [navController.viewControllers objectAtIndex:0];
-    [controller dismissViewControllerAnimated:YES completion:nil];
-    [self useImage];
+    while ([imageData length] > maxFileSize && compression > maxCompression)
+    {
+        compression -= 0.1;
+        imageData = UIImageJPEGRepresentation(originalImage, compression);
+    }
+   // NSData *newda = UIImageJPEGRepresentation(originalImage,1.0f);
+    NSLog(@"image size %lu",(unsigned long)[imageData length]);
+    NSInteger size=(unsigned long)[imageData length]/1000;
+     NSLog(@"image size %lu",size);
+    if (size <=50)
+    {
+        [[NSUserDefaults standardUserDefaults]setValue:imageData forKey:@"myimage"];
+        [[NSUserDefaults standardUserDefaults]synchronize];
+        NSURL *imagePath = [info objectForKey:@"UIImagePickerControllerReferenceURL"];
+        urllabel.text=[NSString stringWithFormat:@"%@",imagePath];
+        upload.hidden=NO;
+        urllabel.hidden=NO;
+        //    NSString *imageName = [imagePath lastPathComponent];
+        
+        
+        [[picker parentViewController] dismissViewControllerAnimated:YES completion:nil];
+        UINavigationController* navController = self.navigationController;
+        UIViewController* controller = [navController.viewControllers objectAtIndex:0];
+        [controller dismissViewControllerAnimated:YES completion:nil];
+        [self useImage];
+    }
+    else
+    {
+        
+        [[picker parentViewController] dismissViewControllerAnimated:YES completion:nil];
+        UINavigationController* navController = self.navigationController;
+        UIViewController* controller = [navController.viewControllers objectAtIndex:0];
+        [controller dismissViewControllerAnimated:YES completion:nil];
+
+        [self ShowAlert:@"Image size should not be greater than 50 KB" title:@"Sorry User"];
+    }
+   
     
 }
 -(void)useImage

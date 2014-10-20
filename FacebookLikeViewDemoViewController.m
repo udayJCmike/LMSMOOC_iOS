@@ -103,6 +103,37 @@
     //
     //
     //    [self.webview loadHTMLString:twitterFollowButton baseURL:nil];
+    NSString *tem = self.terms.titleLabel.text;
+    
+    if (tem != nil && ![tem isEqualToString:@""]) {
+        NSMutableAttributedString *temString=[[NSMutableAttributedString alloc]initWithString:tem];
+        [temString addAttribute:NSUnderlineStyleAttributeName
+                          value:[NSNumber numberWithInt:1]
+                          range:(NSRange){0,[temString length]}];
+        
+        self.terms.titleLabel.attributedText = temString;
+    }
+    NSString *pri = self.privacy.titleLabel.text;
+    
+    if (pri != nil && ![pri isEqualToString:@""]) {
+        NSMutableAttributedString *temString=[[NSMutableAttributedString alloc]initWithString:pri];
+        [temString addAttribute:NSUnderlineStyleAttributeName
+                          value:[NSNumber numberWithInt:1]
+                          range:(NSRange){0,[temString length]}];
+        
+        self.privacy.titleLabel.attributedText = temString;
+    }
+    NSString *why = self.whylearnterest.titleLabel.text;
+    
+    if (why != nil && ![why isEqualToString:@""]) {
+        NSMutableAttributedString *temString=[[NSMutableAttributedString alloc]initWithString:why];
+        [temString addAttribute:NSUnderlineStyleAttributeName
+                          value:[NSNumber numberWithInt:1]
+                          range:(NSRange){0,[temString length]}];
+        
+        self.whylearnterest.titleLabel.attributedText = temString;
+    }
+    
 }
 - (void)menulistener:(id)sender {
     
@@ -200,6 +231,57 @@
     //        [ctrl release];
     //    }
 }
+- (IBAction)termsofuse:(id)sender {
+    
+    if (self.navigationController.navigationBar.hidden == NO)
+    {
+        // Show the Navigation Bar
+        [self.navigationController setNavigationBarHidden:YES animated:NO];
+    }
+//    [MTPopupWindow showWindowWithHTMLFile:@"http://208.109.248.89:8087/OnlineCourse/user_view_Termsofuses" insideView:self.view];
+    MTPopupWindow *popup = [[MTPopupWindow alloc] init];
+    popup.usesSafari = YES;
+    popup.fileName = @"http://208.109.248.89:8087/OnlineCourse/user_view_Termsofuses";
+    popup.delegate=self;
+    [popup show];
+   
+    
+}
+- (IBAction)privacy:(id)sender {
+    if (self.navigationController.navigationBar.hidden == NO)
+    {
+        // Show the Navigation Bar
+        [self.navigationController setNavigationBarHidden:YES animated:NO];
+    }
+    MTPopupWindow *popup = [[MTPopupWindow alloc] init];
+    popup.usesSafari = YES;
+    popup.fileName = @"http://208.109.248.89:8087/OnlineCourse/user_view_PrivacyPolicy";
+    popup.delegate=self;
+    [popup show];
+ //   [MTPopupWindow showWindowWithHTMLFile:@"http://208.109.248.89:8087/OnlineCourse/user_view_PrivacyPolicy" insideView:self.view];
+}
+- (IBAction)whylearnterest:(id)sender {
+    if (self.navigationController.navigationBar.hidden == NO)
+    {
+        // Show the Navigation Bar
+        [self.navigationController setNavigationBarHidden:YES animated:NO];
+    }
+    MTPopupWindow *popup = [[MTPopupWindow alloc] init];
+    popup.usesSafari = YES;
+    popup.fileName = @"http://208.109.248.89:8087/OnlineCourse/whylearnterest";
+    popup.delegate=self;
+    [popup show];
+  // [MTPopupWindow showWindowWithHTMLFile:@"http://208.109.248.89:8087/OnlineCourse/whylearnterest" insideView:self.view];
+}
+-(void)willCloseMTPopupWindow:(MTPopupWindow *)sender
+{
+
+    if (self.navigationController.navigationBar.hidden == YES)
+    {
+        // Show the Navigation Bar
+        [self.navigationController setNavigationBarHidden:NO animated:NO];
+    }
+}
 
 - (void)viewDidUnload
 {
@@ -210,6 +292,7 @@
 
 - (void)dealloc {
     [_webview release];
+    [_terms release];
     [super dealloc];
 }
 @end

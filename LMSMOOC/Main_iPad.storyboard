@@ -157,7 +157,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logotab.png" translatesAutoresizingMaskIntoConstraints="NO" id="sRv-ox-edq">
-                                <rect key="frame" x="389" y="16" width="222" height="36"/>
+                                <rect key="frame" x="389" y="19" width="222" height="36"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -343,7 +343,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logotab.png" translatesAutoresizingMaskIntoConstraints="NO" id="bF0-nk-djV">
-                                <rect key="frame" x="389" y="16" width="222" height="36"/>
+                                <rect key="frame" x="389" y="19" width="222" height="36"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

@@ -9,6 +9,7 @@
 #import "DashboardContentListTableViewController.h"
 #import "UIViewController+REFrostedViewController.h"
 #import "lmsmoocAppDelegate.h"
+#import "HelpViewController.h"
 #define  AppDelegate (lmsmoocAppDelegate *)[[UIApplication sharedApplication] delegate]
 @interface DashboardContentListTableViewController ()
 {
@@ -50,7 +51,7 @@
     self.tableView.opaque = NO;
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.allowsSelection=YES;
-       titles = [[NSArray alloc]initWithObjects:@"Home", @"Profile",@"Change Password", @"Inbox",@"My Courses",@"My Favorites",@"My Categories",@"My Authors",@"Billing",@"About",@"Logout",nil];
+       titles = [[NSArray alloc]initWithObjects:@"Home", @"Profile",@"Change Password", @"Inbox",@"My Courses",@"My Favorites",@"My Categories",@"My Authors",@"My Billing",@"About",@"Help",@"Logout",nil];
    // NSLog(@"did load called in tablelist");
 
 }
@@ -209,9 +210,14 @@
         FacebookLikeViewDemoViewController *secondViewController2 = [self.storyboard instantiateViewControllerWithIdentifier:@"About"];
         navigationController.viewControllers = @[secondViewController2];
     }
+    else if(indexPath.section == 0 && indexPath.row == 10) {
+        
+        HelpViewController *secondViewController2 = [self.storyboard instantiateViewControllerWithIdentifier:@"HelpVC"];
+        navigationController.viewControllers = @[secondViewController2];
+    }
    
     
-    else if(indexPath.section == 0 && indexPath.row == 10)
+    else if(indexPath.section == 0 && indexPath.row == 11)
     {
         [self.navigationController popToRootViewControllerAnimated:NO];
         [self.frostedViewController hideMenuViewController];

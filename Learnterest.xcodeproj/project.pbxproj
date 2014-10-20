@@ -134,6 +134,8 @@
 		847635F019C095A700F45CEF /* Passwordchange.m in Sources */ = {isa = PBXBuildFile; fileRef = 847635EF19C095A700F45CEF /* Passwordchange.m */; };
 		8476E7F419C17EE8002DB513 /* AvatarImagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8476E7F319C17EE8002DB513 /* AvatarImagesViewController.m */; };
 		84795A4E19F0FD890067E2DC /* defaultprofile.png in Resources */ = {isa = PBXBuildFile; fileRef = 84795A4D19F0FD890067E2DC /* defaultprofile.png */; };
+		847CEE8C19F4CCDF000795AC /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847CEE8B19F4CCDF000795AC /* HelpViewController.m */; };
+		847CEE9019F52A9D000795AC /* MTPopupWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 847CEE8F19F52A9D000795AC /* MTPopupWindow.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		8491BA0419CBF3F900B649ED /* MyCategoriesDetailiPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8491BA0319CBF3F900B649ED /* MyCategoriesDetailiPadViewController.m */; };
 		8491BA0719CBF94B00B649ED /* MyauthorcoursesiPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8491BA0619CBF94B00B649ED /* MyauthorcoursesiPadViewController.m */; };
 		8491BA0919CC5B9200B649ED /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8491BA0819CC5B9100B649ED /* MessageUI.framework */; };
@@ -382,6 +384,10 @@
 		8476E7F219C17EE8002DB513 /* AvatarImagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvatarImagesViewController.h; sourceTree = "<group>"; };
 		8476E7F319C17EE8002DB513 /* AvatarImagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvatarImagesViewController.m; sourceTree = "<group>"; };
 		84795A4D19F0FD890067E2DC /* defaultprofile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultprofile.png; sourceTree = "<group>"; };
+		847CEE8A19F4CCDF000795AC /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
+		847CEE8B19F4CCDF000795AC /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
+		847CEE8E19F52A9D000795AC /* MTPopupWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTPopupWindow.h; sourceTree = "<group>"; };
+		847CEE8F19F52A9D000795AC /* MTPopupWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTPopupWindow.m; sourceTree = "<group>"; };
 		8491BA0219CBF3F900B649ED /* MyCategoriesDetailiPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCategoriesDetailiPadViewController.h; sourceTree = "<group>"; };
 		8491BA0319CBF3F900B649ED /* MyCategoriesDetailiPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCategoriesDetailiPadViewController.m; sourceTree = "<group>"; };
 		8491BA0519CBF94B00B649ED /* MyauthorcoursesiPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyauthorcoursesiPadViewController.h; sourceTree = "<group>"; };
@@ -560,6 +566,8 @@
 		0DAFCFF319BEC75500A1E509 = {
 			isa = PBXGroup;
 			children = (
+				847CEE8D19F52A7A000795AC /* MTPopupWindowForURL */,
+				847CEE8919F4CCCF000795AC /* Help */,
 				0DFF63D419ED717A00F06D77 /* splash */,
 				0DFF63B119ED6EB300F06D77 /* assests */,
 				8474C57619E6B128008FB907 /* ShareAmongSocialNetwork */,
@@ -889,6 +897,24 @@
 				8474C57919E6B141008FB907 /* RDActivityViewControllerDelegate.h */,
 			);
 			name = ShareAmongSocialNetwork;
+			sourceTree = "<group>";
+		};
+		847CEE8919F4CCCF000795AC /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				847CEE8A19F4CCDF000795AC /* HelpViewController.h */,
+				847CEE8B19F4CCDF000795AC /* HelpViewController.m */,
+			);
+			name = Help;
+			sourceTree = "<group>";
+		};
+		847CEE8D19F52A7A000795AC /* MTPopupWindowForURL */ = {
+			isa = PBXGroup;
+			children = (
+				847CEE8E19F52A9D000795AC /* MTPopupWindow.h */,
+				847CEE8F19F52A9D000795AC /* MTPopupWindow.m */,
+			);
+			name = MTPopupWindowForURL;
 			sourceTree = "<group>";
 		};
 		8491B9FA19CBED2900B649ED /* iPad */ = {
@@ -1449,6 +1475,7 @@
 				8470B52019CD6555008A5809 /* BrowseCategorywiseDatasiPadViewController.m in Sources */,
 				842D992119E4078000EEF307 /* FacebookLikeViewDemoViewController.m in Sources */,
 				8470B51D19CD6511008A5809 /* BrowseCourseSearchViewController.m in Sources */,
+				847CEE9019F52A9D000795AC /* MTPopupWindow.m in Sources */,
 				84CBD50019C730C500CB50D1 /* courselist_iPhoneTableViewController.m in Sources */,
 				84EC715A19CAD77000529168 /* MyfavoritesViewController.m in Sources */,
 				840B832319BEE58F0065B678 /* PageContentViewController.m in Sources */,
@@ -1475,6 +1502,7 @@
 				84FC7D9019C0064E0001FD7C /* NSObject+SBJSON.m in Sources */,
 				84E52CBD19C9B2440042D07A /* CategorywiseDatasiPadViewController.m in Sources */,
 				84EC715819CAD77000529168 /* MycategoriesDetailViewController.m in Sources */,
+				847CEE8C19F4CCDF000795AC /* HelpViewController.m in Sources */,
 				842D990E19E4074300EEF307 /* FacebookLikeView.m in Sources */,
 				84F59B7119C2FC37009EF252 /* MAILinboxTableViewCell.m in Sources */,
 				8474C57A19E6B141008FB907 /* RDActivityViewController.m in Sources */,
@@ -1625,7 +1653,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: JACOB BENJAMIN (EQSE4S4WK5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1635,7 +1663,7 @@
 				INFOPLIST_FILE = "LMSMOOC/LMSMOOC-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = Learnterest;
-				PROVISIONING_PROFILE = "9a31b4ae-ea2d-4354-9600-2dc5c29a94be";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1646,8 +1674,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = NO;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Deemsys Inc (6N5EE6FZH9)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Deemsys Inc (6N5EE6FZH9)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1657,7 +1685,7 @@
 				INFOPLIST_FILE = "LMSMOOC/LMSMOOC-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = Learnterest;
-				PROVISIONING_PROFILE = "9a31b4ae-ea2d-4354-9600-2dc5c29a94be";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
