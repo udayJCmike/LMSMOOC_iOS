@@ -32,6 +32,31 @@
 {
     [super viewDidLoad];
     delegate=AppDelegate;
+    if (SCREEN_35) {
+        for (NSLayoutConstraint *con in self.view.constraints)
+        {
+            if (con.firstItem == self.scrollheight && con.firstAttribute == NSLayoutAttributeTop) {
+                
+                self.scrollbottom.constant = 100;
+                [self.scrollheight needsUpdateConstraints];
+                
+                
+            }
+        }
+    }
+    else if(SCREEN_40)
+    {
+        for (NSLayoutConstraint *con in self.view.constraints)
+        {
+            if (con.firstItem == self.scrollheight && con.firstAttribute == NSLayoutAttributeTop) {
+                
+                self.scrollbottom.constant = 50;
+                [self.scrollheight needsUpdateConstraints];
+                
+                
+            }
+        }
+    }
     du=[[databaseurl alloc]init];
        course_des.text=[delegate.CourseDetail valueForKey:@"course_description"];
    // NSLog(@"delegate.coursedetail %@",delegate.CourseDetail);

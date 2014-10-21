@@ -12,6 +12,9 @@
 #import "MBProgressHUD.h"
 #import "UIButton+Bootstrap.h"
 #import "SBJSON.h"
+#define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
+#define SCREEN_35 (SCREEN_HEIGHT == 480)
+#define SCREEN_40 (SCREEN_HEIGHT == 568)
 #define  AppDelegate (lmsmoocAppDelegate *)[[UIApplication sharedApplication] delegate]
 @interface AboutcourseViewController : UIViewController<MBProgressHUDDelegate>
 {
@@ -21,5 +24,6 @@
 }
 @property(nonatomic,retain)IBOutlet UITextView *course_des;
 @property (retain, nonatomic) IBOutlet UIButton *removefromfav;
-
+@property(retain,nonatomic)IBOutlet UIScrollView *scrollheight;
+@property (retain, nonatomic) IBOutlet NSLayoutConstraint *scrollbottom;
 @end

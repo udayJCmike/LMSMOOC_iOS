@@ -41,6 +41,8 @@
                                              selector:@selector(menulistener:)
                                                  name:@"Showmenu"
                                                object:nil];
+    self.bg.layer.cornerRadius=10;
+   self. bg.layer.masksToBounds=YES;
     // [privacypolicy loadRequest:[NSURLRequest requestWithURL:[[NSURL alloc]initWithString:privacyurl]]];
 }
 - (void)menulistener:(id)sender {
@@ -72,6 +74,7 @@
 
 - (void)dealloc {
     
+    [_bg release];
     [super dealloc];
 }
 @end

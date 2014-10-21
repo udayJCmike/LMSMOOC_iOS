@@ -782,7 +782,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="How to use Learnterest" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YS3-iF-lBk">
-                                        <rect key="frame" x="10" y="41" width="210" height="25"/>
+                                        <rect key="frame" x="375" y="30" width="210" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="highlightedColor"/>
@@ -916,6 +916,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Help" id="OvQ-zK-stc"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="bg" destination="KdH-oS-jCk" id="rGX-69-VKt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M9H-cq-JtO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2225,7 +2228,7 @@
                                         <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ved-hb-hCl">
-                                        <rect key="frame" x="419" y="330" width="108" height="30"/>
+                                        <rect key="frame" x="68" y="296" width="92" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Terms of Use">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -2235,7 +2238,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AJI-Cv-IZo">
-                                        <rect key="frame" x="424" y="387" width="112" height="30"/>
+                                        <rect key="frame" x="68" y="334" width="96" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Privacy Policy">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -2245,7 +2248,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mTm-VW-PQL">
-                                        <rect key="frame" x="418" y="452" width="121" height="30"/>
+                                        <rect key="frame" x="68" y="372" width="115" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Why Learnterest">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -2264,6 +2267,7 @@
                     <navigationItem key="navigationItem" title="About us" id="5EC-OM-i0d"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
+                        <outlet property="bg" destination="jta-aa-A82" id="mMQ-39-Hhp"/>
                         <outlet property="facebookLikeView" destination="2xl-2s-uSB" id="KMo-g0-JWg"/>
                         <outlet property="privacy" destination="AJI-Cv-IZo" id="y7f-uu-1V8"/>
                         <outlet property="terms" destination="Ved-hb-hCl" id="N7b-UH-yf2"/>

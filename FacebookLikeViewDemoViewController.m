@@ -82,7 +82,9 @@
     self.facebookLikeView.layout = @"button_count";
     self.facebookLikeView.showFaces = NO;
     self.facebookLikeView.alpha = 0;
-    [self.facebookLikeView load];
+       [self.facebookLikeView load];
+    self.bg.layer.cornerRadius=10;
+    self.bg.layer.masksToBounds=YES;
     if (self.navigationController.navigationBar.hidden == YES)
     {
         // Show the Navigation Bar
@@ -293,6 +295,7 @@
 - (void)dealloc {
     [_webview release];
     [_terms release];
+    [_bg release];
     [super dealloc];
 }
 @end

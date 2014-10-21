@@ -10,6 +10,8 @@
 #import "lmsmoocAppDelegate.h"
 #import "MBProgressHUD.h"
 #import "databaseurl.h"
+#import <AVFoundation/AVFoundation.h>
+#import <MediaPlayer/MediaPlayer.h>
 #define  AppDelegate (lmsmoocAppDelegate *)[[UIApplication sharedApplication] delegate]
 @interface AudioPlayerViewController : UIViewController<MBProgressHUDDelegate>
 {
@@ -23,4 +25,6 @@
 @property (retain, nonatomic) IBOutlet UIView *bg;
 @property (strong, nonatomic) IBOutlet UISlider *slider;
 @property (strong, nonatomic) IBOutlet UILabel *totaltime;
+@property(nonatomic,strong) AVPlayer *player;
+@property(nonatomic,strong)  AVPlayerItem *playerItem;
 @end

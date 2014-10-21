@@ -17,6 +17,7 @@
 {
     MBProgressHUD *HUD;
 }
+@property (retain, nonatomic) IBOutlet UIView *bg;
 @property (retain, nonatomic) IBOutlet UIButton *terms;
 @property (retain, nonatomic) IBOutlet UIButton *privacy;
 @property (retain, nonatomic) IBOutlet UIButton *whylearnterest;

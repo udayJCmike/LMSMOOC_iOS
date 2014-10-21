@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "REFrostedViewController.h"
 @interface HelpViewController : UIViewController
+@property (retain, nonatomic) IBOutlet UIView *bg;
 
 @end

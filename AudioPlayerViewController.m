@@ -7,16 +7,15 @@
 //
 
 #import "AudioPlayerViewController.h"
-#import <AVFoundation/AVFoundation.h>
-#import <MediaPlayer/MediaPlayer.h>
+
 @interface AudioPlayerViewController ()
 {
-    AVPlayerItem *playerItem;
-    AVPlayer *player;
+  
+   
     
     
 }
-@property(nonatomic,strong) AVPlayer *player;
+
 @end
 
 
@@ -27,6 +26,9 @@
 @synthesize durationoutlet;
 @synthesize totaltime;
 @synthesize bg;
+@synthesize player;
+@synthesize playerItem;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -126,18 +128,22 @@
     NSString*secid= [delegate.lectureDetail objectForKey:@"id_section"];
     NSString*lecid= [delegate.lectureDetail objectForKey:@"id_lecture"];
     audioname= [delegate.lectureDetail objectForKey:@"lecture_audio"];
-    NSString *imageUrlString = [[NSString alloc]initWithFormat:@"%@/%@/%@/%@/%@",delegate.course_image_url,courseid,secid,lecid,audioname];
+    NSString *imageUrlString = [[NSString alloc]initWithFormat:@"%@%@/%@/%@/%@",delegate.course_image_url,courseid,secid,lecid,audioname];
     
-//    NSURL *url = [NSURL URLWithString:@"http://tamilmp3hub.com/4256s5f46ht4he4r6/2014/Saivam/Azhagu-Song.mp3"];
-    AVURLAsset *asset = [AVURLAsset assetWithURL:[NSURL URLWithString:imageUrlString]];
+//    NSString *filepath   =   [[NSBundle mainBundle] pathForResource:@"dairy-milk-kiss-me-file" ofType:@"mp3"];
+//    NSURL    *fileURL    =   [NSURL fileURLWithPath:filepath];
+   // NSLog(@"audio url %@",filepath);
+    NSURL *url = [NSURL URLWithString:imageUrlString];
+    //http://tamilmp3hub.com/4256s5f46ht4he4r6/2014/Saivam/Azhagu-Song.mp3
+    AVURLAsset *asset = [AVURLAsset assetWithURL: url];
     
     if (![HUD isHidden]) {
         [HUD hide:YES];
     }
     
     Float64 duration = CMTimeGetSeconds(asset.duration);
-    AVPlayerItem *item = [AVPlayerItem playerItemWithAsset: asset];
-    self.player = [[AVPlayer alloc] initWithPlayerItem: item];
+    playerItem = [AVPlayerItem playerItemWithAsset: asset];
+    player = [[AVPlayer alloc] initWithURL:url];
     
     
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -157,6 +163,7 @@
        int hr= (int)((int)duration/60);
         int mn=(int)((int)duration%60);
         [totaltime setText: [NSString stringWithFormat:@"%02d:%02d",hr,mn]];
+      NSLog(@"total sec1 %f",duration);
     [slider setMaximumValue:duration];
     
     
