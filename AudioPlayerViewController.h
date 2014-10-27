@@ -27,4 +27,5 @@
 @property (strong, nonatomic) IBOutlet UILabel *totaltime;
 @property(nonatomic,strong) AVPlayer *player;
 @property(nonatomic,strong)  AVPlayerItem *playerItem;
+@property(nonatomic,strong)AVURLAsset *asset;
 @end
