@@ -219,11 +219,41 @@
     
     else if(indexPath.section == 0 && indexPath.row == 11)
     {
-        [self.navigationController popToRootViewControllerAnimated:NO];
-        [self.frostedViewController hideMenuViewController];
-        return;
+        [[NSUserDefaults standardUserDefaults]setValue:@"" forKey:@"username"];
+        [[NSUserDefaults standardUserDefaults]setValue:@"" forKey:@"password"];
+        [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"username"];
+        [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"password"];
+        [[NSUserDefaults standardUserDefaults]synchronize];
+        if (delegate.sessionLogin)
+        {
+            NSLog(@"logged out using session");
+            if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad)
+            {
+                UIStoryboard *welcome=[UIStoryboard storyboardWithName:@"Main_iPad" bundle:nil];
+                UIViewController *initialvc=[welcome instantiateInitialViewController];
+                delegate.window.rootViewController =initialvc;
+                
+            }
+            if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPhone)
+            {
+                
+                UIStoryboard *welcome=[UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+                UIViewController *initialvc=[welcome instantiateInitialViewController];
+                delegate.window.rootViewController =initialvc;
+                
+            }
+            [self.frostedViewController hideMenuViewController];
+            return;
+        }
+        else
+        {
+            [self.navigationController popToRootViewControllerAnimated:NO];
+            [self.frostedViewController hideMenuViewController];
+            return;
+        }
         
     }
+
     
     self.frostedViewController.contentViewController = navigationController;
     [self.frostedViewController hideMenuViewController];

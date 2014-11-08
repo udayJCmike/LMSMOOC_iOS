@@ -54,6 +54,7 @@
 //        [reminder setImage:[UIImage imageNamed:@"checkBox.png"] forState:UIControlStateNormal];
 //    }
 //}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -61,20 +62,20 @@
     [self.back defaultStyle];
 
     
-    NSString *keepmeres=[[NSUserDefaults standardUserDefaults]objectForKey:@"keepmesign"];
-    if ([keepmeres isEqualToString:@"1"]) {
-        username.text=[[NSUserDefaults standardUserDefaults]objectForKey:@"username"];
-        password.text=[[NSUserDefaults standardUserDefaults]objectForKey:@"password"];
-        reminder.selected=YES;
-        [reminder setImage:[UIImage imageNamed:@"checkBoxMarked.png"] forState:UIControlStateNormal];
-       
-    }
-    else{
-        username.text=@"";
-        password.text=@"";
-        reminder.selected=NO;
-         [reminder setImage:[UIImage imageNamed:@"checkBox.png"] forState:UIControlStateNormal];
-    }
+//    NSString *keepmeres=[[NSUserDefaults standardUserDefaults]objectForKey:@"keepmesign"];
+//    if ([keepmeres isEqualToString:@"1"]) {
+//        username.text=[[NSUserDefaults standardUserDefaults]objectForKey:@"username"];
+//        password.text=[[NSUserDefaults standardUserDefaults]objectForKey:@"password"];
+//        reminder.selected=YES;
+//        [reminder setImage:[UIImage imageNamed:@"checkBoxMarked.png"] forState:UIControlStateNormal];
+//       
+//    }
+//    else{
+//        username.text=@"";
+//        password.text=@"";
+//        reminder.selected=NO;
+//         [reminder setImage:[UIImage imageNamed:@"checkBox.png"] forState:UIControlStateNormal];
+//    }
    
     du=[[databaseurl alloc]init];
     delegate=AppDelegate;
@@ -309,17 +310,17 @@
                 delegate.av_image=[NSString stringWithFormat:@"%@%@",avatarURL,avatarImage];
                 delegate.profileimage=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:delegate.av_image]]];
 
-              
-                if (reminder.selected) {
-                  [[NSUserDefaults standardUserDefaults]setValue:@"1" forKey:@"keepmesign"];
-//                    password.text=@"";
-                }
-                else
-                {
-                    [[NSUserDefaults standardUserDefaults]setValue:@"0" forKey:@"keepmesign"];
-//                username.text=@"";
-//                password.text=@"";
-                }
+//              
+//                if (reminder.selected) {
+//                  [[NSUserDefaults standardUserDefaults]setValue:@"1" forKey:@"keepmesign"];
+////                    password.text=@"";
+//                }
+//                else
+//                {
+//                    [[NSUserDefaults standardUserDefaults]setValue:@"0" forKey:@"keepmesign"];
+////                username.text=@"";
+////                password.text=@"";
+//                }
                   [[NSUserDefaults standardUserDefaults]synchronize];
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"LoginComplete"
                                                                     object:self
@@ -360,6 +361,111 @@
     return [du returndbresult:post URL:url];
 }
 
+-(NSString *)HttpPostEntityFirstLogin1:(NSString*)firstEntity ForValue1:(NSString*)value1 EntitySecond:(NSString*)secondEntity ForValue2:(NSString*)value2
+{
+    
+    
+    NSString *urltemp=[[databaseurl sharedInstance]DBurl];
+    NSString *url1=@"Login.php?service=login";
+    NSString *url2=[NSString stringWithFormat:@"%@%@",urltemp,url1];
+    NSString *post =[[NSString alloc] initWithFormat:@"%@=%@&password=%@&%@=%@",firstEntity,value1,[[NSUserDefaults standardUserDefaults] valueForKey:@"password"],secondEntity,value2];
+    NSURL *url = [NSURL URLWithString:url2];
+    
+    return [du returndbresult:post URL:url];
+}
+-(void)checkdataForLogin
+{
+    du=[[databaseurl alloc]init];
+    delegate=AppDelegate;
+    NSString *response=[self HttpPostEntityFirstLogin1:@"username" ForValue1:[[NSUserDefaults standardUserDefaults] valueForKey:@"username"]  EntitySecond:@"authkey" ForValue2:@"rzTFevN099Km39PV"];
+    NSError *error;
+    
+    SBJSON *json = [[SBJSON new] autorelease];
+    NSDictionary *parsedvalue = [json objectWithString:response error:&error];
+    
+    NSLog(@"%@ parsedvalue",parsedvalue);
+    if (parsedvalue == nil)
+    {
+        
+        //NSLog(@"parsedvalue == nil");
+        
+    }
+    else
+    {
+        
+        NSDictionary* menu = [parsedvalue objectForKey:@"serviceresponse"];
+        if ([[menu objectForKey:@"servicename"] isEqualToString:@"Login Data"])
+        {
+            if ([[menu objectForKey:@"success"] isEqualToString:@"Yes"])
+            {
+                
+                
+                delegate.Profiledetails=[[NSMutableDictionary alloc]init];
+                
+                
+                [[NSUserDefaults standardUserDefaults]setValue:[menu objectForKey:@"firstname"] forKey:@"firstname"];
+                [[NSUserDefaults standardUserDefaults]setValue:[menu objectForKey:@"userid"] forKey:@"userid"];
+                [delegate.Profiledetails setValue:[menu objectForKey:@"firstname"] forKey:@"firstname"];
+                [delegate.Profiledetails setValue:[menu objectForKey:@"lastname"] forKey:@"lastname"];
+                [delegate.Profiledetails setValue:[menu objectForKey:@"email"] forKey:@"email"];
+                [delegate.Profiledetails setValue:[menu objectForKey:@"interested_in"] forKey:@"interested_in"];
+                [delegate.Profiledetails setValue:[menu objectForKey:@"gender"] forKey:@"gender"];
+                [delegate.Profiledetails setValue:[menu objectForKey:@"avatarURL"] forKey:@"avatarURL"];
+                [delegate.Profiledetails setValue:[menu objectForKey:@"avatarImage"] forKey:@"avatarImage"];
+                [delegate.Profiledetails setValue:[menu objectForKey:@"logins"] forKey:@"logins"];
+                [delegate.Profiledetails setValue:[menu objectForKey:@"username"] forKey:@"username"];
+                [delegate.Profiledetails setValue:[menu objectForKey:@"password"] forKey:@"password"];
+                
+                delegate.course_image_url= [menu objectForKey:@"courseimageURL"];
+                NSString *avatarURL=[menu objectForKey:@"avatarURL"];
+                NSString *avatarImage=[menu objectForKey:@"avatarImage"];
+                
+                //                NSLog(@"values %@",avatarURL);
+                //                    NSLog(@"values %@", delegate.course_image_url);
+                
+                
+                delegate.avatharURL=avatarURL;
+                delegate.av_image=[NSString stringWithFormat:@"%@%@",avatarURL,avatarImage];
+                delegate.profileimage=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:delegate.av_image]]];
+                
+                
+//                if (reminder.selected) {
+//                    [[NSUserDefaults standardUserDefaults]setValue:@"1" forKey:@"keepmesign"];
+//                    //                    password.text=@"";
+//                }
+//                else
+//                {
+//                    [[NSUserDefaults standardUserDefaults]setValue:@"0" forKey:@"keepmesign"];
+//                    //                username.text=@"";
+//                    //                password.text=@"";
+//                }
+                [[NSUserDefaults standardUserDefaults]synchronize];
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"LoginComplete"
+                                                                    object:self
+                                                                  userInfo:nil];
+                
+                
+                [self dismiss:self];
+                
+                
+            }
+            else if ([[menu objectForKey:@"success"] isEqualToString:@"No"])
+            
+            {
+                
+                
+                [HUD hide:YES];
+                // NSLog(@"invalid username or password");
+                [self ShowAlert:@"Invalid username or password." title:@"Sorry User" ];
+                username.text=@"";
+                password.text=@"";
+                
+            }
+            
+        }
+    }
+    [HUD hide:YES];
+}
 
 
 -(void)dealloc

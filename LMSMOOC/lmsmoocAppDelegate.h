@@ -21,5 +21,6 @@
 @property(strong,nonatomic)NSMutableDictionary *Profiledetails;
 @property(strong,nonatomic)NSString *deviceid;
 @property(strong,nonatomic)NSString *tockenid;
+@property BOOL sessionLogin;
 -(void)downloadDataFromURL:(NSURL *)url withCompletionHandler:(void(^)(NSData *data))completionHandler;
 @end

@@ -343,7 +343,7 @@
    // NSLog(@"tag number %d",textField.tag);
     switch (textField.tag) {
         case 1:
-            if ([cur_pwd.text isEqualToString:[delegate.Profiledetails objectForKey:@"password"]] && [du validatePasswordForSignupPage:cur_pwd.text])
+            if ([cur_pwd.text isEqualToString:[delegate.Profiledetails objectForKey:@"password"]] )
             {
             }
             else

@@ -10,7 +10,7 @@
 #import<MediaPlayer/MediaPlayer.h>
 #import "SBJSON.h"
 #import "databaseurl.h"
-
+#import "LoginPageViewController.h"
 #define  AppDelegate (lmsmoocAppDelegate *)[[UIApplication sharedApplication] delegate]
 @implementation lmsmoocAppDelegate
 {
@@ -37,6 +37,31 @@
     deviceid= [self getUniqueDeviceIdentifierAsString];
     [[NSUserDefaults standardUserDefaults]setValue:deviceid forKey:@"deviceid"];
     [[NSUserDefaults standardUserDefaults]synchronize];
+   
+    if (([[[NSUserDefaults standardUserDefaults]valueForKey:@"username"] length]>0)&&([[[NSUserDefaults standardUserDefaults]valueForKey:@"password"] length]>0))
+    {
+        if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad)
+        {
+            self.sessionLogin=YES;
+            UIStoryboard *welcome=[UIStoryboard storyboardWithName:@"Dashboard_iPad" bundle:nil];
+            UIViewController *initialvc=[welcome instantiateInitialViewController];
+            self.window.rootViewController=initialvc;
+        }
+        if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPhone)
+        {
+            self.sessionLogin=YES;
+            UIStoryboard *welcome=[UIStoryboard storyboardWithName:@"Dashboard_iPhone" bundle:nil];
+            UIViewController *initialvc=[welcome instantiateInitialViewController];
+            self.window.rootViewController=initialvc;
+        }
+        
+        LoginPageViewController *login=[[LoginPageViewController alloc]init];
+        [login checkdataForLogin];
+    }
+    else
+    {
+        self.sessionLogin=NO;
+    }
     return YES;
 }
 
