@@ -230,7 +230,7 @@ int loadcompleted;
     }
     
    
-    offset+=10;
+    offset+=[courselist count];
     // NSLog(@"array values in all course after updating %@",courselist);
     [self performSelector:@selector(reloaddatas) withObject:nil afterDelay:0.5f];
  
@@ -293,7 +293,7 @@ int loadcompleted;
     if (![HUD isHidden]) {
         [HUD hide:YES];
     }
-    offset_free+=10;
+    offset_free+=[courselist count];
     [self performSelector:@selector(reloaddatas) withObject:nil afterDelay:0.5f];
     
     
@@ -351,7 +351,7 @@ int loadcompleted;
     }
     
     
-    offset_paid+=10;
+    offset_paid+=[courselist count];
     [self performSelector:@selector(reloaddatas) withObject:nil afterDelay:0.5f];
     
     

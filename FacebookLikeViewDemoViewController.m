@@ -52,6 +52,7 @@
     [UIView setAnimationDelay:0.5];
     self.facebookLikeView.alpha = 1;
     [UIView commitAnimations];
+    [HUD hide:YES];
 }
 
 - (void)facebookLikeViewDidLike:(FacebookLikeView *)aFacebookLikeView {
@@ -77,7 +78,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+    [self.navigationController.view addSubview:HUD];
+    HUD.delegate = self;
+    HUD.labelText = @"Please wait...";
+    [HUD show:YES];
     self.facebookLikeView.href = [NSURL URLWithString:@"https://www.facebook.com/pages/Learnterest-Best-Online-Learning-Marketplace/280656465457314"];
     self.facebookLikeView.layout = @"button_count";
     self.facebookLikeView.showFaces = NO;

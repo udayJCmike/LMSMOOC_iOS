@@ -275,7 +275,7 @@ int loadcompleted;
         [HUD hide:YES];
     }
    
-    offset+=10;
+    offset+=[courselist count];
     
     
     
@@ -332,7 +332,7 @@ int loadcompleted;
     if (![HUD isHidden]) {
         [HUD hide:YES];
     }
-    offset_free+=10;
+    offset_free+=[courselist count];
     
     
     
@@ -390,7 +390,7 @@ int loadcompleted;
     if (![HUD isHidden]) {
         [HUD hide:YES];
     }
-    offset_paid+=10;
+    offset_paid+=[courselist count];
     
     
     

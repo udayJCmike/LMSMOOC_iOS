@@ -251,7 +251,7 @@
     if (![HUD isHidden]) {
         [HUD hide:YES];
     }
-    offset+=10;
+    offset+=[courselist count];
     
     
     [self performSelector:@selector(reloaddatas) withObject:nil afterDelay:1.0f];

@@ -286,7 +286,7 @@
     if (![HUD isHidden]) {
         [HUD hide:YES];
     }
-    offset+=10;
+    offset+=[courselist count];
     
     
     

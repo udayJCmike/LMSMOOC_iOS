@@ -150,7 +150,7 @@ int loadcompleted;
         loadcompleted=1;
         NSLog(@"No Datas found");
     }
-    offset+=10;
+    offset+=[courselist count];
     
     if (![HUD isHidden]) {
         [HUD hide:YES];

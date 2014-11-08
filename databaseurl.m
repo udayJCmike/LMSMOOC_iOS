@@ -248,7 +248,7 @@ static databaseurl * appInstance;
 }
 -(NSMutableArray *)MultipleCharacters:(NSString *)url
 {
-//    NSLog(@"url in multiple %@",url);
+   // NSLog(@"url in multiple %@",url);
     NSString *myurl=[url stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
     NSMutableURLRequest *request =[[NSMutableURLRequest alloc]initWithURL:[NSURL URLWithString:myurl]];
 //     NSLog(@"return request %@",request);
