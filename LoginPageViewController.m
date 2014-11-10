@@ -383,7 +383,7 @@
     SBJSON *json = [[SBJSON new] autorelease];
     NSDictionary *parsedvalue = [json objectWithString:response error:&error];
     
-    NSLog(@"%@ parsedvalue",parsedvalue);
+   // NSLog(@"%@ parsedvalue",parsedvalue);
     if (parsedvalue == nil)
     {
         
@@ -457,8 +457,21 @@
                 [HUD hide:YES];
                 // NSLog(@"invalid username or password");
                 [self ShowAlert:@"Invalid username or password." title:@"Sorry User" ];
-                username.text=@"";
-                password.text=@"";
+                if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad)
+                {
+                    UIStoryboard *welcome=[UIStoryboard storyboardWithName:@"Main_iPad" bundle:nil];
+                    UIViewController *initialvc=[welcome instantiateInitialViewController];
+                    delegate.window.rootViewController =initialvc;
+                    
+                }
+                if (UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPhone)
+                {
+                    
+                    UIStoryboard *welcome=[UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+                    UIViewController *initialvc=[welcome instantiateInitialViewController];
+                    delegate.window.rootViewController =initialvc;
+                    
+                }
                 
             }
             

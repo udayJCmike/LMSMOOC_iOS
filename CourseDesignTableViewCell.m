@@ -16,6 +16,7 @@
 @synthesize review;
 @synthesize promoimage;
 @synthesize enrolled;
+@synthesize numberofpurchased;
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];

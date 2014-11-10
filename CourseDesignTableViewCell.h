@@ -16,4 +16,5 @@
 @property(nonatomic,strong)IBOutlet UIImageView *cover;
 @property(nonatomic,strong)IBOutlet UIImageView *promoimage;
 @property(nonatomic,retain)IBOutlet UILabel *enrolled;
+@property(nonatomic,retain)IBOutlet UILabel *numberofpurchased;
 @end

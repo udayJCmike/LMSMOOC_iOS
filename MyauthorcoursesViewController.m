@@ -343,7 +343,8 @@
     course=[courselist objectAtIndex:indexPath.row];
     cell.coursename.text=[course objectForKey:@"course_name"];
     cell.authorname.text=[course objectForKey:@"course_author"];
-    cell.price.text=[course objectForKey:@"course_price"];
+    cell.price.text=[NSString stringWithFormat:@"$ %@",[course objectForKey:@"course_price"]];
+    cell.numberofpurchased.text=[NSString stringWithFormat:@"%@ students",[course objectForKey:@"numofpurchased"]];
     cell.cover.image=[UIImage imageNamed:[course objectForKey:@"course_cover_image"]];
     [self setimage:[course objectForKey:@"ratings"]];
     cell.review.image=[UIImage imageNamed:[self setimage:[course objectForKey:@"ratings"]]];
